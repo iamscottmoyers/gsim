@@ -1,0 +1,85 @@
+Missing explanation of what 'E' and 'D' mean in the class heirarchy diagrams.
+
+Duplication of the IIR_AscendingAttribute in table 8. Class heirarchy derived from IIR_Name.
+
+Page 76 IIR_StringLiteral Get Method has an IIR_Int32 length parameter, it should be IR_Int32 length.
+
+Inconsistant use of ',' ';' and 'and' when specifying enumeration lists (makes pdf harder to parse).
+
+7.6.3.3 page 79 operator[] returns an IIR_Int32, should be IR_Int32, or should it really return an IR_Boolean?
+
+7.11.3.2 IIR_FloatingPointLiteral32 second function called 'get_value' should probably be called 'value' so it is in line with the rest of the definitions. Also prevents overloading the 'get_value' function.
+
+Table 3 page 45 IIR_AssociationElementExpression is later referred to as IIR_AssociationElementByExpression. Stick with IIR_AssociationElementByExpression.
+
+8.20.3.1 IIR_Elsif constructor method missing opening brace.
+
+8.20.3.3 set_else_clause(condition) should probably be set_else_clause(else_clause)
+
+4.5 IIR_Tuple Derived Class mentions IIR_SimultaneousAlternativeByAll which is not defined anywhere else in the spec. I assume it meand to be IIR_SimultaneousAlternativeByOthers as stated in table 30. Why are these tables duplicated?
+
+9.15.3.1 IIR_EnaturelementDeclarationList() should be IIR_NatureElementDeclarationList().
+
+9.1.3.1 List Properties number_of_elements should return IR_Int32 not IIR_Int32.
+
+9.2.3.2 get_predecessor_element parameter should be called 'existing_element' not 'element'.
+
+8.16.2 Parent class is IIR_Tupler, should be IIR_Tuple.
+
+10.6.3.1 Typo, resolution_functio, should be resolution_function.
+
+IIR_ComponentSpecification definition missing from the spec?
+
+10.16.3.3 Object creation / destruction isn't very orthogonal. get / release and create / destroy is ok, but IIR_AccessTypeDefinition has get (which isn't static) and destroy.
+
+10.22 IIR_ScalarSubatureDefinition should be IIR_ScalarSubNatureDefinition. 
+
+10.22.2 Table says it's for IIR_ScalarNatureDefinition when it's actually for IIR_ScalarSubnatureDefinition.
+
+10.22.3.3 Should the ScalarSubnatureDefinition constructor take a base nature? Not sure where the base nature is set, unless the spec is missing a set_base_nature function.
+
+10.26.3.1 10.26.3.2 Constructor and Destructor names contain a T.
+
+11.7.3.2 subtype argument should be called subnature to be consistant.
+
+11.9.3.2 get_subtype returns an IIR_SubtypeDefinition which does not exist. I suspect it's meant to be an IIR_TypeDefinition.
+
+11.11.3.2 set_subnature and get_subnature both work on IIR_SubnatureDefinition types. IIR_SubnatureDefinition doesn't exist. I'll assume these operations worn on IIR_NatureDefinition types rather than creating the IIR_SubnatureDefinition class.
+
+11.15.3.1 Constructor method is specified as IIR_VariableDeclaration() but should probably be IIR_SharedVariableDeclaration().
+
+11.17.3.3 The argument for set_file_logical_name is 'file_open_expression' it should be 'file_logical_name'
+
+11.20.3.2 Argument to set_subnation_indication should be calles subnature_indication to be consistent.
+
+11.22.3.3 argument to setter is 'value' again, we should use 'value' or the name of the value to set throughout the spec.
+
+11.25.3.1 Mentions IIR_Mode, should be IR_Mode.
+
+11.35.3.2 set_group_template should be set_grout_template_name.
+
+11.40.4. typo. architectecture_declarative_part should be architecture_declarative_part.
+
+12.40.3.1 typo. IIR_IhroughAttribute should be IIR_ThroughAttribute.
+
+13.22.3.1 typo. SLAOoperator should be SLAOperator.
+
+13.26.3.2 parameter is called 'v' I think setters and getters should standardise on set_something( type something );
+
+13.40.3.3 Formatting oddities.
+
+14.5.3.3 delay_mechanism type is stated as IIR_DelayMechanism when it should be IR_DelayMechanism.
+
+14.6.3.3 set_expression takes the argument target... should be expression.
+
+14.8.3.3 elsif parameter should be elsif, not condition.
+
+15.5.3.1 type IIR_ConcurrentProcedurCallStatement() should be IIR_ConcurrentProcedureCallStatement().
+
+15.6.3.2 Shouldn't the argument to set_postponed be postponed, not predicate.
+
+499 chapter 15 IIR_ConcurrentConditionalSignalAssignmentt <- 2 t's and IIR_ConcurrentSelectedSignaAssignmentt <- 2 t's, missing l from Signal.
+
+Is it IIR_ConcurrentConditionSignalStatement or IIR_ConcurrentConditionSignalAssignment ? The rest of that group of classes uses Statement but assignment is used most often so I will use assignment..
+
+15.7.3.5 IIR_DelayMechanism should be IR_DelayMechanism.

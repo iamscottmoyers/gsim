@@ -1,0 +1,11 @@
+#ifndef _NAVVIE_UML_VISIBILITY_H_
+#define _NAVVIE_UML_VISIBILITY_H_
+
+enum UMLVisibility {
+	NV_PUBLIC,
+	NV_PROTECTED,
+	NV_PRIVATE,
+	NV_PACKAGE
+};
+
+#endif
