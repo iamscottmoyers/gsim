@@ -1,5 +1,5 @@
-navvie  - navvie is my program that can convert .uml files into graphviz format or C. It depends upon libxml2 so you might
-          want to get that first. To run it try this:
+navvie  - navvie is my program that can convert .uml files into graphviz format or C. It depends upon libxml2 so you
+          might want to get that first. To run it try this:
 
           cd navvie
           make
@@ -11,8 +11,8 @@ navvie  - navvie is my program that can convert .uml files into graphviz format 
 
           dot -Tpng out.dot > out.png
 
-vhdl    - The very start of a vhdl parser. You'll need antlr3 installed somewhere. I don't know java, but you need to set
-          the classpath (the -cp path in the Makefile). I've hard coded mine so you'll have to hack that.
+vhdl    - The very start of a vhdl parser. You'll need antlr3 installed somewhere. I don't know java, but you need to
+          set the classpath (the -cp path in the Makefile). I've hard coded mine so you'll have to hack that.
 
           cd vhdl
           make
