@@ -167,7 +167,7 @@ static void nv_cpp_write_enumeration(FILE *fp, struct UMLEnumeration *e)
 	List *work;
 	int comma = 0;
 	work = nv_uml_enumeration_get_literals(e);
-	fprintf(fp, "enum %s {", nv_get_name(e));
+	fprintf(fp, "enum %s\n{", nv_get_name(e));
 	while(work != NULL) {
 		struct UMLLiteral *l = (struct UMLLiteral *) work->data;
 		if (comma == 1) {
@@ -203,11 +203,68 @@ static void nv_cpp_write_guard_start(FILE *fp, const char *mn, const char *n)
 static void nv_cpp_write_function_prototypes(FILE *fp, struct UMLModel *m, struct UMLClass *c)
 {
 	List *l;
-	/* TODO: make public / private / protected sections */
-	for(l = nv_uml_class_get_operations(c);l ;l = l->next) {
+	const char *prefix = "public:\n";
+	for(l = nv_uml_class_get_operations(c); l; l = l->next) {
 		struct UMLOperation *o = (struct UMLOperation *) l->data;
-		fprintf(fp, "\t");
-		nv_cpp_write_function_header(fp, m, c, o);
+		if(nv_uml_element_get_visibility((struct UMLElement *)o) == NV_PUBLIC) {
+			fprintf(fp, "%s\t", prefix);
+			prefix = "";
+			nv_cpp_write_function_header(fp, m, c, o);
+		}
+	}
+
+	prefix = "public:\n";
+	for(l = nv_uml_class_get_operations(c); l; l = l->next) {
+		struct UMLOperation *o = (struct UMLOperation *) l->data;
+		if(nv_uml_element_get_visibility((struct UMLElement *)o) == NV_PROTECTED) {
+			fprintf(fp, "%s\t", prefix);
+			prefix = "";
+			nv_cpp_write_function_header(fp, m, c, o);
+		}
+	}
+
+	prefix = "private:\n";
+	for(l = nv_uml_class_get_operations(c); l; l = l->next) {
+		struct UMLOperation *o = (struct UMLOperation *) l->data;
+		if(nv_uml_element_get_visibility((struct UMLElement *)o) == NV_PRIVATE) {
+			fprintf(fp, "%s\t", prefix);
+			prefix = "";
+			nv_cpp_write_function_header(fp, m, c, o);
+		}
+	}
+}
+
+static void nv_cpp_write_attributes(FILE *fp, struct UMLClass *c)
+{
+	List *l;
+	const char *prefix = "public:\n";
+	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
+		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
+		if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PUBLIC) {
+			fprintf(fp, "%s", prefix);
+			prefix = "";
+			nv_cpp_write_attribute(fp, a);
+		}
+	}
+
+	prefix = "protected:\n";
+	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
+		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
+		if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PROTECTED) {
+			fprintf(fp, "%s", prefix);
+			prefix = "";
+			nv_cpp_write_attribute(fp, a);
+		}
+	}
+
+	prefix = "private:\n";
+	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
+		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
+		if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PRIVATE) {
+			fprintf(fp, "%s", prefix);
+			prefix = "";
+			nv_cpp_write_attribute(fp, a);
+		}
 	}
 }
 
@@ -223,10 +280,7 @@ static void nv_cpp_write_class_declaration(FILE *fp, struct UMLModel *m, struct 
 	}
 	fprintf(fp, "\n{\n");
 
-	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
-		nv_cpp_write_attribute(fp, (struct UMLAttribute *) l->data);
-	}
-
+	nv_cpp_write_attributes(fp, c);
 	nv_cpp_write_function_prototypes(fp, m, c);
 
 	fprintf(fp, "};\n\n");
