@@ -84,19 +84,24 @@ static void nv_cpp_write_function_argument(FILE *fp, struct UMLParameter *p)
 	fprintf(fp, "%s", nv_get_name(p));
 }
 
-static void nv_cpp_write_function_name(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
+static void nv_cpp_write_function_name(FILE *fp, struct UMLModel *m, struct UMLClass *c,
+                                       struct UMLOperation *o, unsigned int qualified)
 {
 	(void)m;
+	if(qualified) {
+		fprintf(fp, "%s::", nv_get_name(c));
+	}
 	if(nv_uml_element_get_stereotypes((struct UMLElement *)o) & NV_STEREOTYPE_CREATE) {
 		fprintf(fp, "%s", nv_get_name(c));
 	} else if(nv_uml_element_get_stereotypes((struct UMLElement *)o) & NV_STEREOTYPE_DESTROY) {
-		fprintf(fp, "%s", nv_get_name(c));
+		fprintf(fp, "~%s", nv_get_name(c));
 	} else {
 		fprintf(fp, "%s", nv_get_name(o));
 	}
 }
 
-static void nv_cpp_write_function_head(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
+static void nv_cpp_write_function_head(FILE *fp, struct UMLModel *m, struct UMLClass *c,
+                                       struct UMLOperation *o, unsigned int qualified)
 {
 	List *l;
 	char comma[3] = {'\0','\0','\0'};
@@ -112,11 +117,12 @@ static void nv_cpp_write_function_head(FILE *fp, struct UMLModel *m, struct UMLC
 		}
 
 		nv_cpp_write_type(fp, nv_uml_parameter_get_type(p), agg);
-	} else {
+	} else if(!(nv_uml_element_get_stereotypes((struct UMLElement *)o) &
+	            (NV_STEREOTYPE_CREATE | NV_STEREOTYPE_DESTROY))) {
 		nv_cpp_write_type(fp, NULL, NV_COMPOSITE);
 	}
 
-	nv_cpp_write_function_name(fp, m, c, o);
+	nv_cpp_write_function_name(fp, m, c, o, qualified);
 	fprintf(fp, "(");
 	for(l = nv_uml_operation_get_parameters(o);l ;l = l->next) {
 		struct UMLParameter *p = (struct UMLParameter *) l->data;
@@ -138,13 +144,13 @@ static void nv_cpp_write_function_head(FILE *fp, struct UMLModel *m, struct UMLC
 
 static void nv_cpp_write_function_header(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
 {
-	nv_cpp_write_function_head(fp, m, c, o);
+	nv_cpp_write_function_head(fp, m, c, o, 0);
 	fprintf(fp, ";\n");
 }
 
 static void nv_cpp_write_function(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
 {
-	nv_cpp_write_function_head(fp, m, c, o);
+	nv_cpp_write_function_head(fp, m, c, o, 1);
 	fprintf(fp, "\n");
 	fprintf(fp, "{\n");
 	/* method */
@@ -208,13 +214,14 @@ static void nv_cpp_write_function_prototypes(FILE *fp, struct UMLModel *m, struc
 static void nv_cpp_write_class_declaration(FILE *fp, struct UMLModel *m, struct UMLClass *c)
 {
 	List *l;
-	fprintf(fp, "class %s {\n", nv_get_name(c));
+	const char *comma = " : ";
+	fprintf(fp, "class %s", nv_get_name(c));
 	for(l = nv_uml_type_get_supers((struct UMLType *) c); l; l = l->next) {
 		struct UMLType *ty = (struct UMLType *) l->data;
-		fprintf(fp, "\t");
-		nv_cpp_write_type(fp, ty, NV_COMPOSITE);
-		fprintf(fp, "super; /**< 'super' must be the first member in the structure */\n");
+		fprintf(fp, "%spublic %s", comma, nv_get_name(ty));
+		comma = ", ";
 	}
+	fprintf(fp, "\n{\n");
 
 	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
 		nv_cpp_write_attribute(fp, (struct UMLAttribute *) l->data);
