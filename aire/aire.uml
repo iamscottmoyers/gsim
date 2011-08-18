@@ -367,7 +367,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_7yWWYLhPEeCvfsd9vkRMpg" name="IIR_DesignFile">
       <generalization xmi:id="_87V-wLhPEeCvfsd9vkRMpg" general="_6M73wLhPEeCvfsd9vkRMpg"/>
-      <ownedAttribute xmi:id="_TzzZ4Lh0EeCwzeK-AyVIvA" name="name" visibility="private" type="_g9SRELhSEeCck7_5T208DA" isUnique="false" aggregation="composite"/>
+      <ownedAttribute xmi:id="_TzzZ4Lh0EeCwzeK-AyVIvA" name="name" visibility="private" type="_g9SRELhSEeCck7_5T208DA" isUnique="false"/>
       <ownedAttribute xmi:id="_kimScLh0EeCwzeK-AyVIvA" name="source_language" visibility="private" type="_w0_4FbhPEeCvfsd9vkRMpg" isUnique="false" aggregation="composite"/>
       <ownedAttribute xmi:id="_xfVOoLh0EeCwzeK-AyVIvA" name="design_files" isStatic="true" type="_pvP1BLhdEeCLreWQB-1psQ" isUnique="false" aggregation="composite"/>
       <ownedAttribute xmi:id="_4_ks8Lh0EeCwzeK-AyVIvA" name="comments" type="_pvP0-rhdEeCLreWQB-1psQ" isUnique="false" aggregation="composite"/>
@@ -416,7 +416,7 @@
         <ownedParameter xmi:id="_DYY8ELiPEeCL38vbAV_WXw" name="subscript" type="_DTdtgLhHEeCX-d1Uu4Phhw"/>
         <ownedParameter xmi:id="_Dep8ILiPEeCL38vbAV_WXw" name="value" type="_B9AQ4LhHEeCX-d1Uu4Phhw"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_O0ZFULiPEeCL38vbAV_WXw" name="operator[]">
+      <ownedOperation xmi:id="_O0ZFULiPEeCL38vbAV_WXw" name="operator_array_access">
         <ownedParameter xmi:id="_R6kzILiPEeCL38vbAV_WXw" name="subscript" type="_DTdtgLhHEeCX-d1Uu4Phhw"/>
         <ownedParameter xmi:id="_YhNv8LiPEeCL38vbAV_WXw" name="character" type="_B9AQ4LhHEeCX-d1Uu4Phhw" direction="return"/>
       </ownedOperation>
@@ -477,7 +477,7 @@
       <ownedOperation xmi:id="_BStaQLiVEeCL38vbAV_WXw" name="get_text_length">
         <ownedParameter xmi:id="_CxbbALiVEeCL38vbAV_WXw" name="text_length" type="_DTdtgLhHEeCX-d1Uu4Phhw" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_OEDl0LiVEeCL38vbAV_WXw" name="operator[]">
+      <ownedOperation xmi:id="_OEDl0LiVEeCL38vbAV_WXw" name="operator_array_access">
         <ownedParameter xmi:id="_Ph6D4LiVEeCL38vbAV_WXw" name="subscript" type="_DTdtgLhHEeCX-d1Uu4Phhw"/>
         <ownedParameter xmi:id="_QKCa4LiVEeCL38vbAV_WXw" name="character" type="_B9AQ4LhHEeCX-d1Uu4Phhw" direction="return"/>
       </ownedOperation>
@@ -526,7 +526,7 @@
       <ownedOperation xmi:id="_anoTwLiYEeCL38vbAV_WXw" name="get_text_length">
         <ownedParameter xmi:id="_cPozYLiYEeCL38vbAV_WXw" name="text_length" type="_DTdtgLhHEeCX-d1Uu4Phhw" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_iGWIELiYEeCL38vbAV_WXw" name="operator[]">
+      <ownedOperation xmi:id="_iGWIELiYEeCL38vbAV_WXw" name="operator_array_access">
         <ownedParameter xmi:id="_ms8fwLiYEeCL38vbAV_WXw" name="subscript" type="_DTdtgLhHEeCX-d1Uu4Phhw"/>
         <ownedParameter xmi:id="_mx6fULiYEeCL38vbAV_WXw" name="bit" type="_DTdtgLhHEeCX-d1Uu4Phhw"/>
       </ownedOperation>
@@ -5444,7 +5444,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PjdrwMDoEeC_5b-HSFDe4w" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PjbPgMDoEeC_5b-HSFDe4w" value="1"/>
       </ownedAttribute>
-      <ownedOperation xmi:id="_oOPq0MDlEeCfZM1OCy4LcA" name="lookup" isStatic="true">
+      <ownedOperation xmi:id="_oOPq0MDlEeCfZM1OCy4LcA" name="lookup_from_identifier" isStatic="true">
         <ownedParameter xmi:id="_qdDEsMDlEeCfZM1OCy4LcA" name="identifier" type="_zJc8ALhREeCWeuTq2qyEXw"/>
         <ownedParameter xmi:id="_qpGjsMDlEeCfZM1OCy4LcA" name="declaration" type="_xUEkNbhQEeCMvYGEMeZdkA" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HbwaQMDnEeCfZM1OCy4LcA" value="*"/>
@@ -5456,7 +5456,7 @@
         </ownedParameter>
         <ownedParameter xmi:id="_q8QJMMDlEeCfZM1OCy4LcA" name="number_of_matches" type="_DTdtgLhHEeCX-d1Uu4Phhw" direction="out"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_ekkI4cDnEeC_5b-HSFDe4w" name="lookup" isStatic="true">
+      <ownedOperation xmi:id="_ekkI4cDnEeC_5b-HSFDe4w" name="lookup_from_name" isStatic="true">
         <ownedParameter xmi:id="_ekkI4sDnEeC_5b-HSFDe4w" name="name" type="_xUEkN7hQEeCMvYGEMeZdkA"/>
         <ownedParameter xmi:id="_ekkI48DnEeC_5b-HSFDe4w" name="declaration" type="_xUEkNbhQEeCMvYGEMeZdkA" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ekkv8MDnEeC_5b-HSFDe4w" value="*"/>
@@ -7269,6 +7269,10 @@
       <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
   </uml:Model>
+  <Standard:Create xmi:id="_user000000000000000000" base_BehavioralFeature="_f7mnk8DXEeCh7K_l0QPfzg"/>
+  <Standard:Destroy xmi:id="_user000000000000000001" base_BehavioralFeature="_f7mnlMDXEeCh7K_l0QPfzg"/>
+  <Standard:Create xmi:id="_user000000000000000002" base_BehavioralFeature="_K0cAacWUEeC8s5foPRA_QQ"/>
+  <Standard:Destroy xmi:id="_user000000000000000003" base_BehavioralFeature="_K0cAasWUEeC8s5foPRA_QQ"/>
   <Standard:Create xmi:id="_-YE4ILhzEeCwzeK-AyVIvA" base_BehavioralFeature="_0h7SYLhzEeCwzeK-AyVIvA"/>
   <Standard:Destroy xmi:id="_Hh9NwLh0EeCwzeK-AyVIvA" base_BehavioralFeature="_EkpIELh0EeCwzeK-AyVIvA"/>
   <Standard:Destroy xmi:id="_VJ6AcLiQEeCL38vbAV_WXw" base_BehavioralFeature="_SVO5YLiQEeCL38vbAV_WXw"/>

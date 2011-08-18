@@ -54,21 +54,21 @@ static void nv_c_write_type(FILE *fp, struct UMLType *t, enum UMLAggregation agg
 	}
 }
 
-static void nv_c_write_attribute(FILE *fp, struct UMLAttribute *a)
+static void nv_c_write_attribute(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLAttribute *a)
 {
 	struct UMLType *ty = nv_uml_attribute_get_type(a);
-	const char *n = nv_get_name(a);
-	fprintf(fp, "\t");
-	if (nv_uml_attribute_get_qualifier(a, NV_STATIC)) {
-		fprintf(fp, "static ");
-	}
 
 	if (nv_uml_attribute_get_qualifier(a, NV_READONLY)) {
 		fprintf(fp, "const ");
 	}
 
 	nv_c_write_type(fp, ty, nv_uml_attribute_get_aggregation(a));
-	fprintf(fp, "%s;\n", n);
+
+	if (nv_uml_attribute_get_qualifier(a, NV_STATIC)) {
+		fprintf(fp, "%s_%s_", nv_get_name(m), nv_get_name(c));
+	}
+
+	fprintf(fp, "%s;\n", nv_get_name(a));
 }
 
 static void nv_c_write_function_argument(FILE *fp, struct UMLParameter *p)
@@ -193,10 +193,10 @@ static void nv_c_write_guard_start(FILE *fp, const char *mn, const char *n)
 	free(g);
 }
 
-static void nv_c_write_class_declaration(FILE *fp, struct UMLClass *c)
+static void nv_c_write_class_declaration(FILE *fp, struct UMLModel *m, struct UMLClass *c)
 {
 	List *l;
-	fprintf(fp, "struct %s {\n", nv_get_name(c));
+	fprintf(fp, "struct %s\n{\n", nv_get_name(c));
 	for(l = nv_uml_type_get_supers((struct UMLType *) c); l; l = l->next) {
 		struct UMLType *ty = (struct UMLType *) l->data;
 		fprintf(fp, "\t");
@@ -205,7 +205,11 @@ static void nv_c_write_class_declaration(FILE *fp, struct UMLClass *c)
 	}
 
 	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
-		nv_c_write_attribute(fp, (struct UMLAttribute *) l->data);
+		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
+		if(!nv_uml_attribute_get_qualifier(a, NV_STATIC)) {
+			fprintf(fp, "\t");
+			nv_c_write_attribute(fp, m, c, a);
+		}
 	}
 	fprintf(fp, "};\n\n");
 }
@@ -305,6 +309,7 @@ static void nv_c_write_header_includes(FILE *fp, struct UMLClass *c)
 
 static void nv_c_write_class_header(const char *dir, struct UMLModel *m, struct UMLClass *c)
 {
+	List *l;
 	FILE *fp;
 	char *header = (char *) malloc(sizeof(char) * (strlen(dir) + strlen(nv_get_name(c)) + 4));
 
@@ -317,9 +322,18 @@ static void nv_c_write_class_header(const char *dir, struct UMLModel *m, struct 
 
 	nv_c_write_guard_start(fp, nv_get_name(m), nv_get_name(c));
 	nv_c_write_header_includes(fp, c);
-	/*nv_c_write_forward_declarations();
-	  nv_c_write_enumerations();*/
-	nv_c_write_class_declaration(fp, c);
+
+	/* Write externs for global variables */
+	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
+		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
+		if(nv_uml_attribute_get_qualifier(a, NV_STATIC)) {
+			fprintf(fp, "extern ");
+			nv_c_write_attribute(fp, m, c, a);
+		}
+	}
+	fprintf(fp, "\n");
+
+	nv_c_write_class_declaration(fp, m, c);
 	nv_c_write_function_prototypes(fp, m, c);
 	nv_c_write_guard_end(fp, nv_get_name(m), nv_get_name(c));
 	fclose(fp);
@@ -341,6 +355,7 @@ static void nv_c_write_functions(FILE *fp, struct UMLModel *m, struct UMLClass *
 
 static void nv_c_write_class_source(const char *dir, struct UMLModel *m, struct UMLClass *c)
 {
+	List *l;
 	FILE *fp;
 	char *source = (char *) malloc(sizeof(char) *
 					    (strlen(dir)
@@ -355,6 +370,16 @@ static void nv_c_write_class_source(const char *dir, struct UMLModel *m, struct 
 	}
 
 	nv_c_write_source_includes(fp, c);
+
+	/* Write global variables */
+	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
+		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
+		if(nv_uml_attribute_get_qualifier(a, NV_STATIC)) {
+			nv_c_write_attribute(fp, m, c, a);
+		}
+	}
+	fprintf(fp, "\n");
+
 	nv_c_write_functions(fp, m, c);
 	fclose(fp);
 	free(source);
