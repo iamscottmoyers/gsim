@@ -12,6 +12,7 @@ INCLUDE := -I $(INCDIR)
 OBJECTS := $(OBJDIR)/main.o \
 $(OBJDIR)/xml_reader.o \
 $(OBJDIR)/c_writer.o \
+$(OBJDIR)/cpp_writer.o \
 $(OBJDIR)/graphviz_writer.o \
 $(OBJDIR)/uml_package.o \
 $(OBJDIR)/uml_model.o \

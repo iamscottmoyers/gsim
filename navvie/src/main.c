@@ -24,7 +24,8 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	nv_c_write_model(m, argv[2]);
+	/*nv_c_write_model(m, argv[2]);*/
+	nv_cpp_write_model(m, argv[2]);
 	nv_graphviz_write_model(m, stdout);
 	nv_uml_model_delete(m);
 	return 0;
