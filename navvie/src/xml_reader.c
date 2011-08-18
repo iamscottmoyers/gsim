@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdint.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 #include <assert.h>

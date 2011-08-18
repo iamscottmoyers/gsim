@@ -86,6 +86,7 @@ static void nv_cpp_write_function_argument(FILE *fp, struct UMLParameter *p)
 
 static void nv_cpp_write_function_name(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
 {
+	(void)m;
 	if(nv_uml_element_get_stereotypes((struct UMLElement *)o) & NV_STEREOTYPE_CREATE) {
 		fprintf(fp, "%s", nv_get_name(c));
 	} else if(nv_uml_element_get_stereotypes((struct UMLElement *)o) & NV_STEREOTYPE_DESTROY) {
@@ -347,7 +348,7 @@ static void nv_cpp_write_class_source(const char *dir, struct UMLModel *m, struc
 	char *source = (char *) malloc(sizeof(char) *
 					    (strlen(dir)
 					     + strlen(nv_get_name(c))
-					     + 4));
+					     + 6));
 
 	sprintf(source, "%s/%s.cpp", dir, nv_get_name(c));
 	fp = fopen(source, "w");

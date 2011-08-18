@@ -38,16 +38,19 @@ $(OBJDIR)/compare-string.o \
 $(OBJDIR)/hash-pointer.o \
 $(OBJDIR)/compare-pointer.o
 
-navvie : $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
-
 all : navvie
+
+navvie : makeobjdir $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $@ $(LIBS)
+
+makeobjdir :
+	mkdir -p obj
 
 $(OBJDIR)/%.o : $(SOURCEDIR)/%.c
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
 
 clean :
-	rm -f $(OBJDIR)/*.o
+	rm -rf $(OBJDIR)
 	rm -f navvie
 	rm -f gmon.out
 

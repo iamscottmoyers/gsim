@@ -3,6 +3,7 @@
 #include "xml_reader.h"
 #include "uml_model.h"
 #include "c_writer.h"
+#include "cpp_writer.h"
 #include "graphviz_writer.h"
 
 void usage(char *prog)
