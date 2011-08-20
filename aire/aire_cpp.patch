@@ -569,19 +569,6 @@ diff -u a/IIR_BreakElement.cpp b/IIR_BreakElement.cpp
  }
  
  IIR_BreakElement::~IIR_BreakElement(void)
-diff -u a/IIR_BreakElement.h b/IIR_BreakElement.h
---- a/IIR_BreakElement.h	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_BreakElement.h	2011-08-20 09:43:25.000000000 +0100
-@@ -3,8 +3,8 @@
- 
- #include "primitive_types.h"
- #include "IIR_Tuple.h"
-+#include "IIR.h"
- 
--class IIR;
- 
- class IIR_BreakElement : public IIR_Tuple
- {
 diff -u a/IIR_BreakStatement.cpp b/IIR_BreakStatement.cpp
 --- a/IIR_BreakStatement.cpp	2011-08-20 11:03:20.000000000 +0100
 +++ b/IIR_BreakStatement.cpp	2011-08-20 09:43:22.000000000 +0100
