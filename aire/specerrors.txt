@@ -83,3 +83,5 @@ IIR_ComponentSpecification definition missing from the spec?
 Is it IIR_ConcurrentConditionSignalStatement or IIR_ConcurrentConditionSignalAssignment ? The rest of that group of classes uses Statement but assignment is used most often so I will use assignment..
 
 15.7.3.5 IIR_DelayMechanism should be IR_DelayMechanism.
+
+10.25.3.3 get_base_nature should return an IIR_ScalarNatureDefinition * not an IIR_ArrayNatureDefinition *.

@@ -25,7 +25,7 @@
 #include "uml_attribute.h"
 #include "uml_comment.h"
 
-static void nv_cpp_write_type(FILE *fp, struct UMLType *t, enum UMLAggregation agg)
+static void nv_cpp_write_type(FILE *fp, struct UMLType *t, enum UMLAggregation agg, int upper)
 {
 	if (t != NULL) {
 		const char *tn = nv_get_name(t);
@@ -48,8 +48,23 @@ static void nv_cpp_write_type(FILE *fp, struct UMLType *t, enum UMLAggregation a
 		fprintf(fp, "void ");
 	}
 
-	/* Make non-composite types pointers. */
-	if( agg != NV_COMPOSITE ) {
+	/* Aggregations of type None that are enumerations or primitive
+	   types are not stored as pointers. */
+	switch(agg) {
+		case NV_NONE:
+			if( t == NULL || nv_uml_type_get_base_type(t) == NV_CLASS ) {
+				fprintf(fp, "*");
+			}
+			break;
+		case NV_AGGREGATION:
+			fprintf(fp, "*");
+		case NV_COMPOSITE:
+			break;
+	}
+
+	/* Multiplicities with an infinite upper bound will have to be passed as a pointer
+	   to whatever the current type is */
+	if(upper == NV_MANY) {
 		fprintf(fp, "*");
 	}
 }
@@ -67,7 +82,8 @@ static void nv_cpp_write_attribute(FILE *fp, struct UMLAttribute *a)
 		fprintf(fp, "const ");
 	}
 
-	nv_cpp_write_type(fp, ty, nv_uml_attribute_get_aggregation(a));
+	nv_cpp_write_type(fp, ty, nv_uml_attribute_get_aggregation(a),
+	                  nv_uml_attribute_get_multiplicity(a, NV_UPPER));
 	fprintf(fp, "%s;\n", n);
 }
 
@@ -80,7 +96,9 @@ static void nv_cpp_write_function_argument(FILE *fp, struct UMLParameter *p)
 		agg = NV_AGGREGATION;
 	}
 
-	nv_cpp_write_type(fp, nv_uml_parameter_get_type(p), agg);
+	nv_cpp_write_type(fp, nv_uml_parameter_get_type(p), agg,
+	                  nv_uml_parameter_get_multiplicity(p, NV_UPPER));
+
 	fprintf(fp, "%s", nv_get_name(p));
 }
 
@@ -116,10 +134,11 @@ static void nv_cpp_write_function_head(FILE *fp, struct UMLModel *m, struct UMLC
 			agg = NV_AGGREGATION;
 		}
 
-		nv_cpp_write_type(fp, nv_uml_parameter_get_type(p), agg);
+		nv_cpp_write_type(fp, nv_uml_parameter_get_type(p), agg,
+		                  nv_uml_parameter_get_multiplicity(p, NV_UPPER));
 	} else if(!(nv_uml_element_get_stereotypes((struct UMLElement *)o) &
 	            (NV_STEREOTYPE_CREATE | NV_STEREOTYPE_DESTROY))) {
-		nv_cpp_write_type(fp, NULL, NV_COMPOSITE);
+		nv_cpp_write_type(fp, NULL, NV_COMPOSITE, 1);
 	}
 
 	nv_cpp_write_function_name(fp, m, c, o, qualified);
@@ -144,6 +163,9 @@ static void nv_cpp_write_function_head(FILE *fp, struct UMLModel *m, struct UMLC
 
 static void nv_cpp_write_function_header(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
 {
+	if(nv_uml_operation_get_qualifier(o, NV_STATIC)) {
+		fprintf(fp, "static ");
+	}
 	nv_cpp_write_function_head(fp, m, c, o, 0);
 	fprintf(fp, ";\n");
 }
@@ -153,7 +175,20 @@ static void nv_cpp_write_function(FILE *fp, struct UMLModel *m, struct UMLClass 
 	nv_cpp_write_function_head(fp, m, c, o, 1);
 	fprintf(fp, "\n");
 	fprintf(fp, "{\n");
-	/* method */
+
+#if 0
+	/* generate code if this is a getter or setter */
+	{
+		const char *fn = nv_get_name(o);
+		if(!strncmp(fn, "set_", 4)) {
+			const char *an = fn + 4;
+			fprintf(fp, "\tthis->_%s = %s;\n", an, an);
+		} else if(!strncmp(fn, "get_", 4)) {
+			const char *an = fn + 4;
+			fprintf(fp, "\treturn this->_%s;\n", an);
+		}
+	}
+#endif
 	fprintf(fp, "}\n\n");
 }
 
