@@ -849,7 +849,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_g9S4L7hSEeCck7_5T208DA" name="IIR_SelectedWaveform">
       <generalization xmi:id="_g9S4MLhSEeCck7_5T208DA" general="_DTOG0LhQEeCvfsd9vkRMpg"/>
-      <ownedAttribute xmi:id="_bBCjwLkQEeCsmNt-jM_yeg" name="waveform" type="_pvQcCLhdEeCLreWQB-1psQ">
+      <ownedAttribute xmi:id="_bBCjwLkQEeCsmNt-jM_yeg" name="waveform" type="_pvQcCLhdEeCLreWQB-1psQ" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bBIDULkQEeCsmNt-jM_yeg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bBFnELkQEeCsmNt-jM_yeg" value="1"/>
       </ownedAttribute>
@@ -996,7 +996,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_FFWy0LhQEeCvfsd9vkRMpg" name="IIR_List" isAbstract="true">
       <generalization xmi:id="_FhxpELhQEeCvfsd9vkRMpg" general="_6M73wLhPEeCvfsd9vkRMpg"/>
-      <ownedAttribute xmi:id="__Y9HQLksEeCPBuRjaACVpA" name="elements" visibility="protected" type="_DTdtgLhHEeCX-d1Uu4Phhw">
+      <ownedAttribute xmi:id="__Y9HQLksEeCPBuRjaACVpA" name="elements" visibility="private" type="_DTdtgLhHEeCX-d1Uu4Phhw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__Y_jgLksEeCPBuRjaACVpA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__Y-VYLksEeCPBuRjaACVpA" value="1"/>
       </ownedAttribute>
@@ -7216,11 +7216,11 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e1wSRcWXEeCfg6QQegSZhg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e1wSRsWXEeCfg6QQegSZhg" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_e1wSR8WXEeCfg6QQegSZhg" name="then_statement_list" type="_pvQcDLhdEeCLreWQB-1psQ">
+      <ownedAttribute xmi:id="_e1wSR8WXEeCfg6QQegSZhg" name="then_statement_list" type="_pvQcDLhdEeCLreWQB-1psQ" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e1wSSMWXEeCfg6QQegSZhg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e1wSScWXEeCfg6QQegSZhg" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_e1wSSsWXEeCfg6QQegSZhg" name="else_statement_list" type="_pvQcDLhdEeCLreWQB-1psQ">
+      <ownedAttribute xmi:id="_e1wSSsWXEeCfg6QQegSZhg" name="else_statement_list" type="_pvQcDLhdEeCLreWQB-1psQ" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e1w5UMWXEeCfg6QQegSZhg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e1w5UcWXEeCfg6QQegSZhg" value="1"/>
       </ownedAttribute>
