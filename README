@@ -11,9 +11,9 @@ navvie  - navvie is my program that can convert .uml files into graphviz format 
 
           dot -Tpng out.dot > out.png
 
-vhdl    - The very start of a vhdl parser. You'll need antlr3 installed somewhere. I don't know java, but you need to
-          set the classpath (the -cp path in the Makefile). I've hard coded mine so you'll have to hack that.
+vhdl    - The very start of a vhdl parser. You'll need antlr3 installed somewhere. You need to set the classpath. e.g.
 
+          export CLASSPATH=/home/scott/bin/antlrworks-1.4.3.jar
           cd vhdl
           make
           vhdl input.vhd

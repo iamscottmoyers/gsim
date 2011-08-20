@@ -1,5 +1,5 @@
 vhdl:
-	java -cp /Applications/ANTLRWorks.app/Contents/Resources/Java/antlrworks.jar:. org.antlr.Tool *.g
+	java org.antlr.Tool *.g
 	gcc -I. -m32 -I/usr/local/include/ -L/usr/local/lib/ -lantlr3c *.c -o vhdl
 
 clean:
