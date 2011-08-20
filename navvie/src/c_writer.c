@@ -98,7 +98,6 @@ static void nv_c_write_function_name(FILE *fp, struct UMLModel *m, struct UMLCla
 static void nv_c_write_function_head(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
 {
 	List *l;
-	char comma[3] = {'\0','\0','\0'};
 	struct UMLParameter *p;
 
 	p = nv_uml_operation_get_return_parameter(o);
@@ -117,19 +116,17 @@ static void nv_c_write_function_head(FILE *fp, struct UMLModel *m, struct UMLCla
 
 	nv_c_write_function_name(fp, m, c, o);
 	fprintf(fp, "(");
+
+	/* All C functions take the object as the first argument */
+	nv_c_write_type(fp, (struct UMLType *)c, NV_AGGREGATION);
+	fprintf(fp, "object");
+
 	for(l = nv_uml_operation_get_parameters(o);l ;l = l->next) {
 		struct UMLParameter *p = (struct UMLParameter *) l->data;
 		if (nv_uml_parameter_get_direction(p) != NV_RETURN) {
-			fprintf(fp, "%s", comma);
+			fprintf(fp, ", ");
 			nv_c_write_function_argument(fp, p);
-			comma[0] = ',';
-			comma[1] = ' ';
 		}
-	}
-
-	/* If nothing was printed insert a void */
-	if( comma[0] == '\0' ) {
-		fprintf(fp, "void");
 	}
 
 	fprintf(fp, ")");
