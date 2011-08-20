@@ -2,16 +2,16 @@
 entity a is
         port (l : in std_logic;
               art : out moosetype);
-end
+end;
 
 architecture tootle of a is
         begin
         end architecture tooTle;
 entity b is
-begin end
+begin end;
 entity c is
-begin end entity c
+begin end entity c;
 entity d is
-begin end d
+begin end d;
 entity e is
-begin end entity
+begin end entity;
