@@ -4,7 +4,7 @@ navvie  - navvie is my program that can convert .uml files into graphviz format 
           cd navvie
           make
           mkdir tmp
-          ./navvie ../aire.uml tmp > out.dot
+          ./navvie ../aire/aire.uml tmp > out.dot
 
           That will put the C output in the tmp directory. At the moment the graphviz .dot file is printed to stdout so
           that will be redirected to out.dot. To create a .png from out.dot (assuming you have graphviz installed) do:
@@ -24,3 +24,12 @@ verilog - A verilog parser, I got an example parser and fixed the warnings it wa
           cd verilog
           make
           verilog input.v
+
+aire    -
+          cd navvie
+          make
+          mkdir tmp
+          ./navvie ../aire/aire.uml tmp > out.dot
+          cd tmp
+          patch -p1 < ../../aire/aire_cpp.patch
+          make
