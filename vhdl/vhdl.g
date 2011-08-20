@@ -47,7 +47,7 @@ entity_declaration : ENTITY i=identifier IS entity_header entity_declarative_par
                                         $s.text->chars, $s.start->line );
                                 exit(0);
                             }
-                        })? -> ^(ENTITY identifier entity_header) ;
+                        })? ';' -> ^(ENTITY identifier entity_header) ;
 
 entity_header : port_clause? ;
 port_clause : PORT '(' interface_list ')' ';' -> ^(PORT interface_list) ;
