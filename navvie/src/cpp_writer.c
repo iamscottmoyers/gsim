@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "cpp_writer.h"
 #include "uml_element.h"
@@ -176,6 +177,23 @@ static void nv_cpp_write_function(FILE *fp, struct UMLModel *m, struct UMLClass 
 	fprintf(fp, "\n");
 	fprintf(fp, "{\n");
 
+#if 0
+	/* Set the object kind in the constructor */
+	if(nv_uml_element_get_stereotypes((struct UMLElement *)o) & NV_STEREOTYPE_CREATE) {
+		const char *name = nv_get_name(c);
+		fprintf(fp, "\tthis->_kind = ");
+		name+=4;
+		fprintf(fp, "IR");
+		while(*name) {
+			if(isupper(*name)) {
+				fprintf(fp, "_");
+			}
+			fprintf(fp, "%c", toupper(*name));
+			name++;
+		}
+		fprintf(fp, ";\n");
+	}
+#endif
 #if 0
 	/* generate code if this is a getter or setter */
 	{
@@ -545,6 +563,10 @@ static void nv_cpp_write_makefile(const char *dir, struct UMLModel *m)
 	fprintf(fp, "\tar rcs $(LIBNAME) $(OBJECTS)\n\n");
 	fprintf(fp, "$(OBJDIR)/%%.o : $(SRCDIR)/%%.cpp\n");
 	fprintf(fp, "\t$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@\n");
+
+	fprintf(fp, "\n");
+	fprintf(fp, "clean:\n");
+	fprintf(fp, "\trm -f *.o *.a\n");
 
 	fclose(fp);
 }

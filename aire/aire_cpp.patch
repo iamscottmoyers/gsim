@@ -1,6 +1,1456 @@
+diff -u a/IIR_AboveAttribute.cpp b/IIR_AboveAttribute.cpp
+--- a/IIR_AboveAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_AboveAttribute.cpp	2011-08-20 17:20:01.287468085 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AboveAttribute::IIR_AboveAttribute(void)
+ {
++	this->_kind = IR_ABOVE_ATTRIBUTE;
+ }
+ 
+ IIR_AboveAttribute::~IIR_AboveAttribute(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_AboveAttribute::set_suffix(IIR *suffix)
+ {
++	this->_suffix = suffix;
+ }
+ 
+ IIR *IIR_AboveAttribute::get_suffix(void)
+ {
++	return this->_suffix;
+ }
+ 
+diff -u a/IIR_AbsoluteOperator.cpp b/IIR_AbsoluteOperator.cpp
+--- a/IIR_AbsoluteOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_AbsoluteOperator.cpp	2011-08-20 17:20:01.291468107 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AbsoluteOperator::IIR_AbsoluteOperator(void)
+ {
++	this->_kind = IR_ABSOLUTE_OPERATOR;
+ }
+ 
+ IIR_AbsoluteOperator::~IIR_AbsoluteOperator(void)
+diff -u a/IIR_AccessSubtypeDefinition.cpp b/IIR_AccessSubtypeDefinition.cpp
+--- a/IIR_AccessSubtypeDefinition.cpp	2011-08-20 17:21:55.356033724 +0100
++++ b/IIR_AccessSubtypeDefinition.cpp	2011-08-20 17:19:47.927401835 +0100
+@@ -6,18 +6,22 @@
+ 
+ void IIR_AccessSubtypeDefinition::set_designated_subtype(IIR_TypeDefinition *designated_subtype)
+ {
++	this->_designated_subtype = designated_subtype;
+ }
+ 
+ IIR_TypeDefinition *IIR_AccessSubtypeDefinition::get_designated_subtype(void)
+ {
++	return this->_designated_subtype;
+ }
+ 
+ void IIR_AccessSubtypeDefinition::set_resolution_function(IIR_FunctionDeclaration *resolution_function)
+ {
++	this->_resolution_function = resolution_function;
+ }
+ 
+ IIR_FunctionDeclaration *IIR_AccessSubtypeDefinition::get_resolution_function(void)
+ {
++	return this->_resolution_function;
+ }
+ 
+ void IIR_AccessSubtypeDefinition::release(void)
+diff -u a/IIR_AccessTypeDefinition.cpp b/IIR_AccessTypeDefinition.cpp
+--- a/IIR_AccessTypeDefinition.cpp	2011-08-20 17:21:55.356033724 +0100
++++ b/IIR_AccessTypeDefinition.cpp	2011-08-20 17:19:47.931401865 +0100
+@@ -6,10 +6,12 @@
+ 
+ void IIR_AccessTypeDefinition::set_designated_type(IIR_TypeDefinition *designated_type)
+ {
++	this->_designated_type = designated_type;
+ }
+ 
+ IIR_TypeDefinition *IIR_AccessTypeDefinition::get_designated_type(void)
+ {
++	return this->_designated_type;
+ }
+ 
+ IIR_AccessTypeDefinition::~IIR_AccessTypeDefinition(void)
+diff -u a/IIR_AcrossAttribute.cpp b/IIR_AcrossAttribute.cpp
+--- a/IIR_AcrossAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_AcrossAttribute.cpp	2011-08-20 17:20:01.291468107 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AcrossAttribute::IIR_AcrossAttribute(void)
+ {
++	this->_kind = IR_ACROSS_ATTRIBUTE;
+ }
+ 
+ IIR_AcrossAttribute::~IIR_AcrossAttribute(void)
+diff -u a/IIR_AcrossQuantityDeclaration.cpp b/IIR_AcrossQuantityDeclaration.cpp
+--- a/IIR_AcrossQuantityDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_AcrossQuantityDeclaration.cpp	2011-08-20 17:20:01.291468107 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AcrossQuantityDeclaration::IIR_AcrossQuantityDeclaration(void)
+ {
++	this->_kind = IR_ACROSS_QUANTITY_DECLARATION;
+ }
+ 
+ IIR_AcrossQuantityDeclaration::~IIR_AcrossQuantityDeclaration(void)
+@@ -10,33 +11,41 @@
+ 
+ void IIR_AcrossQuantityDeclaration::set_expression(IIR *expression)
+ {
++	this->_expression = expression;
+ }
+ 
+ IIR *IIR_AcrossQuantityDeclaration::get_expression(void)
+ {
++	return this->_expression;
+ }
+ 
+ void IIR_AcrossQuantityDeclaration::set_tolerance(IIR *tolerance)
+ {
++	this->_tolerance = tolerance;
+ }
+ 
+ IIR *IIR_AcrossQuantityDeclaration::get_tolerance(void)
+ {
++	return this->_tolerance;
+ }
+ 
+ void IIR_AcrossQuantityDeclaration::set_plus_terminal_name(IIR *plus_terminal_name)
+ {
++	this->_plus_terminal_name = plus_terminal_name;
+ }
+ 
+ IIR *IIR_AcrossQuantityDeclaration::get_plus_terminal_name(void)
+ {
++	return this->_plus_terminal_name;
+ }
+ 
+ void IIR_AcrossQuantityDeclaration::set_minus_terminal_name(IIR *minus_terminal_name)
+ {
++	this->_minus_terminal_name = minus_terminal_name;
+ }
+ 
+ IIR *IIR_AcrossQuantityDeclaration::get_minus_terminal_name(void)
+ {
++	return this->_minus_terminal_name;
+ }
+ 
+diff -u a/IIR_ActiveAttribute.cpp b/IIR_ActiveAttribute.cpp
+--- a/IIR_ActiveAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_ActiveAttribute.cpp	2011-08-20 17:20:01.295468132 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ActiveAttribute::IIR_ActiveAttribute(void)
+ {
++	this->_kind = IR_ACTIVE_ATTRIBUTE;
+ }
+ 
+ IIR_ActiveAttribute::~IIR_ActiveAttribute(void)
+diff -u a/IIR_AdditionOperator.cpp b/IIR_AdditionOperator.cpp
+--- a/IIR_AdditionOperator.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_AdditionOperator.cpp	2011-08-20 17:20:01.295468132 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AdditionOperator::IIR_AdditionOperator(void)
+ {
++	this->_kind = IR_ADDITION_OPERATOR;
+ }
+ 
+ IIR_AdditionOperator::~IIR_AdditionOperator(void)
+diff -u a/IIR_Aggregate.cpp b/IIR_Aggregate.cpp
+--- a/IIR_Aggregate.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_Aggregate.cpp	2011-08-20 17:20:01.295468132 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_Aggregate::IIR_Aggregate(void)
+ {
++	this->_kind = IR_AGGREGATE;
+ }
+ 
+ IIR_Aggregate::~IIR_Aggregate(void)
+diff -u a/IIR_AliasDeclaration.cpp b/IIR_AliasDeclaration.cpp
+--- a/IIR_AliasDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_AliasDeclaration.cpp	2011-08-20 17:20:01.295468132 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AliasDeclaration::IIR_AliasDeclaration(void)
+ {
++	this->_kind = IR_ALIAS_DECLARATION;
+ }
+ 
+ IIR_AliasDeclaration::~IIR_AliasDeclaration(void)
+@@ -10,17 +11,21 @@
+ 
+ void IIR_AliasDeclaration::set_subtype(IIR_TypeDefinition *subtype)
+ {
++	this->_subtype = subtype;
+ }
+ 
+ IIR_TypeDefinition *IIR_AliasDeclaration::get_subtype(void)
+ {
++	return this->_subtype;
+ }
+ 
+ void IIR_AliasDeclaration::set_name(IIR *name)
+ {
++	this->_name = name;
+ }
+ 
+ IIR *IIR_AliasDeclaration::get_name(void)
+ {
++	return this->_name;
+ }
+ 
+diff -u a/IIR_Allocator.cpp b/IIR_Allocator.cpp
+--- a/IIR_Allocator.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_Allocator.cpp	2011-08-20 17:20:01.299468148 +0100
+@@ -2,22 +2,27 @@
+ 
+ void IIR_Allocator::set_type_mark(IIR_TypeDefinition *type_mark)
+ {
++	this->_type_mark = type_mark;
+ }
+ 
+ IIR_TypeDefinition *IIR_Allocator::get_type_mark(void)
+ {
++	return this->_type_mark;
+ }
+ 
+ IIR *IIR_Allocator::get_value(void)
+ {
++	return this->_value;
+ }
+ 
+ void IIR_Allocator::set_value(IIR *value)
+ {
++	this->_value = value;
+ }
+ 
+ IIR_Allocator::IIR_Allocator(void)
+ {
++	this->_kind = IR_ALLOCATOR;
+ }
+ 
+ IIR_Allocator::~IIR_Allocator(void)
+Only in b: IIR_Allocator.cpp.orig
+diff -u a/IIR_AndOperator.cpp b/IIR_AndOperator.cpp
+--- a/IIR_AndOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_AndOperator.cpp	2011-08-20 17:20:01.303468167 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AndOperator::IIR_AndOperator(void)
+ {
++	this->_kind = IR_AND_OPERATOR;
+ }
+ 
+ IIR_AndOperator::~IIR_AndOperator(void)
+diff -u a/IIR_ArchitectureDeclaration.cpp b/IIR_ArchitectureDeclaration.cpp
+--- a/IIR_ArchitectureDeclaration.cpp	2011-08-20 17:21:55.376033822 +0100
++++ b/IIR_ArchitectureDeclaration.cpp	2011-08-20 17:20:01.303468167 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ArchitectureDeclaration::IIR_ArchitectureDeclaration(void)
+ {
++	this->_kind = IR_ARCHITECTURE_DECLARATION;
+ }
+ 
+ IIR_ArchitectureDeclaration::~IIR_ArchitectureDeclaration(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_ArchitectureDeclaration::set_entity(IIR_EntityDeclaration *entity)
+ {
++	this->_entity = entity;
+ }
+ 
+ IIR_EntityDeclaration *IIR_ArchitectureDeclaration::get_entity(void)
+ {
++	return this->_entity;
+ }
+ 
+diff -u a/IIR_ArrayNatureDefinition.cpp b/IIR_ArrayNatureDefinition.cpp
+--- a/IIR_ArrayNatureDefinition.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_ArrayNatureDefinition.cpp	2011-08-20 17:20:01.303468167 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ArrayNatureDefinition::IIR_ArrayNatureDefinition(void)
+ {
++	this->_kind = IR_ARRAY_NATURE_DEFINITION;
+ }
+ 
+ IIR_ArrayNatureDefinition::~IIR_ArrayNatureDefinition(void)
+@@ -10,17 +11,21 @@
+ 
+ void IIR_ArrayNatureDefinition::set_index_subtype(IIR_ScalarTypeDefinition *index_subtype)
+ {
++	this->_index_subtype = index_subtype;
+ }
+ 
+ IIR_ScalarTypeDefinition *IIR_ArrayNatureDefinition::get_index_subtype(void)
+ {
++	return this->_index_subtype;
+ }
+ 
+ void IIR_ArrayNatureDefinition::set_element_subtype(IIR_NatureDefinition *element_subtype)
+ {
++	this->_element_subtype = element_subtype;
+ }
+ 
+ IIR_NatureDefinition *IIR_ArrayNatureDefinition::get_element_subtype(void)
+ {
++	return this->_element_subtype;
+ }
+ 
+diff -u a/IIR_ArraySubnatureDefinition.cpp b/IIR_ArraySubnatureDefinition.cpp
+--- a/IIR_ArraySubnatureDefinition.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_ArraySubnatureDefinition.cpp	2011-08-20 17:20:01.303468167 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ArraySubnatureDefinition::IIR_ArraySubnatureDefinition(void)
+ {
++	this->_kind = IR_ARRAY_SUBNATURE_DEFINITION;
+ }
+ 
+ IIR_ArraySubnatureDefinition::~IIR_ArraySubnatureDefinition(void)
+@@ -10,21 +11,26 @@
+ 
+ void IIR_ArraySubnatureDefinition::set_across_tolerance(IIR *across_tolerance)
+ {
++	this->_across_tolerance = across_tolerance;
+ }
+ 
+ IIR *IIR_ArraySubnatureDefinition::get_across_tolerance(void)
+ {
++	return this->_across_tolerance;
+ }
+ 
+ void IIR_ArraySubnatureDefinition::set_through_tolerance(IIR *through_tolerance)
+ {
++	this->_through_tolerance = through_tolerance;
+ }
+ 
+ IIR *IIR_ArraySubnatureDefinition::get_through_tolerance(void)
+ {
++	return this->_through_tolerance;
+ }
+ 
+ IIR_ArrayNatureDefinition *IIR_ArraySubnatureDefinition::get_base_nature(void)
+ {
++	return static_cast<IIR_ArrayNatureDefinition *>(this);
+ }
+ 
+diff -u a/IIR_ArraySubtypeDefinition.cpp b/IIR_ArraySubtypeDefinition.cpp
+--- a/IIR_ArraySubtypeDefinition.cpp	2011-08-20 17:21:55.356033724 +0100
++++ b/IIR_ArraySubtypeDefinition.cpp	2011-08-20 17:19:47.943401920 +0100
+@@ -6,18 +6,22 @@
+ 
+ void IIR_ArraySubtypeDefinition::set_base_type(IIR_ArrayTypeDefinition *base_type)
+ {
++	this->_base_type = base_type;
+ }
+ 
+ IIR_ArrayTypeDefinition *IIR_ArraySubtypeDefinition::get_base_type(void)
+ {
++	return static_cast<IIR_ArrayTypeDefinition *>(this->_base_type);
+ }
+ 
+ void IIR_ArraySubtypeDefinition::set_resolution_function(IIR_FunctionDeclaration *resolution_function)
+ {
++	this->_resolution_function = resolution_function;
+ }
+ 
+ IIR_FunctionDeclaration *IIR_ArraySubtypeDefinition::get_resolution_function(void)
+ {
++	return this->_resolution_function;
+ }
+ 
+ void IIR_ArraySubtypeDefinition::release(void)
+diff -u a/IIR_ArrayTypeDefinition.cpp b/IIR_ArrayTypeDefinition.cpp
+--- a/IIR_ArrayTypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_ArrayTypeDefinition.cpp	2011-08-20 17:20:01.307468191 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ArrayTypeDefinition::IIR_ArrayTypeDefinition(void)
+ {
++	this->_kind = IR_ARRAY_TYPE_DEFINITION;
+ }
+ 
+ IIR_ArrayTypeDefinition::~IIR_ArrayTypeDefinition(void)
+@@ -10,17 +11,21 @@
+ 
+ void IIR_ArrayTypeDefinition::set_index_subtype(IIR_ScalarTypeDefinition *index_subtype)
+ {
++	this->_index_subtype = index_subtype;
+ }
+ 
+ IIR_ScalarTypeDefinition *IIR_ArrayTypeDefinition::get_index_subtype(void)
+ {
++	return this->_index_subtype;
+ }
+ 
+ void IIR_ArrayTypeDefinition::set_element_subtype(IIR_TypeDefinition *element_subtype)
+ {
++	this->_element_subtype = element_subtype;
+ }
+ 
+ IIR_TypeDefinition *IIR_ArrayTypeDefinition::get_element_subtype(void)
+ {
++	return this->_element_subtype;
+ }
+ 
+diff -u a/IIR_AscendingAttribute.cpp b/IIR_AscendingAttribute.cpp
+--- a/IIR_AscendingAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_AscendingAttribute.cpp	2011-08-20 17:20:01.307468191 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AscendingAttribute::IIR_AscendingAttribute(void)
+ {
++	this->_kind = IR_ASCENDING_ATTRIBUTE;
+ }
+ 
+ IIR_AscendingAttribute::~IIR_AscendingAttribute(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_AscendingAttribute::set_suffix(IIR *suffix)
+ {
++	this->_suffix = suffix;
+ }
+ 
+ IIR *IIR_AscendingAttribute::get_suffix(void)
+ {
++	return this->_suffix;
+ }
+ 
+diff -u a/IIR_AssertionStatement.cpp b/IIR_AssertionStatement.cpp
+--- a/IIR_AssertionStatement.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_AssertionStatement.cpp	2011-08-20 17:20:01.307468191 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AssertionStatement::IIR_AssertionStatement(void)
+ {
++	this->_kind = IR_ASSERTION_STATEMENT;
+ }
+ 
+ IIR_AssertionStatement::~IIR_AssertionStatement(void)
+@@ -10,25 +11,31 @@
+ 
+ void IIR_AssertionStatement::set_assertion_condition(IIR *assertion_condition)
+ {
++	this->_assertion_condition = assertion_condition;
+ }
+ 
+ IIR *IIR_AssertionStatement::get_assertion_condition(void)
+ {
++	return this->_assertion_condition;
+ }
+ 
+ void IIR_AssertionStatement::set_report_expression(IIR *report_expression)
+ {
++	this->_report_expression = report_expression;
+ }
+ 
+ IIR *IIR_AssertionStatement::get_report_expression(void)
+ {
++	return this->_report_expression;
+ }
+ 
+ void IIR_AssertionStatement::set_severity_expression(IIR *severity_expression)
+ {
++	this->_severity_expression = severity_expression;
+ }
+ 
+ IIR *IIR_AssertionStatement::get_severity_expression(void)
+ {
++	return this->_severity_expression;
+ }
+ 
+diff -u a/IIR_AssociationElementByExpression.cpp b/IIR_AssociationElementByExpression.cpp
+--- a/IIR_AssociationElementByExpression.cpp	2011-08-20 17:21:55.328033582 +0100
++++ b/IIR_AssociationElementByExpression.cpp	2011-08-20 17:20:01.307468191 +0100
+@@ -2,14 +2,17 @@
+ 
+ IIR_AssociationElementByExpression::IIR_AssociationElementByExpression(void)
+ {
++	this->_kind = IR_ASSOCIATION_ELEMENT_BY_EXPRESSION;
+ }
+ 
+ void IIR_AssociationElementByExpression::set_actual(IIR *actual)
+ {
++	this->_actual = actual;
+ }
+ 
+ IIR *IIR_AssociationElementByExpression::get_actual(void)
+ {
++	return this->_actual;
+ }
+ 
+ IIR_AssociationElementByExpression::~IIR_AssociationElementByExpression(void)
+diff -u a/IIR_AssociationElementByOthers.cpp b/IIR_AssociationElementByOthers.cpp
+--- a/IIR_AssociationElementByOthers.cpp	2011-08-20 17:21:55.328033582 +0100
++++ b/IIR_AssociationElementByOthers.cpp	2011-08-20 17:20:01.307468191 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AssociationElementByOthers::IIR_AssociationElementByOthers(void)
+ {
++	this->_kind = IR_ASSOCIATION_ELEMENT_BY_OTHERS;
+ }
+ 
+ IIR_AssociationElementByOthers::~IIR_AssociationElementByOthers(void)
+diff -u a/IIR_AssociationElement.cpp b/IIR_AssociationElement.cpp
+--- a/IIR_AssociationElement.cpp	2011-08-20 17:21:55.328033582 +0100
++++ b/IIR_AssociationElement.cpp	2011-08-20 17:19:47.947401938 +0100
+@@ -2,9 +2,11 @@
+ 
+ void IIR_AssociationElement::set_formal(IIR *formal)
+ {
++	this->_formal = formal;
+ }
+ 
+ IIR *IIR_AssociationElement::get_formal(void)
+ {
++	return this->_formal;
+ }
+ 
+diff -u a/IIR_AssociationElementOpen.cpp b/IIR_AssociationElementOpen.cpp
+--- a/IIR_AssociationElementOpen.cpp	2011-08-20 17:21:55.328033582 +0100
++++ b/IIR_AssociationElementOpen.cpp	2011-08-20 17:20:01.311468204 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AssociationElementOpen::IIR_AssociationElementOpen(void)
+ {
++	this->_kind = IR_ASSOCIATION_ELEMENT_OPEN;
+ }
+ 
+ IIR_AssociationElementOpen::~IIR_AssociationElementOpen(void)
+diff -u a/IIR_AssociationList.cpp b/IIR_AssociationList.cpp
+--- a/IIR_AssociationList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_AssociationList.cpp	2011-08-20 17:20:01.311468204 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AssociationList::IIR_AssociationList(void)
+ {
++	this->_kind = IR_ASSOCIATION_LIST;
+ }
+ 
+ IIR_AssociationList::~IIR_AssociationList(void)
+diff -u a/IIR_AttributeDeclaration.cpp b/IIR_AttributeDeclaration.cpp
+--- a/IIR_AttributeDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_AttributeDeclaration.cpp	2011-08-20 17:20:01.311468204 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AttributeDeclaration::IIR_AttributeDeclaration(void)
+ {
++	this->_kind = IR_ATTRIBUTE_DECLARATION;
+ }
+ 
+ IIR_AttributeDeclaration::~IIR_AttributeDeclaration(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_AttributeDeclaration::set_subtype(IIR_TypeDefinition *subtype)
+ {
++	this->_subtype = subtype;
+ }
+ 
+ IIR_TypeDefinition *IIR_AttributeDeclaration::get_subtype(void)
+ {
++	return this->_subtype;
+ }
+ 
+diff -u a/IIR_AttributeSpecification.cpp b/IIR_AttributeSpecification.cpp
+--- a/IIR_AttributeSpecification.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_AttributeSpecification.cpp	2011-08-20 17:20:01.311468204 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AttributeSpecification::IIR_AttributeSpecification(void)
+ {
++	this->_kind = IR_ATTRIBUTE_SPECIFICATION;
+ }
+ 
+ IIR_AttributeSpecification::~IIR_AttributeSpecification(void)
+@@ -10,17 +11,21 @@
+ 
+ void IIR_AttributeSpecification::set_value(IIR *value)
+ {
++	this->_value = value;
+ }
+ 
+ IIR *IIR_AttributeSpecification::get_value(void)
+ {
++	return this->_value;
+ }
+ 
+ void IIR_AttributeSpecification::set_entity_class(IIR_Identifier *entity_class)
+ {
++	this->_entity_class = entity_class;
+ }
+ 
+ IIR_Identifier *IIR_AttributeSpecification::get_entity_class(void)
+ {
++	return this->_entity_class;
+ }
+ 
+diff -u a/IIR_AttributeSpecificationList.cpp b/IIR_AttributeSpecificationList.cpp
+--- a/IIR_AttributeSpecificationList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_AttributeSpecificationList.cpp	2011-08-20 17:20:01.315468225 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_AttributeSpecificationList::IIR_AttributeSpecificationList(void)
+ {
++	this->_kind = IR_ATTRIBUTE_SPECIFICATION_LIST;
+ }
+ 
+ IIR_AttributeSpecificationList::~IIR_AttributeSpecificationList(void)
+diff -u a/IIR_BaseAttribute.cpp b/IIR_BaseAttribute.cpp
+--- a/IIR_BaseAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_BaseAttribute.cpp	2011-08-20 17:20:01.315468225 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_BaseAttribute::IIR_BaseAttribute(void)
+ {
++	this->_kind = IR_BASE_ATTRIBUTE;
+ }
+ 
+ IIR_BaseAttribute::~IIR_BaseAttribute(void)
+diff -u a/IIR_BitStringLiteral.cpp b/IIR_BitStringLiteral.cpp
+--- a/IIR_BitStringLiteral.cpp	2011-08-20 17:21:55.324033567 +0100
++++ b/IIR_BitStringLiteral.cpp	2011-08-20 17:19:47.951401962 +0100
+@@ -6,18 +6,22 @@
+ 
+ IR_Char *IIR_BitStringLiteral::get_text(void)
+ {
++	return this->_text;
+ }
+ 
+ IR_Int32 IIR_BitStringLiteral::get_text_length(void)
+ {
++	return this->_text_length;
+ }
+ 
+ IR_Int32 IIR_BitStringLiteral::get_element(IR_Int32 subscript)
+ {
++	return this->_text[subscript];
+ }
+ 
+ void IIR_BitStringLiteral::set_element(IR_Int32 subscript, IR_Int32 value)
+ {
++	this->_text[subscript] = value;
+ }
+ 
+ void IIR_BitStringLiteral::release(void)
+diff -u a/IIR_BlockConfiguration.cpp b/IIR_BlockConfiguration.cpp
+--- a/IIR_BlockConfiguration.cpp	2011-08-20 17:21:55.332033606 +0100
++++ b/IIR_BlockConfiguration.cpp	2011-08-20 17:20:01.315468225 +0100
+@@ -2,14 +2,17 @@
+ 
+ IIR_BlockConfiguration::IIR_BlockConfiguration(void)
+ {
++	this->_kind = IR_BLOCK_CONFIGURATION;
+ }
+ 
+ void IIR_BlockConfiguration::set_block_specification(IIR *block_specification)
+ {
++	this->_block_specification = block_specification;
+ }
+ 
+ IIR *IIR_BlockConfiguration::get_block_specification(void)
+ {
++	return this->_block_specification;
+ }
+ 
+ IIR_BlockConfiguration::~IIR_BlockConfiguration(void)
+diff -u a/IIR_BlockStatement.cpp b/IIR_BlockStatement.cpp
+--- a/IIR_BlockStatement.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_BlockStatement.cpp	2011-08-20 17:20:01.315468225 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_BlockStatement::IIR_BlockStatement(void)
+ {
++	this->_kind = IR_BLOCK_STATEMENT;
+ }
+ 
+ IIR_BlockStatement::~IIR_BlockStatement(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_BlockStatement::set_guard_expression(IIR *guard_expression)
+ {
++	this->_guard_expression = guard_expression;
+ }
+ 
+ IIR *IIR_BlockStatement::get_guard_expression(void)
+ {
++	return this->_guard_expression;
+ }
+ 
+diff -u a/IIR_BreakElement.cpp b/IIR_BreakElement.cpp
+--- a/IIR_BreakElement.cpp	2011-08-20 17:21:55.328033582 +0100
++++ b/IIR_BreakElement.cpp	2011-08-20 17:20:01.315468225 +0100
+@@ -2,30 +2,37 @@
+ 
+ IIR_BreakElement::IIR_BreakElement(void)
+ {
++	this->_kind = IR_BREAK_ELEMENT;
+ }
+ 
+ void IIR_BreakElement::set_quantity_selector(IIR *quantity_selector)
+ {
++	this->_quantity_selector = quantity_selector;
+ }
+ 
+ IIR *IIR_BreakElement::get_quantity_selector(void)
+ {
++	return this->_quantity_selector;
+ }
+ 
+ void IIR_BreakElement::set_quantity_name(IIR *quantity_name)
+ {
++	this->_quantity_name = quantity_name;
+ }
+ 
+ IIR *IIR_BreakElement::get_quantity_name(void)
+ {
++	return this->_quantity_name;
+ }
+ 
+ void IIR_BreakElement::set_expression(IIR *expression)
+ {
++	this->_expression = expression;
+ }
+ 
+ IIR *IIR_BreakElement::get_expression(void)
+ {
++	return this->_expression;
+ }
+ 
+ IIR_BreakElement::~IIR_BreakElement(void)
+diff -u a/IIR_BreakList.cpp b/IIR_BreakList.cpp
+--- a/IIR_BreakList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_BreakList.cpp	2011-08-20 17:20:01.319468250 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_BreakList::IIR_BreakList(void)
+ {
++	this->_kind = IR_BREAK_LIST;
+ }
+ 
+ IIR_BreakList::~IIR_BreakList(void)
+diff -u a/IIR_BreakStatement.cpp b/IIR_BreakStatement.cpp
+--- a/IIR_BreakStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_BreakStatement.cpp	2011-08-20 17:20:01.319468250 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_BreakStatement::IIR_BreakStatement(void)
+ {
++	this->_kind = IR_BREAK_STATEMENT;
+ }
+ 
+ IIR_BreakStatement::~IIR_BreakStatement(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_BreakStatement::set_condition(IIR *condition)
+ {
++	this->_condition = condition;
+ }
+ 
+ IIR *IIR_BreakStatement::get_condition(void)
+ {
++	return this->_condition;
+ }
+ 
+diff -u a/IIR_CaseStatementAlternativeByChoices.cpp b/IIR_CaseStatementAlternativeByChoices.cpp
+--- a/IIR_CaseStatementAlternativeByChoices.cpp	2011-08-20 17:21:55.332033606 +0100
++++ b/IIR_CaseStatementAlternativeByChoices.cpp	2011-08-20 17:20:01.319468250 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_CaseStatementAlternativeByChoices::IIR_CaseStatementAlternativeByChoices(void)
+ {
++	this->_kind = IR_CASE_STATEMENT_ALTERNATIVE_BY_CHOICES;
+ }
+ 
+ IIR_CaseStatementAlternativeByChoices::~IIR_CaseStatementAlternativeByChoices(void)
+diff -u a/IIR_CaseStatementAlternativeByExpression.cpp b/IIR_CaseStatementAlternativeByExpression.cpp
+--- a/IIR_CaseStatementAlternativeByExpression.cpp	2011-08-20 17:21:55.332033606 +0100
++++ b/IIR_CaseStatementAlternativeByExpression.cpp	2011-08-20 17:20:01.319468250 +0100
+@@ -2,14 +2,17 @@
+ 
+ IIR_CaseStatementAlternativeByExpression::IIR_CaseStatementAlternativeByExpression(void)
+ {
++	this->_kind = IR_CASE_STATEMENT_ALTERNATIVE_BY_EXPRESSION;
+ }
+ 
+ void IIR_CaseStatementAlternativeByExpression::set_choice(IIR *choice)
+ {
++	this->_choice = choice;
+ }
+ 
+ IIR *IIR_CaseStatementAlternativeByExpression::get_choice(void)
+ {
++	return this->_choice;
+ }
+ 
+ IIR_CaseStatementAlternativeByExpression::~IIR_CaseStatementAlternativeByExpression(void)
+diff -u a/IIR_CaseStatementAlternativeByOthers.cpp b/IIR_CaseStatementAlternativeByOthers.cpp
+--- a/IIR_CaseStatementAlternativeByOthers.cpp	2011-08-20 17:21:55.332033606 +0100
++++ b/IIR_CaseStatementAlternativeByOthers.cpp	2011-08-20 17:20:01.323468266 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_CaseStatementAlternativeByOthers::IIR_CaseStatementAlternativeByOthers(void)
+ {
++	this->_kind = IR_CASE_STATEMENT_ALTERNATIVE_BY_OTHERS;
+ }
+ 
+ IIR_CaseStatementAlternativeByOthers::~IIR_CaseStatementAlternativeByOthers(void)
+diff -u a/IIR_CaseStatementAlternativeList.cpp b/IIR_CaseStatementAlternativeList.cpp
+--- a/IIR_CaseStatementAlternativeList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_CaseStatementAlternativeList.cpp	2011-08-20 17:20:01.323468266 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_CaseStatementAlternativeList::IIR_CaseStatementAlternativeList(void)
+ {
++	this->_kind = IR_CASE_STATEMENT_ALTERNATIVE_LIST;
+ }
+ 
+ IIR_CaseStatementAlternativeList::~IIR_CaseStatementAlternativeList(void)
+diff -u a/IIR_CaseStatement.cpp b/IIR_CaseStatement.cpp
+--- a/IIR_CaseStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_CaseStatement.cpp	2011-08-20 17:20:01.323468266 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_CaseStatement::IIR_CaseStatement(void)
+ {
++	this->_kind = IR_CASE_STATEMENT;
+ }
+ 
+ IIR_CaseStatement::~IIR_CaseStatement(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_CaseStatement::set_expression(IIR *expression)
+ {
++	this->_expression = expression;
+ }
+ 
+ IIR *IIR_CaseStatement::get_expression(void)
+ {
++	return this->_expression;
+ }
+ 
+diff -u a/IIR_CharacterLiteral.cpp b/IIR_CharacterLiteral.cpp
+--- a/IIR_CharacterLiteral.cpp	2011-08-20 17:21:55.324033567 +0100
++++ b/IIR_CharacterLiteral.cpp	2011-08-20 17:19:47.955401975 +0100
+@@ -6,6 +6,7 @@
+ 
+ IR_Char IIR_CharacterLiteral::get_text(void)
+ {
++	return this->_text;
+ }
+ 
+ IIR_CharacterLiteral::~IIR_CharacterLiteral(void)
+diff -u a/IIR_Choice.cpp b/IIR_Choice.cpp
+--- a/IIR_Choice.cpp	2011-08-20 17:21:55.332033606 +0100
++++ b/IIR_Choice.cpp	2011-08-20 17:20:01.323468266 +0100
+@@ -2,14 +2,17 @@
+ 
+ IIR_Choice::IIR_Choice(void)
+ {
++	this->_kind = IR_CHOICE;
+ }
+ 
+ void IIR_Choice::set_value(IIR *value)
+ {
++	this->_value = value;
+ }
+ 
+ IIR *IIR_Choice::get_value(void)
+ {
++	return this->_value;
+ }
+ 
+ IIR_Choice::~IIR_Choice(void)
+diff -u a/IIR_ChoiceList.cpp b/IIR_ChoiceList.cpp
+--- a/IIR_ChoiceList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_ChoiceList.cpp	2011-08-20 17:20:01.323468266 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ChoiceList::IIR_ChoiceList(void)
+ {
++	this->_kind = IR_CHOICE_LIST;
+ }
+ 
+ IIR_ChoiceList::~IIR_ChoiceList(void)
+diff -u a/IIR_Comment.cpp b/IIR_Comment.cpp
+--- a/IIR_Comment.cpp	2011-08-20 17:21:55.324033567 +0100
++++ b/IIR_Comment.cpp	2011-08-20 17:19:47.959401997 +0100
+@@ -6,10 +6,12 @@
+ 
+ IR_Char *IIR_Comment::get_text(void)
+ {
++	return this->_text;
+ }
+ 
+ IR_Int32 IIR_Comment::get_text_length(void)
+ {
++	return this->_text_length;
+ }
+ 
+ void IIR_Comment::release(void)
+@@ -18,9 +20,11 @@
+ 
+ void IIR_Comment::set_element(IR_Int32 subscript, IR_Char value)
+ {
++	this->_text[subscript] = value;
+ }
+ 
+ IR_Char IIR_Comment::get_element(IR_Int32 subscript)
+ {
++	return this->_text[subscript];
+ }
+ 
+diff -u a/IIR_CommentList.cpp b/IIR_CommentList.cpp
+--- a/IIR_CommentList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_CommentList.cpp	2011-08-20 17:20:01.327468285 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_CommentList::IIR_CommentList(void)
+ {
++	this->_kind = IR_COMMENT_LIST;
+ }
+ 
+ IIR_CommentList::~IIR_CommentList(void)
+diff -u a/IIR_ComponentConfiguration.cpp b/IIR_ComponentConfiguration.cpp
+--- a/IIR_ComponentConfiguration.cpp	2011-08-20 17:21:55.332033606 +0100
++++ b/IIR_ComponentConfiguration.cpp	2011-08-20 17:20:01.327468285 +0100
+@@ -2,30 +2,37 @@
+ 
+ IIR_ComponentConfiguration::IIR_ComponentConfiguration(void)
+ {
++	this->_kind = IR_COMPONENT_CONFIGURATION;
+ }
+ 
+ void IIR_ComponentConfiguration::set_component_name(IIR *component_name)
+ {
++	this->_component_name = component_name;
+ }
+ 
+ IIR *IIR_ComponentConfiguration::get_component_name(void)
+ {
++	return this->_component_name;
+ }
+ 
+ void IIR_ComponentConfiguration::set_entity_aspect(IIR_LibraryUnit *entity_aspect)
+ {
++	this->_entity_aspect = entity_aspect;
+ }
+ 
+ IIR_LibraryUnit *IIR_ComponentConfiguration::get_entity_aspect(void)
+ {
++	return this->_entity_aspect;
+ }
+ 
+ void IIR_ComponentConfiguration::set_block_configuration(IIR_BlockConfiguration *block_configuration)
+ {
++	this->_block_configuration = block_configuration;
+ }
+ 
+ IIR_BlockConfiguration *IIR_ComponentConfiguration::get_block_configuration(void)
+ {
++	return this->_block_configuration;
+ }
+ 
+ IIR_ComponentConfiguration::~IIR_ComponentConfiguration(void)
+diff -u a/IIR_ComponentDeclaration.cpp b/IIR_ComponentDeclaration.cpp
+--- a/IIR_ComponentDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_ComponentDeclaration.cpp	2011-08-20 17:20:01.327468285 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ComponentDeclaration::IIR_ComponentDeclaration(void)
+ {
++	this->_kind = IR_COMPONENT_DECLARATION;
+ }
+ 
+ IIR_ComponentDeclaration::~IIR_ComponentDeclaration(void)
+Only in a: IIR_ComponentInstantiationStatement.cpp
+Only in a: IIR_ComponentInstantiationStatement.h
+diff -u a/IIR_ConcatenationOperator.cpp b/IIR_ConcatenationOperator.cpp
+--- a/IIR_ConcatenationOperator.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_ConcatenationOperator.cpp	2011-08-20 17:20:01.327468285 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConcatenationOperator::IIR_ConcatenationOperator(void)
+ {
++	this->_kind = IR_CONCATENATION_OPERATOR;
+ }
+ 
+ IIR_ConcatenationOperator::~IIR_ConcatenationOperator(void)
+diff -u a/IIR_ConcurrentAssertionStatement.cpp b/IIR_ConcurrentAssertionStatement.cpp
+--- a/IIR_ConcurrentAssertionStatement.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_ConcurrentAssertionStatement.cpp	2011-08-20 17:20:01.331468310 +0100
+@@ -6,37 +6,46 @@
+ 
+ IIR_ConcurrentAssertionStatement::IIR_ConcurrentAssertionStatement(void)
+ {
++	this->_kind = IR_CONCURRENT_ASSERTION_STATEMENT;
+ }
+ 
+ void IIR_ConcurrentAssertionStatement::set_postponed(IR_Boolean postponed)
+ {
++	this->_postponed = postponed;
+ }
+ 
+ IR_Boolean IIR_ConcurrentAssertionStatement::get_postponed(void)
+ {
++	return this->_postponed;
+ }
+ 
+ void IIR_ConcurrentAssertionStatement::set_assertion_condition(IIR *assertion_condition)
+ {
++	this->_assertion_condition = assertion_condition;
+ }
+ 
+ IIR *IIR_ConcurrentAssertionStatement::get_assertion_condition(void)
+ {
++	return this->_assertion_condition;
+ }
+ 
+ void IIR_ConcurrentAssertionStatement::set_report_expression(IIR *report_expression)
+ {
++	this->_report_expression = report_expression;
+ }
+ 
+ IIR *IIR_ConcurrentAssertionStatement::get_report_expression(void)
+ {
++	return this->_report_expression;
+ }
+ 
+ void IIR_ConcurrentAssertionStatement::set_severity_expression(IIR *severity_expression)
+ {
++	this->_severity_expression = severity_expression;
+ }
+ 
+ IIR *IIR_ConcurrentAssertionStatement::get_severity_expression(void)
+ {
++	return this->_severity_expression;
+ }
+ 
+diff -u a/IIR_ConcurrentBreakStatement.cpp b/IIR_ConcurrentBreakStatement.cpp
+--- a/IIR_ConcurrentBreakStatement.cpp	2011-08-20 17:21:55.424034059 +0100
++++ b/IIR_ConcurrentBreakStatement.cpp	2011-08-20 17:20:01.331468310 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConcurrentBreakStatement::IIR_ConcurrentBreakStatement(void)
+ {
++	this->_kind = IR_CONCURRENT_BREAK_STATEMENT;
+ }
+ 
+ IIR_ConcurrentBreakStatement::~IIR_ConcurrentBreakStatement(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_ConcurrentBreakStatement::set_condition(IIR *condition)
+ {
++	this->_condition = condition;
+ }
+ 
+ IIR *IIR_ConcurrentBreakStatement::get_condition(void)
+ {
++	return this->_condition;
+ }
+ 
+diff -u a/IIR_ConcurrentConditionalSignalAssignment.cpp b/IIR_ConcurrentConditionalSignalAssignment.cpp
+--- a/IIR_ConcurrentConditionalSignalAssignment.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_ConcurrentConditionalSignalAssignment.cpp	2011-08-20 17:20:01.331468310 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConcurrentConditionalSignalAssignment::IIR_ConcurrentConditionalSignalAssignment(void)
+ {
++	this->_kind = IR_CONCURRENT_CONDITIONAL_SIGNAL_ASSIGNMENT;
+ }
+ 
+ IIR_ConcurrentConditionalSignalAssignment::~IIR_ConcurrentConditionalSignalAssignment(void)
+@@ -10,41 +11,51 @@
+ 
+ void IIR_ConcurrentConditionalSignalAssignment::set_postponed(IR_Boolean postponed)
+ {
++	this->_postponed = postponed;
+ }
+ 
+ IR_Boolean IIR_ConcurrentConditionalSignalAssignment::get_postponed(void)
+ {
++	return this->_postponed;
+ }
+ 
+ void IIR_ConcurrentConditionalSignalAssignment::set_target(IIR *target)
+ {
++	this->_target = target;
+ }
+ 
+ IIR *IIR_ConcurrentConditionalSignalAssignment::get_target(void)
+ {
++	return this->_target;
+ }
+ 
+ void IIR_ConcurrentConditionalSignalAssignment::set_guarded(IR_Boolean guarded)
+ {
++	this->_guarded = guarded;
+ }
+ 
+ IR_Boolean IIR_ConcurrentConditionalSignalAssignment::get_guarded(void)
+ {
++	return this->_guarded;
+ }
+ 
+ void IIR_ConcurrentConditionalSignalAssignment::set_delay_mechanism(enum IR_DelayMechanism delay_mechanism)
+ {
++	this->_delay_mechanism = delay_mechanism;
+ }
+ 
+ enum IR_DelayMechanism IIR_ConcurrentConditionalSignalAssignment::get_delay_mechanism(void)
+ {
++	return this->_delay_mechanism;
+ }
+ 
+ void IIR_ConcurrentConditionalSignalAssignment::set_reject_time_expression(IIR *reject_time_expression)
+ {
++	this->_reject_time_expression = reject_time_expression;
+ }
+ 
+ IIR *IIR_ConcurrentConditionalSignalAssignment::get_reject_time_expression(void)
+ {
++	return this->_reject_time_expression;
+ }
+ 
+diff -u a/IIR_ConcurrentGenerateForStatement.cpp b/IIR_ConcurrentGenerateForStatement.cpp
+--- a/IIR_ConcurrentGenerateForStatement.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_ConcurrentGenerateForStatement.cpp	2011-08-20 17:20:01.331468310 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConcurrentGenerateForStatement::IIR_ConcurrentGenerateForStatement(void)
+ {
++	this->_kind = IR_CONCURRENT_GENERATE_FOR_STATEMENT;
+ }
+ 
+ IIR_ConcurrentGenerateForStatement::~IIR_ConcurrentGenerateForStatement(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_ConcurrentGenerateForStatement::set_generate_parameter_specification(IIR_ConstantDeclaration *generate_parameter_specification)
+ {
++	this->_generate_parameter_specification = generate_parameter_specification;
+ }
+ 
+ IIR_ConstantDeclaration *IIR_ConcurrentGenerateForStatement::get_generate_parameter_specification(void)
+ {
++	return this->_generate_parameter_specification;
+ }
+ 
+diff -u a/IIR_ConcurrentGenerateIfStatement.cpp b/IIR_ConcurrentGenerateIfStatement.cpp
+--- a/IIR_ConcurrentGenerateIfStatement.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_ConcurrentGenerateIfStatement.cpp	2011-08-20 17:20:01.331468310 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConcurrentGenerateIfStatement::IIR_ConcurrentGenerateIfStatement(void)
+ {
++	this->_kind = IR_CONCURRENT_GENERATE_IF_STATEMENT;
+ }
+ 
+ IIR_ConcurrentGenerateIfStatement::~IIR_ConcurrentGenerateIfStatement(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_ConcurrentGenerateIfStatement::set_if_condition(IIR *if_condition)
+ {
++	this->_if_condition = if_condition;
+ }
+ 
+ IIR *IIR_ConcurrentGenerateIfStatement::get_if_condition(void)
+ {
++	return this->_if_condition;
+ }
+ 
+diff -u a/IIR_ConcurrentInstantiationStatement.cpp b/IIR_ConcurrentInstantiationStatement.cpp
+--- a/IIR_ConcurrentInstantiationStatement.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_ConcurrentInstantiationStatement.cpp	2011-08-20 17:19:47.959401997 +0100
+@@ -10,9 +10,11 @@
+ 
+ void IIR_ConcurrentInstantiationStatement::set_instantiated_unit(IIR *instantiated_unit)
+ {
++	this->_instantiated_unit = instantiated_unit;
+ }
+ 
+ IIR *IIR_ConcurrentInstantiationStatement::get_instantiated_unit(void)
+ {
++	return this->_instantiated_unit;
+ }
+ 
+diff -u a/IIR_ConcurrentProcedureCallStatement.cpp b/IIR_ConcurrentProcedureCallStatement.cpp
+--- a/IIR_ConcurrentProcedureCallStatement.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_ConcurrentProcedureCallStatement.cpp	2011-08-20 17:20:01.335468326 +0100
+@@ -6,21 +6,26 @@
+ 
+ IIR_ConcurrentProcedureCallStatement::IIR_ConcurrentProcedureCallStatement(void)
+ {
++	this->_kind = IR_CONCURRENT_PROCEDURE_CALL_STATEMENT;
+ }
+ 
+ void IIR_ConcurrentProcedureCallStatement::set_procedure_name(IIR *procedure_name)
+ {
++	this->_procedure_name = procedure_name;
+ }
+ 
+ IIR *IIR_ConcurrentProcedureCallStatement::get_procedure_name(void)
+ {
++	return this->_procedure_name;
+ }
+ 
+ void IIR_ConcurrentProcedureCallStatement::set_postponed(IR_Boolean postponed)
+ {
++	this->_postponed = postponed;
+ }
+ 
+ IR_Boolean IIR_ConcurrentProcedureCallStatement::get_postponed(void)
+ {
++	return this->_postponed;
+ }
+ 
+diff -u a/IIR_ConcurrentSelectedSignalAssignment.cpp b/IIR_ConcurrentSelectedSignalAssignment.cpp
+--- a/IIR_ConcurrentSelectedSignalAssignment.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_ConcurrentSelectedSignalAssignment.cpp	2011-08-20 17:20:01.335468326 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConcurrentSelectedSignalAssignment::IIR_ConcurrentSelectedSignalAssignment(void)
+ {
++	this->_kind = IR_CONCURRENT_SELECTED_SIGNAL_ASSIGNMENT;
+ }
+ 
+ IIR_ConcurrentSelectedSignalAssignment::~IIR_ConcurrentSelectedSignalAssignment(void)
+@@ -10,49 +11,61 @@
+ 
+ IIR *IIR_ConcurrentSelectedSignalAssignment::get_expression(void)
+ {
++	return this->_expression;
+ }
+ 
+ void IIR_ConcurrentSelectedSignalAssignment::set_expression(IIR *expression)
+ {
++	this->_expression = expression;
+ }
+ 
+ void IIR_ConcurrentSelectedSignalAssignment::set_postponed(IR_Boolean postponed)
+ {
++	this->_postponed = postponed;
+ }
+ 
+ IR_Boolean IIR_ConcurrentSelectedSignalAssignment::get_postponed(void)
+ {
++	return this->_postponed;
+ }
+ 
+ void IIR_ConcurrentSelectedSignalAssignment::set_target(IIR *target)
+ {
++	this->_target = target;
+ }
+ 
+ IIR *IIR_ConcurrentSelectedSignalAssignment::get_target(void)
+ {
++	return this->_target;
+ }
+ 
+ void IIR_ConcurrentSelectedSignalAssignment::set_guarded(IR_Boolean guarded)
+ {
++	this->_guarded = guarded;
+ }
+ 
+ IR_Boolean IIR_ConcurrentSelectedSignalAssignment::get_guarded(void)
+ {
++	return this->_guarded;
+ }
+ 
+ void IIR_ConcurrentSelectedSignalAssignment::set_delay_mechanism(enum IR_DelayMechanism delay_mechanism)
+ {
++	this->_delay_mechanism = delay_mechanism;
+ }
+ 
+ enum IR_DelayMechanism IIR_ConcurrentSelectedSignalAssignment::get_delay_mechanism(void)
+ {
++	return this->_delay_mechanism;
+ }
+ 
+ void IIR_ConcurrentSelectedSignalAssignment::set_reject_time_expression(IIR *reject_time_expression)
+ {
++	this->_reject_time_expression = reject_time_expression;
+ }
+ 
+ IIR *IIR_ConcurrentSelectedSignalAssignment::get_reject_time_expression(void)
+ {
++	return this->_reject_time_expression;
+ }
+ 
+diff -u a/IIR_ConcurrentStatementList.cpp b/IIR_ConcurrentStatementList.cpp
+--- a/IIR_ConcurrentStatementList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_ConcurrentStatementList.cpp	2011-08-20 17:20:01.335468326 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConcurrentStatementList::IIR_ConcurrentStatementList(void)
+ {
++	this->_kind = IR_CONCURRENT_STATEMENT_LIST;
+ }
+ 
+ IIR_ConcurrentStatementList::~IIR_ConcurrentStatementList(void)
+diff -u a/IIR_ConditionalWaveform.cpp b/IIR_ConditionalWaveform.cpp
+--- a/IIR_ConditionalWaveform.cpp	2011-08-20 17:21:55.332033606 +0100
++++ b/IIR_ConditionalWaveform.cpp	2011-08-20 17:20:01.339468345 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConditionalWaveform::IIR_ConditionalWaveform(void)
+ {
++	this->_kind = IR_CONDITIONAL_WAVEFORM;
+ }
+ 
+ IIR_ConditionalWaveform::~IIR_ConditionalWaveform(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_ConditionalWaveform::set_condition(IIR *condition)
+ {
++	this->_condition = condition;
+ }
+ 
+ IIR *IIR_ConditionalWaveform::get_condition(void)
+ {
++	return this->_condition;
+ }
+ 
+diff -u a/IIR_ConditionalWaveformList.cpp b/IIR_ConditionalWaveformList.cpp
+--- a/IIR_ConditionalWaveformList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_ConditionalWaveformList.cpp	2011-08-20 17:20:01.339468345 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConditionalWaveformList::IIR_ConditionalWaveformList(void)
+ {
++	this->_kind = IR_CONDITIONAL_WAVEFORM_LIST;
+ }
+ 
+ IIR_ConditionalWaveformList::~IIR_ConditionalWaveformList(void)
+diff -u a/IIR_ConfigurationDeclaration.cpp b/IIR_ConfigurationDeclaration.cpp
+--- a/IIR_ConfigurationDeclaration.cpp	2011-08-20 17:21:55.376033822 +0100
++++ b/IIR_ConfigurationDeclaration.cpp	2011-08-20 17:20:01.339468345 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConfigurationDeclaration::IIR_ConfigurationDeclaration(void)
+ {
++	this->_kind = IR_CONFIGURATION_DECLARATION;
+ }
+ 
+ IIR_ConfigurationDeclaration::~IIR_ConfigurationDeclaration(void)
+@@ -10,17 +11,21 @@
+ 
+ void IIR_ConfigurationDeclaration::set_block_configuration(IIR_BlockConfiguration *block_configuration)
+ {
++	this->_block_configuration = block_configuration;
+ }
+ 
+ IIR_BlockConfiguration *IIR_ConfigurationDeclaration::get_block_configuration(void)
+ {
++	return this->_block_configuration;
+ }
+ 
+ void IIR_ConfigurationDeclaration::set_entity(IIR_EntityDeclaration *entity)
+ {
++	this->_entity = entity;
+ }
+ 
+ IIR_EntityDeclaration *IIR_ConfigurationDeclaration::get_entity(void)
+ {
++	return this->_entity;
+ }
+ 
+diff -u a/IIR_ConfigurationItemList.cpp b/IIR_ConfigurationItemList.cpp
+--- a/IIR_ConfigurationItemList.cpp	2011-08-20 17:21:55.340033644 +0100
++++ b/IIR_ConfigurationItemList.cpp	2011-08-20 17:20:01.343468367 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConfigurationItemList::IIR_ConfigurationItemList(void)
+ {
++	this->_kind = IR_CONFIGURATION_ITEM_LIST;
+ }
+ 
+ IIR_ConfigurationItemList::~IIR_ConfigurationItemList(void)
+diff -u a/IIR_ConfigurationSpecification.cpp b/IIR_ConfigurationSpecification.cpp
+--- a/IIR_ConfigurationSpecification.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_ConfigurationSpecification.cpp	2011-08-20 17:20:01.343468367 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConfigurationSpecification::IIR_ConfigurationSpecification(void)
+ {
++	this->_kind = IR_CONFIGURATION_SPECIFICATION;
+ }
+ 
+ IIR_ConfigurationSpecification::~IIR_ConfigurationSpecification(void)
+@@ -10,17 +11,21 @@
+ 
+ void IIR_ConfigurationSpecification::set_entity_aspect(IIR_LibraryUnit *entity_aspect)
+ {
++	this->_entity_aspect = entity_aspect;
+ }
+ 
+ IIR_LibraryUnit *IIR_ConfigurationSpecification::get_entity_aspect(void)
+ {
++	return this->_entity_aspect;
+ }
+ 
+ void IIR_ConfigurationSpecification::set_component_name(IIR *component_name)
+ {
++	this->_component_name = component_name;
+ }
+ 
+ IIR *IIR_ConfigurationSpecification::get_component_name(void)
+ {
++	return this->_component_name;
+ }
+ 
+diff -u a/IIR_ConstantDeclaration.cpp b/IIR_ConstantDeclaration.cpp
+--- a/IIR_ConstantDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_ConstantDeclaration.cpp	2011-08-20 17:20:01.343468367 +0100
+@@ -2,14 +2,17 @@
+ 
+ void IIR_ConstantDeclaration::set_value(IIR *value)
+ {
++	this->_value = value;
+ }
+ 
+ IIR *IIR_ConstantDeclaration::get_value(void)
+ {
++	return this->_value;
+ }
+ 
+ IIR_ConstantDeclaration::IIR_ConstantDeclaration(void)
+ {
++	this->_kind = IR_CONSTANT_DECLARATION;
+ }
+ 
+ IIR_ConstantDeclaration::~IIR_ConstantDeclaration(void)
+Only in b: IIR_ConstantDeclaration.cpp.orig
+diff -u a/IIR_ConstantInterfaceDeclaration.cpp b/IIR_ConstantInterfaceDeclaration.cpp
+--- a/IIR_ConstantInterfaceDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_ConstantInterfaceDeclaration.cpp	2011-08-20 17:20:01.347468391 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ConstantInterfaceDeclaration::IIR_ConstantInterfaceDeclaration(void)
+ {
++	this->_kind = IR_CONSTANT_INTERFACE_DECLARATION;
+ }
+ 
+ IIR_ConstantInterfaceDeclaration::~IIR_ConstantInterfaceDeclaration(void)
+diff -u a/IIR_ContributionAttribute.cpp b/IIR_ContributionAttribute.cpp
+--- a/IIR_ContributionAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_ContributionAttribute.cpp	2011-08-20 17:20:01.347468391 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ContributionAttribute::IIR_ContributionAttribute(void)
+ {
++	this->_kind = IR_CONTRIBUTION_ATTRIBUTE;
+ }
+ 
+ IIR_ContributionAttribute::~IIR_ContributionAttribute(void)
 diff -u a/IIR.cpp b/IIR.cpp
---- a/IIR.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR.cpp	2011-08-20 11:11:21.000000000 +0100
+--- a/IIR.cpp	2011-08-20 17:21:55.324033567 +0100
++++ b/IIR.cpp	2011-08-20 17:19:47.927401835 +0100
 @@ -2,6 +2,7 @@
  
  enum IR_Kind IIR::get_kind(void)
@@ -81,965 +1531,9 @@ diff -u a/IIR.cpp b/IIR.cpp
 +	return this->_y_coordinate;
  }
  
-diff -u a/IIR_AboveAttribute.cpp b/IIR_AboveAttribute.cpp
---- a/IIR_AboveAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AboveAttribute.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_AboveAttribute::set_suffix(IIR *suffix)
- {
-+	this->_suffix = suffix;
- }
- 
- IIR *IIR_AboveAttribute::get_suffix(void)
- {
-+	return this->_suffix;
- }
- 
-diff -u a/IIR_AccessSubtypeDefinition.cpp b/IIR_AccessSubtypeDefinition.cpp
---- a/IIR_AccessSubtypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AccessSubtypeDefinition.cpp	2011-08-20 10:15:40.000000000 +0100
-@@ -6,18 +6,22 @@
- 
- void IIR_AccessSubtypeDefinition::set_designated_subtype(IIR_TypeDefinition *designated_subtype)
- {
-+	this->_designated_subtype = designated_subtype;
- }
- 
- IIR_TypeDefinition *IIR_AccessSubtypeDefinition::get_designated_subtype(void)
- {
-+	return this->_designated_subtype;
- }
- 
- void IIR_AccessSubtypeDefinition::set_resolution_function(IIR_FunctionDeclaration *resolution_function)
- {
-+	this->_resolution_function = resolution_function;
- }
- 
- IIR_FunctionDeclaration *IIR_AccessSubtypeDefinition::get_resolution_function(void)
- {
-+	return this->_resolution_function;
- }
- 
- void IIR_AccessSubtypeDefinition::release(void)
-diff -u a/IIR_AccessTypeDefinition.cpp b/IIR_AccessTypeDefinition.cpp
---- a/IIR_AccessTypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AccessTypeDefinition.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -6,10 +6,12 @@
- 
- void IIR_AccessTypeDefinition::set_designated_type(IIR_TypeDefinition *designated_type)
- {
-+	this->_designated_type = designated_type;
- }
- 
- IIR_TypeDefinition *IIR_AccessTypeDefinition::get_designated_type(void)
- {
-+	return this->_designated_type;
- }
- 
- IIR_AccessTypeDefinition::~IIR_AccessTypeDefinition(void)
-diff -u a/IIR_AcrossQuantityDeclaration.cpp b/IIR_AcrossQuantityDeclaration.cpp
---- a/IIR_AcrossQuantityDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AcrossQuantityDeclaration.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,33 +10,41 @@
- 
- void IIR_AcrossQuantityDeclaration::set_expression(IIR *expression)
- {
-+	this->_expression = expression;
- }
- 
- IIR *IIR_AcrossQuantityDeclaration::get_expression(void)
- {
-+	return this->_expression;
- }
- 
- void IIR_AcrossQuantityDeclaration::set_tolerance(IIR *tolerance)
- {
-+	this->_tolerance = tolerance;
- }
- 
- IIR *IIR_AcrossQuantityDeclaration::get_tolerance(void)
- {
-+	return this->_tolerance;
- }
- 
- void IIR_AcrossQuantityDeclaration::set_plus_terminal_name(IIR *plus_terminal_name)
- {
-+	this->_plus_terminal_name = plus_terminal_name;
- }
- 
- IIR *IIR_AcrossQuantityDeclaration::get_plus_terminal_name(void)
- {
-+	return this->_plus_terminal_name;
- }
- 
- void IIR_AcrossQuantityDeclaration::set_minus_terminal_name(IIR *minus_terminal_name)
- {
-+	this->_minus_terminal_name = minus_terminal_name;
- }
- 
- IIR *IIR_AcrossQuantityDeclaration::get_minus_terminal_name(void)
- {
-+	return this->_minus_terminal_name;
- }
- 
-diff -u a/IIR_AliasDeclaration.cpp b/IIR_AliasDeclaration.cpp
---- a/IIR_AliasDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AliasDeclaration.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,17 +10,21 @@
- 
- void IIR_AliasDeclaration::set_subtype(IIR_TypeDefinition *subtype)
- {
-+	this->_subtype = subtype;
- }
- 
- IIR_TypeDefinition *IIR_AliasDeclaration::get_subtype(void)
- {
-+	return this->_subtype;
- }
- 
- void IIR_AliasDeclaration::set_name(IIR *name)
- {
-+	this->_name = name;
- }
- 
- IIR *IIR_AliasDeclaration::get_name(void)
- {
-+	return this->_name;
- }
- 
-diff -u a/IIR_Allocator.cpp b/IIR_Allocator.cpp
---- a/IIR_Allocator.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Allocator.cpp	2011-08-20 09:43:20.000000000 +0100
-@@ -2,18 +2,22 @@
- 
- void IIR_Allocator::set_type_mark(IIR_TypeDefinition *type_mark)
- {
-+	this->_type_mark = type_mark;
- }
- 
- IIR_TypeDefinition *IIR_Allocator::get_type_mark(void)
- {
-+	return this->_type_mark;
- }
- 
- IIR *IIR_Allocator::get_value(void)
- {
-+	return this->_value;
- }
- 
- void IIR_Allocator::set_value(IIR *value)
- {
-+	this->_value = value;
- }
- 
- IIR_Allocator::IIR_Allocator(void)
-diff -u a/IIR_ArchitectureDeclaration.cpp b/IIR_ArchitectureDeclaration.cpp
---- a/IIR_ArchitectureDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ArchitectureDeclaration.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_ArchitectureDeclaration::set_entity(IIR_EntityDeclaration *entity)
- {
-+	this->_entity = entity;
- }
- 
- IIR_EntityDeclaration *IIR_ArchitectureDeclaration::get_entity(void)
- {
-+	return this->_entity;
- }
- 
-diff -u a/IIR_ArrayNatureDefinition.cpp b/IIR_ArrayNatureDefinition.cpp
---- a/IIR_ArrayNatureDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ArrayNatureDefinition.cpp	2011-08-20 09:43:28.000000000 +0100
-@@ -10,17 +10,21 @@
- 
- void IIR_ArrayNatureDefinition::set_index_subtype(IIR_ScalarTypeDefinition *index_subtype)
- {
-+	this->_index_subtype = index_subtype;
- }
- 
- IIR_ScalarTypeDefinition *IIR_ArrayNatureDefinition::get_index_subtype(void)
- {
-+	return this->_index_subtype;
- }
- 
- void IIR_ArrayNatureDefinition::set_element_subtype(IIR_NatureDefinition *element_subtype)
- {
-+	this->_element_subtype = element_subtype;
- }
- 
- IIR_NatureDefinition *IIR_ArrayNatureDefinition::get_element_subtype(void)
- {
-+	return this->_element_subtype;
- }
- 
-diff -u a/IIR_ArraySubnatureDefinition.cpp b/IIR_ArraySubnatureDefinition.cpp
---- a/IIR_ArraySubnatureDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ArraySubnatureDefinition.cpp	2011-08-20 10:25:26.000000000 +0100
-@@ -10,21 +10,26 @@
- 
- void IIR_ArraySubnatureDefinition::set_across_tolerance(IIR *across_tolerance)
- {
-+	this->_across_tolerance = across_tolerance;
- }
- 
- IIR *IIR_ArraySubnatureDefinition::get_across_tolerance(void)
- {
-+	return this->_across_tolerance;
- }
- 
- void IIR_ArraySubnatureDefinition::set_through_tolerance(IIR *through_tolerance)
- {
-+	this->_through_tolerance = through_tolerance;
- }
- 
- IIR *IIR_ArraySubnatureDefinition::get_through_tolerance(void)
- {
-+	return this->_through_tolerance;
- }
- 
- IIR_ArrayNatureDefinition *IIR_ArraySubnatureDefinition::get_base_nature(void)
- {
-+	return static_cast<IIR_ArrayNatureDefinition *>(this);
- }
- 
-diff -u a/IIR_ArraySubtypeDefinition.cpp b/IIR_ArraySubtypeDefinition.cpp
---- a/IIR_ArraySubtypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ArraySubtypeDefinition.cpp	2011-08-20 10:10:24.000000000 +0100
-@@ -6,18 +6,22 @@
- 
- void IIR_ArraySubtypeDefinition::set_base_type(IIR_ArrayTypeDefinition *base_type)
- {
-+	this->_base_type = base_type;
- }
- 
- IIR_ArrayTypeDefinition *IIR_ArraySubtypeDefinition::get_base_type(void)
- {
-+	return static_cast<IIR_ArrayTypeDefinition *>(this->_base_type);
- }
- 
- void IIR_ArraySubtypeDefinition::set_resolution_function(IIR_FunctionDeclaration *resolution_function)
- {
-+	this->_resolution_function = resolution_function;
- }
- 
- IIR_FunctionDeclaration *IIR_ArraySubtypeDefinition::get_resolution_function(void)
- {
-+	return this->_resolution_function;
- }
- 
- void IIR_ArraySubtypeDefinition::release(void)
-diff -u a/IIR_ArrayTypeDefinition.cpp b/IIR_ArrayTypeDefinition.cpp
---- a/IIR_ArrayTypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ArrayTypeDefinition.cpp	2011-08-20 10:10:00.000000000 +0100
-@@ -10,17 +10,21 @@
- 
- void IIR_ArrayTypeDefinition::set_index_subtype(IIR_ScalarTypeDefinition *index_subtype)
- {
-+	this->_index_subtype = index_subtype;
- }
- 
- IIR_ScalarTypeDefinition *IIR_ArrayTypeDefinition::get_index_subtype(void)
- {
-+	return this->_index_subtype;
- }
- 
- void IIR_ArrayTypeDefinition::set_element_subtype(IIR_TypeDefinition *element_subtype)
- {
-+	this->_element_subtype = element_subtype;
- }
- 
- IIR_TypeDefinition *IIR_ArrayTypeDefinition::get_element_subtype(void)
- {
-+	return this->_element_subtype;
- }
- 
-diff -u a/IIR_AscendingAttribute.cpp b/IIR_AscendingAttribute.cpp
---- a/IIR_AscendingAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AscendingAttribute.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_AscendingAttribute::set_suffix(IIR *suffix)
- {
-+	this->_suffix = suffix;
- }
- 
- IIR *IIR_AscendingAttribute::get_suffix(void)
- {
-+	return this->_suffix;
- }
- 
-diff -u a/IIR_AssertionStatement.cpp b/IIR_AssertionStatement.cpp
---- a/IIR_AssertionStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AssertionStatement.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,25 +10,31 @@
- 
- void IIR_AssertionStatement::set_assertion_condition(IIR *assertion_condition)
- {
-+	this->_assertion_condition = assertion_condition;
- }
- 
- IIR *IIR_AssertionStatement::get_assertion_condition(void)
- {
-+	return this->_assertion_condition;
- }
- 
- void IIR_AssertionStatement::set_report_expression(IIR *report_expression)
- {
-+	this->_report_expression = report_expression;
- }
- 
- IIR *IIR_AssertionStatement::get_report_expression(void)
- {
-+	return this->_report_expression;
- }
- 
- void IIR_AssertionStatement::set_severity_expression(IIR *severity_expression)
- {
-+	this->_severity_expression = severity_expression;
- }
- 
- IIR *IIR_AssertionStatement::get_severity_expression(void)
- {
-+	return this->_severity_expression;
- }
- 
-diff -u a/IIR_AssociationElement.cpp b/IIR_AssociationElement.cpp
---- a/IIR_AssociationElement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AssociationElement.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -2,9 +2,11 @@
- 
- void IIR_AssociationElement::set_formal(IIR *formal)
- {
-+	this->_formal = formal;
- }
- 
- IIR *IIR_AssociationElement::get_formal(void)
- {
-+	return this->_formal;
- }
- 
-diff -u a/IIR_AssociationElementByExpression.cpp b/IIR_AssociationElementByExpression.cpp
---- a/IIR_AssociationElementByExpression.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AssociationElementByExpression.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -6,10 +6,12 @@
- 
- void IIR_AssociationElementByExpression::set_actual(IIR *actual)
- {
-+	this->_actual = actual;
- }
- 
- IIR *IIR_AssociationElementByExpression::get_actual(void)
- {
-+	return this->_actual;
- }
- 
- IIR_AssociationElementByExpression::~IIR_AssociationElementByExpression(void)
-diff -u a/IIR_AttributeDeclaration.cpp b/IIR_AttributeDeclaration.cpp
---- a/IIR_AttributeDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AttributeDeclaration.cpp	2011-08-20 09:43:20.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_AttributeDeclaration::set_subtype(IIR_TypeDefinition *subtype)
- {
-+	this->_subtype = subtype;
- }
- 
- IIR_TypeDefinition *IIR_AttributeDeclaration::get_subtype(void)
- {
-+	return this->_subtype;
- }
- 
-diff -u a/IIR_AttributeSpecification.cpp b/IIR_AttributeSpecification.cpp
---- a/IIR_AttributeSpecification.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_AttributeSpecification.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,17 +10,21 @@
- 
- void IIR_AttributeSpecification::set_value(IIR *value)
- {
-+	this->_value = value;
- }
- 
- IIR *IIR_AttributeSpecification::get_value(void)
- {
-+	return this->_value;
- }
- 
- void IIR_AttributeSpecification::set_entity_class(IIR_Identifier *entity_class)
- {
-+	this->_entity_class = entity_class;
- }
- 
- IIR_Identifier *IIR_AttributeSpecification::get_entity_class(void)
- {
-+	return this->_entity_class;
- }
- 
-diff -u a/IIR_BitStringLiteral.cpp b/IIR_BitStringLiteral.cpp
---- a/IIR_BitStringLiteral.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_BitStringLiteral.cpp	2011-08-20 11:05:00.000000000 +0100
-@@ -6,18 +6,22 @@
- 
- IR_Char *IIR_BitStringLiteral::get_text(void)
- {
-+	return this->_text;
- }
- 
- IR_Int32 IIR_BitStringLiteral::get_text_length(void)
- {
-+	return this->_text_length;
- }
- 
- IR_Int32 IIR_BitStringLiteral::get_element(IR_Int32 subscript)
- {
-+	return this->_text[subscript];
- }
- 
- void IIR_BitStringLiteral::set_element(IR_Int32 subscript, IR_Int32 value)
- {
-+	this->_text[subscript] = value;
- }
- 
- void IIR_BitStringLiteral::release(void)
-diff -u a/IIR_BlockConfiguration.cpp b/IIR_BlockConfiguration.cpp
---- a/IIR_BlockConfiguration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_BlockConfiguration.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -6,10 +6,12 @@
- 
- void IIR_BlockConfiguration::set_block_specification(IIR *block_specification)
- {
-+	this->_block_specification = block_specification;
- }
- 
- IIR *IIR_BlockConfiguration::get_block_specification(void)
- {
-+	return this->_block_specification;
- }
- 
- IIR_BlockConfiguration::~IIR_BlockConfiguration(void)
-diff -u a/IIR_BlockStatement.cpp b/IIR_BlockStatement.cpp
---- a/IIR_BlockStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_BlockStatement.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_BlockStatement::set_guard_expression(IIR *guard_expression)
- {
-+	this->_guard_expression = guard_expression;
- }
- 
- IIR *IIR_BlockStatement::get_guard_expression(void)
- {
-+	return this->_guard_expression;
- }
- 
-diff -u a/IIR_BreakElement.cpp b/IIR_BreakElement.cpp
---- a/IIR_BreakElement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_BreakElement.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -6,26 +6,32 @@
- 
- void IIR_BreakElement::set_quantity_selector(IIR *quantity_selector)
- {
-+	this->_quantity_selector = quantity_selector;
- }
- 
- IIR *IIR_BreakElement::get_quantity_selector(void)
- {
-+	return this->_quantity_selector;
- }
- 
- void IIR_BreakElement::set_quantity_name(IIR *quantity_name)
- {
-+	this->_quantity_name = quantity_name;
- }
- 
- IIR *IIR_BreakElement::get_quantity_name(void)
- {
-+	return this->_quantity_name;
- }
- 
- void IIR_BreakElement::set_expression(IIR *expression)
- {
-+	this->_expression = expression;
- }
- 
- IIR *IIR_BreakElement::get_expression(void)
- {
-+	return this->_expression;
- }
- 
- IIR_BreakElement::~IIR_BreakElement(void)
-diff -u a/IIR_BreakStatement.cpp b/IIR_BreakStatement.cpp
---- a/IIR_BreakStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_BreakStatement.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_BreakStatement::set_condition(IIR *condition)
- {
-+	this->_condition = condition;
- }
- 
- IIR *IIR_BreakStatement::get_condition(void)
- {
-+	return this->_condition;
- }
- 
-diff -u a/IIR_CaseStatement.cpp b/IIR_CaseStatement.cpp
---- a/IIR_CaseStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_CaseStatement.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_CaseStatement::set_expression(IIR *expression)
- {
-+	this->_expression = expression;
- }
- 
- IIR *IIR_CaseStatement::get_expression(void)
- {
-+	return this->_expression;
- }
- 
-diff -u a/IIR_CaseStatementAlternativeByExpression.cpp b/IIR_CaseStatementAlternativeByExpression.cpp
---- a/IIR_CaseStatementAlternativeByExpression.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_CaseStatementAlternativeByExpression.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -6,10 +6,12 @@
- 
- void IIR_CaseStatementAlternativeByExpression::set_choice(IIR *choice)
- {
-+	this->_choice = choice;
- }
- 
- IIR *IIR_CaseStatementAlternativeByExpression::get_choice(void)
- {
-+	return this->_choice;
- }
- 
- IIR_CaseStatementAlternativeByExpression::~IIR_CaseStatementAlternativeByExpression(void)
-diff -u a/IIR_CharacterLiteral.cpp b/IIR_CharacterLiteral.cpp
---- a/IIR_CharacterLiteral.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_CharacterLiteral.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -6,6 +6,7 @@
- 
- IR_Char IIR_CharacterLiteral::get_text(void)
- {
-+	return this->_text;
- }
- 
- IIR_CharacterLiteral::~IIR_CharacterLiteral(void)
-diff -u a/IIR_Choice.cpp b/IIR_Choice.cpp
---- a/IIR_Choice.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Choice.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -6,10 +6,12 @@
- 
- void IIR_Choice::set_value(IIR *value)
- {
-+	this->_value = value;
- }
- 
- IIR *IIR_Choice::get_value(void)
- {
-+	return this->_value;
- }
- 
- IIR_Choice::~IIR_Choice(void)
-diff -u a/IIR_Comment.cpp b/IIR_Comment.cpp
---- a/IIR_Comment.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Comment.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -6,10 +6,12 @@
- 
- IR_Char *IIR_Comment::get_text(void)
- {
-+	return this->_text;
- }
- 
- IR_Int32 IIR_Comment::get_text_length(void)
- {
-+	return this->_text_length;
- }
- 
- void IIR_Comment::release(void)
-@@ -18,9 +20,11 @@
- 
- void IIR_Comment::set_element(IR_Int32 subscript, IR_Char value)
- {
-+	this->_text[subscript] = value;
- }
- 
- IR_Char IIR_Comment::get_element(IR_Int32 subscript)
- {
-+	return this->_text[subscript];
- }
- 
-diff -u a/IIR_ComponentConfiguration.cpp b/IIR_ComponentConfiguration.cpp
---- a/IIR_ComponentConfiguration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ComponentConfiguration.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -6,26 +6,32 @@
- 
- void IIR_ComponentConfiguration::set_component_name(IIR *component_name)
- {
-+	this->_component_name = component_name;
- }
- 
- IIR *IIR_ComponentConfiguration::get_component_name(void)
- {
-+	return this->_component_name;
- }
- 
- void IIR_ComponentConfiguration::set_entity_aspect(IIR_LibraryUnit *entity_aspect)
- {
-+	this->_entity_aspect = entity_aspect;
- }
- 
- IIR_LibraryUnit *IIR_ComponentConfiguration::get_entity_aspect(void)
- {
-+	return this->_entity_aspect;
- }
- 
- void IIR_ComponentConfiguration::set_block_configuration(IIR_BlockConfiguration *block_configuration)
- {
-+	this->_block_configuration = block_configuration;
- }
- 
- IIR_BlockConfiguration *IIR_ComponentConfiguration::get_block_configuration(void)
- {
-+	return this->_block_configuration;
- }
- 
- IIR_ComponentConfiguration::~IIR_ComponentConfiguration(void)
-diff -u a/IIR_ComponentInstantiationStatement.cpp b/IIR_ComponentInstantiationStatement.cpp
---- a/IIR_ComponentInstantiationStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ComponentInstantiationStatement.cpp	2011-08-20 10:50:30.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_ComponentInstantiationStatement::set_instantiated_unit(IIR *instantiated_unit)
- {
-+	this->_instantiated_unit = instantiated_unit;
- }
- 
- IIR *IIR_ComponentInstantiationStatement::get_instantiated_unit(void)
- {
-+	return this->_instantiated_unit;
- }
- 
-diff -u a/IIR_ConcurrentAssertionStatement.cpp b/IIR_ConcurrentAssertionStatement.cpp
---- a/IIR_ConcurrentAssertionStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConcurrentAssertionStatement.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,33 +10,41 @@
- 
- void IIR_ConcurrentAssertionStatement::set_postponed(IR_Boolean postponed)
- {
-+	this->_postponed = postponed;
- }
- 
- IR_Boolean IIR_ConcurrentAssertionStatement::get_postponed(void)
- {
-+	return this->_postponed;
- }
- 
- void IIR_ConcurrentAssertionStatement::set_assertion_condition(IIR *assertion_condition)
- {
-+	this->_assertion_condition = assertion_condition;
- }
- 
- IIR *IIR_ConcurrentAssertionStatement::get_assertion_condition(void)
- {
-+	return this->_assertion_condition;
- }
- 
- void IIR_ConcurrentAssertionStatement::set_report_expression(IIR *report_expression)
- {
-+	this->_report_expression = report_expression;
- }
- 
- IIR *IIR_ConcurrentAssertionStatement::get_report_expression(void)
- {
-+	return this->_report_expression;
- }
- 
- void IIR_ConcurrentAssertionStatement::set_severity_expression(IIR *severity_expression)
- {
-+	this->_severity_expression = severity_expression;
- }
- 
- IIR *IIR_ConcurrentAssertionStatement::get_severity_expression(void)
- {
-+	return this->_severity_expression;
- }
- 
-diff -u a/IIR_ConcurrentBreakStatement.cpp b/IIR_ConcurrentBreakStatement.cpp
---- a/IIR_ConcurrentBreakStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConcurrentBreakStatement.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_ConcurrentBreakStatement::set_condition(IIR *condition)
- {
-+	this->_condition = condition;
- }
- 
- IIR *IIR_ConcurrentBreakStatement::get_condition(void)
- {
-+	return this->_condition;
- }
- 
-diff -u a/IIR_ConcurrentConditionalSignalAssignment.cpp b/IIR_ConcurrentConditionalSignalAssignment.cpp
---- a/IIR_ConcurrentConditionalSignalAssignment.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConcurrentConditionalSignalAssignment.cpp	2011-08-20 09:43:23.000000000 +0100
-@@ -10,41 +10,51 @@
- 
- void IIR_ConcurrentConditionalSignalAssignment::set_postponed(IR_Boolean postponed)
- {
-+	this->_postponed = postponed;
- }
- 
- IR_Boolean IIR_ConcurrentConditionalSignalAssignment::get_postponed(void)
- {
-+	return this->_postponed;
- }
- 
- void IIR_ConcurrentConditionalSignalAssignment::set_target(IIR *target)
- {
-+	this->_target = target;
- }
- 
- IIR *IIR_ConcurrentConditionalSignalAssignment::get_target(void)
- {
-+	return this->_target;
- }
- 
- void IIR_ConcurrentConditionalSignalAssignment::set_guarded(IR_Boolean guarded)
- {
-+	this->_guarded = guarded;
- }
- 
- IR_Boolean IIR_ConcurrentConditionalSignalAssignment::get_guarded(void)
- {
-+	return this->_guarded;
- }
- 
- void IIR_ConcurrentConditionalSignalAssignment::set_delay_mechanism(enum IR_DelayMechanism delay_mechanism)
- {
-+	this->_delay_mechanism = delay_mechanism;
- }
- 
- enum IR_DelayMechanism IIR_ConcurrentConditionalSignalAssignment::get_delay_mechanism(void)
- {
-+	return this->_delay_mechanism;
- }
- 
- void IIR_ConcurrentConditionalSignalAssignment::set_reject_time_expression(IIR *reject_time_expression)
- {
-+	this->_reject_time_expression = reject_time_expression;
- }
- 
- IIR *IIR_ConcurrentConditionalSignalAssignment::get_reject_time_expression(void)
- {
-+	return this->_reject_time_expression;
- }
- 
-diff -u a/IIR_ConcurrentGenerateForStatement.cpp b/IIR_ConcurrentGenerateForStatement.cpp
---- a/IIR_ConcurrentGenerateForStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConcurrentGenerateForStatement.cpp	2011-08-20 09:43:23.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_ConcurrentGenerateForStatement::set_generate_parameter_specification(IIR_ConstantDeclaration *generate_parameter_specification)
- {
-+	this->_generate_parameter_specification = generate_parameter_specification;
- }
- 
- IIR_ConstantDeclaration *IIR_ConcurrentGenerateForStatement::get_generate_parameter_specification(void)
- {
-+	return this->_generate_parameter_specification;
- }
- 
-diff -u a/IIR_ConcurrentGenerateIfStatement.cpp b/IIR_ConcurrentGenerateIfStatement.cpp
---- a/IIR_ConcurrentGenerateIfStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConcurrentGenerateIfStatement.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_ConcurrentGenerateIfStatement::set_if_condition(IIR *if_condition)
- {
-+	this->_if_condition = if_condition;
- }
- 
- IIR *IIR_ConcurrentGenerateIfStatement::get_if_condition(void)
- {
-+	return this->_if_condition;
- }
- 
-diff -u a/IIR_ConcurrentProcedureCallStatement.cpp b/IIR_ConcurrentProcedureCallStatement.cpp
---- a/IIR_ConcurrentProcedureCallStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConcurrentProcedureCallStatement.cpp	2011-08-20 09:43:23.000000000 +0100
-@@ -10,17 +10,21 @@
- 
- void IIR_ConcurrentProcedureCallStatement::set_procedure_name(IIR *procedure_name)
- {
-+	this->_procedure_name = procedure_name;
- }
- 
- IIR *IIR_ConcurrentProcedureCallStatement::get_procedure_name(void)
- {
-+	return this->_procedure_name;
- }
- 
- void IIR_ConcurrentProcedureCallStatement::set_postponed(IR_Boolean postponed)
- {
-+	this->_postponed = postponed;
- }
- 
- IR_Boolean IIR_ConcurrentProcedureCallStatement::get_postponed(void)
- {
-+	return this->_postponed;
- }
- 
-diff -u a/IIR_ConcurrentSelectedSignalAssignment.cpp b/IIR_ConcurrentSelectedSignalAssignment.cpp
---- a/IIR_ConcurrentSelectedSignalAssignment.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConcurrentSelectedSignalAssignment.cpp	2011-08-20 10:48:10.000000000 +0100
-@@ -10,49 +10,61 @@
- 
- IIR *IIR_ConcurrentSelectedSignalAssignment::get_expression(void)
- {
-+	return this->_expression;
- }
- 
- void IIR_ConcurrentSelectedSignalAssignment::set_expression(IIR *expression)
- {
-+	this->_expression = expression;
- }
- 
- void IIR_ConcurrentSelectedSignalAssignment::set_postponed(IR_Boolean postponed)
- {
-+	this->_postponed = postponed;
- }
- 
- IR_Boolean IIR_ConcurrentSelectedSignalAssignment::get_postponed(void)
- {
-+	return this->_postponed;
- }
- 
- void IIR_ConcurrentSelectedSignalAssignment::set_target(IIR *target)
- {
-+	this->_target = target;
- }
- 
- IIR *IIR_ConcurrentSelectedSignalAssignment::get_target(void)
- {
-+	return this->_target;
- }
- 
- void IIR_ConcurrentSelectedSignalAssignment::set_guarded(IR_Boolean guarded)
- {
-+	this->_guarded = guarded;
- }
- 
- IR_Boolean IIR_ConcurrentSelectedSignalAssignment::get_guarded(void)
- {
-+	return this->_guarded;
- }
- 
- void IIR_ConcurrentSelectedSignalAssignment::set_delay_mechanism(enum IR_DelayMechanism delay_mechanism)
- {
-+	this->_delay_mechanism = delay_mechanism;
- }
- 
- enum IR_DelayMechanism IIR_ConcurrentSelectedSignalAssignment::get_delay_mechanism(void)
- {
-+	return this->_delay_mechanism;
- }
- 
- void IIR_ConcurrentSelectedSignalAssignment::set_reject_time_expression(IIR *reject_time_expression)
- {
-+	this->_reject_time_expression = reject_time_expression;
- }
- 
- IIR *IIR_ConcurrentSelectedSignalAssignment::get_reject_time_expression(void)
- {
-+	return this->_reject_time_expression;
- }
- 
-diff -u a/IIR_ConditionalWaveform.cpp b/IIR_ConditionalWaveform.cpp
---- a/IIR_ConditionalWaveform.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConditionalWaveform.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_ConditionalWaveform::set_condition(IIR *condition)
- {
-+	this->_condition = condition;
- }
- 
- IIR *IIR_ConditionalWaveform::get_condition(void)
- {
-+	return this->_condition;
- }
- 
-diff -u a/IIR_ConfigurationDeclaration.cpp b/IIR_ConfigurationDeclaration.cpp
---- a/IIR_ConfigurationDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConfigurationDeclaration.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,17 +10,21 @@
- 
- void IIR_ConfigurationDeclaration::set_block_configuration(IIR_BlockConfiguration *block_configuration)
- {
-+	this->_block_configuration = block_configuration;
- }
- 
- IIR_BlockConfiguration *IIR_ConfigurationDeclaration::get_block_configuration(void)
- {
-+	return this->_block_configuration;
- }
- 
- void IIR_ConfigurationDeclaration::set_entity(IIR_EntityDeclaration *entity)
- {
-+	this->_entity = entity;
- }
- 
- IIR_EntityDeclaration *IIR_ConfigurationDeclaration::get_entity(void)
- {
-+	return this->_entity;
- }
- 
-diff -u a/IIR_ConfigurationSpecification.cpp b/IIR_ConfigurationSpecification.cpp
---- a/IIR_ConfigurationSpecification.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConfigurationSpecification.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,17 +10,21 @@
- 
- void IIR_ConfigurationSpecification::set_entity_aspect(IIR_LibraryUnit *entity_aspect)
- {
-+	this->_entity_aspect = entity_aspect;
- }
- 
- IIR_LibraryUnit *IIR_ConfigurationSpecification::get_entity_aspect(void)
- {
-+	return this->_entity_aspect;
- }
- 
- void IIR_ConfigurationSpecification::set_component_name(IIR *component_name)
- {
-+	this->_component_name = component_name;
- }
- 
- IIR *IIR_ConfigurationSpecification::get_component_name(void)
- {
-+	return this->_component_name;
- }
- 
-diff -u a/IIR_ConstantDeclaration.cpp b/IIR_ConstantDeclaration.cpp
---- a/IIR_ConstantDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ConstantDeclaration.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -2,10 +2,12 @@
- 
- void IIR_ConstantDeclaration::set_value(IIR *value)
- {
-+	this->_value = value;
- }
- 
- IIR *IIR_ConstantDeclaration::get_value(void)
- {
-+	return this->_value;
- }
- 
- IIR_ConstantDeclaration::IIR_ConstantDeclaration(void)
 diff -u a/IIR_Declaration.cpp b/IIR_Declaration.cpp
---- a/IIR_Declaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Declaration.cpp	2011-08-20 10:27:40.000000000 +0100
+--- a/IIR_Declaration.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_Declaration.cpp	2011-08-20 17:19:47.971402059 +0100
 @@ -2,9 +2,11 @@
  
  void IIR_Declaration::set_declarator(IIR_TextLiteral *declarator)
@@ -1052,10 +1546,29 @@ diff -u a/IIR_Declaration.cpp b/IIR_Declaration.cpp
 +	return this->_declarator;
  }
  
+diff -u a/IIR_DeclarationList.cpp b/IIR_DeclarationList.cpp
+--- a/IIR_DeclarationList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_DeclarationList.cpp	2011-08-20 17:20:01.351468404 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DeclarationList::IIR_DeclarationList(void)
+ {
++	this->_kind = IR_DECLARATION_LIST;
+ }
+ 
+ IIR_DeclarationList::~IIR_DeclarationList(void)
 diff -u a/IIR_DelayedAttribute.cpp b/IIR_DelayedAttribute.cpp
---- a/IIR_DelayedAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_DelayedAttribute.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_DelayedAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_DelayedAttribute.cpp	2011-08-20 17:20:01.351468404 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DelayedAttribute::IIR_DelayedAttribute(void)
+ {
++	this->_kind = IR_DELAYED_ATTRIBUTE;
+ }
+ 
+ IIR_DelayedAttribute::~IIR_DelayedAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_DelayedAttribute::set_suffix(IIR *suffix)
  {
@@ -1067,35 +1580,40 @@ diff -u a/IIR_DelayedAttribute.cpp b/IIR_DelayedAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -u a/IIR_DesignFile.cpp b/IIR_DesignFile.cpp
---- a/IIR_DesignFile.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_DesignFile.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,17 +10,21 @@
+diff -u a/IIR_DesignatorByAll.cpp b/IIR_DesignatorByAll.cpp
+--- a/IIR_DesignatorByAll.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_DesignatorByAll.cpp	2011-08-20 17:20:01.351468404 +0100
+@@ -2,6 +2,7 @@
  
- void IIR_DesignFile::set_name(IIR_Identifier *name)
+ IIR_DesignatorByAll::IIR_DesignatorByAll(void)
  {
-+	this->_name = name;
++	this->_kind = IR_DESIGNATOR_BY_ALL;
  }
  
- IIR_Identifier *IIR_DesignFile::get_name(void)
+ IIR_DesignatorByAll::~IIR_DesignatorByAll(void)
+diff -u a/IIR_DesignatorByOthers.cpp b/IIR_DesignatorByOthers.cpp
+--- a/IIR_DesignatorByOthers.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_DesignatorByOthers.cpp	2011-08-20 17:20:01.351468404 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DesignatorByOthers::IIR_DesignatorByOthers(void)
  {
-+	return this->_name;
++	this->_kind = IR_DESIGNATOR_BY_OTHERS;
  }
  
- void IIR_DesignFile::set_source_language(enum IR_SourceLanguage source_language)
- {
-+	this->_source_language = source_language;
- }
- 
- enum IR_SourceLanguage IIR_DesignFile::get_source_language(void)
- {
-+	return this->_source_language;
- }
- 
+ IIR_DesignatorByOthers::~IIR_DesignatorByOthers(void)
 diff -u a/IIR_DesignatorExplicit.cpp b/IIR_DesignatorExplicit.cpp
---- a/IIR_DesignatorExplicit.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_DesignatorExplicit.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_DesignatorExplicit.cpp	2011-08-20 17:21:55.332033606 +0100
++++ b/IIR_DesignatorExplicit.cpp	2011-08-20 17:20:01.355468426 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DesignatorExplicit::IIR_DesignatorExplicit(void)
+ {
++	this->_kind = IR_DESIGNATOR_EXPLICIT;
+ }
+ 
+ IIR_DesignatorExplicit::~IIR_DesignatorExplicit(void)
+@@ -10,17 +11,21 @@
  
  void IIR_DesignatorExplicit::set_name(IIR *name)
  {
@@ -1117,10 +1635,73 @@ diff -u a/IIR_DesignatorExplicit.cpp b/IIR_DesignatorExplicit.cpp
 +	return this->_signature;
  }
  
+diff -u a/IIR_DesignatorList.cpp b/IIR_DesignatorList.cpp
+--- a/IIR_DesignatorList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_DesignatorList.cpp	2011-08-20 17:20:01.355468426 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DesignatorList::IIR_DesignatorList(void)
+ {
++	this->_kind = IR_DESIGNATOR_LIST;
+ }
+ 
+ IIR_DesignatorList::~IIR_DesignatorList(void)
+diff -u a/IIR_DesignFile.cpp b/IIR_DesignFile.cpp
+--- a/IIR_DesignFile.cpp	2011-08-20 17:21:55.324033567 +0100
++++ b/IIR_DesignFile.cpp	2011-08-20 17:20:01.355468426 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DesignFile::IIR_DesignFile(void)
+ {
++	this->_kind = IR_DESIGN_FILE;
+ }
+ 
+ IIR_DesignFile::~IIR_DesignFile(void)
+@@ -10,17 +11,21 @@
+ 
+ void IIR_DesignFile::set_name(IIR_Identifier *name)
+ {
++	this->_name = name;
+ }
+ 
+ IIR_Identifier *IIR_DesignFile::get_name(void)
+ {
++	return this->_name;
+ }
+ 
+ void IIR_DesignFile::set_source_language(enum IR_SourceLanguage source_language)
+ {
++	this->_source_language = source_language;
+ }
+ 
+ enum IR_SourceLanguage IIR_DesignFile::get_source_language(void)
+ {
++	return this->_source_language;
+ }
+ 
+diff -u a/IIR_DesignFileList.cpp b/IIR_DesignFileList.cpp
+--- a/IIR_DesignFileList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_DesignFileList.cpp	2011-08-20 17:20:01.355468426 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DesignFileList::IIR_DesignFileList(void)
+ {
++	this->_kind = IR_DESIGN_FILE_LIST;
+ }
+ 
+ IIR_DesignFileList::~IIR_DesignFileList(void)
 diff -u a/IIR_DisconnectionSpecification.cpp b/IIR_DisconnectionSpecification.cpp
---- a/IIR_DisconnectionSpecification.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_DisconnectionSpecification.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_DisconnectionSpecification.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_DisconnectionSpecification.cpp	2011-08-20 17:20:01.359468450 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DisconnectionSpecification::IIR_DisconnectionSpecification(void)
+ {
++	this->_kind = IR_DISCONNECTION_SPECIFICATION;
+ }
+ 
+ IIR_DisconnectionSpecification::~IIR_DisconnectionSpecification(void)
+@@ -10,17 +11,21 @@
  
  void IIR_DisconnectionSpecification::set_type_mark(IIR_TypeDefinition *type_mark)
  {
@@ -1142,9 +1723,53 @@ diff -u a/IIR_DisconnectionSpecification.cpp b/IIR_DisconnectionSpecification.cp
 +	return this->_time_expression;
  }
  
+diff -u a/IIR_DivisionOperator.cpp b/IIR_DivisionOperator.cpp
+--- a/IIR_DivisionOperator.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_DivisionOperator.cpp	2011-08-20 17:20:01.359468450 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DivisionOperator::IIR_DivisionOperator(void)
+ {
++	this->_kind = IR_DIVISION_OPERATOR;
+ }
+ 
+ IIR_DivisionOperator::~IIR_DivisionOperator(void)
+diff -u a/IIR_DotAttribute.cpp b/IIR_DotAttribute.cpp
+--- a/IIR_DotAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_DotAttribute.cpp	2011-08-20 17:20:01.359468450 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DotAttribute::IIR_DotAttribute(void)
+ {
++	this->_kind = IR_DOT_ATTRIBUTE;
+ }
+ 
+ IIR_DotAttribute::~IIR_DotAttribute(void)
+diff -u a/IIR_DrivingAttribute.cpp b/IIR_DrivingAttribute.cpp
+--- a/IIR_DrivingAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_DrivingAttribute.cpp	2011-08-20 17:20:01.359468450 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DrivingAttribute::IIR_DrivingAttribute(void)
+ {
++	this->_kind = IR_DRIVING_ATTRIBUTE;
+ }
+ 
+ IIR_DrivingAttribute::~IIR_DrivingAttribute(void)
+diff -u a/IIR_DrivingValueAttribute.cpp b/IIR_DrivingValueAttribute.cpp
+--- a/IIR_DrivingValueAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_DrivingValueAttribute.cpp	2011-08-20 17:20:01.359468450 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_DrivingValueAttribute::IIR_DrivingValueAttribute(void)
+ {
++	this->_kind = IR_DRIVING_VALUE_ATTRIBUTE;
+ }
+ 
+ IIR_DrivingValueAttribute::~IIR_DrivingValueAttribute(void)
 diff -u a/IIR_DyadicOperator.cpp b/IIR_DyadicOperator.cpp
---- a/IIR_DyadicOperator.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_DyadicOperator.cpp	2011-08-20 09:43:24.000000000 +0100
+--- a/IIR_DyadicOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_DyadicOperator.cpp	2011-08-20 17:19:47.975402082 +0100
 @@ -2,25 +2,31 @@
  
  void IIR_DyadicOperator::set_implementation(IIR_SubprogramDeclaration *implementation)
@@ -1178,9 +1803,17 @@ diff -u a/IIR_DyadicOperator.cpp b/IIR_DyadicOperator.cpp
  }
  
 diff -u a/IIR_ElementDeclaration.cpp b/IIR_ElementDeclaration.cpp
---- a/IIR_ElementDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ElementDeclaration.cpp	2011-08-20 10:32:45.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_ElementDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_ElementDeclaration.cpp	2011-08-20 17:20:01.363468463 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ElementDeclaration::IIR_ElementDeclaration(void)
+ {
++	this->_kind = IR_ELEMENT_DECLARATION;
+ }
+ 
+ IIR_ElementDeclaration::~IIR_ElementDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_ElementDeclaration::set_subtype(IIR_TypeDefinition *subtype)
  {
@@ -1192,10 +1825,29 @@ diff -u a/IIR_ElementDeclaration.cpp b/IIR_ElementDeclaration.cpp
 +	return this->_subtype;
  }
  
+diff -u a/IIR_ElementDeclarationList.cpp b/IIR_ElementDeclarationList.cpp
+--- a/IIR_ElementDeclarationList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_ElementDeclarationList.cpp	2011-08-20 17:20:01.363468463 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ElementDeclarationList::IIR_ElementDeclarationList(void)
+ {
++	this->_kind = IR_ELEMENT_DECLARATION_LIST;
+ }
+ 
+ IIR_ElementDeclarationList::~IIR_ElementDeclarationList(void)
 diff -u a/IIR_Elsif.cpp b/IIR_Elsif.cpp
---- a/IIR_Elsif.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Elsif.cpp	2011-08-20 09:43:23.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_Elsif.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_Elsif.cpp	2011-08-20 17:20:01.363468463 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_Elsif::IIR_Elsif(void)
+ {
++	this->_kind = IR_ELSIF;
+ }
+ 
+ IIR_Elsif::~IIR_Elsif(void)
+@@ -10,17 +11,21 @@
  
  void IIR_Elsif::set_condition(IIR *condition)
  {
@@ -1218,9 +1870,9 @@ diff -u a/IIR_Elsif.cpp b/IIR_Elsif.cpp
  }
  
 diff -u a/IIR_EntityClassEntry.cpp b/IIR_EntityClassEntry.cpp
---- a/IIR_EntityClassEntry.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_EntityClassEntry.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -2,10 +2,12 @@
+--- a/IIR_EntityClassEntry.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_EntityClassEntry.cpp	2011-08-20 17:20:01.363468463 +0100
+@@ -2,14 +2,17 @@
  
  void IIR_EntityClassEntry::set_entity_kind(enum IR_Kind entity_kind)
  {
@@ -1233,7 +1885,12 @@ diff -u a/IIR_EntityClassEntry.cpp b/IIR_EntityClassEntry.cpp
  }
  
  IIR_EntityClassEntry::IIR_EntityClassEntry(void)
-@@ -18,9 +20,11 @@
+ {
++	this->_kind = IR_ENTITY_CLASS_ENTRY;
+ }
+ 
+ IIR_EntityClassEntry::~IIR_EntityClassEntry(void)
+@@ -18,9 +21,11 @@
  
  void IIR_EntityClassEntry::set_boxed(IR_Boolean boxed)
  {
@@ -1245,10 +1902,30 @@ diff -u a/IIR_EntityClassEntry.cpp b/IIR_EntityClassEntry.cpp
 +	return this->_boxed;
  }
  
+Only in b: IIR_EntityClassEntry.cpp.orig
+diff -u a/IIR_EntityClassEntryList.cpp b/IIR_EntityClassEntryList.cpp
+--- a/IIR_EntityClassEntryList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_EntityClassEntryList.cpp	2011-08-20 17:20:01.367468485 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_EntityClassEntryList::IIR_EntityClassEntryList(void)
+ {
++	this->_kind = IR_ENTITY_CLASS_ENTRY_LIST;
+ }
+ 
+ IIR_EntityClassEntryList::~IIR_EntityClassEntryList(void)
 diff -u a/IIR_EntityDeclaration.cpp b/IIR_EntityDeclaration.cpp
---- a/IIR_EntityDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_EntityDeclaration.cpp	2011-08-20 09:43:23.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_EntityDeclaration.cpp	2011-08-20 17:21:55.376033822 +0100
++++ b/IIR_EntityDeclaration.cpp	2011-08-20 17:20:01.367468485 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_EntityDeclaration::IIR_EntityDeclaration(void)
+ {
++	this->_kind = IR_ENTITY_DECLARATION;
+ }
+ 
+ IIR_EntityDeclaration::~IIR_EntityDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_EntityDeclaration::set_last_analyzed_architecture(IIR_ArchitectureDeclaration *last_analyzed_architecture)
  {
@@ -1261,9 +1938,17 @@ diff -u a/IIR_EntityDeclaration.cpp b/IIR_EntityDeclaration.cpp
  }
  
 diff -u a/IIR_EnumerationLiteral.cpp b/IIR_EnumerationLiteral.cpp
---- a/IIR_EnumerationLiteral.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_EnumerationLiteral.cpp	2011-08-20 09:43:28.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_EnumerationLiteral.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_EnumerationLiteral.cpp	2011-08-20 17:20:01.367468485 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_EnumerationLiteral::IIR_EnumerationLiteral(void)
+ {
++	this->_kind = IR_ENUMERATION_LITERAL;
+ }
+ 
+ IIR_EnumerationLiteral::~IIR_EnumerationLiteral(void)
+@@ -10,17 +11,21 @@
  
  void IIR_EnumerationLiteral::set_position(IIR *position)
  {
@@ -1285,9 +1970,20 @@ diff -u a/IIR_EnumerationLiteral.cpp b/IIR_EnumerationLiteral.cpp
 +	return this->_subtype;
  }
  
+diff -u a/IIR_EnumerationLiteralList.cpp b/IIR_EnumerationLiteralList.cpp
+--- a/IIR_EnumerationLiteralList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_EnumerationLiteralList.cpp	2011-08-20 17:20:01.371468509 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_EnumerationLiteralList::IIR_EnumerationLiteralList(void)
+ {
++	this->_kind = IR_ENUMERATION_LITERAL_LIST;
+ }
+ 
+ IIR_EnumerationLiteralList::~IIR_EnumerationLiteralList(void)
 diff -u a/IIR_EnumerationSubtypeDefinition.cpp b/IIR_EnumerationSubtypeDefinition.cpp
---- a/IIR_EnumerationSubtypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_EnumerationSubtypeDefinition.cpp	2011-08-20 10:04:42.000000000 +0100
+--- a/IIR_EnumerationSubtypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_EnumerationSubtypeDefinition.cpp	2011-08-20 17:19:47.983402114 +0100
 @@ -6,18 +6,22 @@
  
  void IIR_EnumerationSubtypeDefinition::set_base_type(IIR_EnumerationTypeDefinition *base_type)
@@ -1311,10 +2007,51 @@ diff -u a/IIR_EnumerationSubtypeDefinition.cpp b/IIR_EnumerationSubtypeDefinitio
  }
  
  void IIR_EnumerationSubtypeDefinition::release(void)
+diff -u a/IIR_EnumerationTypeDefinition.cpp b/IIR_EnumerationTypeDefinition.cpp
+--- a/IIR_EnumerationTypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_EnumerationTypeDefinition.cpp	2011-08-20 17:20:01.371468509 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_EnumerationTypeDefinition::IIR_EnumerationTypeDefinition(void)
+ {
++	this->_kind = IR_ENUMERATION_TYPE_DEFINITION;
+ }
+ 
+ IIR_EnumerationTypeDefinition::~IIR_EnumerationTypeDefinition(void)
+diff -u a/IIR_EqualityOperator.cpp b/IIR_EqualityOperator.cpp
+--- a/IIR_EqualityOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_EqualityOperator.cpp	2011-08-20 17:20:01.371468509 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_EqualityOperator::IIR_EqualityOperator(void)
+ {
++	this->_kind = IR_EQUALITY_OPERATOR;
+ }
+ 
+ IIR_EqualityOperator::~IIR_EqualityOperator(void)
+diff -u a/IIR_EventAttribute.cpp b/IIR_EventAttribute.cpp
+--- a/IIR_EventAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_EventAttribute.cpp	2011-08-20 17:20:01.371468509 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_EventAttribute::IIR_EventAttribute(void)
+ {
++	this->_kind = IR_EVENT_ATTRIBUTE;
+ }
+ 
+ IIR_EventAttribute::~IIR_EventAttribute(void)
 diff -u a/IIR_ExitStatement.cpp b/IIR_ExitStatement.cpp
---- a/IIR_ExitStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ExitStatement.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_ExitStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_ExitStatement.cpp	2011-08-20 17:20:01.371468509 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ExitStatement::IIR_ExitStatement(void)
+ {
++	this->_kind = IR_EXIT_STATEMENT;
+ }
+ 
+ IIR_ExitStatement::~IIR_ExitStatement(void)
+@@ -10,17 +11,21 @@
  
  void IIR_ExitStatement::set_enclosing_loop(IIR_SequentialStatement *enclosing_loop)
  {
@@ -1336,9 +2073,20 @@ diff -u a/IIR_ExitStatement.cpp b/IIR_ExitStatement.cpp
 +	return this->_condition;
  }
  
+diff -u a/IIR_ExponentiationOperator.cpp b/IIR_ExponentiationOperator.cpp
+--- a/IIR_ExponentiationOperator.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_ExponentiationOperator.cpp	2011-08-20 17:20:01.375468523 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ExponentiationOperator::IIR_ExponentiationOperator(void)
+ {
++	this->_kind = IR_EXPONENTIATION_OPERATOR;
+ }
+ 
+ IIR_ExponentiationOperator::~IIR_ExponentiationOperator(void)
 diff -u a/IIR_Expression.cpp b/IIR_Expression.cpp
---- a/IIR_Expression.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Expression.cpp	2011-08-20 09:43:27.000000000 +0100
+--- a/IIR_Expression.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_Expression.cpp	2011-08-20 17:19:47.987402140 +0100
 @@ -2,9 +2,11 @@
  
  void IIR_Expression::set_subtype(IIR_TypeDefinition *subtype)
@@ -1352,9 +2100,9 @@ diff -u a/IIR_Expression.cpp b/IIR_Expression.cpp
  }
  
 diff -u a/IIR_FileDeclaration.cpp b/IIR_FileDeclaration.cpp
---- a/IIR_FileDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_FileDeclaration.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -2,18 +2,22 @@
+--- a/IIR_FileDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_FileDeclaration.cpp	2011-08-20 17:20:01.375468523 +0100
+@@ -2,22 +2,27 @@
  
  void IIR_FileDeclaration::set_file_open_expression(IIR *file_open_expression)
  {
@@ -1377,10 +2125,35 @@ diff -u a/IIR_FileDeclaration.cpp b/IIR_FileDeclaration.cpp
  }
  
  IIR_FileDeclaration::IIR_FileDeclaration(void)
+ {
++	this->_kind = IR_FILE_DECLARATION;
+ }
+ 
+ IIR_FileDeclaration::~IIR_FileDeclaration(void)
+Only in b: IIR_FileDeclaration.cpp.orig
+diff -u a/IIR_FileInterfaceDeclaration.cpp b/IIR_FileInterfaceDeclaration.cpp
+--- a/IIR_FileInterfaceDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_FileInterfaceDeclaration.cpp	2011-08-20 17:20:01.375468523 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_FileInterfaceDeclaration::IIR_FileInterfaceDeclaration(void)
+ {
++	this->_kind = IR_FILE_INTERFACE_DECLARATION;
+ }
+ 
+ IIR_FileInterfaceDeclaration::~IIR_FileInterfaceDeclaration(void)
 diff -u a/IIR_FileTypeDefinition.cpp b/IIR_FileTypeDefinition.cpp
---- a/IIR_FileTypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_FileTypeDefinition.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_FileTypeDefinition.cpp	2011-08-20 17:21:55.356033724 +0100
++++ b/IIR_FileTypeDefinition.cpp	2011-08-20 17:20:01.379468547 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_FileTypeDefinition::IIR_FileTypeDefinition(void)
+ {
++	this->_kind = IR_FILE_TYPE_DEFINITION;
+ }
+ 
+ IIR_FileTypeDefinition::~IIR_FileTypeDefinition(void)
+@@ -10,9 +11,11 @@
  
  void IIR_FileTypeDefinition::set_type_mark(IIR_TypeDefinition *type_mark)
  {
@@ -1393,8 +2166,8 @@ diff -u a/IIR_FileTypeDefinition.cpp b/IIR_FileTypeDefinition.cpp
  }
  
 diff -u a/IIR_FloatingPointLiteral32.cpp b/IIR_FloatingPointLiteral32.cpp
---- a/IIR_FloatingPointLiteral32.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_FloatingPointLiteral32.cpp	2011-08-20 09:58:55.000000000 +0100
+--- a/IIR_FloatingPointLiteral32.cpp	2011-08-20 17:21:55.328033582 +0100
++++ b/IIR_FloatingPointLiteral32.cpp	2011-08-20 17:19:47.987402140 +0100
 @@ -2,6 +2,7 @@
  
  IIR_FloatingPointLiteral32 *IIR_FloatingPointLiteral32::get_value(IR_FP32 value)
@@ -1404,8 +2177,8 @@ diff -u a/IIR_FloatingPointLiteral32.cpp b/IIR_FloatingPointLiteral32.cpp
  
  IR_FP32 IIR_FloatingPointLiteral32::get_value(void)
 diff -u a/IIR_FloatingPointLiteral64.cpp b/IIR_FloatingPointLiteral64.cpp
---- a/IIR_FloatingPointLiteral64.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_FloatingPointLiteral64.cpp	2011-08-20 09:59:02.000000000 +0100
+--- a/IIR_FloatingPointLiteral64.cpp	2011-08-20 17:21:55.328033582 +0100
++++ b/IIR_FloatingPointLiteral64.cpp	2011-08-20 17:19:47.991402156 +0100
 @@ -2,6 +2,7 @@
  
  IIR_FloatingPointLiteral64 *IIR_FloatingPointLiteral64::get_value(IR_FP64 value)
@@ -1415,8 +2188,8 @@ diff -u a/IIR_FloatingPointLiteral64.cpp b/IIR_FloatingPointLiteral64.cpp
  
  IR_FP64 IIR_FloatingPointLiteral64::get_value(void)
 diff -u a/IIR_FloatingSubtypeDefinition.cpp b/IIR_FloatingSubtypeDefinition.cpp
---- a/IIR_FloatingSubtypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_FloatingSubtypeDefinition.cpp	2011-08-20 10:06:11.000000000 +0100
+--- a/IIR_FloatingSubtypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_FloatingSubtypeDefinition.cpp	2011-08-20 17:19:47.991402156 +0100
 @@ -6,18 +6,22 @@
  
  void IIR_FloatingSubtypeDefinition::set_base_type(IIR_FloatingTypeDefinition *base_type)
@@ -1440,10 +2213,29 @@ diff -u a/IIR_FloatingSubtypeDefinition.cpp b/IIR_FloatingSubtypeDefinition.cpp
  }
  
  void IIR_FloatingSubtypeDefinition::release(void)
+diff -u a/IIR_FloatingTypeDefinition.cpp b/IIR_FloatingTypeDefinition.cpp
+--- a/IIR_FloatingTypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_FloatingTypeDefinition.cpp	2011-08-20 17:20:01.379468547 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_FloatingTypeDefinition::IIR_FloatingTypeDefinition(void)
+ {
++	this->_kind = IR_FLOATING_TYPE_DEFINITION;
+ }
+ 
+ IIR_FloatingTypeDefinition::~IIR_FloatingTypeDefinition(void)
 diff -u a/IIR_ForLoopStatement.cpp b/IIR_ForLoopStatement.cpp
---- a/IIR_ForLoopStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ForLoopStatement.cpp	2011-08-20 10:45:06.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_ForLoopStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_ForLoopStatement.cpp	2011-08-20 17:20:01.379468547 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ForLoopStatement::IIR_ForLoopStatement(void)
+ {
++	this->_kind = IR_FOR_LOOP_STATEMENT;
+ }
+ 
+ IIR_ForLoopStatement::~IIR_ForLoopStatement(void)
+@@ -10,9 +11,11 @@
  
  void IIR_ForLoopStatement::set_iteration_scheme(IIR_ConstantDeclaration *iteration_scheme)
  {
@@ -1456,9 +2248,9 @@ diff -u a/IIR_ForLoopStatement.cpp b/IIR_ForLoopStatement.cpp
  }
  
 diff -u a/IIR_FreeQuantityDeclaration.cpp b/IIR_FreeQuantityDeclaration.cpp
---- a/IIR_FreeQuantityDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_FreeQuantityDeclaration.cpp	2011-08-20 09:43:28.000000000 +0100
-@@ -2,10 +2,12 @@
+--- a/IIR_FreeQuantityDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_FreeQuantityDeclaration.cpp	2011-08-20 17:20:01.379468547 +0100
+@@ -2,14 +2,17 @@
  
  void IIR_FreeQuantityDeclaration::set_subnature_indication(IIR_NatureDefinition *subnature_indication)
  {
@@ -1471,10 +2263,24 @@ diff -u a/IIR_FreeQuantityDeclaration.cpp b/IIR_FreeQuantityDeclaration.cpp
  }
  
  IIR_FreeQuantityDeclaration::IIR_FreeQuantityDeclaration(void)
+ {
++	this->_kind = IR_FREE_QUANTITY_DECLARATION;
+ }
+ 
+ IIR_FreeQuantityDeclaration::~IIR_FreeQuantityDeclaration(void)
+Only in b: IIR_FreeQuantityDeclaration.cpp.orig
 diff -u a/IIR_FunctionCall.cpp b/IIR_FunctionCall.cpp
---- a/IIR_FunctionCall.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_FunctionCall.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_FunctionCall.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_FunctionCall.cpp	2011-08-20 17:20:01.383468561 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_FunctionCall::IIR_FunctionCall(void)
+ {
++	this->_kind = IR_FUNCTION_CALL;
+ }
+ 
+ IIR_FunctionCall::~IIR_FunctionCall(void)
+@@ -10,9 +11,11 @@
  
  void IIR_FunctionCall::set_implementation(IIR_SubprogramDeclaration *implementation)
  {
@@ -1487,9 +2293,17 @@ diff -u a/IIR_FunctionCall.cpp b/IIR_FunctionCall.cpp
  }
  
 diff -u a/IIR_FunctionDeclaration.cpp b/IIR_FunctionDeclaration.cpp
---- a/IIR_FunctionDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_FunctionDeclaration.cpp	2011-08-20 10:29:00.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_FunctionDeclaration.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_FunctionDeclaration.cpp	2011-08-20 17:20:01.383468561 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_FunctionDeclaration::IIR_FunctionDeclaration(void)
+ {
++	this->_kind = IR_FUNCTION_DECLARATION;
+ }
+ 
+ IIR_FunctionDeclaration::~IIR_FunctionDeclaration(void)
+@@ -10,17 +11,21 @@
  
  void IIR_FunctionDeclaration::set_pure(enum IR_Pure pure)
  {
@@ -1511,10 +2325,51 @@ diff -u a/IIR_FunctionDeclaration.cpp b/IIR_FunctionDeclaration.cpp
 +	return this->_return_type;
  }
  
+diff -u a/IIR_GenericList.cpp b/IIR_GenericList.cpp
+--- a/IIR_GenericList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_GenericList.cpp	2011-08-20 17:20:01.383468561 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_GenericList::IIR_GenericList(void)
+ {
++	this->_kind = IR_GENERIC_LIST;
+ }
+ 
+ IIR_GenericList::~IIR_GenericList(void)
+diff -u a/IIR_GreaterThanOperator.cpp b/IIR_GreaterThanOperator.cpp
+--- a/IIR_GreaterThanOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_GreaterThanOperator.cpp	2011-08-20 17:20:01.383468561 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_GreaterThanOperator::IIR_GreaterThanOperator(void)
+ {
++	this->_kind = IR_GREATER_THAN_OPERATOR;
+ }
+ 
+ IIR_GreaterThanOperator::~IIR_GreaterThanOperator(void)
+diff -u a/IIR_GreaterThanOrEqualOperator.cpp b/IIR_GreaterThanOrEqualOperator.cpp
+--- a/IIR_GreaterThanOrEqualOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_GreaterThanOrEqualOperator.cpp	2011-08-20 17:20:01.387468583 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_GreaterThanOrEqualOperator::IIR_GreaterThanOrEqualOperator(void)
+ {
++	this->_kind = IR_GREATER_THAN_OR_EQUAL_OPERATOR;
+ }
+ 
+ IIR_GreaterThanOrEqualOperator::~IIR_GreaterThanOrEqualOperator(void)
 diff -u a/IIR_GroupDeclaration.cpp b/IIR_GroupDeclaration.cpp
---- a/IIR_GroupDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_GroupDeclaration.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_GroupDeclaration.cpp	2011-08-20 17:21:55.376033822 +0100
++++ b/IIR_GroupDeclaration.cpp	2011-08-20 17:20:01.387468583 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_GroupDeclaration::IIR_GroupDeclaration(void)
+ {
++	this->_kind = IR_GROUP_DECLARATION;
+ }
+ 
+ IIR_GroupDeclaration::~IIR_GroupDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_GroupDeclaration::set_group_template_name(IIR_Name *group_template_name)
  {
@@ -1526,10 +2381,29 @@ diff -u a/IIR_GroupDeclaration.cpp b/IIR_GroupDeclaration.cpp
 +	return this->_group_template_name;
  }
  
+diff -u a/IIR_GroupTemplateDeclaration.cpp b/IIR_GroupTemplateDeclaration.cpp
+--- a/IIR_GroupTemplateDeclaration.cpp	2011-08-20 17:21:55.376033822 +0100
++++ b/IIR_GroupTemplateDeclaration.cpp	2011-08-20 17:20:01.387468583 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_GroupTemplateDeclaration::IIR_GroupTemplateDeclaration(void)
+ {
++	this->_kind = IR_GROUP_TEMPLATE_DECLARATION;
+ }
+ 
+ IIR_GroupTemplateDeclaration::~IIR_GroupTemplateDeclaration(void)
 diff -u a/IIR_HighAttribute.cpp b/IIR_HighAttribute.cpp
---- a/IIR_HighAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_HighAttribute.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_HighAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_HighAttribute.cpp	2011-08-20 17:20:01.387468583 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_HighAttribute::IIR_HighAttribute(void)
+ {
++	this->_kind = IR_HIGH_ATTRIBUTE;
+ }
+ 
+ IIR_HighAttribute::~IIR_HighAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_HighAttribute::set_suffix(IIR *suffix)
  {
@@ -1542,8 +2416,8 @@ diff -u a/IIR_HighAttribute.cpp b/IIR_HighAttribute.cpp
  }
  
 diff -u a/IIR_Identifier.cpp b/IIR_Identifier.cpp
---- a/IIR_Identifier.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Identifier.cpp	2011-08-20 09:43:21.000000000 +0100
+--- a/IIR_Identifier.cpp	2011-08-20 17:21:55.324033567 +0100
++++ b/IIR_Identifier.cpp	2011-08-20 17:19:47.999402201 +0100
 @@ -6,10 +6,12 @@
  
  IR_Char *IIR_Identifier::get_text(void)
@@ -1557,10 +2431,29 @@ diff -u a/IIR_Identifier.cpp b/IIR_Identifier.cpp
  }
  
  IIR_Identifier::~IIR_Identifier(void)
+diff -u a/IIR_IdentityOperator.cpp b/IIR_IdentityOperator.cpp
+--- a/IIR_IdentityOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_IdentityOperator.cpp	2011-08-20 17:20:01.387468583 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_IdentityOperator::IIR_IdentityOperator(void)
+ {
++	this->_kind = IR_IDENTITY_OPERATOR;
+ }
+ 
+ IIR_IdentityOperator::~IIR_IdentityOperator(void)
 diff -u a/IIR_IfStatement.cpp b/IIR_IfStatement.cpp
---- a/IIR_IfStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_IfStatement.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_IfStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_IfStatement.cpp	2011-08-20 17:20:01.391468608 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_IfStatement::IIR_IfStatement(void)
+ {
++	this->_kind = IR_IF_STATEMENT;
+ }
+ 
+ IIR_IfStatement::~IIR_IfStatement(void)
+@@ -10,17 +11,21 @@
  
  void IIR_IfStatement::set_condition(IIR *condition)
  {
@@ -1583,9 +2476,17 @@ diff -u a/IIR_IfStatement.cpp b/IIR_IfStatement.cpp
  }
  
 diff -u a/IIR_ImageAttribute.cpp b/IIR_ImageAttribute.cpp
---- a/IIR_ImageAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ImageAttribute.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_ImageAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_ImageAttribute.cpp	2011-08-20 17:20:01.391468608 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ImageAttribute::IIR_ImageAttribute(void)
+ {
++	this->_kind = IR_IMAGE_ATTRIBUTE;
+ }
+ 
+ IIR_ImageAttribute::~IIR_ImageAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_ImageAttribute::set_suffix(IIR_ScalarTypeDefinition *suffix)
  {
@@ -1598,9 +2499,14 @@ diff -u a/IIR_ImageAttribute.cpp b/IIR_ImageAttribute.cpp
  }
  
 diff -u a/IIR_IndexedName.cpp b/IIR_IndexedName.cpp
---- a/IIR_IndexedName.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_IndexedName.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_IndexedName.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_IndexedName.cpp	2011-08-20 17:20:01.391468608 +0100
+@@ -6,13 +6,16 @@
+ 
+ IIR_IndexedName::IIR_IndexedName(void)
+ {
++	this->_kind = IR_INDEXED_NAME;
+ }
  
  void IIR_IndexedName::set_suffix(IIR *suffix)
  {
@@ -1612,9 +2518,31 @@ diff -u a/IIR_IndexedName.cpp b/IIR_IndexedName.cpp
 +	return this->_suffix;
  }
  
+diff -u a/IIR_InequalityOperator.cpp b/IIR_InequalityOperator.cpp
+--- a/IIR_InequalityOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_InequalityOperator.cpp	2011-08-20 17:20:01.391468608 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_InequalityOperator::IIR_InequalityOperator(void)
+ {
++	this->_kind = IR_INEQUALITY_OPERATOR;
+ }
+ 
+ IIR_InequalityOperator::~IIR_InequalityOperator(void)
+diff -u a/IIR_IntegAttribute.cpp b/IIR_IntegAttribute.cpp
+--- a/IIR_IntegAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_IntegAttribute.cpp	2011-08-20 17:20:01.395468623 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_IntegAttribute::IIR_IntegAttribute(void)
+ {
++	this->_kind = IR_INTEG_ATTRIBUTE;
+ }
+ 
+ IIR_IntegAttribute::~IIR_IntegAttribute(void)
 diff -u a/IIR_IntegerSubtypeDefinition.cpp b/IIR_IntegerSubtypeDefinition.cpp
---- a/IIR_IntegerSubtypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_IntegerSubtypeDefinition.cpp	2011-08-20 10:05:27.000000000 +0100
+--- a/IIR_IntegerSubtypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_IntegerSubtypeDefinition.cpp	2011-08-20 17:19:48.003402214 +0100
 @@ -6,18 +6,22 @@
  
  void IIR_IntegerSubtypeDefinition::set_base_type(IIR_IntegerTypeDefinition *base_type)
@@ -1638,9 +2566,20 @@ diff -u a/IIR_IntegerSubtypeDefinition.cpp b/IIR_IntegerSubtypeDefinition.cpp
  }
  
  void IIR_IntegerSubtypeDefinition::release(void)
+diff -u a/IIR_IntegerTypeDefinition.cpp b/IIR_IntegerTypeDefinition.cpp
+--- a/IIR_IntegerTypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_IntegerTypeDefinition.cpp	2011-08-20 17:20:01.395468623 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_IntegerTypeDefinition::IIR_IntegerTypeDefinition(void)
+ {
++	this->_kind = IR_INTEGER_TYPE_DEFINITION;
+ }
+ 
+ IIR_IntegerTypeDefinition::~IIR_IntegerTypeDefinition(void)
 diff -u a/IIR_InterfaceDeclaration.cpp b/IIR_InterfaceDeclaration.cpp
---- a/IIR_InterfaceDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_InterfaceDeclaration.cpp	2011-08-20 09:43:27.000000000 +0100
+--- a/IIR_InterfaceDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_InterfaceDeclaration.cpp	2011-08-20 17:19:48.003402214 +0100
 @@ -2,25 +2,31 @@
  
  void IIR_InterfaceDeclaration::set_mode(enum IR_Mode mode)
@@ -1673,10 +2612,236 @@ diff -u a/IIR_InterfaceDeclaration.cpp b/IIR_InterfaceDeclaration.cpp
 +	return this->_value;
  }
  
+diff -u a/IIR_InterfaceList.cpp b/IIR_InterfaceList.cpp
+--- a/IIR_InterfaceList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_InterfaceList.cpp	2011-08-20 17:20:01.395468623 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_InterfaceList::IIR_InterfaceList(void)
+ {
++	this->_kind = IR_INTERFACE_LIST;
+ }
+ 
+ IIR_InterfaceList::~IIR_InterfaceList(void)
+diff -u a/IIR_Label.cpp b/IIR_Label.cpp
+--- a/IIR_Label.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_Label.cpp	2011-08-20 17:20:01.395468623 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_Label::IIR_Label(void)
+ {
++	this->_kind = IR_LABEL;
+ }
+ 
+ IIR_Label::~IIR_Label(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_Label::set_statement(IIR_SequentialStatement *statement)
+ {
++	this->_statement = statement;
+ }
+ 
+ IIR_SequentialStatement *IIR_Label::get_statement(void)
+ {
++	return this->_statement;
+ }
+ 
+diff -u a/IIR_LastActiveAttribute.cpp b/IIR_LastActiveAttribute.cpp
+--- a/IIR_LastActiveAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_LastActiveAttribute.cpp	2011-08-20 17:20:01.395468623 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LastActiveAttribute::IIR_LastActiveAttribute(void)
+ {
++	this->_kind = IR_LAST_ACTIVE_ATTRIBUTE;
+ }
+ 
+ IIR_LastActiveAttribute::~IIR_LastActiveAttribute(void)
+diff -u a/IIR_LastEventAttribute.cpp b/IIR_LastEventAttribute.cpp
+--- a/IIR_LastEventAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_LastEventAttribute.cpp	2011-08-20 17:20:01.399468642 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LastEventAttribute::IIR_LastEventAttribute(void)
+ {
++	this->_kind = IR_LAST_EVENT_ATTRIBUTE;
+ }
+ 
+ IIR_LastEventAttribute::~IIR_LastEventAttribute(void)
+diff -u a/IIR_LastValueAttribute.cpp b/IIR_LastValueAttribute.cpp
+--- a/IIR_LastValueAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_LastValueAttribute.cpp	2011-08-20 17:20:01.399468642 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LastValueAttribute::IIR_LastValueAttribute(void)
+ {
++	this->_kind = IR_LAST_VALUE_ATTRIBUTE;
+ }
+ 
+ IIR_LastValueAttribute::~IIR_LastValueAttribute(void)
+diff -u a/IIR_LeftAttribute.cpp b/IIR_LeftAttribute.cpp
+--- a/IIR_LeftAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_LeftAttribute.cpp	2011-08-20 17:20:01.399468642 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LeftAttribute::IIR_LeftAttribute(void)
+ {
++	this->_kind = IR_LEFT_ATTRIBUTE;
+ }
+ 
+ IIR_LeftAttribute::~IIR_LeftAttribute(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_LeftAttribute::set_suffix(IIR *suffix)
+ {
++	this->_suffix = suffix;
+ }
+ 
+ IIR *IIR_LeftAttribute::get_suffix(void)
+ {
++	return this->_suffix;
+ }
+ 
+diff -u a/IIR_LeftOfAttribute.cpp b/IIR_LeftOfAttribute.cpp
+--- a/IIR_LeftOfAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_LeftOfAttribute.cpp	2011-08-20 17:20:01.403468667 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LeftOfAttribute::IIR_LeftOfAttribute(void)
+ {
++	this->_kind = IR_LEFT_OF_ATTRIBUTE;
+ }
+ 
+ IIR_LeftOfAttribute::~IIR_LeftOfAttribute(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_LeftOfAttribute::set_suffix(IIR_ScalarTypeDefinition *suffix)
+ {
++	this->_suffix = suffix;
+ }
+ 
+ IIR_ScalarTypeDefinition *IIR_LeftOfAttribute::get_suffix(void)
+ {
++	return this->_suffix;
+ }
+ 
+diff -u a/IIR_LengthAttribute.cpp b/IIR_LengthAttribute.cpp
+--- a/IIR_LengthAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_LengthAttribute.cpp	2011-08-20 17:20:01.403468667 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LengthAttribute::IIR_LengthAttribute(void)
+ {
++	this->_kind = IR_LENGTH_ATTRIBUTE;
+ }
+ 
+ IIR_LengthAttribute::~IIR_LengthAttribute(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_LengthAttribute::set_suffix(IIR *suffix)
+ {
++	this->_suffix = suffix;
+ }
+ 
+ IIR *IIR_LengthAttribute::get_suffix(void)
+ {
++	return this->_suffix;
+ }
+ 
+diff -u a/IIR_LessThanOperator.cpp b/IIR_LessThanOperator.cpp
+--- a/IIR_LessThanOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_LessThanOperator.cpp	2011-08-20 17:20:01.403468667 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LessThanOperator::IIR_LessThanOperator(void)
+ {
++	this->_kind = IR_LESS_THAN_OPERATOR;
+ }
+ 
+ IIR_LessThanOperator::~IIR_LessThanOperator(void)
+diff -u a/IIR_LessThanOrEqualOperator.cpp b/IIR_LessThanOrEqualOperator.cpp
+--- a/IIR_LessThanOrEqualOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_LessThanOrEqualOperator.cpp	2011-08-20 17:20:01.403468667 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LessThanOrEqualOperator::IIR_LessThanOrEqualOperator(void)
+ {
++	this->_kind = IR_LESS_THAN_OR_EQUAL_OPERATOR;
+ }
+ 
+ IIR_LessThanOrEqualOperator::~IIR_LessThanOrEqualOperator(void)
+diff -u a/IIR_LibraryClause.cpp b/IIR_LibraryClause.cpp
+--- a/IIR_LibraryClause.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_LibraryClause.cpp	2011-08-20 17:20:01.403468667 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LibraryClause::IIR_LibraryClause(void)
+ {
++	this->_kind = IR_LIBRARY_CLAUSE;
+ }
+ 
+ IIR_LibraryClause::~IIR_LibraryClause(void)
+@@ -10,6 +11,7 @@
+ 
+ void IIR_LibraryClause::set_logical_name(IIR_LibraryDeclaration *logical_name)
+ {
++	this->_logical_name = logical_name;
+ }
+ 
+ void IIR_LibraryClause::operation1(void)
+@@ -18,5 +20,6 @@
+ 
+ IIR_LibraryDeclaration *IIR_LibraryClause::get_logical_name(void)
+ {
++	return this->_logical_name;
+ }
+ 
+diff -u a/IIR_LibraryUnitList.cpp b/IIR_LibraryUnitList.cpp
+--- a/IIR_LibraryUnitList.cpp	2011-08-20 17:21:55.344033668 +0100
++++ b/IIR_LibraryUnitList.cpp	2011-08-20 17:20:01.407468682 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LibraryUnitList::IIR_LibraryUnitList(void)
+ {
++	this->_kind = IR_LIBRARY_UNIT_LIST;
+ }
+ 
+ IIR_LibraryUnitList::~IIR_LibraryUnitList(void)
+diff -u a/IIR_LowAttribute.cpp b/IIR_LowAttribute.cpp
+--- a/IIR_LowAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_LowAttribute.cpp	2011-08-20 17:20:01.407468682 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LowAttribute::IIR_LowAttribute(void)
+ {
++	this->_kind = IR_LOW_ATTRIBUTE;
+ }
+ 
+ IIR_LowAttribute::~IIR_LowAttribute(void)
+@@ -10,9 +11,11 @@
+ 
+ void IIR_LowAttribute::set_suffix(IIR *suffix)
+ {
++	this->_suffix = suffix;
+ }
+ 
+ IIR *IIR_LowAttribute::get_suffix(void)
+ {
++	return this->_suffix;
+ }
+ 
 diff -u a/IIR_LTFAttribute.cpp b/IIR_LTFAttribute.cpp
---- a/IIR_LTFAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_LTFAttribute.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_LTFAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_LTFAttribute.cpp	2011-08-20 17:20:01.407468682 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_LTFAttribute::IIR_LTFAttribute(void)
+ {
++	this->_kind = IR_LTF_ATTRIBUTE;
+ }
+ 
+ IIR_LTFAttribute::~IIR_LTFAttribute(void)
+@@ -10,17 +11,21 @@
  
  void IIR_LTFAttribute::set_num(IIR *num)
  {
@@ -1698,102 +2863,20 @@ diff -u a/IIR_LTFAttribute.cpp b/IIR_LTFAttribute.cpp
 +	return this->_den;
  }
  
-diff -u a/IIR_Label.cpp b/IIR_Label.cpp
---- a/IIR_Label.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Label.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
+diff -u a/IIR_ModulusOperator.cpp b/IIR_ModulusOperator.cpp
+--- a/IIR_ModulusOperator.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_ModulusOperator.cpp	2011-08-20 17:20:01.407468682 +0100
+@@ -2,6 +2,7 @@
  
- void IIR_Label::set_statement(IIR_SequentialStatement *statement)
+ IIR_ModulusOperator::IIR_ModulusOperator(void)
  {
-+	this->_statement = statement;
++	this->_kind = IR_MODULUS_OPERATOR;
  }
  
- IIR_SequentialStatement *IIR_Label::get_statement(void)
- {
-+	return this->_statement;
- }
- 
-diff -u a/IIR_LeftAttribute.cpp b/IIR_LeftAttribute.cpp
---- a/IIR_LeftAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_LeftAttribute.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_LeftAttribute::set_suffix(IIR *suffix)
- {
-+	this->_suffix = suffix;
- }
- 
- IIR *IIR_LeftAttribute::get_suffix(void)
- {
-+	return this->_suffix;
- }
- 
-diff -u a/IIR_LeftOfAttribute.cpp b/IIR_LeftOfAttribute.cpp
---- a/IIR_LeftOfAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_LeftOfAttribute.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_LeftOfAttribute::set_suffix(IIR_ScalarTypeDefinition *suffix)
- {
-+	this->_suffix = suffix;
- }
- 
- IIR_ScalarTypeDefinition *IIR_LeftOfAttribute::get_suffix(void)
- {
-+	return this->_suffix;
- }
- 
-diff -u a/IIR_LengthAttribute.cpp b/IIR_LengthAttribute.cpp
---- a/IIR_LengthAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_LengthAttribute.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_LengthAttribute::set_suffix(IIR *suffix)
- {
-+	this->_suffix = suffix;
- }
- 
- IIR *IIR_LengthAttribute::get_suffix(void)
- {
-+	return this->_suffix;
- }
- 
-diff -u a/IIR_LibraryClause.cpp b/IIR_LibraryClause.cpp
---- a/IIR_LibraryClause.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_LibraryClause.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,6 +10,7 @@
- 
- void IIR_LibraryClause::set_logical_name(IIR_LibraryDeclaration *logical_name)
- {
-+	this->_logical_name = logical_name;
- }
- 
- void IIR_LibraryClause::operation1(void)
-@@ -18,5 +19,6 @@
- 
- IIR_LibraryDeclaration *IIR_LibraryClause::get_logical_name(void)
- {
-+	return this->_logical_name;
- }
- 
-diff -u a/IIR_LowAttribute.cpp b/IIR_LowAttribute.cpp
---- a/IIR_LowAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_LowAttribute.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
- 
- void IIR_LowAttribute::set_suffix(IIR *suffix)
- {
-+	this->_suffix = suffix;
- }
- 
- IIR *IIR_LowAttribute::get_suffix(void)
- {
-+	return this->_suffix;
- }
- 
+ IIR_ModulusOperator::~IIR_ModulusOperator(void)
 diff -u a/IIR_MonadicOperator.cpp b/IIR_MonadicOperator.cpp
---- a/IIR_MonadicOperator.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_MonadicOperator.cpp	2011-08-20 09:43:26.000000000 +0100
+--- a/IIR_MonadicOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_MonadicOperator.cpp	2011-08-20 17:19:48.011402252 +0100
 @@ -2,17 +2,21 @@
  
  void IIR_MonadicOperator::set_implementation(IIR_SubprogramDeclaration *implementation)
@@ -1816,9 +2899,20 @@ diff -u a/IIR_MonadicOperator.cpp b/IIR_MonadicOperator.cpp
 +	return this->_operand;
  }
  
+diff -u a/IIR_MultiplicationOperator.cpp b/IIR_MultiplicationOperator.cpp
+--- a/IIR_MultiplicationOperator.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_MultiplicationOperator.cpp	2011-08-20 17:20:01.411468701 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_MultiplicationOperator::IIR_MultiplicationOperator(void)
+ {
++	this->_kind = IR_MULTIPLICATION_OPERATOR;
+ }
+ 
+ IIR_MultiplicationOperator::~IIR_MultiplicationOperator(void)
 diff -u a/IIR_Name.cpp b/IIR_Name.cpp
---- a/IIR_Name.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Name.cpp	2011-08-20 09:43:25.000000000 +0100
+--- a/IIR_Name.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_Name.cpp	2011-08-20 17:19:48.011402252 +0100
 @@ -10,9 +10,11 @@
  
  void IIR_Name::set_prefix(IIR *prefix)
@@ -1831,10 +2925,29 @@ diff -u a/IIR_Name.cpp b/IIR_Name.cpp
 +	return this->_prefix;
  }
  
+diff -u a/IIR_NandOperator.cpp b/IIR_NandOperator.cpp
+--- a/IIR_NandOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_NandOperator.cpp	2011-08-20 17:20:01.411468701 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NandOperator::IIR_NandOperator(void)
+ {
++	this->_kind = IR_NAND_OPERATOR;
+ }
+ 
+ IIR_NandOperator::~IIR_NandOperator(void)
 diff -u a/IIR_NatureDeclaration.cpp b/IIR_NatureDeclaration.cpp
---- a/IIR_NatureDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_NatureDeclaration.cpp	2011-08-20 09:43:23.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_NatureDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_NatureDeclaration.cpp	2011-08-20 17:20:01.411468701 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NatureDeclaration::IIR_NatureDeclaration(void)
+ {
++	this->_kind = IR_NATURE_DECLARATION;
+ }
+ 
+ IIR_NatureDeclaration::~IIR_NatureDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_NatureDeclaration::set_nature(IIR_NatureDefinition *nature)
  {
@@ -1847,9 +2960,17 @@ diff -u a/IIR_NatureDeclaration.cpp b/IIR_NatureDeclaration.cpp
  }
  
 diff -u a/IIR_NatureElementDeclaration.cpp b/IIR_NatureElementDeclaration.cpp
---- a/IIR_NatureElementDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_NatureElementDeclaration.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_NatureElementDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_NatureElementDeclaration.cpp	2011-08-20 17:20:01.411468701 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NatureElementDeclaration::IIR_NatureElementDeclaration(void)
+ {
++	this->_kind = IR_NATURE_ELEMENT_DECLARATION;
+ }
+ 
+ IIR_NatureElementDeclaration::~IIR_NatureElementDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_NatureElementDeclaration::set_subnature(IIR_NatureDefinition *subnature)
  {
@@ -1861,10 +2982,40 @@ diff -u a/IIR_NatureElementDeclaration.cpp b/IIR_NatureElementDeclaration.cpp
 +	return this->_subnature;
  }
  
+diff -u a/IIR_NatureElementDeclarationList.cpp b/IIR_NatureElementDeclarationList.cpp
+--- a/IIR_NatureElementDeclarationList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_NatureElementDeclarationList.cpp	2011-08-20 17:20:01.411468701 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NatureElementDeclarationList::IIR_NatureElementDeclarationList(void)
+ {
++	this->_kind = IR_NATURE_ELEMENT_DECLARATION_LIST;
+ }
+ 
+ IIR_NatureElementDeclarationList::~IIR_NatureElementDeclarationList(void)
+diff -u a/IIR_NegationOperator.cpp b/IIR_NegationOperator.cpp
+--- a/IIR_NegationOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_NegationOperator.cpp	2011-08-20 17:20:01.415468726 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NegationOperator::IIR_NegationOperator(void)
+ {
++	this->_kind = IR_NEGATION_OPERATOR;
+ }
+ 
+ IIR_NegationOperator::~IIR_NegationOperator(void)
 diff -u a/IIR_NextStatement.cpp b/IIR_NextStatement.cpp
---- a/IIR_NextStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_NextStatement.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_NextStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_NextStatement.cpp	2011-08-20 17:20:01.415468726 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NextStatement::IIR_NextStatement(void)
+ {
++	this->_kind = IR_NEXT_STATEMENT;
+ }
+ 
+ IIR_NextStatement::~IIR_NextStatement(void)
+@@ -10,17 +11,21 @@
  
  void IIR_NextStatement::set_enclosing_loop(IIR_SequentialStatement *enclosing_loop)
  {
@@ -1887,9 +3038,17 @@ diff -u a/IIR_NextStatement.cpp b/IIR_NextStatement.cpp
  }
  
 diff -u a/IIR_NoiseSourceQuantityDeclaration.cpp b/IIR_NoiseSourceQuantityDeclaration.cpp
---- a/IIR_NoiseSourceQuantityDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_NoiseSourceQuantityDeclaration.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_NoiseSourceQuantityDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_NoiseSourceQuantityDeclaration.cpp	2011-08-20 17:20:01.415468726 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NoiseSourceQuantityDeclaration::IIR_NoiseSourceQuantityDeclaration(void)
+ {
++	this->_kind = IR_NOISE_SOURCE_QUANTITY_DECLARATION;
+ }
+ 
+ IIR_NoiseSourceQuantityDeclaration::~IIR_NoiseSourceQuantityDeclaration(void)
+@@ -10,17 +11,21 @@
  
  void IIR_NoiseSourceQuantityDeclaration::set_subnature_indication(IIR_NatureDefinition *subnature_indication)
  {
@@ -1911,9 +3070,42 @@ diff -u a/IIR_NoiseSourceQuantityDeclaration.cpp b/IIR_NoiseSourceQuantityDeclar
 +	return this->_magnitude_simple_expression;
  }
  
+diff -u a/IIR_NorOperator.cpp b/IIR_NorOperator.cpp
+--- a/IIR_NorOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_NorOperator.cpp	2011-08-20 17:20:01.415468726 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NorOperator::IIR_NorOperator(void)
+ {
++	this->_kind = IR_NOR_OPERATOR;
+ }
+ 
+ IIR_NorOperator::~IIR_NorOperator(void)
+diff -u a/IIR_NotOperator.cpp b/IIR_NotOperator.cpp
+--- a/IIR_NotOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_NotOperator.cpp	2011-08-20 17:20:01.419468740 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NotOperator::IIR_NotOperator(void)
+ {
++	this->_kind = IR_NOT_OPERATOR;
+ }
+ 
+ IIR_NotOperator::~IIR_NotOperator(void)
+diff -u a/IIR_NullStatement.cpp b/IIR_NullStatement.cpp
+--- a/IIR_NullStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_NullStatement.cpp	2011-08-20 17:20:01.419468740 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_NullStatement::IIR_NullStatement(void)
+ {
++	this->_kind = IR_NULL_STATEMENT;
+ }
+ 
+ IIR_NullStatement::~IIR_NullStatement(void)
 diff -u a/IIR_ObjectDeclaration.cpp b/IIR_ObjectDeclaration.cpp
---- a/IIR_ObjectDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ObjectDeclaration.cpp	2011-08-20 09:43:24.000000000 +0100
+--- a/IIR_ObjectDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_ObjectDeclaration.cpp	2011-08-20 17:19:48.015402274 +0100
 @@ -2,9 +2,11 @@
  
  void IIR_ObjectDeclaration::set_subtype(IIR_TypeDefinition *subtype)
@@ -1926,10 +3118,29 @@ diff -u a/IIR_ObjectDeclaration.cpp b/IIR_ObjectDeclaration.cpp
 +	return this->_subtype;
  }
  
+diff -u a/IIR_OrOperator.cpp b/IIR_OrOperator.cpp
+--- a/IIR_OrOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_OrOperator.cpp	2011-08-20 17:20:01.419468740 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_OrOperator::IIR_OrOperator(void)
+ {
++	this->_kind = IR_OR_OPERATOR;
+ }
+ 
+ IIR_OrOperator::~IIR_OrOperator(void)
 diff -u a/IIR_OthersInitialization.cpp b/IIR_OthersInitialization.cpp
---- a/IIR_OthersInitialization.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_OthersInitialization.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_OthersInitialization.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_OthersInitialization.cpp	2011-08-20 17:20:01.419468740 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_OthersInitialization::IIR_OthersInitialization(void)
+ {
++	this->_kind = IR_OTHERS_INITIALIZATION;
+ }
+ 
+ IIR_OthersInitialization::~IIR_OthersInitialization(void)
+@@ -10,9 +11,11 @@
  
  void IIR_OthersInitialization::set_expression(IIR *expression)
  {
@@ -1941,20 +3152,58 @@ diff -u a/IIR_OthersInitialization.cpp b/IIR_OthersInitialization.cpp
 +	return this->_expression;
  }
  
+diff -u a/IIR_PackageBodyDeclaration.cpp b/IIR_PackageBodyDeclaration.cpp
+--- a/IIR_PackageBodyDeclaration.cpp	2011-08-20 17:21:55.376033822 +0100
++++ b/IIR_PackageBodyDeclaration.cpp	2011-08-20 17:20:01.419468740 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PackageBodyDeclaration::IIR_PackageBodyDeclaration(void)
+ {
++	this->_kind = IR_PACKAGE_BODY_DECLARATION;
+ }
+ 
+ IIR_PackageBodyDeclaration::~IIR_PackageBodyDeclaration(void)
 diff -u a/IIR_PackageDeclaration.cpp b/IIR_PackageDeclaration.cpp
---- a/IIR_PackageDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_PackageDeclaration.cpp	2011-08-20 09:43:23.000000000 +0100
-@@ -10,5 +10,6 @@
+--- a/IIR_PackageDeclaration.cpp	2011-08-20 17:21:55.376033822 +0100
++++ b/IIR_PackageDeclaration.cpp	2011-08-20 17:20:01.423468765 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PackageDeclaration::IIR_PackageDeclaration(void)
+ {
++	this->_kind = IR_PACKAGE_DECLARATION;
+ }
+ 
+ IIR_PackageDeclaration::~IIR_PackageDeclaration(void)
+@@ -10,5 +11,6 @@
  
  IIR_PackageBodyDeclaration *IIR_PackageDeclaration::get_package_body(void)
  {
 +	return this->_package_body;
  }
  
+diff -u a/IIR_PathNameAttribute.cpp b/IIR_PathNameAttribute.cpp
+--- a/IIR_PathNameAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_PathNameAttribute.cpp	2011-08-20 17:20:01.423468765 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PathNameAttribute::IIR_PathNameAttribute(void)
+ {
++	this->_kind = IR_PATH_NAME_ATTRIBUTE;
+ }
+ 
+ IIR_PathNameAttribute::~IIR_PathNameAttribute(void)
 diff -u a/IIR_PhysicalLiteral.cpp b/IIR_PhysicalLiteral.cpp
---- a/IIR_PhysicalLiteral.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_PhysicalLiteral.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_PhysicalLiteral.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_PhysicalLiteral.cpp	2011-08-20 17:20:01.423468765 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PhysicalLiteral::IIR_PhysicalLiteral(void)
+ {
++	this->_kind = IR_PHYSICAL_LITERAL;
+ }
+ 
+ IIR_PhysicalLiteral::~IIR_PhysicalLiteral(void)
+@@ -10,17 +11,21 @@
  
  void IIR_PhysicalLiteral::set_abstract_literal(IIR *abstract_literal)
  {
@@ -1977,8 +3226,8 @@ diff -u a/IIR_PhysicalLiteral.cpp b/IIR_PhysicalLiteral.cpp
  }
  
 diff -u a/IIR_PhysicalSubtypeDefinition.cpp b/IIR_PhysicalSubtypeDefinition.cpp
---- a/IIR_PhysicalSubtypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_PhysicalSubtypeDefinition.cpp	2011-08-20 10:08:28.000000000 +0100
+--- a/IIR_PhysicalSubtypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_PhysicalSubtypeDefinition.cpp	2011-08-20 17:19:48.019402299 +0100
 @@ -6,18 +6,22 @@
  
  void IIR_PhysicalSubtypeDefinition::set_base_type(IIR_PhysicalTypeDefinition *base_type)
@@ -2003,9 +3252,17 @@ diff -u a/IIR_PhysicalSubtypeDefinition.cpp b/IIR_PhysicalSubtypeDefinition.cpp
  
  void IIR_PhysicalSubtypeDefinition::release(void)
 diff -u a/IIR_PhysicalTypeDefinition.cpp b/IIR_PhysicalTypeDefinition.cpp
---- a/IIR_PhysicalTypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_PhysicalTypeDefinition.cpp	2011-08-20 10:06:37.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_PhysicalTypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_PhysicalTypeDefinition.cpp	2011-08-20 17:20:01.423468765 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PhysicalTypeDefinition::IIR_PhysicalTypeDefinition(void)
+ {
++	this->_kind = IR_PHYSICAL_TYPE_DEFINITION;
+ }
+ 
+ IIR_PhysicalTypeDefinition::~IIR_PhysicalTypeDefinition(void)
+@@ -10,9 +11,11 @@
  
  void IIR_PhysicalTypeDefinition::set_primary_unit(IIR_PhysicalUnit *primary_unit)
  {
@@ -2018,9 +3275,17 @@ diff -u a/IIR_PhysicalTypeDefinition.cpp b/IIR_PhysicalTypeDefinition.cpp
  }
  
 diff -u a/IIR_PhysicalUnit.cpp b/IIR_PhysicalUnit.cpp
---- a/IIR_PhysicalUnit.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_PhysicalUnit.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_PhysicalUnit.cpp	2011-08-20 17:21:55.376033822 +0100
++++ b/IIR_PhysicalUnit.cpp	2011-08-20 17:20:01.423468765 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PhysicalUnit::IIR_PhysicalUnit(void)
+ {
++	this->_kind = IR_PHYSICAL_UNIT;
+ }
+ 
+ IIR_PhysicalUnit::~IIR_PhysicalUnit(void)
+@@ -10,17 +11,21 @@
  
  void IIR_PhysicalUnit::set_multiplier(IIR *multiplier)
  {
@@ -2042,10 +3307,29 @@ diff -u a/IIR_PhysicalUnit.cpp b/IIR_PhysicalUnit.cpp
 +	return this->_unit_name;
  }
  
+diff -u a/IIR_PortList.cpp b/IIR_PortList.cpp
+--- a/IIR_PortList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_PortList.cpp	2011-08-20 17:20:01.427468779 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PortList::IIR_PortList(void)
+ {
++	this->_kind = IR_PORT_LIST;
+ }
+ 
+ IIR_PortList::~IIR_PortList(void)
 diff -u a/IIR_PosAttribute.cpp b/IIR_PosAttribute.cpp
---- a/IIR_PosAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_PosAttribute.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_PosAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_PosAttribute.cpp	2011-08-20 17:20:01.427468779 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PosAttribute::IIR_PosAttribute(void)
+ {
++	this->_kind = IR_POS_ATTRIBUTE;
+ }
+ 
+ IIR_PosAttribute::~IIR_PosAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_PosAttribute::set_suffix(IIR_ScalarTypeDefinition *suffix)
  {
@@ -2058,9 +3342,17 @@ diff -u a/IIR_PosAttribute.cpp b/IIR_PosAttribute.cpp
  }
  
 diff -u a/IIR_PredAttribute.cpp b/IIR_PredAttribute.cpp
---- a/IIR_PredAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_PredAttribute.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_PredAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_PredAttribute.cpp	2011-08-20 17:20:01.427468779 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_PredAttribute::IIR_PredAttribute(void)
+ {
++	this->_kind = IR_PRED_ATTRIBUTE;
+ }
+ 
+ IIR_PredAttribute::~IIR_PredAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_PredAttribute::set_suffix(IIR_ScalarTypeDefinition *suffix)
  {
@@ -2073,9 +3365,9 @@ diff -u a/IIR_PredAttribute.cpp b/IIR_PredAttribute.cpp
  }
  
 diff -u a/IIR_ProcedureCallStatement.cpp b/IIR_ProcedureCallStatement.cpp
---- a/IIR_ProcedureCallStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ProcedureCallStatement.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -2,10 +2,12 @@
+--- a/IIR_ProcedureCallStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_ProcedureCallStatement.cpp	2011-08-20 17:20:01.427468779 +0100
+@@ -2,14 +2,17 @@
  
  void IIR_ProcedureCallStatement::set_procedure_name(IIR *procedure_name)
  {
@@ -2088,10 +3380,35 @@ diff -u a/IIR_ProcedureCallStatement.cpp b/IIR_ProcedureCallStatement.cpp
  }
  
  IIR_ProcedureCallStatement::IIR_ProcedureCallStatement(void)
+ {
++	this->_kind = IR_PROCEDURE_CALL_STATEMENT;
+ }
+ 
+ IIR_ProcedureCallStatement::~IIR_ProcedureCallStatement(void)
+Only in b: IIR_ProcedureCallStatement.cpp.orig
+diff -u a/IIR_ProcedureDeclaration.cpp b/IIR_ProcedureDeclaration.cpp
+--- a/IIR_ProcedureDeclaration.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_ProcedureDeclaration.cpp	2011-08-20 17:20:01.431468804 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ProcedureDeclaration::IIR_ProcedureDeclaration(void)
+ {
++	this->_kind = IR_PROCEDURE_DECLARATION;
+ }
+ 
+ IIR_ProcedureDeclaration::~IIR_ProcedureDeclaration(void)
 diff -u a/IIR_ProcessStatement.cpp b/IIR_ProcessStatement.cpp
---- a/IIR_ProcessStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ProcessStatement.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_ProcessStatement.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_ProcessStatement.cpp	2011-08-20 17:20:01.431468804 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ProcessStatement::IIR_ProcessStatement(void)
+ {
++	this->_kind = IR_PROCESS_STATEMENT;
+ }
+ 
+ IIR_ProcessStatement::~IIR_ProcessStatement(void)
+@@ -10,9 +11,11 @@
  
  void IIR_ProcessStatement::set_postponed(IR_Boolean postponed)
  {
@@ -2104,9 +3421,14 @@ diff -u a/IIR_ProcessStatement.cpp b/IIR_ProcessStatement.cpp
  }
  
 diff -u a/IIR_QualifiedExpression.cpp b/IIR_QualifiedExpression.cpp
---- a/IIR_QualifiedExpression.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_QualifiedExpression.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_QualifiedExpression.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_QualifiedExpression.cpp	2011-08-20 17:20:01.431468804 +0100
+@@ -6,21 +6,26 @@
+ 
+ IIR_QualifiedExpression::IIR_QualifiedExpression(void)
+ {
++	this->_kind = IR_QUALIFIED_EXPRESSION;
+ }
  
  void IIR_QualifiedExpression::set_type_mark(IIR_TypeDefinition *type_mark)
  {
@@ -2129,9 +3451,17 @@ diff -u a/IIR_QualifiedExpression.cpp b/IIR_QualifiedExpression.cpp
  }
  
 diff -u a/IIR_QuantityInterfaceDeclaration.cpp b/IIR_QuantityInterfaceDeclaration.cpp
---- a/IIR_QuantityInterfaceDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_QuantityInterfaceDeclaration.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_QuantityInterfaceDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_QuantityInterfaceDeclaration.cpp	2011-08-20 17:20:01.435468818 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_QuantityInterfaceDeclaration::IIR_QuantityInterfaceDeclaration(void)
+ {
++	this->_kind = IR_QUANTITY_INTERFACE_DECLARATION;
+ }
+ 
+ IIR_QuantityInterfaceDeclaration::~IIR_QuantityInterfaceDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_QuantityInterfaceDeclaration::set_subnature_indication(IIR_NatureDefinition *subnature_indication)
  {
@@ -2144,9 +3474,17 @@ diff -u a/IIR_QuantityInterfaceDeclaration.cpp b/IIR_QuantityInterfaceDeclaratio
  }
  
 diff -u a/IIR_QuietAttribute.cpp b/IIR_QuietAttribute.cpp
---- a/IIR_QuietAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_QuietAttribute.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_QuietAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_QuietAttribute.cpp	2011-08-20 17:20:01.435468818 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_QuietAttribute::IIR_QuietAttribute(void)
+ {
++	this->_kind = IR_QUIET_ATTRIBUTE;
+ }
+ 
+ IIR_QuietAttribute::~IIR_QuietAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_QuietAttribute::set_suffix(IIR *suffix)
  {
@@ -2159,9 +3497,17 @@ diff -u a/IIR_QuietAttribute.cpp b/IIR_QuietAttribute.cpp
  }
  
 diff -u a/IIR_RangeAttribute.cpp b/IIR_RangeAttribute.cpp
---- a/IIR_RangeAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_RangeAttribute.cpp	2011-08-20 09:43:20.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_RangeAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_RangeAttribute.cpp	2011-08-20 17:20:01.435468818 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_RangeAttribute::IIR_RangeAttribute(void)
+ {
++	this->_kind = IR_RANGE_ATTRIBUTE;
+ }
+ 
+ IIR_RangeAttribute::~IIR_RangeAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_RangeAttribute::set_suffix(IIR *suffix)
  {
@@ -2173,10 +3519,40 @@ diff -u a/IIR_RangeAttribute.cpp b/IIR_RangeAttribute.cpp
 +	return this->_suffix;
  }
  
+diff -u a/IIR_RangeTypeDefinition.cpp b/IIR_RangeTypeDefinition.cpp
+--- a/IIR_RangeTypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_RangeTypeDefinition.cpp	2011-08-20 17:20:01.435468818 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_RangeTypeDefinition::IIR_RangeTypeDefinition(void)
+ {
++	this->_kind = IR_RANGE_TYPE_DEFINITION;
+ }
+ 
+ IIR_RangeTypeDefinition::~IIR_RangeTypeDefinition(void)
+diff -u a/IIR_RecordNatureDefinition.cpp b/IIR_RecordNatureDefinition.cpp
+--- a/IIR_RecordNatureDefinition.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_RecordNatureDefinition.cpp	2011-08-20 17:20:01.439468841 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_RecordNatureDefinition::IIR_RecordNatureDefinition(void)
+ {
++	this->_kind = IR_RECORD_NATURE_DEFINITION;
+ }
+ 
+ IIR_RecordNatureDefinition::~IIR_RecordNatureDefinition(void)
 diff -u a/IIR_RecordSubnatureDefinition.cpp b/IIR_RecordSubnatureDefinition.cpp
---- a/IIR_RecordSubnatureDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_RecordSubnatureDefinition.cpp	2011-08-20 10:26:08.000000000 +0100
-@@ -10,21 +10,26 @@
+--- a/IIR_RecordSubnatureDefinition.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_RecordSubnatureDefinition.cpp	2011-08-20 17:20:01.439468841 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_RecordSubnatureDefinition::IIR_RecordSubnatureDefinition(void)
+ {
++	this->_kind = IR_RECORD_SUBNATURE_DEFINITION;
+ }
+ 
+ IIR_RecordSubnatureDefinition::~IIR_RecordSubnatureDefinition(void)
+@@ -10,21 +11,26 @@
  
  void IIR_RecordSubnatureDefinition::set_across_tolerance(IIR *across_tolerance)
  {
@@ -2204,8 +3580,8 @@ diff -u a/IIR_RecordSubnatureDefinition.cpp b/IIR_RecordSubnatureDefinition.cpp
  }
  
 diff -u a/IIR_RecordSubtypeDefinition.cpp b/IIR_RecordSubtypeDefinition.cpp
---- a/IIR_RecordSubtypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_RecordSubtypeDefinition.cpp	2011-08-20 10:10:58.000000000 +0100
+--- a/IIR_RecordSubtypeDefinition.cpp	2011-08-20 17:21:55.356033724 +0100
++++ b/IIR_RecordSubtypeDefinition.cpp	2011-08-20 17:19:48.031402358 +0100
 @@ -6,18 +6,22 @@
  
  void IIR_RecordSubtypeDefinition::set_base_type(IIR_RecordTypeDefinition *base_type)
@@ -2229,10 +3605,43 @@ diff -u a/IIR_RecordSubtypeDefinition.cpp b/IIR_RecordSubtypeDefinition.cpp
  }
  
  void IIR_RecordSubtypeDefinition::release(void)
+diff -u a/IIR_RecordTypeDefinition.cpp b/IIR_RecordTypeDefinition.cpp
+--- a/IIR_RecordTypeDefinition.cpp	2011-08-20 17:21:55.356033724 +0100
++++ b/IIR_RecordTypeDefinition.cpp	2011-08-20 17:20:01.439468841 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_RecordTypeDefinition::IIR_RecordTypeDefinition(void)
+ {
++	this->_kind = IR_RECORD_TYPE_DEFINITION;
+ }
+ 
+ IIR_RecordTypeDefinition::~IIR_RecordTypeDefinition(void)
+diff -u a/IIR_ReferenceAttribute.cpp b/IIR_ReferenceAttribute.cpp
+--- a/IIR_ReferenceAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_ReferenceAttribute.cpp	2011-08-20 17:20:01.439468841 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ReferenceAttribute::IIR_ReferenceAttribute(void)
+ {
++	this->_kind = IR_REFERENCE_ATTRIBUTE;
+ }
+ 
+ IIR_ReferenceAttribute::~IIR_ReferenceAttribute(void)
+diff -u a/IIR_RemainderOperator.cpp b/IIR_RemainderOperator.cpp
+--- a/IIR_RemainderOperator.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_RemainderOperator.cpp	2011-08-20 17:20:01.443468866 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_RemainderOperator::IIR_RemainderOperator(void)
+ {
++	this->_kind = IR_REMAINDER_OPERATOR;
+ }
+ 
+ IIR_RemainderOperator::~IIR_RemainderOperator(void)
 diff -u a/IIR_ReportStatement.cpp b/IIR_ReportStatement.cpp
---- a/IIR_ReportStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ReportStatement.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -2,18 +2,22 @@
+--- a/IIR_ReportStatement.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_ReportStatement.cpp	2011-08-20 17:20:01.443468866 +0100
+@@ -2,22 +2,27 @@
  
  void IIR_ReportStatement::set_report_expression(IIR *report_expression)
  {
@@ -2255,10 +3664,24 @@ diff -u a/IIR_ReportStatement.cpp b/IIR_ReportStatement.cpp
  }
  
  IIR_ReportStatement::IIR_ReportStatement(void)
+ {
++	this->_kind = IR_REPORT_STATEMENT;
+ }
+ 
+ IIR_ReportStatement::~IIR_ReportStatement(void)
+Only in b: IIR_ReportStatement.cpp.orig
 diff -u a/IIR_ReturnStatement.cpp b/IIR_ReturnStatement.cpp
---- a/IIR_ReturnStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ReturnStatement.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_ReturnStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_ReturnStatement.cpp	2011-08-20 17:20:01.447468882 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ReturnStatement::IIR_ReturnStatement(void)
+ {
++	this->_kind = IR_RETURN_STATEMENT;
+ }
+ 
+ IIR_ReturnStatement::~IIR_ReturnStatement(void)
+@@ -10,17 +11,21 @@
  
  void IIR_ReturnStatement::set_enclosing_subprogram(IIR_SubprogramDeclaration *enclosing_subprogram)
  {
@@ -2281,9 +3704,17 @@ diff -u a/IIR_ReturnStatement.cpp b/IIR_ReturnStatement.cpp
  }
  
 diff -u a/IIR_ReverseRangeAttribute.cpp b/IIR_ReverseRangeAttribute.cpp
---- a/IIR_ReverseRangeAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ReverseRangeAttribute.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_ReverseRangeAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_ReverseRangeAttribute.cpp	2011-08-20 17:20:01.447468882 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ReverseRangeAttribute::IIR_ReverseRangeAttribute(void)
+ {
++	this->_kind = IR_REVERSE_RANGE_ATTRIBUTE;
+ }
+ 
+ IIR_ReverseRangeAttribute::~IIR_ReverseRangeAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_ReverseRangeAttribute::set_suffix(IIR *suffix)
  {
@@ -2296,9 +3727,17 @@ diff -u a/IIR_ReverseRangeAttribute.cpp b/IIR_ReverseRangeAttribute.cpp
  }
  
 diff -u a/IIR_RightAttribute.cpp b/IIR_RightAttribute.cpp
---- a/IIR_RightAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_RightAttribute.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_RightAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_RightAttribute.cpp	2011-08-20 17:20:01.447468882 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_RightAttribute::IIR_RightAttribute(void)
+ {
++	this->_kind = IR_RIGHT_ATTRIBUTE;
+ }
+ 
+ IIR_RightAttribute::~IIR_RightAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_RightAttribute::set_suffix(IIR *suffix)
  {
@@ -2311,9 +3750,17 @@ diff -u a/IIR_RightAttribute.cpp b/IIR_RightAttribute.cpp
  }
  
 diff -u a/IIR_RightOfAttribute.cpp b/IIR_RightOfAttribute.cpp
---- a/IIR_RightOfAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_RightOfAttribute.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_RightOfAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_RightOfAttribute.cpp	2011-08-20 17:20:01.447468882 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_RightOfAttribute::IIR_RightOfAttribute(void)
+ {
++	this->_kind = IR_RIGHT_OF_ATTRIBUTE;
+ }
+ 
+ IIR_RightOfAttribute::~IIR_RightOfAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_RightOfAttribute::set_suffix(IIR_ScalarTypeDefinition *suffix)
  {
@@ -2325,10 +3772,37 @@ diff -u a/IIR_RightOfAttribute.cpp b/IIR_RightOfAttribute.cpp
 +	return this->_suffix;
  }
  
+diff -u a/IIR_ROLOperator.cpp b/IIR_ROLOperator.cpp
+--- a/IIR_ROLOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_ROLOperator.cpp	2011-08-20 17:20:01.447468882 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ROLOperator::IIR_ROLOperator(void)
+ {
++	this->_kind = IR_ROL_OPERATOR;
+ }
+ 
+ IIR_ROLOperator::~IIR_ROLOperator(void)
+diff -u a/IIR_ROROperator.cpp b/IIR_ROROperator.cpp
+--- a/IIR_ROROperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_ROROperator.cpp	2011-08-20 17:20:01.451468902 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ROROperator::IIR_ROROperator(void)
+ {
++	this->_kind = IR_ROR_OPERATOR;
+ }
+ 
+ IIR_ROROperator::~IIR_ROROperator(void)
 diff -u a/IIR_ScalarNatureDefinition.cpp b/IIR_ScalarNatureDefinition.cpp
---- a/IIR_ScalarNatureDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ScalarNatureDefinition.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -6,18 +6,22 @@
+--- a/IIR_ScalarNatureDefinition.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_ScalarNatureDefinition.cpp	2011-08-20 17:20:01.451468902 +0100
+@@ -2,22 +2,27 @@
+ 
+ IIR_ScalarNatureDefinition::IIR_ScalarNatureDefinition(void)
+ {
++	this->_kind = IR_SCALAR_NATURE_DEFINITION;
+ }
  
  void IIR_ScalarNatureDefinition::set_across(IIR_NatureDefinition *across)
  {
@@ -2352,9 +3826,14 @@ diff -u a/IIR_ScalarNatureDefinition.cpp b/IIR_ScalarNatureDefinition.cpp
  
  IIR_ScalarNatureDefinition::~IIR_ScalarNatureDefinition(void)
 diff -u a/IIR_ScalarSubnatureDefinition.cpp b/IIR_ScalarSubnatureDefinition.cpp
---- a/IIR_ScalarSubnatureDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ScalarSubnatureDefinition.cpp	2011-08-20 10:43:39.000000000 +0100
-@@ -6,18 +6,22 @@
+--- a/IIR_ScalarSubnatureDefinition.cpp	2011-08-20 17:21:55.360033747 +0100
++++ b/IIR_ScalarSubnatureDefinition.cpp	2011-08-20 17:20:01.451468902 +0100
+@@ -2,22 +2,27 @@
+ 
+ IIR_ScalarSubnatureDefinition::IIR_ScalarSubnatureDefinition(void)
+ {
++	this->_kind = IR_SCALAR_SUBNATURE_DEFINITION;
+ }
  
  void IIR_ScalarSubnatureDefinition::set_across_tolerance(IIR *across_tolerance)
  {
@@ -2377,7 +3856,7 @@ diff -u a/IIR_ScalarSubnatureDefinition.cpp b/IIR_ScalarSubnatureDefinition.cpp
  }
  
  IIR_ScalarSubnatureDefinition::~IIR_ScalarSubnatureDefinition(void)
-@@ -26,5 +30,6 @@
+@@ -26,5 +31,6 @@
  
  IIR_ScalarNatureDefinition *IIR_ScalarSubnatureDefinition::get_base_nature(void)
  {
@@ -2385,8 +3864,8 @@ diff -u a/IIR_ScalarSubnatureDefinition.cpp b/IIR_ScalarSubnatureDefinition.cpp
  }
  
 diff -u a/IIR_ScalarTypeDefinition.cpp b/IIR_ScalarTypeDefinition.cpp
---- a/IIR_ScalarTypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ScalarTypeDefinition.cpp	2011-08-20 09:43:20.000000000 +0100
+--- a/IIR_ScalarTypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_ScalarTypeDefinition.cpp	2011-08-20 17:19:48.035402373 +0100
 @@ -2,25 +2,31 @@
  
  void IIR_ScalarTypeDefinition::set_left(IIR *left)
@@ -2419,10 +3898,29 @@ diff -u a/IIR_ScalarTypeDefinition.cpp b/IIR_ScalarTypeDefinition.cpp
 +	return this->_right;
  }
  
+diff -u a/IIR_SelectedNameByAll.cpp b/IIR_SelectedNameByAll.cpp
+--- a/IIR_SelectedNameByAll.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_SelectedNameByAll.cpp	2011-08-20 17:20:01.451468902 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SelectedNameByAll::IIR_SelectedNameByAll(void)
+ {
++	this->_kind = IR_SELECTED_NAME_BY_ALL;
+ }
+ 
+ IIR_SelectedNameByAll::~IIR_SelectedNameByAll(void)
 diff -u a/IIR_SelectedName.cpp b/IIR_SelectedName.cpp
---- a/IIR_SelectedName.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SelectedName.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SelectedName.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_SelectedName.cpp	2011-08-20 17:20:01.451468902 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SelectedName::IIR_SelectedName(void)
+ {
++	this->_kind = IR_SELECTED_NAME;
+ }
+ 
+ IIR_SelectedName::~IIR_SelectedName(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SelectedName::set_suffix(IIR *suffix)
  {
@@ -2435,9 +3933,17 @@ diff -u a/IIR_SelectedName.cpp b/IIR_SelectedName.cpp
  }
  
 diff -u a/IIR_SelectedWaveform.cpp b/IIR_SelectedWaveform.cpp
---- a/IIR_SelectedWaveform.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SelectedWaveform.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SelectedWaveform.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_SelectedWaveform.cpp	2011-08-20 17:20:01.455468926 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SelectedWaveform::IIR_SelectedWaveform(void)
+ {
++	this->_kind = IR_SELECTED_WAVEFORM;
+ }
+ 
+ IIR_SelectedWaveform::~IIR_SelectedWaveform(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SelectedWaveform::set_choice(IIR *choice)
  {
@@ -2449,10 +3955,51 @@ diff -u a/IIR_SelectedWaveform.cpp b/IIR_SelectedWaveform.cpp
 +	return this->_choice;
  }
  
+diff -u a/IIR_SelectedWaveFormList.cpp b/IIR_SelectedWaveFormList.cpp
+--- a/IIR_SelectedWaveFormList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_SelectedWaveFormList.cpp	2011-08-20 17:20:01.455468926 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SelectedWaveFormList::IIR_SelectedWaveFormList(void)
+ {
++	this->_kind = IR_SELECTED_WAVEFORM_LIST;
+ }
+ 
+ IIR_SelectedWaveFormList::~IIR_SelectedWaveFormList(void)
+diff -u a/IIR_SensitizedProcessStatement.cpp b/IIR_SensitizedProcessStatement.cpp
+--- a/IIR_SensitizedProcessStatement.cpp	2011-08-20 17:21:55.420034044 +0100
++++ b/IIR_SensitizedProcessStatement.cpp	2011-08-20 17:20:01.455468926 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SensitizedProcessStatement::IIR_SensitizedProcessStatement(void)
+ {
++	this->_kind = IR_SENSITIZED_PROCESS_STATEMENT;
+ }
+ 
+ IIR_SensitizedProcessStatement::~IIR_SensitizedProcessStatement(void)
+diff -u a/IIR_SequentialStatementList.cpp b/IIR_SequentialStatementList.cpp
+--- a/IIR_SequentialStatementList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_SequentialStatementList.cpp	2011-08-20 17:20:01.455468926 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SequentialStatementList::IIR_SequentialStatementList(void)
+ {
++	this->_kind = IR_SEQUENTIAL_STATEMENT_LIST;
+ }
+ 
+ IIR_SequentialStatementList::~IIR_SequentialStatementList(void)
 diff -u a/IIR_SharedVariableDeclaration.cpp b/IIR_SharedVariableDeclaration.cpp
---- a/IIR_SharedVariableDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SharedVariableDeclaration.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SharedVariableDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_SharedVariableDeclaration.cpp	2011-08-20 17:20:01.455468926 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SharedVariableDeclaration::IIR_SharedVariableDeclaration(void)
+ {
++	this->_kind = IR_SHARED_VARIABLE_DECLARATION;
+ }
+ 
+ IIR_SharedVariableDeclaration::~IIR_SharedVariableDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SharedVariableDeclaration::set_value(IIR *value)
  {
@@ -2465,9 +4012,17 @@ diff -u a/IIR_SharedVariableDeclaration.cpp b/IIR_SharedVariableDeclaration.cpp
  }
  
 diff -u a/IIR_SignalAssignmentStatement.cpp b/IIR_SignalAssignmentStatement.cpp
---- a/IIR_SignalAssignmentStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SignalAssignmentStatement.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,25 +10,31 @@
+--- a/IIR_SignalAssignmentStatement.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_SignalAssignmentStatement.cpp	2011-08-20 17:20:01.459468939 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SignalAssignmentStatement::IIR_SignalAssignmentStatement(void)
+ {
++	this->_kind = IR_SIGNAL_ASSIGNMENT_STATEMENT;
+ }
+ 
+ IIR_SignalAssignmentStatement::~IIR_SignalAssignmentStatement(void)
+@@ -10,25 +11,31 @@
  
  void IIR_SignalAssignmentStatement::set_target(IIR *target)
  {
@@ -2499,35 +4054,51 @@ diff -u a/IIR_SignalAssignmentStatement.cpp b/IIR_SignalAssignmentStatement.cpp
 +	return this->_reject_time_expression;
  }
  
-diff -u a/IIR_SignalDeclaraion.cpp b/IIR_SignalDeclaraion.cpp
---- a/IIR_SignalDeclaraion.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SignalDeclaraion.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,17 +10,21 @@
+diff -u a/IIR_SignalDeclaration.cpp b/IIR_SignalDeclaration.cpp
+--- a/IIR_SignalDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_SignalDeclaration.cpp	2011-08-20 17:20:01.459468939 +0100
+@@ -2,6 +2,7 @@
  
- void IIR_SignalDeclaraion::set_value(IIR *value)
+ IIR_SignalDeclaration::IIR_SignalDeclaration(void)
+ {
++	this->_kind = IR_SIGNAL_DECLARATION;
+ }
+ 
+ IIR_SignalDeclaration::~IIR_SignalDeclaration(void)
+@@ -10,17 +11,21 @@
+ 
+ void IIR_SignalDeclaration::set_value(IIR *value)
  {
 +	this->_value = value;
  }
  
- IIR *IIR_SignalDeclaraion::get_value(void)
+ IIR *IIR_SignalDeclaration::get_value(void)
  {
 +	return this->_value;
  }
  
- void IIR_SignalDeclaraion::set_signal_kind(enum IR_SignalKind signal_kind)
+ void IIR_SignalDeclaration::set_signal_kind(enum IR_SignalKind signal_kind)
  {
 +	this->_signal_kind = signal_kind;
  }
  
- enum IR_SignalKind IIR_SignalDeclaraion::get_signal_kind(void)
+ enum IR_SignalKind IIR_SignalDeclaration::get_signal_kind(void)
  {
 +	return this->_signal_kind;
  }
  
 diff -u a/IIR_SignalInterfaceDeclaration.cpp b/IIR_SignalInterfaceDeclaration.cpp
---- a/IIR_SignalInterfaceDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SignalInterfaceDeclaration.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SignalInterfaceDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_SignalInterfaceDeclaration.cpp	2011-08-20 17:20:01.459468939 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SignalInterfaceDeclaration::IIR_SignalInterfaceDeclaration(void)
+ {
++	this->_kind = IR_SIGNAL_INTERFACE_DECLARATION;
+ }
+ 
+ IIR_SignalInterfaceDeclaration::~IIR_SignalInterfaceDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SignalInterfaceDeclaration::set_signal_kind(enum IR_SignalKind signal_kind)
  {
@@ -2540,9 +4111,14 @@ diff -u a/IIR_SignalInterfaceDeclaration.cpp b/IIR_SignalInterfaceDeclaration.cp
  }
  
 diff -u a/IIR_Signature.cpp b/IIR_Signature.cpp
---- a/IIR_Signature.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Signature.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -6,10 +6,12 @@
+--- a/IIR_Signature.cpp	2011-08-20 17:21:55.356033724 +0100
++++ b/IIR_Signature.cpp	2011-08-20 17:20:01.459468939 +0100
+@@ -2,14 +2,17 @@
+ 
+ IIR_Signature::IIR_Signature(void)
+ {
++	this->_kind = IR_SIGNATURE;
+ }
  
  void IIR_Signature::set_return_type(IIR_TypeDefinition *return_type)
  {
@@ -2555,10 +4131,25 @@ diff -u a/IIR_Signature.cpp b/IIR_Signature.cpp
  }
  
  IIR_Signature::~IIR_Signature(void)
+diff -u a/IIR_SimpleNameAttribute.cpp b/IIR_SimpleNameAttribute.cpp
+--- a/IIR_SimpleNameAttribute.cpp	2011-08-20 17:21:55.392033900 +0100
++++ b/IIR_SimpleNameAttribute.cpp	2011-08-20 17:20:01.463468961 +0100
+@@ -6,5 +6,6 @@
+ 
+ IIR_SimpleNameAttribute::IIR_SimpleNameAttribute(void)
+ {
++	this->_kind = IR_SIMPLE_NAME_ATTRIBUTE;
+ }
+ 
 diff -u a/IIR_SimpleName.cpp b/IIR_SimpleName.cpp
---- a/IIR_SimpleName.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SimpleName.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SimpleName.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_SimpleName.cpp	2011-08-20 17:20:01.463468961 +0100
+@@ -6,13 +6,16 @@
+ 
+ IIR_SimpleName::IIR_SimpleName(void)
+ {
++	this->_kind = IR_SIMPLE_NAME;
+ }
  
  void IIR_SimpleName::set_name(IIR_TextLiteral *name)
  {
@@ -2571,9 +4162,17 @@ diff -u a/IIR_SimpleName.cpp b/IIR_SimpleName.cpp
  }
  
 diff -u a/IIR_SimpleSimultaneousStatement.cpp b/IIR_SimpleSimultaneousStatement.cpp
---- a/IIR_SimpleSimultaneousStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SimpleSimultaneousStatement.cpp	2011-08-20 09:43:20.000000000 +0100
-@@ -10,25 +10,31 @@
+--- a/IIR_SimpleSimultaneousStatement.cpp	2011-08-20 17:21:55.424034059 +0100
++++ b/IIR_SimpleSimultaneousStatement.cpp	2011-08-20 17:20:01.463468961 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimpleSimultaneousStatement::IIR_SimpleSimultaneousStatement(void)
+ {
++	this->_kind = IR_SIMPLE_SIMULTANEOUS_STATEMENT;
+ }
+ 
+ IIR_SimpleSimultaneousStatement::~IIR_SimpleSimultaneousStatement(void)
+@@ -10,25 +11,31 @@
  
  void IIR_SimpleSimultaneousStatement::set_left_expression(IIR *left_expression)
  {
@@ -2605,10 +4204,29 @@ diff -u a/IIR_SimpleSimultaneousStatement.cpp b/IIR_SimpleSimultaneousStatement.
 +	return this->_tolerance_aspect;
  }
  
+diff -u a/IIR_SimultaneousAlternativeByChoices.cpp b/IIR_SimultaneousAlternativeByChoices.cpp
+--- a/IIR_SimultaneousAlternativeByChoices.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_SimultaneousAlternativeByChoices.cpp	2011-08-20 17:20:01.463468961 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousAlternativeByChoices::IIR_SimultaneousAlternativeByChoices(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_ALTERNATIVE_BY_CHOICES;
+ }
+ 
+ IIR_SimultaneousAlternativeByChoices::~IIR_SimultaneousAlternativeByChoices(void)
 diff -u a/IIR_SimultaneousAlternativeByExpression.cpp b/IIR_SimultaneousAlternativeByExpression.cpp
---- a/IIR_SimultaneousAlternativeByExpression.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SimultaneousAlternativeByExpression.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SimultaneousAlternativeByExpression.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_SimultaneousAlternativeByExpression.cpp	2011-08-20 17:20:01.467468986 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousAlternativeByExpression::IIR_SimultaneousAlternativeByExpression(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_ALTERNATIVE_BY_EXPRESSION;
+ }
+ 
+ IIR_SimultaneousAlternativeByExpression::~IIR_SimultaneousAlternativeByExpression(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SimultaneousAlternativeByExpression::set_choice(IIR *choice)
  {
@@ -2620,10 +4238,40 @@ diff -u a/IIR_SimultaneousAlternativeByExpression.cpp b/IIR_SimultaneousAlternat
 +	return this->_choice;
  }
  
+diff -u a/IIR_SimultaneousAlternativeByOthers.cpp b/IIR_SimultaneousAlternativeByOthers.cpp
+--- a/IIR_SimultaneousAlternativeByOthers.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_SimultaneousAlternativeByOthers.cpp	2011-08-20 17:20:01.467468986 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousAlternativeByOthers::IIR_SimultaneousAlternativeByOthers(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_ALTERNATIVE_BY_OTHERS;
+ }
+ 
+ IIR_SimultaneousAlternativeByOthers::~IIR_SimultaneousAlternativeByOthers(void)
+diff -u a/IIR_SimultaneousAlternativeList.cpp b/IIR_SimultaneousAlternativeList.cpp
+--- a/IIR_SimultaneousAlternativeList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_SimultaneousAlternativeList.cpp	2011-08-20 17:20:01.467468986 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousAlternativeList::IIR_SimultaneousAlternativeList(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_ALTERNATIVE_LIST;
+ }
+ 
+ IIR_SimultaneousAlternativeList::~IIR_SimultaneousAlternativeList(void)
 diff -u a/IIR_SimultaneousCaseStatement.cpp b/IIR_SimultaneousCaseStatement.cpp
---- a/IIR_SimultaneousCaseStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SimultaneousCaseStatement.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SimultaneousCaseStatement.cpp	2011-08-20 17:21:55.424034059 +0100
++++ b/IIR_SimultaneousCaseStatement.cpp	2011-08-20 17:20:01.467468986 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousCaseStatement::IIR_SimultaneousCaseStatement(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_CASE_STATEMENT;
+ }
+ 
+ IIR_SimultaneousCaseStatement::~IIR_SimultaneousCaseStatement(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SimultaneousCaseStatement::set_expression(IIR *expression)
  {
@@ -2636,9 +4284,17 @@ diff -u a/IIR_SimultaneousCaseStatement.cpp b/IIR_SimultaneousCaseStatement.cpp
  }
  
 diff -u a/IIR_SimultaneousElsif.cpp b/IIR_SimultaneousElsif.cpp
---- a/IIR_SimultaneousElsif.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SimultaneousElsif.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_SimultaneousElsif.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_SimultaneousElsif.cpp	2011-08-20 17:20:01.471469001 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousElsif::IIR_SimultaneousElsif(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_ELSIF;
+ }
+ 
+ IIR_SimultaneousElsif::~IIR_SimultaneousElsif(void)
+@@ -10,17 +11,21 @@
  
  void IIR_SimultaneousElsif::set_condition(IIR *condition)
  {
@@ -2661,9 +4317,17 @@ diff -u a/IIR_SimultaneousElsif.cpp b/IIR_SimultaneousElsif.cpp
  }
  
 diff -u a/IIR_SimultaneousIfStatement.cpp b/IIR_SimultaneousIfStatement.cpp
---- a/IIR_SimultaneousIfStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SimultaneousIfStatement.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_SimultaneousIfStatement.cpp	2011-08-20 17:21:55.424034059 +0100
++++ b/IIR_SimultaneousIfStatement.cpp	2011-08-20 17:20:01.471469001 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousIfStatement::IIR_SimultaneousIfStatement(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_IF_STATEMENT;
+ }
+ 
+ IIR_SimultaneousIfStatement::~IIR_SimultaneousIfStatement(void)
+@@ -10,17 +11,21 @@
  
  void IIR_SimultaneousIfStatement::set_condition(IIR *condition)
  {
@@ -2685,10 +4349,62 @@ diff -u a/IIR_SimultaneousIfStatement.cpp b/IIR_SimultaneousIfStatement.cpp
 +	return this->_elsif;
  }
  
+diff -u a/IIR_SimultaneousNullStatement.cpp b/IIR_SimultaneousNullStatement.cpp
+--- a/IIR_SimultaneousNullStatement.cpp	2011-08-20 17:21:55.424034059 +0100
++++ b/IIR_SimultaneousNullStatement.cpp	2011-08-20 17:20:01.471469001 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousNullStatement::IIR_SimultaneousNullStatement(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_NULL_STATEMENT;
+ }
+ 
+ IIR_SimultaneousNullStatement::~IIR_SimultaneousNullStatement(void)
+diff -u a/IIR_SimultaneousProceduralStatement.cpp b/IIR_SimultaneousProceduralStatement.cpp
+--- a/IIR_SimultaneousProceduralStatement.cpp	2011-08-20 17:21:55.424034059 +0100
++++ b/IIR_SimultaneousProceduralStatement.cpp	2011-08-20 17:20:01.471469001 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousProceduralStatement::IIR_SimultaneousProceduralStatement(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_PROCEDURAL_STATEMENT;
+ }
+ 
+ IIR_SimultaneousProceduralStatement::~IIR_SimultaneousProceduralStatement(void)
+diff -u a/IIR_SimultaneousStatementList.cpp b/IIR_SimultaneousStatementList.cpp
+--- a/IIR_SimultaneousStatementList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_SimultaneousStatementList.cpp	2011-08-20 17:20:01.475469019 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SimultaneousStatementList::IIR_SimultaneousStatementList(void)
+ {
++	this->_kind = IR_SIMULTANEOUS_STATEMENT_LIST;
+ }
+ 
+ IIR_SimultaneousStatementList::~IIR_SimultaneousStatementList(void)
+diff -u a/IIR_SLAOperator.cpp b/IIR_SLAOperator.cpp
+--- a/IIR_SLAOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_SLAOperator.cpp	2011-08-20 17:20:01.475469019 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SLAOperator::IIR_SLAOperator(void)
+ {
++	this->_kind = IR_SLA_OPERATOR;
+ }
+ 
+ IIR_SLAOperator::~IIR_SLAOperator(void)
 diff -u a/IIR_SliceName.cpp b/IIR_SliceName.cpp
---- a/IIR_SliceName.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SliceName.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SliceName.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_SliceName.cpp	2011-08-20 17:20:01.475469019 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SliceName::IIR_SliceName(void)
+ {
++	this->_kind = IR_SLICE_NAME;
+ }
+ 
+ IIR_SliceName::~IIR_SliceName(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SliceName::set_suffix(IIR *suffix)
  {
@@ -2700,10 +4416,21 @@ diff -u a/IIR_SliceName.cpp b/IIR_SliceName.cpp
 +	return this->_suffix;
  }
  
+diff -u a/IIR_SLLOperator.cpp b/IIR_SLLOperator.cpp
+--- a/IIR_SLLOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_SLLOperator.cpp	2011-08-20 17:20:01.475469019 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SLLOperator::IIR_SLLOperator(void)
+ {
++	this->_kind = IR_SLL_OPERATOR;
+ }
+ 
+ IIR_SLLOperator::~IIR_SLLOperator(void)
 diff -u a/IIR_SpectrumSourceQuantityDeclaration.cpp b/IIR_SpectrumSourceQuantityDeclaration.cpp
---- a/IIR_SpectrumSourceQuantityDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SpectrumSourceQuantityDeclaration.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -2,26 +2,32 @@
+--- a/IIR_SpectrumSourceQuantityDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_SpectrumSourceQuantityDeclaration.cpp	2011-08-20 17:20:01.479469044 +0100
+@@ -2,30 +2,37 @@
  
  void IIR_SpectrumSourceQuantityDeclaration::set_subnature_indication(IIR_NatureDefinition *subnature_indication)
  {
@@ -2736,10 +4463,46 @@ diff -u a/IIR_SpectrumSourceQuantityDeclaration.cpp b/IIR_SpectrumSourceQuantity
  }
  
  IIR_SpectrumSourceQuantityDeclaration::IIR_SpectrumSourceQuantityDeclaration(void)
+ {
++	this->_kind = IR_SPECTRUM_SOURCE_QUANTITY_DECLARATION;
+ }
+ 
+ IIR_SpectrumSourceQuantityDeclaration::~IIR_SpectrumSourceQuantityDeclaration(void)
+Only in b: IIR_SpectrumSourceQuantityDeclaration.cpp.orig
+diff -u a/IIR_SRAOperator.cpp b/IIR_SRAOperator.cpp
+--- a/IIR_SRAOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_SRAOperator.cpp	2011-08-20 17:20:01.479469044 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SRAOperator::IIR_SRAOperator(void)
+ {
++	this->_kind = IR_SRA_OPERATOR;
+ }
+ 
+ IIR_SRAOperator::~IIR_SRAOperator(void)
+diff -u a/IIR_SRLOperator.cpp b/IIR_SRLOperator.cpp
+--- a/IIR_SRLOperator.cpp	2011-08-20 17:21:55.404033962 +0100
++++ b/IIR_SRLOperator.cpp	2011-08-20 17:20:01.483469058 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SRLOperator::IIR_SRLOperator(void)
+ {
++	this->_kind = IR_SRL_OPERATOR;
+ }
+ 
+ IIR_SRLOperator::~IIR_SRLOperator(void)
 diff -u a/IIR_StableAttribute.cpp b/IIR_StableAttribute.cpp
---- a/IIR_StableAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_StableAttribute.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_StableAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_StableAttribute.cpp	2011-08-20 17:20:01.483469058 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_StableAttribute::IIR_StableAttribute(void)
+ {
++	this->_kind = IR_STABLE_ATTRIBUTE;
+ }
+ 
+ IIR_StableAttribute::~IIR_StableAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_StableAttribute::set_suffix(IIR *suffix)
  {
@@ -2752,8 +4515,8 @@ diff -u a/IIR_StableAttribute.cpp b/IIR_StableAttribute.cpp
  }
  
 diff -u a/IIR_Statement.cpp b/IIR_Statement.cpp
---- a/IIR_Statement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Statement.cpp	2011-08-20 09:43:21.000000000 +0100
+--- a/IIR_Statement.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_Statement.cpp	2011-08-20 17:19:48.051402456 +0100
 @@ -2,9 +2,11 @@
  
  void IIR_Statement::set_label(IIR_Label *label)
@@ -2767,8 +4530,8 @@ diff -u a/IIR_Statement.cpp b/IIR_Statement.cpp
  }
  
 diff -u a/IIR_Statement.h b/IIR_Statement.h
---- a/IIR_Statement.h	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_Statement.h	2011-08-20 10:43:08.000000000 +0100
+--- a/IIR_Statement.h	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_Statement.h	2011-08-20 17:19:48.055402470 +0100
 @@ -3,8 +3,8 @@
  
  #include "primitive_types.h"
@@ -2779,9 +4542,20 @@ diff -u a/IIR_Statement.h b/IIR_Statement.h
  
  class IIR_Statement : public IIR
  {
+diff -u a/IIR_StatementList.cpp b/IIR_StatementList.cpp
+--- a/IIR_StatementList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_StatementList.cpp	2011-08-20 17:20:01.483469058 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_StatementList::IIR_StatementList(void)
+ {
++	this->_kind = IR_STATEMENT_LIST;
+ }
+ 
+ IIR_StatementList::~IIR_StatementList(void)
 diff -u a/IIR_StringLiteral.cpp b/IIR_StringLiteral.cpp
---- a/IIR_StringLiteral.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_StringLiteral.cpp	2011-08-20 09:58:41.000000000 +0100
+--- a/IIR_StringLiteral.cpp	2011-08-20 17:21:55.324033567 +0100
++++ b/IIR_StringLiteral.cpp	2011-08-20 17:19:48.055402470 +0100
 @@ -2,22 +2,27 @@
  
  IIR_StringLiteral *IIR_StringLiteral::get_value(IR_Char *value, IR_Int32 length)
@@ -2811,9 +4585,17 @@ diff -u a/IIR_StringLiteral.cpp b/IIR_StringLiteral.cpp
  
  void IIR_StringLiteral::release(void)
 diff -u a/IIR_SubnatureDeclaration.cpp b/IIR_SubnatureDeclaration.cpp
---- a/IIR_SubnatureDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SubnatureDeclaration.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SubnatureDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_SubnatureDeclaration.cpp	2011-08-20 17:20:01.483469058 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SubnatureDeclaration::IIR_SubnatureDeclaration(void)
+ {
++	this->_kind = IR_SUBNATURE_DECLARATION;
+ }
+ 
+ IIR_SubnatureDeclaration::~IIR_SubnatureDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SubnatureDeclaration::set_subnature(IIR_NatureDefinition *subnature)
  {
@@ -2825,10 +4607,29 @@ diff -u a/IIR_SubnatureDeclaration.cpp b/IIR_SubnatureDeclaration.cpp
 +	return this->_subnature;
  }
  
+diff -u a/IIR_SubtractionOperator.cpp b/IIR_SubtractionOperator.cpp
+--- a/IIR_SubtractionOperator.cpp	2011-08-20 17:21:55.408033986 +0100
++++ b/IIR_SubtractionOperator.cpp	2011-08-20 17:20:01.483469058 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SubtractionOperator::IIR_SubtractionOperator(void)
+ {
++	this->_kind = IR_SUBTRACTION_OPERATOR;
+ }
+ 
+ IIR_SubtractionOperator::~IIR_SubtractionOperator(void)
 diff -u a/IIR_SubtypeDeclaration.cpp b/IIR_SubtypeDeclaration.cpp
---- a/IIR_SubtypeDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SubtypeDeclaration.cpp	2011-08-20 09:43:28.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SubtypeDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_SubtypeDeclaration.cpp	2011-08-20 17:20:01.487469083 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SubtypeDeclaration::IIR_SubtypeDeclaration(void)
+ {
++	this->_kind = IR_SUBTYPE_DECLARATION;
+ }
+ 
+ IIR_SubtypeDeclaration::~IIR_SubtypeDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SubtypeDeclaration::set_subtype(IIR_TypeDefinition *subtype)
  {
@@ -2841,9 +4642,17 @@ diff -u a/IIR_SubtypeDeclaration.cpp b/IIR_SubtypeDeclaration.cpp
  }
  
 diff -u a/IIR_SuccAttribute.cpp b/IIR_SuccAttribute.cpp
---- a/IIR_SuccAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_SuccAttribute.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_SuccAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_SuccAttribute.cpp	2011-08-20 17:20:01.487469083 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_SuccAttribute::IIR_SuccAttribute(void)
+ {
++	this->_kind = IR_SUCC_ATTRIBUTE;
+ }
+ 
+ IIR_SuccAttribute::~IIR_SuccAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_SuccAttribute::set_suffix(IIR_ScalarTypeDefinition *suffix)
  {
@@ -2856,9 +4665,17 @@ diff -u a/IIR_SuccAttribute.cpp b/IIR_SuccAttribute.cpp
  }
  
 diff -u a/IIR_TerminalDeclaration.cpp b/IIR_TerminalDeclaration.cpp
---- a/IIR_TerminalDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_TerminalDeclaration.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_TerminalDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_TerminalDeclaration.cpp	2011-08-20 17:20:01.487469083 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_TerminalDeclaration::IIR_TerminalDeclaration(void)
+ {
++	this->_kind = IR_TERMINAL_DECLARATION;
+ }
+ 
+ IIR_TerminalDeclaration::~IIR_TerminalDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_TerminalDeclaration::set_nature(IIR_NatureDefinition *nature)
  {
@@ -2871,9 +4688,17 @@ diff -u a/IIR_TerminalDeclaration.cpp b/IIR_TerminalDeclaration.cpp
  }
  
 diff -u a/IIR_TerminalInterfaceDeclaration.cpp b/IIR_TerminalInterfaceDeclaration.cpp
---- a/IIR_TerminalInterfaceDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_TerminalInterfaceDeclaration.cpp	2011-08-20 10:34:20.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_TerminalInterfaceDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_TerminalInterfaceDeclaration.cpp	2011-08-20 17:20:01.487469083 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_TerminalInterfaceDeclaration::IIR_TerminalInterfaceDeclaration(void)
+ {
++	this->_kind = IR_TERMINAL_INTERFACE_DECLARATION;
+ }
+ 
+ IIR_TerminalInterfaceDeclaration::~IIR_TerminalInterfaceDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_TerminalInterfaceDeclaration::set_subnature_indication(IIR_NatureDefinition *subnature_indication)
  {
@@ -2885,10 +4710,29 @@ diff -u a/IIR_TerminalInterfaceDeclaration.cpp b/IIR_TerminalInterfaceDeclaratio
 +	return this->_subnature_indication;
  }
  
+diff -u a/IIR_ThroughAttribute.cpp b/IIR_ThroughAttribute.cpp
+--- a/IIR_ThroughAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_ThroughAttribute.cpp	2011-08-20 17:20:01.491469097 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ThroughAttribute::IIR_ThroughAttribute(void)
+ {
++	this->_kind = IR_THROUGH_ATTRIBUTE;
+ }
+ 
+ IIR_ThroughAttribute::~IIR_ThroughAttribute(void)
 diff -u a/IIR_ThroughQuantityDeclaration.cpp b/IIR_ThroughQuantityDeclaration.cpp
---- a/IIR_ThroughQuantityDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ThroughQuantityDeclaration.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,49 +10,61 @@
+--- a/IIR_ThroughQuantityDeclaration.cpp	2011-08-20 17:21:55.368033783 +0100
++++ b/IIR_ThroughQuantityDeclaration.cpp	2011-08-20 17:20:01.491469097 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ThroughQuantityDeclaration::IIR_ThroughQuantityDeclaration(void)
+ {
++	this->_kind = IR_THROUGH_QUANTITY_DECLARATION;
+ }
+ 
+ IIR_ThroughQuantityDeclaration::~IIR_ThroughQuantityDeclaration(void)
+@@ -10,49 +11,61 @@
  
  void IIR_ThroughQuantityDeclaration::set_across_aspect_expression(IIR *across_aspect_expression)
  {
@@ -2950,10 +4794,40 @@ diff -u a/IIR_ThroughQuantityDeclaration.cpp b/IIR_ThroughQuantityDeclaration.cp
 +	return this->_minus_terminal_name;
  }
  
+diff -u a/IIR_ToleranceAttribute.cpp b/IIR_ToleranceAttribute.cpp
+--- a/IIR_ToleranceAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_ToleranceAttribute.cpp	2011-08-20 17:20:01.491469097 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ToleranceAttribute::IIR_ToleranceAttribute(void)
+ {
++	this->_kind = IR_TOLERANCE_ATTRIBUTE;
+ }
+ 
+ IIR_ToleranceAttribute::~IIR_ToleranceAttribute(void)
+diff -u a/IIR_TransactionAttribute.cpp b/IIR_TransactionAttribute.cpp
+--- a/IIR_TransactionAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_TransactionAttribute.cpp	2011-08-20 17:20:01.491469097 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_TransactionAttribute::IIR_TransactionAttribute(void)
+ {
++	this->_kind = IR_TRANSACTION_ATTRIBUTE;
+ }
+ 
+ IIR_TransactionAttribute::~IIR_TransactionAttribute(void)
 diff -u a/IIR_TypeConversion.cpp b/IIR_TypeConversion.cpp
---- a/IIR_TypeConversion.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_TypeConversion.cpp	2011-08-20 09:43:23.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_TypeConversion.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_TypeConversion.cpp	2011-08-20 17:20:01.491469097 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_TypeConversion::IIR_TypeConversion(void)
+ {
++	this->_kind = IR_TYPE_CONVERSION;
+ }
+ 
+ IIR_TypeConversion::~IIR_TypeConversion(void)
+@@ -10,17 +11,21 @@
  
  void IIR_TypeConversion::set_type_mark(IIR_TypeDefinition *type_mark)
  {
@@ -2976,9 +4850,17 @@ diff -u a/IIR_TypeConversion.cpp b/IIR_TypeConversion.cpp
  }
  
 diff -u a/IIR_TypeDeclaration.cpp b/IIR_TypeDeclaration.cpp
---- a/IIR_TypeDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_TypeDeclaration.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_TypeDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_TypeDeclaration.cpp	2011-08-20 17:20:01.495469120 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_TypeDeclaration::IIR_TypeDeclaration(void)
+ {
++	this->_kind = IR_TYPE_DECLARATION;
+ }
+ 
+ IIR_TypeDeclaration::~IIR_TypeDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_TypeDeclaration::set_type(IIR_TypeDefinition *type)
  {
@@ -2991,8 +4873,8 @@ diff -u a/IIR_TypeDeclaration.cpp b/IIR_TypeDeclaration.cpp
  }
  
 diff -u a/IIR_TypeDefinition.cpp b/IIR_TypeDefinition.cpp
---- a/IIR_TypeDefinition.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_TypeDefinition.cpp	2011-08-20 09:43:24.000000000 +0100
+--- a/IIR_TypeDefinition.cpp	2011-08-20 17:21:55.352033703 +0100
++++ b/IIR_TypeDefinition.cpp	2011-08-20 17:19:48.063402518 +0100
 @@ -2,9 +2,11 @@
  
  void IIR_TypeDefinition::set_base_type(IIR_TypeDefinition *base_type)
@@ -3005,10 +4887,29 @@ diff -u a/IIR_TypeDefinition.cpp b/IIR_TypeDefinition.cpp
 +	return this->_base_type;
  }
  
+diff -u a/IIR_UnitList.cpp b/IIR_UnitList.cpp
+--- a/IIR_UnitList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_UnitList.cpp	2011-08-20 17:20:01.495469120 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_UnitList::IIR_UnitList(void)
+ {
++	this->_kind = IR_UNIT_LIST;
+ }
+ 
+ IIR_UnitList::~IIR_UnitList(void)
 diff -u a/IIR_UseClause.cpp b/IIR_UseClause.cpp
---- a/IIR_UseClause.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_UseClause.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_UseClause.cpp	2011-08-20 17:21:55.380033846 +0100
++++ b/IIR_UseClause.cpp	2011-08-20 17:20:01.495469120 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_UseClause::IIR_UseClause(void)
+ {
++	this->_kind = IR_USE_CLAUSE;
+ }
+ 
+ IIR_UseClause::~IIR_UseClause(void)
+@@ -10,9 +11,11 @@
  
  void IIR_UseClause::set_selected_name(IIR_Name *selected_name)
  {
@@ -3021,9 +4922,17 @@ diff -u a/IIR_UseClause.cpp b/IIR_UseClause.cpp
  }
  
 diff -u a/IIR_UserAttribute.cpp b/IIR_UserAttribute.cpp
---- a/IIR_UserAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_UserAttribute.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_UserAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_UserAttribute.cpp	2011-08-20 17:20:01.495469120 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_UserAttribute::IIR_UserAttribute(void)
+ {
++	this->_kind = IR_USER_ATTRIBUTE;
+ }
+ 
+ IIR_UserAttribute::~IIR_UserAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_UserAttribute::set_suffix(IIR *suffix)
  {
@@ -3036,9 +4945,17 @@ diff -u a/IIR_UserAttribute.cpp b/IIR_UserAttribute.cpp
  }
  
 diff -u a/IIR_ValAttribute.cpp b/IIR_ValAttribute.cpp
---- a/IIR_ValAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ValAttribute.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_ValAttribute.cpp	2011-08-20 17:21:55.388033885 +0100
++++ b/IIR_ValAttribute.cpp	2011-08-20 17:20:01.499469145 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ValAttribute::IIR_ValAttribute(void)
+ {
++	this->_kind = IR_VAL_ATTRIBUTE;
+ }
+ 
+ IIR_ValAttribute::~IIR_ValAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_ValAttribute::set_suffix(IIR_ScalarTypeDefinition *suffix)
  {
@@ -3051,9 +4968,17 @@ diff -u a/IIR_ValAttribute.cpp b/IIR_ValAttribute.cpp
  }
  
 diff -u a/IIR_ValueAttribute.cpp b/IIR_ValueAttribute.cpp
---- a/IIR_ValueAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ValueAttribute.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_ValueAttribute.cpp	2011-08-20 17:21:55.384033861 +0100
++++ b/IIR_ValueAttribute.cpp	2011-08-20 17:20:01.499469145 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ValueAttribute::IIR_ValueAttribute(void)
+ {
++	this->_kind = IR_VALUE_ATTRIBUTE;
+ }
+ 
+ IIR_ValueAttribute::~IIR_ValueAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_ValueAttribute::set_suffix(IIR *suffix)
  {
@@ -3066,9 +4991,17 @@ diff -u a/IIR_ValueAttribute.cpp b/IIR_ValueAttribute.cpp
  }
  
 diff -u a/IIR_VariableAssignmentStatement.cpp b/IIR_VariableAssignmentStatement.cpp
---- a/IIR_VariableAssignmentStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_VariableAssignmentStatement.cpp	2011-08-20 09:43:26.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_VariableAssignmentStatement.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_VariableAssignmentStatement.cpp	2011-08-20 17:20:01.499469145 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_VariableAssignmentStatement::IIR_VariableAssignmentStatement(void)
+ {
++	this->_kind = IR_VARIABLE_ASSIGNMENT_STATEMENT;
+ }
+ 
+ IIR_VariableAssignmentStatement::~IIR_VariableAssignmentStatement(void)
+@@ -10,17 +11,21 @@
  
  void IIR_VariableAssignmentStatement::set_target(IIR *target)
  {
@@ -3091,9 +5024,17 @@ diff -u a/IIR_VariableAssignmentStatement.cpp b/IIR_VariableAssignmentStatement.
  }
  
 diff -u a/IIR_VariableDeclaration.cpp b/IIR_VariableDeclaration.cpp
---- a/IIR_VariableDeclaration.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_VariableDeclaration.cpp	2011-08-20 09:43:25.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_VariableDeclaration.cpp	2011-08-20 17:21:55.364033761 +0100
++++ b/IIR_VariableDeclaration.cpp	2011-08-20 17:20:01.499469145 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_VariableDeclaration::IIR_VariableDeclaration(void)
+ {
++	this->_kind = IR_VARIABLE_DECLARATION;
+ }
+ 
+ IIR_VariableDeclaration::~IIR_VariableDeclaration(void)
+@@ -10,9 +11,11 @@
  
  void IIR_VariableDeclaration::set_value(IIR *value)
  {
@@ -3105,10 +5046,29 @@ diff -u a/IIR_VariableDeclaration.cpp b/IIR_VariableDeclaration.cpp
 +	return this->_value;
  }
  
+diff -u a/IIR_VariableInterfaceDeclaration.cpp b/IIR_VariableInterfaceDeclaration.cpp
+--- a/IIR_VariableInterfaceDeclaration.cpp	2011-08-20 17:21:55.372033807 +0100
++++ b/IIR_VariableInterfaceDeclaration.cpp	2011-08-20 17:20:01.503469160 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_VariableInterfaceDeclaration::IIR_VariableInterfaceDeclaration(void)
+ {
++	this->_kind = IR_VARIABLE_INTERFACE_DECLARATION;
+ }
+ 
+ IIR_VariableInterfaceDeclaration::~IIR_VariableInterfaceDeclaration(void)
 diff -u a/IIR_WaitStatement.cpp b/IIR_WaitStatement.cpp
---- a/IIR_WaitStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_WaitStatement.cpp	2011-08-20 09:43:21.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_WaitStatement.cpp	2011-08-20 17:21:55.412034001 +0100
++++ b/IIR_WaitStatement.cpp	2011-08-20 17:20:01.503469160 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_WaitStatement::IIR_WaitStatement(void)
+ {
++	this->_kind = IR_WAIT_STATEMENT;
+ }
+ 
+ IIR_WaitStatement::~IIR_WaitStatement(void)
+@@ -10,17 +11,21 @@
  
  void IIR_WaitStatement::set_condition_clause(IIR *condition_clause)
  {
@@ -3131,9 +5091,17 @@ diff -u a/IIR_WaitStatement.cpp b/IIR_WaitStatement.cpp
  }
  
 diff -u a/IIR_WaveformElement.cpp b/IIR_WaveformElement.cpp
---- a/IIR_WaveformElement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_WaveformElement.cpp	2011-08-20 09:43:22.000000000 +0100
-@@ -10,17 +10,21 @@
+--- a/IIR_WaveformElement.cpp	2011-08-20 17:21:55.336033621 +0100
++++ b/IIR_WaveformElement.cpp	2011-08-20 17:20:01.503469160 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_WaveformElement::IIR_WaveformElement(void)
+ {
++	this->_kind = IR_WAVEFORM_ELEMENT;
+ }
+ 
+ IIR_WaveformElement::~IIR_WaveformElement(void)
+@@ -10,17 +11,21 @@
  
  void IIR_WaveformElement::set_value(IIR *value)
  {
@@ -3155,10 +5123,29 @@ diff -u a/IIR_WaveformElement.cpp b/IIR_WaveformElement.cpp
 +	return this->_time;
  }
  
+diff -u a/IIR_WaveformList.cpp b/IIR_WaveformList.cpp
+--- a/IIR_WaveformList.cpp	2011-08-20 17:21:55.348033684 +0100
++++ b/IIR_WaveformList.cpp	2011-08-20 17:20:01.503469160 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_WaveformList::IIR_WaveformList(void)
+ {
++	this->_kind = IR_WAVEFORM_LIST;
+ }
+ 
+ IIR_WaveformList::~IIR_WaveformList(void)
 diff -u a/IIR_WhileLoopStatement.cpp b/IIR_WhileLoopStatement.cpp
---- a/IIR_WhileLoopStatement.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_WhileLoopStatement.cpp	2011-08-20 10:46:35.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_WhileLoopStatement.cpp	2011-08-20 17:21:55.416034020 +0100
++++ b/IIR_WhileLoopStatement.cpp	2011-08-20 17:20:01.507469179 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_WhileLoopStatement::IIR_WhileLoopStatement(void)
+ {
++	this->_kind = IR_WHILE_LOOP_STATEMENT;
+ }
+ 
+ IIR_WhileLoopStatement::~IIR_WhileLoopStatement(void)
+@@ -10,9 +11,11 @@
  
  void IIR_WhileLoopStatement::set_while_condition(IIR *while_condition)
  {
@@ -3170,10 +5157,40 @@ diff -u a/IIR_WhileLoopStatement.cpp b/IIR_WhileLoopStatement.cpp
 +	return this->_while_condition;
  }
  
+diff -u a/IIR_XnorOperator.cpp b/IIR_XnorOperator.cpp
+--- a/IIR_XnorOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_XnorOperator.cpp	2011-08-20 17:20:01.507469179 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_XnorOperator::IIR_XnorOperator(void)
+ {
++	this->_kind = IR_XNOR_OPERATOR;
+ }
+ 
+ IIR_XnorOperator::~IIR_XnorOperator(void)
+diff -u a/IIR_XorOperator.cpp b/IIR_XorOperator.cpp
+--- a/IIR_XorOperator.cpp	2011-08-20 17:21:55.400033939 +0100
++++ b/IIR_XorOperator.cpp	2011-08-20 17:20:01.507469179 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_XorOperator::IIR_XorOperator(void)
+ {
++	this->_kind = IR_XOR_OPERATOR;
+ }
+ 
+ IIR_XorOperator::~IIR_XorOperator(void)
 diff -u a/IIR_ZOHAttribute.cpp b/IIR_ZOHAttribute.cpp
---- a/IIR_ZOHAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ZOHAttribute.cpp	2011-08-20 09:43:24.000000000 +0100
-@@ -10,9 +10,11 @@
+--- a/IIR_ZOHAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_ZOHAttribute.cpp	2011-08-20 17:20:01.507469179 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ZOHAttribute::IIR_ZOHAttribute(void)
+ {
++	this->_kind = IR_ZOH_ATTRIBUTE;
+ }
+ 
+ IIR_ZOHAttribute::~IIR_ZOHAttribute(void)
+@@ -10,9 +11,11 @@
  
  void IIR_ZOHAttribute::set_suffix(IIR *suffix)
  {
@@ -3186,9 +5203,17 @@ diff -u a/IIR_ZOHAttribute.cpp b/IIR_ZOHAttribute.cpp
  }
  
 diff -u a/IIR_ZTFAttribute.cpp b/IIR_ZTFAttribute.cpp
---- a/IIR_ZTFAttribute.cpp	2011-08-20 11:03:20.000000000 +0100
-+++ b/IIR_ZTFAttribute.cpp	2011-08-20 09:43:27.000000000 +0100
-@@ -10,33 +10,41 @@
+--- a/IIR_ZTFAttribute.cpp	2011-08-20 17:21:55.396033924 +0100
++++ b/IIR_ZTFAttribute.cpp	2011-08-20 17:20:01.511469200 +0100
+@@ -2,6 +2,7 @@
+ 
+ IIR_ZTFAttribute::IIR_ZTFAttribute(void)
+ {
++	this->_kind = IR_ZTF_ATTRIBUTE;
+ }
+ 
+ IIR_ZTFAttribute::~IIR_ZTFAttribute(void)
+@@ -10,33 +11,41 @@
  
  void IIR_ZTFAttribute::set_num(IIR *num)
  {
@@ -3231,8 +5256,8 @@ diff -u a/IIR_ZTFAttribute.cpp b/IIR_ZTFAttribute.cpp
  }
  
 diff -u a/primitive_types.h b/primitive_types.h
---- a/primitive_types.h	2011-08-20 11:03:20.000000000 +0100
-+++ b/primitive_types.h	2011-08-20 11:40:52.000000000 +0100
+--- a/primitive_types.h	2011-08-20 17:21:55.428034083 +0100
++++ b/primitive_types.h	2011-08-20 17:19:48.071402552 +0100
 @@ -1,11 +1,11 @@
  #ifndef _AIRE_PRIMITIVE_TYPES_H_
  #define _AIRE_PRIMITIVE_TYPES_H_

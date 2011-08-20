@@ -85,3 +85,7 @@ Is it IIR_ConcurrentConditionSignalStatement or IIR_ConcurrentConditionSignalAss
 15.7.3.5 IIR_DelayMechanism should be IR_DelayMechanism.
 
 10.25.3.3 get_base_nature should return an IIR_ScalarNatureDefinition * not an IIR_ArrayNatureDefinition *.
+
+IR_Kind : IR_CASE_ALTERNATIVE_LIST should be IR_CASE_STATEMENT_ALTERNATIVE_LIST
+
+IIR_ComponentInstantiationSpecification should be called IIR_ConcurrentInstantiationSpecification
