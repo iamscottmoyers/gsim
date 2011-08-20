@@ -11,6 +11,25 @@ tokens
     NONE;
 }
 
+@members
+{
+    #include <ctype.h>
+
+    static unsigned int strcmp_i(const char *a, const char *b)
+    {
+        while(*a && *b)
+        {
+            if( toupper(*a) != toupper(*b) )
+            {
+                return 1;
+            }
+            a++;
+            b++;
+        }
+        return 0;
+    }
+}
+
 design_file : design_unit+ ;
 design_unit : library_unit ;
 library_unit : primary_unit | secondary_unit ;
@@ -20,7 +39,7 @@ architecture_body : ARCHITECTURE i=identifier OF simple_name IS architecture_dec
                         BEGIN architecture_statement_part END ARCHITECTURE?
                         (s=simple_name
                         {
-                            if(strcmp($s.text->chars, $i.text->chars)) /* TODO: Should be a case insensitive comparison */
+                            if(strcmp_i($s.text->chars, $i.text->chars))
                             {
                                 /* TODO: should be overriding mismatch and displayRecognitionError */
                                 printf("error, your architecture names don't match ");
@@ -38,7 +57,7 @@ entity_declaration : ENTITY i=identifier IS entity_header entity_declarative_par
                         (BEGIN entity_statement_part)? END ENTITY?
                         (s=simple_name
                         {
-                            if(strcmp($s.text->chars, $i.text->chars)) /* TODO: Should be a case insensitive comparison */
+                            if(strcmp_i($s.text->chars, $i.text->chars))
                             {
                                 /* TODO: should be overriding mismatch and displayRecognitionError */
                                 printf("error, your entity names don't match ");

@@ -6,7 +6,7 @@ end
 
 architecture tootle of a is
         begin
-        end architecture tootle;
+        end architecture tooTle;
 entity b is
 begin end
 entity c is
