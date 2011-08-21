@@ -174,11 +174,27 @@ static void nv_cpp_write_function_header(FILE *fp, struct UMLModel *m, struct UM
 static void nv_cpp_write_function(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
 {
 	nv_cpp_write_function_head(fp, m, c, o, 1);
+#if 0
+	/* Set the object kind in the IIR constructor */
+	if(nv_uml_element_get_stereotypes((struct UMLElement *)o) & NV_STEREOTYPE_CREATE) {
+		const char *name = nv_get_name(c);
+		fprintf(fp, " : IIR(");
+		name+=4;
+		fprintf(fp, "IR");
+		while(*name) {
+			if(isupper(*name)) {
+				fprintf(fp, "_");
+			}
+			fprintf(fp, "%c", toupper(*name));
+			name++;
+		}
+		fprintf(fp, ")");
+	}
+#endif
 	fprintf(fp, "\n");
 	fprintf(fp, "{\n");
-
 #if 0
-	/* Set the object kind in the constructor */
+	/* Set the object kind */
 	if(nv_uml_element_get_stereotypes((struct UMLElement *)o) & NV_STEREOTYPE_CREATE) {
 		const char *name = nv_get_name(c);
 		fprintf(fp, "\tthis->_kind = ");
@@ -555,7 +571,7 @@ static void nv_cpp_write_makefile(const char *dir, struct UMLModel *m)
 	fprintf(fp, "INCLUDE := -I $(INCDIR)\n");
 	fprintf(fp, "OBJECTS :=");
 	for(l = nv_uml_model_get_classes(m);l ;l = l->next) {
-		fprintf(fp, " $(OBJDIR)/%s.o", nv_get_name(l->data));
+		fprintf(fp, "\\\n$(OBJDIR)/%s.o", nv_get_name(l->data));
 	}
 	fprintf(fp, "\n\n");
 
@@ -568,6 +584,29 @@ static void nv_cpp_write_makefile(const char *dir, struct UMLModel *m)
 	fprintf(fp, "clean:\n");
 	fprintf(fp, "\trm -f *.o *.a\n");
 
+	fclose(fp);
+}
+
+static void nv_cpp_write_library_header(const char *dir, struct UMLModel *m)
+{
+	FILE *fp;
+	List *l;
+	char *header = (char *) malloc(sizeof(char) * (strlen(dir) + strlen(nv_get_name(m)) + 4));
+
+	sprintf(header, "%s/%s.h", dir, nv_get_name(m));
+	fp = fopen(header, "w");
+	if( fp == NULL ) {
+		fprintf(stderr, "Unable to open file %s for writing\n", header);
+		exit(1);
+	}
+	free(header);
+
+	nv_cpp_write_guard_start(fp, nv_get_name(m), "");
+	fprintf(fp, "#include \"primitive_types.h\"\n");
+	for(l = nv_uml_model_get_classes(m);l ;l = l->next) {
+		fprintf(fp, "#include \"%s.h\"\n", nv_get_name(l->data));
+	}
+	nv_cpp_write_guard_end(fp, nv_get_name(m), "");
 	fclose(fp);
 }
 
@@ -588,4 +627,5 @@ void nv_cpp_write_model(struct UMLModel *m, const char *dir)
 
 	nv_cpp_write_primitive_types(dir, m);
 	nv_cpp_write_makefile(dir, m);
+	nv_cpp_write_library_header(dir, m);
 }

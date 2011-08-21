@@ -849,7 +849,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_g9S4L7hSEeCck7_5T208DA" name="IIR_SelectedWaveform">
       <generalization xmi:id="_g9S4MLhSEeCck7_5T208DA" general="_DTOG0LhQEeCvfsd9vkRMpg"/>
-      <ownedAttribute xmi:id="_bBCjwLkQEeCsmNt-jM_yeg" name="waveform" type="_pvQcCLhdEeCLreWQB-1psQ" aggregation="composite">
+      <ownedAttribute xmi:id="_bBCjwLkQEeCsmNt-jM_yeg" name="waveform" type="_pvQcErhdEeCLreWQB-1psQ" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bBIDULkQEeCsmNt-jM_yeg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bBFnELkQEeCsmNt-jM_yeg" value="1"/>
       </ownedAttribute>
@@ -996,7 +996,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_FFWy0LhQEeCvfsd9vkRMpg" name="IIR_List" isAbstract="true">
       <generalization xmi:id="_FhxpELhQEeCvfsd9vkRMpg" general="_6M73wLhPEeCvfsd9vkRMpg"/>
-      <ownedAttribute xmi:id="__Y9HQLksEeCPBuRjaACVpA" name="elements" visibility="private" type="_DTdtgLhHEeCX-d1Uu4Phhw">
+      <ownedAttribute xmi:id="__Y9HQLksEeCPBuRjaACVpA" name="_elements" visibility="protected" type="_DTdtgLhHEeCX-d1Uu4Phhw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__Y_jgLksEeCPBuRjaACVpA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__Y-VYLksEeCPBuRjaACVpA" value="1"/>
       </ownedAttribute>
@@ -3147,10 +3147,10 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_pvQcCLhdEeCLreWQB-1psQ" name="IIR_SelectedWaveFormList">
+    <packagedElement xmi:type="uml:Class" xmi:id="_pvQcCLhdEeCLreWQB-1psQ" name="IIR_SelectedWaveformList">
       <generalization xmi:id="_pvQcCbhdEeCLreWQB-1psQ" general="_FFWy0LhQEeCvfsd9vkRMpg"/>
-      <ownedOperation xmi:id="_bCs-1blfEeCxdPWHNN0THA" name="IIR_SelectedWaveFormList"/>
-      <ownedOperation xmi:id="_bCs-1rlfEeCxdPWHNN0THA" name="IIR_SelectedWaveFormList"/>
+      <ownedOperation xmi:id="_bCs-1blfEeCxdPWHNN0THA" name="IIR_SelectedWaveformList"/>
+      <ownedOperation xmi:id="_bCs-1rlfEeCxdPWHNN0THA" name="IIR_SelectedWaveformList"/>
       <ownedOperation xmi:id="_bCs-17lfEeCxdPWHNN0THA" name="prepend_element">
         <ownedParameter xmi:id="_bCs-2LlfEeCxdPWHNN0THA" name="element" type="_g9S4L7hSEeCck7_5T208DA">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bCs-2blfEeCxdPWHNN0THA" value="1"/>
@@ -5434,7 +5434,6 @@
       <ownedOperation xmi:id="_E9Dc0MDfEeCPcoIh89k6AA" name="set_logical_name">
         <ownedParameter xmi:id="_G9Zj8MDfEeCPcoIh89k6AA" name="logical_name" type="_bwuSVbhiEeC7pPvpJCJdYw"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_FuUhsMDfEeCPcoIh89k6AA" name="operation1"/>
       <ownedOperation xmi:id="_KYxeoMDfEeCPcoIh89k6AA" name="get_logical_name">
         <ownedParameter xmi:id="_LfRMoMDfEeCPcoIh89k6AA" name="logical_name" type="_bwuSVbhiEeC7pPvpJCJdYw" direction="return"/>
       </ownedOperation>
