@@ -573,16 +573,20 @@ static void nv_cpp_write_makefile(const char *dir, struct UMLModel *m)
 	for(l = nv_uml_model_get_classes(m);l ;l = l->next) {
 		fprintf(fp, "\\\n$(OBJDIR)/%s.o", nv_get_name(l->data));
 	}
-	fprintf(fp, "\n\n");
+	fprintf(fp, "\n");
+	fprintf(fp, "DEPS = $(OBJECTS:.o=.d)\n");
+	fprintf(fp, "\n");
 
 	fprintf(fp, "$(LIBNAME) : $(OBJECTS)\n");
 	fprintf(fp, "\tar rcs $(LIBNAME) $(OBJECTS)\n\n");
+	fprintf(fp, "-include $(DEPS)\n\n");
 	fprintf(fp, "$(OBJDIR)/%%.o : $(SRCDIR)/%%.cpp\n");
 	fprintf(fp, "\t$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@\n");
+	fprintf(fp, "\t$(CXX) $(CXXFLAGS) -MM -MF $(patsubst %%.o,%%.d,$@) $<\n");
 
 	fprintf(fp, "\n");
 	fprintf(fp, "clean:\n");
-	fprintf(fp, "\trm -f *.o *.a\n");
+	fprintf(fp, "\trm -f *.o *.a *.d\n");
 
 	fclose(fp);
 }
