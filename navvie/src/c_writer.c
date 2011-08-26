@@ -449,7 +449,7 @@ static void nv_c_write_makefile(const char *dir, struct UMLModel *m)
 	}
 	free(source);
 
-	fprintf(fp, "LIBNAME := lib%s.a\n", nv_get_name(m));
+	fprintf(fp, "LIBNAME := %s\n", nv_get_name(m));
 	fprintf(fp, "CXX := gcc\n");
 	fprintf(fp, "WARNING_FLAGS := -Wall -Wc++-compat -Wextra --pedantic -ansi\n");
 	fprintf(fp, "CXX_FLAGS := $(WARNING_FLAGS) -g\n");
@@ -467,7 +467,7 @@ static void nv_c_write_makefile(const char *dir, struct UMLModel *m)
 	fprintf(fp, "\n");
 
 	fprintf(fp, "$(LIBNAME) : $(OBJECTS)\n");
-	fprintf(fp, "\tar rcs $(LIBNAME) $(OBJECTS)\n\n");
+	fprintf(fp, "\tar rcs lib$(LIBNAME).a $(OBJECTS)\n\n");
 	fprintf(fp, "-include $(DEPS)\n\n");
 	fprintf(fp, "$(OBJDIR)/%%.o : $(SRCDIR)/%%.c\n");
 	fprintf(fp, "\t$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@\n");
@@ -475,7 +475,8 @@ static void nv_c_write_makefile(const char *dir, struct UMLModel *m)
 
 	fprintf(fp, "\n");
 	fprintf(fp, "clean:\n");
-	fprintf(fp, "\trm -f *.o *.a *.d\n");
+	fprintf(fp, "\trm -f *.o *.a *.d *~\n");
+	fprintf(fp, "\trm -f lib$(LIBNAME).a\n");
 
 	fclose(fp);
 }
