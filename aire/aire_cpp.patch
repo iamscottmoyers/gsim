@@ -1,6 +1,5 @@
-Binary files build//a.out and b/a.out differ
-diff -uN build//IIR_AboveAttribute.cpp b/IIR_AboveAttribute.cpp
---- build//IIR_AboveAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_AboveAttribute.cpp b/IIR_AboveAttribute.cpp
+--- a/IIR_AboveAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_AboveAttribute.cpp	2011-08-26 08:03:57.461913470 +0100
 @@ -2,6 +2,7 @@
  
@@ -22,8 +21,8 @@ diff -uN build//IIR_AboveAttribute.cpp b/IIR_AboveAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_AbsoluteOperator.cpp b/IIR_AbsoluteOperator.cpp
---- build//IIR_AbsoluteOperator.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_AbsoluteOperator.cpp b/IIR_AbsoluteOperator.cpp
+--- a/IIR_AbsoluteOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_AbsoluteOperator.cpp	2011-08-26 08:03:57.461913470 +0100
 @@ -2,6 +2,7 @@
  
@@ -33,8 +32,8 @@ diff -uN build//IIR_AbsoluteOperator.cpp b/IIR_AbsoluteOperator.cpp
  }
  
  IIR_AbsoluteOperator::~IIR_AbsoluteOperator(void)
-diff -uN build//IIR_AccessSubtypeDefinition.cpp b/IIR_AccessSubtypeDefinition.cpp
---- build//IIR_AccessSubtypeDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_AccessSubtypeDefinition.cpp b/IIR_AccessSubtypeDefinition.cpp
+--- a/IIR_AccessSubtypeDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_AccessSubtypeDefinition.cpp	2011-08-26 08:03:57.465913491 +0100
 @@ -6,18 +6,22 @@
  
@@ -59,8 +58,8 @@ diff -uN build//IIR_AccessSubtypeDefinition.cpp b/IIR_AccessSubtypeDefinition.cp
  }
  
  void IIR_AccessSubtypeDefinition::release(void)
-diff -uN build//IIR_AccessTypeDefinition.cpp b/IIR_AccessTypeDefinition.cpp
---- build//IIR_AccessTypeDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_AccessTypeDefinition.cpp b/IIR_AccessTypeDefinition.cpp
+--- a/IIR_AccessTypeDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_AccessTypeDefinition.cpp	2011-08-26 08:03:57.465913491 +0100
 @@ -6,10 +6,12 @@
  
@@ -75,8 +74,8 @@ diff -uN build//IIR_AccessTypeDefinition.cpp b/IIR_AccessTypeDefinition.cpp
  }
  
  IIR_AccessTypeDefinition::~IIR_AccessTypeDefinition(void)
-diff -uN build//IIR_AcrossAttribute.cpp b/IIR_AcrossAttribute.cpp
---- build//IIR_AcrossAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_AcrossAttribute.cpp b/IIR_AcrossAttribute.cpp
+--- a/IIR_AcrossAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_AcrossAttribute.cpp	2011-08-26 08:03:57.465913491 +0100
 @@ -2,6 +2,7 @@
  
@@ -86,8 +85,8 @@ diff -uN build//IIR_AcrossAttribute.cpp b/IIR_AcrossAttribute.cpp
  }
  
  IIR_AcrossAttribute::~IIR_AcrossAttribute(void)
-diff -uN build//IIR_AcrossQuantityDeclaration.cpp b/IIR_AcrossQuantityDeclaration.cpp
---- build//IIR_AcrossQuantityDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_AcrossQuantityDeclaration.cpp b/IIR_AcrossQuantityDeclaration.cpp
+--- a/IIR_AcrossQuantityDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_AcrossQuantityDeclaration.cpp	2011-08-26 08:03:57.465913491 +0100
 @@ -2,6 +2,7 @@
  
@@ -139,8 +138,8 @@ diff -uN build//IIR_AcrossQuantityDeclaration.cpp b/IIR_AcrossQuantityDeclaratio
 +	return this->_minus_terminal_name;
  }
  
-diff -uN build//IIR_ActiveAttribute.cpp b/IIR_ActiveAttribute.cpp
---- build//IIR_ActiveAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_ActiveAttribute.cpp b/IIR_ActiveAttribute.cpp
+--- a/IIR_ActiveAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_ActiveAttribute.cpp	2011-08-26 08:03:57.465913491 +0100
 @@ -2,6 +2,7 @@
  
@@ -150,8 +149,8 @@ diff -uN build//IIR_ActiveAttribute.cpp b/IIR_ActiveAttribute.cpp
  }
  
  IIR_ActiveAttribute::~IIR_ActiveAttribute(void)
-diff -uN build//IIR_AdditionOperator.cpp b/IIR_AdditionOperator.cpp
---- build//IIR_AdditionOperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_AdditionOperator.cpp b/IIR_AdditionOperator.cpp
+--- a/IIR_AdditionOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_AdditionOperator.cpp	2011-08-26 08:03:57.465913491 +0100
 @@ -2,6 +2,7 @@
  
@@ -161,8 +160,8 @@ diff -uN build//IIR_AdditionOperator.cpp b/IIR_AdditionOperator.cpp
  }
  
  IIR_AdditionOperator::~IIR_AdditionOperator(void)
-diff -uN build//IIR_Aggregate.cpp b/IIR_Aggregate.cpp
---- build//IIR_Aggregate.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_Aggregate.cpp b/IIR_Aggregate.cpp
+--- a/IIR_Aggregate.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_Aggregate.cpp	2011-08-26 08:03:57.465913491 +0100
 @@ -2,6 +2,7 @@
  
@@ -172,8 +171,8 @@ diff -uN build//IIR_Aggregate.cpp b/IIR_Aggregate.cpp
  }
  
  IIR_Aggregate::~IIR_Aggregate(void)
-diff -uN build//IIR_AliasDeclaration.cpp b/IIR_AliasDeclaration.cpp
---- build//IIR_AliasDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_AliasDeclaration.cpp b/IIR_AliasDeclaration.cpp
+--- a/IIR_AliasDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_AliasDeclaration.cpp	2011-08-26 08:03:57.469913518 +0100
 @@ -2,6 +2,7 @@
  
@@ -205,8 +204,8 @@ diff -uN build//IIR_AliasDeclaration.cpp b/IIR_AliasDeclaration.cpp
 +	return this->_name;
  }
  
-diff -uN build//IIR_Allocator.cpp b/IIR_Allocator.cpp
---- build//IIR_Allocator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_Allocator.cpp b/IIR_Allocator.cpp
+--- a/IIR_Allocator.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_Allocator.cpp	2011-08-26 08:03:57.469913518 +0100
 @@ -2,18 +2,22 @@
  
@@ -231,8 +230,8 @@ diff -uN build//IIR_Allocator.cpp b/IIR_Allocator.cpp
  }
  
  IIR_Allocator::IIR_Allocator(void)
-diff -uN build//IIR_AndOperator.cpp b/IIR_AndOperator.cpp
---- build//IIR_AndOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_AndOperator.cpp b/IIR_AndOperator.cpp
+--- a/IIR_AndOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_AndOperator.cpp	2011-08-26 08:03:57.469913518 +0100
 @@ -2,6 +2,7 @@
  
@@ -242,8 +241,8 @@ diff -uN build//IIR_AndOperator.cpp b/IIR_AndOperator.cpp
  }
  
  IIR_AndOperator::~IIR_AndOperator(void)
-diff -uN build//IIR_ArchitectureDeclaration.cpp b/IIR_ArchitectureDeclaration.cpp
---- build//IIR_ArchitectureDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_ArchitectureDeclaration.cpp b/IIR_ArchitectureDeclaration.cpp
+--- a/IIR_ArchitectureDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_ArchitectureDeclaration.cpp	2011-08-26 08:03:57.469913518 +0100
 @@ -2,6 +2,7 @@
  
@@ -265,8 +264,8 @@ diff -uN build//IIR_ArchitectureDeclaration.cpp b/IIR_ArchitectureDeclaration.cp
 +	return this->_entity;
  }
  
-diff -uN build//IIR_ArrayNatureDefinition.cpp b/IIR_ArrayNatureDefinition.cpp
---- build//IIR_ArrayNatureDefinition.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_ArrayNatureDefinition.cpp b/IIR_ArrayNatureDefinition.cpp
+--- a/IIR_ArrayNatureDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_ArrayNatureDefinition.cpp	2011-08-26 08:03:57.469913518 +0100
 @@ -2,6 +2,7 @@
  
@@ -298,8 +297,8 @@ diff -uN build//IIR_ArrayNatureDefinition.cpp b/IIR_ArrayNatureDefinition.cpp
 +	return this->_element_subtype;
  }
  
-diff -uN build//IIR_ArraySubnatureDefinition.cpp b/IIR_ArraySubnatureDefinition.cpp
---- build//IIR_ArraySubnatureDefinition.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_ArraySubnatureDefinition.cpp b/IIR_ArraySubnatureDefinition.cpp
+--- a/IIR_ArraySubnatureDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_ArraySubnatureDefinition.cpp	2011-08-26 08:03:57.469913518 +0100
 @@ -2,6 +2,7 @@
  
@@ -336,8 +335,8 @@ diff -uN build//IIR_ArraySubnatureDefinition.cpp b/IIR_ArraySubnatureDefinition.
 +	return static_cast<IIR_ArrayNatureDefinition *>(this);
  }
  
-diff -uN build//IIR_ArraySubtypeDefinition.cpp b/IIR_ArraySubtypeDefinition.cpp
---- build//IIR_ArraySubtypeDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_ArraySubtypeDefinition.cpp b/IIR_ArraySubtypeDefinition.cpp
+--- a/IIR_ArraySubtypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_ArraySubtypeDefinition.cpp	2011-08-26 08:03:57.469913518 +0100
 @@ -6,18 +6,22 @@
  
@@ -362,8 +361,8 @@ diff -uN build//IIR_ArraySubtypeDefinition.cpp b/IIR_ArraySubtypeDefinition.cpp
  }
  
  void IIR_ArraySubtypeDefinition::release(void)
-diff -uN build//IIR_ArrayTypeDefinition.cpp b/IIR_ArrayTypeDefinition.cpp
---- build//IIR_ArrayTypeDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_ArrayTypeDefinition.cpp b/IIR_ArrayTypeDefinition.cpp
+--- a/IIR_ArrayTypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_ArrayTypeDefinition.cpp	2011-08-26 08:03:57.473913533 +0100
 @@ -2,6 +2,7 @@
  
@@ -395,8 +394,8 @@ diff -uN build//IIR_ArrayTypeDefinition.cpp b/IIR_ArrayTypeDefinition.cpp
 +	return this->_element_subtype;
  }
  
-diff -uN build//IIR_AscendingAttribute.cpp b/IIR_AscendingAttribute.cpp
---- build//IIR_AscendingAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_AscendingAttribute.cpp b/IIR_AscendingAttribute.cpp
+--- a/IIR_AscendingAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_AscendingAttribute.cpp	2011-08-26 08:03:57.473913533 +0100
 @@ -2,6 +2,7 @@
  
@@ -418,8 +417,8 @@ diff -uN build//IIR_AscendingAttribute.cpp b/IIR_AscendingAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_AssertionStatement.cpp b/IIR_AssertionStatement.cpp
---- build//IIR_AssertionStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_AssertionStatement.cpp b/IIR_AssertionStatement.cpp
+--- a/IIR_AssertionStatement.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_AssertionStatement.cpp	2011-08-26 08:03:57.473913533 +0100
 @@ -2,6 +2,7 @@
  
@@ -461,8 +460,8 @@ diff -uN build//IIR_AssertionStatement.cpp b/IIR_AssertionStatement.cpp
 +	return this->_severity_expression;
  }
  
-diff -uN build//IIR_AssociationElementByExpression.cpp b/IIR_AssociationElementByExpression.cpp
---- build//IIR_AssociationElementByExpression.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_AssociationElementByExpression.cpp b/IIR_AssociationElementByExpression.cpp
+--- a/IIR_AssociationElementByExpression.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_AssociationElementByExpression.cpp	2011-08-26 08:03:57.473913533 +0100
 @@ -6,10 +6,12 @@
  
@@ -477,8 +476,8 @@ diff -uN build//IIR_AssociationElementByExpression.cpp b/IIR_AssociationElementB
  }
  
  IIR_AssociationElementByExpression::~IIR_AssociationElementByExpression(void)
-diff -uN build//IIR_AssociationElementByOthers.cpp b/IIR_AssociationElementByOthers.cpp
---- build//IIR_AssociationElementByOthers.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_AssociationElementByOthers.cpp b/IIR_AssociationElementByOthers.cpp
+--- a/IIR_AssociationElementByOthers.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_AssociationElementByOthers.cpp	2011-08-26 08:03:57.473913533 +0100
 @@ -2,6 +2,7 @@
  
@@ -488,8 +487,8 @@ diff -uN build//IIR_AssociationElementByOthers.cpp b/IIR_AssociationElementByOth
  }
  
  IIR_AssociationElementByOthers::~IIR_AssociationElementByOthers(void)
-diff -uN build//IIR_AssociationElement.cpp b/IIR_AssociationElement.cpp
---- build//IIR_AssociationElement.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_AssociationElement.cpp b/IIR_AssociationElement.cpp
+--- a/IIR_AssociationElement.cpp	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_AssociationElement.cpp	2011-08-26 08:03:57.473913533 +0100
 @@ -2,9 +2,11 @@
  
@@ -503,8 +502,8 @@ diff -uN build//IIR_AssociationElement.cpp b/IIR_AssociationElement.cpp
 +	return this->_formal;
  }
  
-diff -uN build//IIR_AssociationElement.h b/IIR_AssociationElement.h
---- build//IIR_AssociationElement.h	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_AssociationElement.h b/IIR_AssociationElement.h
+--- a/IIR_AssociationElement.h	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_AssociationElement.h	2011-08-26 08:03:57.473913533 +0100
 @@ -3,6 +3,7 @@
  
@@ -522,8 +521,8 @@ diff -uN build//IIR_AssociationElement.h b/IIR_AssociationElement.h
  public:
  	void set_formal(IIR *formal);
  	IIR *get_formal(void);
-diff -uN build//IIR_AssociationElementOpen.cpp b/IIR_AssociationElementOpen.cpp
---- build//IIR_AssociationElementOpen.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_AssociationElementOpen.cpp b/IIR_AssociationElementOpen.cpp
+--- a/IIR_AssociationElementOpen.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_AssociationElementOpen.cpp	2011-08-26 08:03:57.477913552 +0100
 @@ -2,6 +2,7 @@
  
@@ -533,8 +532,8 @@ diff -uN build//IIR_AssociationElementOpen.cpp b/IIR_AssociationElementOpen.cpp
  }
  
  IIR_AssociationElementOpen::~IIR_AssociationElementOpen(void)
-diff -uN build//IIR_AssociationList.cpp b/IIR_AssociationList.cpp
---- build//IIR_AssociationList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_AssociationList.cpp b/IIR_AssociationList.cpp
+--- a/IIR_AssociationList.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_AssociationList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_AssociationList.h"
@@ -591,8 +590,8 @@ diff -uN build//IIR_AssociationList.cpp b/IIR_AssociationList.cpp
 -{
 -}
 -
-diff -uN build//IIR_AssociationList.h b/IIR_AssociationList.h
---- build//IIR_AssociationList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_AssociationList.h b/IIR_AssociationList.h
+--- a/IIR_AssociationList.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_AssociationList.h	2011-08-26 08:03:57.477913552 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_ASSOCIATIONLIST_H_
@@ -626,8 +625,8 @@ diff -uN build//IIR_AssociationList.h b/IIR_AssociationList.h
 +typedef _TemplatedList<IIR_AssociationElement> IIR_AssociationList;
  
  #endif /*!_AIRE_IIR_ASSOCIATIONLIST_H_*/
-diff -uN build//IIR_AttributeDeclaration.cpp b/IIR_AttributeDeclaration.cpp
---- build//IIR_AttributeDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_AttributeDeclaration.cpp b/IIR_AttributeDeclaration.cpp
+--- a/IIR_AttributeDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_AttributeDeclaration.cpp	2011-08-26 08:03:57.477913552 +0100
 @@ -2,6 +2,7 @@
  
@@ -649,8 +648,8 @@ diff -uN build//IIR_AttributeDeclaration.cpp b/IIR_AttributeDeclaration.cpp
 +	return this->_subtype;
  }
  
-diff -uN build//IIR_AttributeSpecification.cpp b/IIR_AttributeSpecification.cpp
---- build//IIR_AttributeSpecification.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_AttributeSpecification.cpp b/IIR_AttributeSpecification.cpp
+--- a/IIR_AttributeSpecification.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_AttributeSpecification.cpp	2011-08-26 08:03:57.477913552 +0100
 @@ -2,6 +2,7 @@
  
@@ -682,8 +681,8 @@ diff -uN build//IIR_AttributeSpecification.cpp b/IIR_AttributeSpecification.cpp
 +	return this->_entity_class;
  }
  
-diff -uN build//IIR_AttributeSpecification.h b/IIR_AttributeSpecification.h
---- build//IIR_AttributeSpecification.h	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_AttributeSpecification.h b/IIR_AttributeSpecification.h
+--- a/IIR_AttributeSpecification.h	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_AttributeSpecification.h	2011-08-26 08:03:57.481913578 +0100
 @@ -4,6 +4,7 @@
  #include "primitive_types.h"
@@ -701,8 +700,8 @@ diff -uN build//IIR_AttributeSpecification.h b/IIR_AttributeSpecification.h
  public:
  	IIR_AttributeSpecification(void);
  	~IIR_AttributeSpecification(void);
-diff -uN build//IIR_AttributeSpecificationList.cpp b/IIR_AttributeSpecificationList.cpp
---- build//IIR_AttributeSpecificationList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_AttributeSpecificationList.cpp b/IIR_AttributeSpecificationList.cpp
+--- a/IIR_AttributeSpecificationList.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_AttributeSpecificationList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_AttributeSpecificationList.h"
@@ -759,8 +758,8 @@ diff -uN build//IIR_AttributeSpecificationList.cpp b/IIR_AttributeSpecificationL
 -{
 -}
 -
-diff -uN build//IIR_AttributeSpecificationList.h b/IIR_AttributeSpecificationList.h
---- build//IIR_AttributeSpecificationList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_AttributeSpecificationList.h b/IIR_AttributeSpecificationList.h
+--- a/IIR_AttributeSpecificationList.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_AttributeSpecificationList.h	2011-08-26 08:03:57.481913578 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_ATTRIBUTESPECIFICATIONLIST_H_
@@ -794,8 +793,8 @@ diff -uN build//IIR_AttributeSpecificationList.h b/IIR_AttributeSpecificationLis
 +typedef _TemplatedList<IIR_AttributeSpecification> IIR_AttributeSpecificationList;
  
  #endif /*!_AIRE_IIR_ATTRIBUTESPECIFICATIONLIST_H_*/
-diff -uN build//IIR_BaseAttribute.cpp b/IIR_BaseAttribute.cpp
---- build//IIR_BaseAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_BaseAttribute.cpp b/IIR_BaseAttribute.cpp
+--- a/IIR_BaseAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_BaseAttribute.cpp	2011-08-26 08:03:57.481913578 +0100
 @@ -2,6 +2,7 @@
  
@@ -805,8 +804,8 @@ diff -uN build//IIR_BaseAttribute.cpp b/IIR_BaseAttribute.cpp
  }
  
  IIR_BaseAttribute::~IIR_BaseAttribute(void)
-diff -uN build//IIR_BitStringLiteral.cpp b/IIR_BitStringLiteral.cpp
---- build//IIR_BitStringLiteral.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_BitStringLiteral.cpp b/IIR_BitStringLiteral.cpp
+--- a/IIR_BitStringLiteral.cpp	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_BitStringLiteral.cpp	2011-08-26 08:03:57.485913589 +0100
 @@ -6,18 +6,22 @@
  
@@ -831,8 +830,8 @@ diff -uN build//IIR_BitStringLiteral.cpp b/IIR_BitStringLiteral.cpp
  }
  
  void IIR_BitStringLiteral::release(void)
-diff -uN build//IIR_BlockConfiguration.cpp b/IIR_BlockConfiguration.cpp
---- build//IIR_BlockConfiguration.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_BlockConfiguration.cpp b/IIR_BlockConfiguration.cpp
+--- a/IIR_BlockConfiguration.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_BlockConfiguration.cpp	2011-08-26 08:03:57.485913589 +0100
 @@ -6,10 +6,12 @@
  
@@ -847,8 +846,8 @@ diff -uN build//IIR_BlockConfiguration.cpp b/IIR_BlockConfiguration.cpp
  }
  
  IIR_BlockConfiguration::~IIR_BlockConfiguration(void)
-diff -uN build//IIR_BlockStatement.cpp b/IIR_BlockStatement.cpp
---- build//IIR_BlockStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_BlockStatement.cpp b/IIR_BlockStatement.cpp
+--- a/IIR_BlockStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_BlockStatement.cpp	2011-08-26 08:03:57.485913589 +0100
 @@ -2,6 +2,7 @@
  
@@ -870,8 +869,8 @@ diff -uN build//IIR_BlockStatement.cpp b/IIR_BlockStatement.cpp
 +	return this->_guard_expression;
  }
  
-diff -uN build//IIR_BreakElement.cpp b/IIR_BreakElement.cpp
---- build//IIR_BreakElement.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_BreakElement.cpp b/IIR_BreakElement.cpp
+--- a/IIR_BreakElement.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_BreakElement.cpp	2011-08-26 08:03:57.485913589 +0100
 @@ -6,26 +6,32 @@
  
@@ -906,8 +905,8 @@ diff -uN build//IIR_BreakElement.cpp b/IIR_BreakElement.cpp
  }
  
  IIR_BreakElement::~IIR_BreakElement(void)
-diff -uN build//IIR_BreakElement.h b/IIR_BreakElement.h
---- build//IIR_BreakElement.h	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_BreakElement.h b/IIR_BreakElement.h
+--- a/IIR_BreakElement.h	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_BreakElement.h	2011-08-26 08:03:57.485913589 +0100
 @@ -3,6 +3,7 @@
  
@@ -925,8 +924,8 @@ diff -uN build//IIR_BreakElement.h b/IIR_BreakElement.h
  public:
  	IIR_BreakElement(void);
  	void set_quantity_selector(IIR *quantity_selector);
-diff -uN build//IIR_BreakList.cpp b/IIR_BreakList.cpp
---- build//IIR_BreakList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_BreakList.cpp b/IIR_BreakList.cpp
+--- a/IIR_BreakList.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_BreakList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_BreakList.h"
@@ -983,8 +982,8 @@ diff -uN build//IIR_BreakList.cpp b/IIR_BreakList.cpp
 -{
 -}
 -
-diff -uN build//IIR_BreakList.h b/IIR_BreakList.h
---- build//IIR_BreakList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_BreakList.h b/IIR_BreakList.h
+--- a/IIR_BreakList.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_BreakList.h	2011-08-26 08:03:57.489913610 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_BREAKLIST_H_
@@ -1018,8 +1017,8 @@ diff -uN build//IIR_BreakList.h b/IIR_BreakList.h
 +typedef _TemplatedList<IIR_BreakElement> IIR_BreakList;
  
  #endif /*!_AIRE_IIR_BREAKLIST_H_*/
-diff -uN build//IIR_BreakStatement.cpp b/IIR_BreakStatement.cpp
---- build//IIR_BreakStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_BreakStatement.cpp b/IIR_BreakStatement.cpp
+--- a/IIR_BreakStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_BreakStatement.cpp	2011-08-26 08:03:57.489913610 +0100
 @@ -2,6 +2,7 @@
  
@@ -1041,8 +1040,8 @@ diff -uN build//IIR_BreakStatement.cpp b/IIR_BreakStatement.cpp
 +	return this->_condition;
  }
  
-diff -uN build//IIR_CaseStatementAlternativeByChoices.cpp b/IIR_CaseStatementAlternativeByChoices.cpp
---- build//IIR_CaseStatementAlternativeByChoices.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_CaseStatementAlternativeByChoices.cpp b/IIR_CaseStatementAlternativeByChoices.cpp
+--- a/IIR_CaseStatementAlternativeByChoices.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_CaseStatementAlternativeByChoices.cpp	2011-08-26 08:03:57.489913610 +0100
 @@ -2,6 +2,7 @@
  
@@ -1052,8 +1051,8 @@ diff -uN build//IIR_CaseStatementAlternativeByChoices.cpp b/IIR_CaseStatementAlt
  }
  
  IIR_CaseStatementAlternativeByChoices::~IIR_CaseStatementAlternativeByChoices(void)
-diff -uN build//IIR_CaseStatementAlternativeByExpression.cpp b/IIR_CaseStatementAlternativeByExpression.cpp
---- build//IIR_CaseStatementAlternativeByExpression.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_CaseStatementAlternativeByExpression.cpp b/IIR_CaseStatementAlternativeByExpression.cpp
+--- a/IIR_CaseStatementAlternativeByExpression.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_CaseStatementAlternativeByExpression.cpp	2011-08-26 08:03:57.489913610 +0100
 @@ -6,10 +6,12 @@
  
@@ -1068,8 +1067,8 @@ diff -uN build//IIR_CaseStatementAlternativeByExpression.cpp b/IIR_CaseStatement
  }
  
  IIR_CaseStatementAlternativeByExpression::~IIR_CaseStatementAlternativeByExpression(void)
-diff -uN build//IIR_CaseStatementAlternativeByOthers.cpp b/IIR_CaseStatementAlternativeByOthers.cpp
---- build//IIR_CaseStatementAlternativeByOthers.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_CaseStatementAlternativeByOthers.cpp b/IIR_CaseStatementAlternativeByOthers.cpp
+--- a/IIR_CaseStatementAlternativeByOthers.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_CaseStatementAlternativeByOthers.cpp	2011-08-26 08:03:57.493913637 +0100
 @@ -2,6 +2,7 @@
  
@@ -1079,8 +1078,8 @@ diff -uN build//IIR_CaseStatementAlternativeByOthers.cpp b/IIR_CaseStatementAlte
  }
  
  IIR_CaseStatementAlternativeByOthers::~IIR_CaseStatementAlternativeByOthers(void)
-diff -uN build//IIR_CaseStatementAlternative.h b/IIR_CaseStatementAlternative.h
---- build//IIR_CaseStatementAlternative.h	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_CaseStatementAlternative.h b/IIR_CaseStatementAlternative.h
+--- a/IIR_CaseStatementAlternative.h	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_CaseStatementAlternative.h	2011-08-26 08:03:57.493913637 +0100
 @@ -3,10 +3,12 @@
  
@@ -1096,8 +1095,8 @@ diff -uN build//IIR_CaseStatementAlternative.h b/IIR_CaseStatementAlternative.h
  };
  
  
-diff -uN build//IIR_CaseStatementAlternativeList.cpp b/IIR_CaseStatementAlternativeList.cpp
---- build//IIR_CaseStatementAlternativeList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_CaseStatementAlternativeList.cpp b/IIR_CaseStatementAlternativeList.cpp
+--- a/IIR_CaseStatementAlternativeList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_CaseStatementAlternativeList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_CaseStatementAlternativeList.h"
@@ -1154,8 +1153,8 @@ diff -uN build//IIR_CaseStatementAlternativeList.cpp b/IIR_CaseStatementAlternat
 -{
 -}
 -
-diff -uN build//IIR_CaseStatementAlternativeList.h b/IIR_CaseStatementAlternativeList.h
---- build//IIR_CaseStatementAlternativeList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_CaseStatementAlternativeList.h b/IIR_CaseStatementAlternativeList.h
+--- a/IIR_CaseStatementAlternativeList.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_CaseStatementAlternativeList.h	2011-08-26 08:03:57.493913637 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_CASESTATEMENTALTERNATIVELIST_H_
@@ -1189,8 +1188,8 @@ diff -uN build//IIR_CaseStatementAlternativeList.h b/IIR_CaseStatementAlternativ
 +typedef _TemplatedList<IIR_CaseStatementAlternative> IIR_CaseStatementAlternativeList;
  
  #endif /*!_AIRE_IIR_CASESTATEMENTALTERNATIVELIST_H_*/
-diff -uN build//IIR_CaseStatement.cpp b/IIR_CaseStatement.cpp
---- build//IIR_CaseStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_CaseStatement.cpp b/IIR_CaseStatement.cpp
+--- a/IIR_CaseStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_CaseStatement.cpp	2011-08-26 08:03:57.493913637 +0100
 @@ -2,6 +2,7 @@
  
@@ -1212,8 +1211,8 @@ diff -uN build//IIR_CaseStatement.cpp b/IIR_CaseStatement.cpp
 +	return this->_expression;
  }
  
-diff -uN build//IIR_CharacterLiteral.cpp b/IIR_CharacterLiteral.cpp
---- build//IIR_CharacterLiteral.cpp	2011-08-26 16:30:46.549777426 +0100
+diff -uN a/IIR_CharacterLiteral.cpp b/IIR_CharacterLiteral.cpp
+--- a/IIR_CharacterLiteral.cpp	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_CharacterLiteral.cpp	2011-08-26 08:03:57.497913652 +0100
 @@ -6,6 +6,7 @@
  
@@ -1223,8 +1222,8 @@ diff -uN build//IIR_CharacterLiteral.cpp b/IIR_CharacterLiteral.cpp
  }
  
  IIR_CharacterLiteral::~IIR_CharacterLiteral(void)
-diff -uN build//IIR_Choice.cpp b/IIR_Choice.cpp
---- build//IIR_Choice.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_Choice.cpp b/IIR_Choice.cpp
+--- a/IIR_Choice.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_Choice.cpp	2011-08-26 08:03:57.497913652 +0100
 @@ -6,10 +6,12 @@
  
@@ -1239,8 +1238,8 @@ diff -uN build//IIR_Choice.cpp b/IIR_Choice.cpp
  }
  
  IIR_Choice::~IIR_Choice(void)
-diff -uN build//IIR_Choice.h b/IIR_Choice.h
---- build//IIR_Choice.h	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_Choice.h b/IIR_Choice.h
+--- a/IIR_Choice.h	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_Choice.h	2011-08-26 08:03:57.497913652 +0100
 @@ -3,6 +3,7 @@
  
@@ -1258,8 +1257,8 @@ diff -uN build//IIR_Choice.h b/IIR_Choice.h
  public:
  	IIR_Choice(void);
  	void set_value(IIR *value);
-diff -uN build//IIR_ChoiceList.cpp b/IIR_ChoiceList.cpp
---- build//IIR_ChoiceList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_ChoiceList.cpp b/IIR_ChoiceList.cpp
+--- a/IIR_ChoiceList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ChoiceList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_ChoiceList.h"
@@ -1316,8 +1315,8 @@ diff -uN build//IIR_ChoiceList.cpp b/IIR_ChoiceList.cpp
 -{
 -}
 -
-diff -uN build//IIR_ChoiceList.h b/IIR_ChoiceList.h
---- build//IIR_ChoiceList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_ChoiceList.h b/IIR_ChoiceList.h
+--- a/IIR_ChoiceList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ChoiceList.h	2011-08-26 08:03:57.497913652 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_CHOICELIST_H_
@@ -1351,8 +1350,8 @@ diff -uN build//IIR_ChoiceList.h b/IIR_ChoiceList.h
 +typedef _TemplatedList<IIR_Choice> IIR_ChoiceList;
  
  #endif /*!_AIRE_IIR_CHOICELIST_H_*/
-diff -uN build//IIR_Comment.cpp b/IIR_Comment.cpp
---- build//IIR_Comment.cpp	2011-08-26 16:30:46.545777415 +0100
+diff -uN a/IIR_Comment.cpp b/IIR_Comment.cpp
+--- a/IIR_Comment.cpp	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_Comment.cpp	2011-08-26 08:03:57.501913671 +0100
 @@ -6,10 +6,12 @@
  
@@ -1379,8 +1378,8 @@ diff -uN build//IIR_Comment.cpp b/IIR_Comment.cpp
 +	return this->_text[subscript];
  }
  
-diff -uN build//IIR_Comment.h b/IIR_Comment.h
---- build//IIR_Comment.h	2011-08-26 16:30:46.545777415 +0100
+diff -uN a/IIR_Comment.h b/IIR_Comment.h
+--- a/IIR_Comment.h	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_Comment.h	2011-08-26 08:03:57.501913671 +0100
 @@ -3,6 +3,7 @@
  
@@ -1398,8 +1397,8 @@ diff -uN build//IIR_Comment.h b/IIR_Comment.h
  public:
  	static IIR_Comment *get(IR_Char *text, IR_Int32 text_length);
  	IR_Char *get_text(void);
-diff -uN build//IIR_CommentList.cpp b/IIR_CommentList.cpp
---- build//IIR_CommentList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_CommentList.cpp b/IIR_CommentList.cpp
+--- a/IIR_CommentList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_CommentList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_CommentList.h"
@@ -1456,8 +1455,8 @@ diff -uN build//IIR_CommentList.cpp b/IIR_CommentList.cpp
 -{
 -}
 -
-diff -uN build//IIR_CommentList.h b/IIR_CommentList.h
---- build//IIR_CommentList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_CommentList.h b/IIR_CommentList.h
+--- a/IIR_CommentList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_CommentList.h	2011-08-26 08:03:57.501913671 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_COMMENTLIST_H_
@@ -1491,8 +1490,8 @@ diff -uN build//IIR_CommentList.h b/IIR_CommentList.h
 +typedef _TemplatedList<IIR_Comment> IIR_CommentList;
  
  #endif /*!_AIRE_IIR_COMMENTLIST_H_*/
-diff -uN build//IIR_ComponentConfiguration.cpp b/IIR_ComponentConfiguration.cpp
---- build//IIR_ComponentConfiguration.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_ComponentConfiguration.cpp b/IIR_ComponentConfiguration.cpp
+--- a/IIR_ComponentConfiguration.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_ComponentConfiguration.cpp	2011-08-26 08:03:57.501913671 +0100
 @@ -6,26 +6,32 @@
  
@@ -1527,8 +1526,8 @@ diff -uN build//IIR_ComponentConfiguration.cpp b/IIR_ComponentConfiguration.cpp
  }
  
  IIR_ComponentConfiguration::~IIR_ComponentConfiguration(void)
-diff -uN build//IIR_ComponentDeclaration.cpp b/IIR_ComponentDeclaration.cpp
---- build//IIR_ComponentDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_ComponentDeclaration.cpp b/IIR_ComponentDeclaration.cpp
+--- a/IIR_ComponentDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_ComponentDeclaration.cpp	2011-08-26 08:03:57.505913697 +0100
 @@ -2,6 +2,7 @@
  
@@ -1538,8 +1537,8 @@ diff -uN build//IIR_ComponentDeclaration.cpp b/IIR_ComponentDeclaration.cpp
  }
  
  IIR_ComponentDeclaration::~IIR_ComponentDeclaration(void)
-diff -uN build//IIR_ConcatenationOperator.cpp b/IIR_ConcatenationOperator.cpp
---- build//IIR_ConcatenationOperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_ConcatenationOperator.cpp b/IIR_ConcatenationOperator.cpp
+--- a/IIR_ConcatenationOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_ConcatenationOperator.cpp	2011-08-26 08:03:57.505913697 +0100
 @@ -2,6 +2,7 @@
  
@@ -1549,8 +1548,8 @@ diff -uN build//IIR_ConcatenationOperator.cpp b/IIR_ConcatenationOperator.cpp
  }
  
  IIR_ConcatenationOperator::~IIR_ConcatenationOperator(void)
-diff -uN build//IIR_ConcurrentAssertionStatement.cpp b/IIR_ConcurrentAssertionStatement.cpp
---- build//IIR_ConcurrentAssertionStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentAssertionStatement.cpp b/IIR_ConcurrentAssertionStatement.cpp
+--- a/IIR_ConcurrentAssertionStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_ConcurrentAssertionStatement.cpp	2011-08-26 08:03:57.505913697 +0100
 @@ -10,33 +10,41 @@
  
@@ -1594,8 +1593,8 @@ diff -uN build//IIR_ConcurrentAssertionStatement.cpp b/IIR_ConcurrentAssertionSt
 +	return this->_severity_expression;
  }
  
-diff -uN build//IIR_ConcurrentBreakStatement.cpp b/IIR_ConcurrentBreakStatement.cpp
---- build//IIR_ConcurrentBreakStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentBreakStatement.cpp b/IIR_ConcurrentBreakStatement.cpp
+--- a/IIR_ConcurrentBreakStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_ConcurrentBreakStatement.cpp	2011-08-26 08:03:57.505913697 +0100
 @@ -2,6 +2,7 @@
  
@@ -1617,8 +1616,8 @@ diff -uN build//IIR_ConcurrentBreakStatement.cpp b/IIR_ConcurrentBreakStatement.
 +	return this->_condition;
  }
  
-diff -uN build//IIR_ConcurrentConditionalSignalAssignment.cpp b/IIR_ConcurrentConditionalSignalAssignment.cpp
---- build//IIR_ConcurrentConditionalSignalAssignment.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentConditionalSignalAssignment.cpp b/IIR_ConcurrentConditionalSignalAssignment.cpp
+--- a/IIR_ConcurrentConditionalSignalAssignment.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_ConcurrentConditionalSignalAssignment.cpp	2011-08-26 08:03:57.509913708 +0100
 @@ -2,6 +2,7 @@
  
@@ -1680,8 +1679,8 @@ diff -uN build//IIR_ConcurrentConditionalSignalAssignment.cpp b/IIR_ConcurrentCo
 +	return this->_reject_time_expression;
  }
  
-diff -uN build//IIR_ConcurrentGenerateForStatement.cpp b/IIR_ConcurrentGenerateForStatement.cpp
---- build//IIR_ConcurrentGenerateForStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentGenerateForStatement.cpp b/IIR_ConcurrentGenerateForStatement.cpp
+--- a/IIR_ConcurrentGenerateForStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_ConcurrentGenerateForStatement.cpp	2011-08-26 08:03:57.509913708 +0100
 @@ -2,6 +2,7 @@
  
@@ -1703,8 +1702,8 @@ diff -uN build//IIR_ConcurrentGenerateForStatement.cpp b/IIR_ConcurrentGenerateF
 +	return this->_generate_parameter_specification;
  }
  
-diff -uN build//IIR_ConcurrentGenerateIfStatement.cpp b/IIR_ConcurrentGenerateIfStatement.cpp
---- build//IIR_ConcurrentGenerateIfStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentGenerateIfStatement.cpp b/IIR_ConcurrentGenerateIfStatement.cpp
+--- a/IIR_ConcurrentGenerateIfStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_ConcurrentGenerateIfStatement.cpp	2011-08-26 08:03:57.509913708 +0100
 @@ -2,6 +2,7 @@
  
@@ -1726,8 +1725,8 @@ diff -uN build//IIR_ConcurrentGenerateIfStatement.cpp b/IIR_ConcurrentGenerateIf
 +	return this->_if_condition;
  }
  
-diff -uN build//IIR_ConcurrentInstantiationStatement.cpp b/IIR_ConcurrentInstantiationStatement.cpp
---- build//IIR_ConcurrentInstantiationStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentInstantiationStatement.cpp b/IIR_ConcurrentInstantiationStatement.cpp
+--- a/IIR_ConcurrentInstantiationStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_ConcurrentInstantiationStatement.cpp	2011-08-26 08:03:57.509913708 +0100
 @@ -10,9 +10,11 @@
  
@@ -1741,8 +1740,8 @@ diff -uN build//IIR_ConcurrentInstantiationStatement.cpp b/IIR_ConcurrentInstant
 +	return this->_instantiated_unit;
  }
  
-diff -uN build//IIR_ConcurrentProcedureCallStatement.cpp b/IIR_ConcurrentProcedureCallStatement.cpp
---- build//IIR_ConcurrentProcedureCallStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentProcedureCallStatement.cpp b/IIR_ConcurrentProcedureCallStatement.cpp
+--- a/IIR_ConcurrentProcedureCallStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_ConcurrentProcedureCallStatement.cpp	2011-08-26 08:03:57.513913729 +0100
 @@ -10,17 +10,21 @@
  
@@ -1766,8 +1765,8 @@ diff -uN build//IIR_ConcurrentProcedureCallStatement.cpp b/IIR_ConcurrentProcedu
 +	return this->_postponed;
  }
  
-diff -uN build//IIR_ConcurrentSelectedSignalAssignment.cpp b/IIR_ConcurrentSelectedSignalAssignment.cpp
---- build//IIR_ConcurrentSelectedSignalAssignment.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentSelectedSignalAssignment.cpp b/IIR_ConcurrentSelectedSignalAssignment.cpp
+--- a/IIR_ConcurrentSelectedSignalAssignment.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_ConcurrentSelectedSignalAssignment.cpp	2011-08-26 08:03:57.513913729 +0100
 @@ -2,6 +2,7 @@
  
@@ -1839,8 +1838,8 @@ diff -uN build//IIR_ConcurrentSelectedSignalAssignment.cpp b/IIR_ConcurrentSelec
 +	return this->_reject_time_expression;
  }
  
-diff -uN build//IIR_ConcurrentStatement.h b/IIR_ConcurrentStatement.h
---- build//IIR_ConcurrentStatement.h	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ConcurrentStatement.h b/IIR_ConcurrentStatement.h
+--- a/IIR_ConcurrentStatement.h	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_ConcurrentStatement.h	2011-08-26 08:03:57.513913729 +0100
 @@ -3,10 +3,12 @@
  
@@ -1856,8 +1855,8 @@ diff -uN build//IIR_ConcurrentStatement.h b/IIR_ConcurrentStatement.h
  };
  
  
-diff -uN build//IIR_ConcurrentStatementList.cpp b/IIR_ConcurrentStatementList.cpp
---- build//IIR_ConcurrentStatementList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_ConcurrentStatementList.cpp b/IIR_ConcurrentStatementList.cpp
+--- a/IIR_ConcurrentStatementList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ConcurrentStatementList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_ConcurrentStatementList.h"
@@ -1914,8 +1913,8 @@ diff -uN build//IIR_ConcurrentStatementList.cpp b/IIR_ConcurrentStatementList.cp
 -{
 -}
 -
-diff -uN build//IIR_ConcurrentStatementList.h b/IIR_ConcurrentStatementList.h
---- build//IIR_ConcurrentStatementList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_ConcurrentStatementList.h b/IIR_ConcurrentStatementList.h
+--- a/IIR_ConcurrentStatementList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ConcurrentStatementList.h	2011-08-26 08:03:57.517913756 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_CONCURRENTSTATEMENTLIST_H_
@@ -1949,8 +1948,8 @@ diff -uN build//IIR_ConcurrentStatementList.h b/IIR_ConcurrentStatementList.h
 +typedef _TemplatedList<IIR_ConcurrentStatement> IIR_ConcurrentStatementList;
  
  #endif /*!_AIRE_IIR_CONCURRENTSTATEMENTLIST_H_*/
-diff -uN build//IIR_ConditionalWaveform.cpp b/IIR_ConditionalWaveform.cpp
---- build//IIR_ConditionalWaveform.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_ConditionalWaveform.cpp b/IIR_ConditionalWaveform.cpp
+--- a/IIR_ConditionalWaveform.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_ConditionalWaveform.cpp	2011-08-26 08:03:57.517913756 +0100
 @@ -2,6 +2,7 @@
  
@@ -1972,8 +1971,8 @@ diff -uN build//IIR_ConditionalWaveform.cpp b/IIR_ConditionalWaveform.cpp
 +	return this->_condition;
  }
  
-diff -uN build//IIR_ConditionalWaveform.h b/IIR_ConditionalWaveform.h
---- build//IIR_ConditionalWaveform.h	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_ConditionalWaveform.h b/IIR_ConditionalWaveform.h
+--- a/IIR_ConditionalWaveform.h	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_ConditionalWaveform.h	2011-08-26 08:03:57.517913756 +0100
 @@ -4,6 +4,7 @@
  #include "primitive_types.h"
@@ -1991,8 +1990,8 @@ diff -uN build//IIR_ConditionalWaveform.h b/IIR_ConditionalWaveform.h
  public:
  	IIR_ConditionalWaveform(void);
  	~IIR_ConditionalWaveform(void);
-diff -uN build//IIR_ConditionalWaveformList.cpp b/IIR_ConditionalWaveformList.cpp
---- build//IIR_ConditionalWaveformList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_ConditionalWaveformList.cpp b/IIR_ConditionalWaveformList.cpp
+--- a/IIR_ConditionalWaveformList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ConditionalWaveformList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_ConditionalWaveformList.h"
@@ -2049,8 +2048,8 @@ diff -uN build//IIR_ConditionalWaveformList.cpp b/IIR_ConditionalWaveformList.cp
 -{
 -}
 -
-diff -uN build//IIR_ConditionalWaveformList.h b/IIR_ConditionalWaveformList.h
---- build//IIR_ConditionalWaveformList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_ConditionalWaveformList.h b/IIR_ConditionalWaveformList.h
+--- a/IIR_ConditionalWaveformList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ConditionalWaveformList.h	2011-08-26 08:03:57.517913756 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_CONDITIONALWAVEFORMLIST_H_
@@ -2084,8 +2083,8 @@ diff -uN build//IIR_ConditionalWaveformList.h b/IIR_ConditionalWaveformList.h
 +typedef _TemplatedList<IIR_ConditionalWaveform> IIR_ConditionalWaveformList;
  
  #endif /*!_AIRE_IIR_CONDITIONALWAVEFORMLIST_H_*/
-diff -uN build//IIR_ConfigurationDeclaration.cpp b/IIR_ConfigurationDeclaration.cpp
---- build//IIR_ConfigurationDeclaration.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_ConfigurationDeclaration.cpp b/IIR_ConfigurationDeclaration.cpp
+--- a/IIR_ConfigurationDeclaration.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_ConfigurationDeclaration.cpp	2011-08-26 08:03:57.521913771 +0100
 @@ -2,6 +2,7 @@
  
@@ -2117,8 +2116,8 @@ diff -uN build//IIR_ConfigurationDeclaration.cpp b/IIR_ConfigurationDeclaration.
 +	return this->_entity;
  }
  
-diff -uN build//IIR_ConfigurationItem.h b/IIR_ConfigurationItem.h
---- build//IIR_ConfigurationItem.h	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_ConfigurationItem.h b/IIR_ConfigurationItem.h
+--- a/IIR_ConfigurationItem.h	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_ConfigurationItem.h	2011-08-26 08:03:57.521913771 +0100
 @@ -3,10 +3,12 @@
  
@@ -2134,8 +2133,8 @@ diff -uN build//IIR_ConfigurationItem.h b/IIR_ConfigurationItem.h
  };
  
  
-diff -uN build//IIR_ConfigurationItemList.cpp b/IIR_ConfigurationItemList.cpp
---- build//IIR_ConfigurationItemList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_ConfigurationItemList.cpp b/IIR_ConfigurationItemList.cpp
+--- a/IIR_ConfigurationItemList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ConfigurationItemList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_ConfigurationItemList.h"
@@ -2192,8 +2191,8 @@ diff -uN build//IIR_ConfigurationItemList.cpp b/IIR_ConfigurationItemList.cpp
 -{
 -}
 -
-diff -uN build//IIR_ConfigurationItemList.h b/IIR_ConfigurationItemList.h
---- build//IIR_ConfigurationItemList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_ConfigurationItemList.h b/IIR_ConfigurationItemList.h
+--- a/IIR_ConfigurationItemList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ConfigurationItemList.h	2011-08-26 08:03:57.521913771 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_CONFIGURATIONITEMLIST_H_
@@ -2227,8 +2226,8 @@ diff -uN build//IIR_ConfigurationItemList.h b/IIR_ConfigurationItemList.h
 +typedef _TemplatedList<IIR_ConfigurationItem> IIR_ConfigurationItemList;
  
  #endif /*!_AIRE_IIR_CONFIGURATIONITEMLIST_H_*/
-diff -uN build//IIR_ConfigurationSpecification.cpp b/IIR_ConfigurationSpecification.cpp
---- build//IIR_ConfigurationSpecification.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_ConfigurationSpecification.cpp b/IIR_ConfigurationSpecification.cpp
+--- a/IIR_ConfigurationSpecification.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_ConfigurationSpecification.cpp	2011-08-26 08:03:57.525913790 +0100
 @@ -2,6 +2,7 @@
  
@@ -2260,8 +2259,8 @@ diff -uN build//IIR_ConfigurationSpecification.cpp b/IIR_ConfigurationSpecificat
 +	return this->_component_name;
  }
  
-diff -uN build//IIR_ConstantDeclaration.cpp b/IIR_ConstantDeclaration.cpp
---- build//IIR_ConstantDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_ConstantDeclaration.cpp b/IIR_ConstantDeclaration.cpp
+--- a/IIR_ConstantDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_ConstantDeclaration.cpp	2011-08-26 08:03:57.525913790 +0100
 @@ -2,10 +2,12 @@
  
@@ -2276,8 +2275,8 @@ diff -uN build//IIR_ConstantDeclaration.cpp b/IIR_ConstantDeclaration.cpp
  }
  
  IIR_ConstantDeclaration::IIR_ConstantDeclaration(void)
-diff -uN build//IIR_ConstantInterfaceDeclaration.cpp b/IIR_ConstantInterfaceDeclaration.cpp
---- build//IIR_ConstantInterfaceDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_ConstantInterfaceDeclaration.cpp b/IIR_ConstantInterfaceDeclaration.cpp
+--- a/IIR_ConstantInterfaceDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_ConstantInterfaceDeclaration.cpp	2011-08-26 08:03:57.525913790 +0100
 @@ -2,6 +2,7 @@
  
@@ -2287,8 +2286,8 @@ diff -uN build//IIR_ConstantInterfaceDeclaration.cpp b/IIR_ConstantInterfaceDecl
  }
  
  IIR_ConstantInterfaceDeclaration::~IIR_ConstantInterfaceDeclaration(void)
-diff -uN build//IIR_ConstantInterfaceDeclaration.h b/IIR_ConstantInterfaceDeclaration.h
---- build//IIR_ConstantInterfaceDeclaration.h	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_ConstantInterfaceDeclaration.h b/IIR_ConstantInterfaceDeclaration.h
+--- a/IIR_ConstantInterfaceDeclaration.h	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_ConstantInterfaceDeclaration.h	2011-08-26 08:03:57.525913790 +0100
 @@ -3,10 +3,12 @@
  
@@ -2304,8 +2303,8 @@ diff -uN build//IIR_ConstantInterfaceDeclaration.h b/IIR_ConstantInterfaceDeclar
  public:
  	IIR_ConstantInterfaceDeclaration(void);
  	~IIR_ConstantInterfaceDeclaration(void);
-diff -uN build//IIR_ContributionAttribute.cpp b/IIR_ContributionAttribute.cpp
---- build//IIR_ContributionAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_ContributionAttribute.cpp b/IIR_ContributionAttribute.cpp
+--- a/IIR_ContributionAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_ContributionAttribute.cpp	2011-08-26 08:03:57.529913816 +0100
 @@ -2,6 +2,7 @@
  
@@ -2315,8 +2314,8 @@ diff -uN build//IIR_ContributionAttribute.cpp b/IIR_ContributionAttribute.cpp
  }
  
  IIR_ContributionAttribute::~IIR_ContributionAttribute(void)
-diff -uN build//IIR.cpp b/IIR.cpp
---- build//IIR.cpp	2011-08-26 16:30:46.545777415 +0100
+diff -uN a/IIR.cpp b/IIR.cpp
+--- a/IIR.cpp	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR.cpp	2011-08-26 08:03:57.529913816 +0100
 @@ -2,6 +2,7 @@
  
@@ -2398,8 +2397,8 @@ diff -uN build//IIR.cpp b/IIR.cpp
 +	return this->_y_coordinate;
  }
 -
-diff -uN build//IIR_Declaration.cpp b/IIR_Declaration.cpp
---- build//IIR_Declaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_Declaration.cpp b/IIR_Declaration.cpp
+--- a/IIR_Declaration.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_Declaration.cpp	2011-08-26 08:03:57.529913816 +0100
 @@ -2,9 +2,11 @@
  
@@ -2413,8 +2412,8 @@ diff -uN build//IIR_Declaration.cpp b/IIR_Declaration.cpp
 +	return this->_declarator;
  }
  
-diff -uN build//IIR_Declaration.h b/IIR_Declaration.h
---- build//IIR_Declaration.h	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_Declaration.h b/IIR_Declaration.h
+--- a/IIR_Declaration.h	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_Declaration.h	2011-08-26 08:03:57.529913816 +0100
 @@ -3,6 +3,7 @@
  
@@ -2432,8 +2431,8 @@ diff -uN build//IIR_Declaration.h b/IIR_Declaration.h
  public:
  	void set_declarator(IIR_TextLiteral *declarator);
  	IIR_TextLiteral *get_declarator(void);
-diff -uN build//IIR_DeclarationList.cpp b/IIR_DeclarationList.cpp
---- build//IIR_DeclarationList.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_DeclarationList.cpp b/IIR_DeclarationList.cpp
+--- a/IIR_DeclarationList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_DeclarationList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_DeclarationList.h"
@@ -2490,8 +2489,8 @@ diff -uN build//IIR_DeclarationList.cpp b/IIR_DeclarationList.cpp
 -{
 -}
 -
-diff -uN build//IIR_DeclarationList.h b/IIR_DeclarationList.h
---- build//IIR_DeclarationList.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_DeclarationList.h b/IIR_DeclarationList.h
+--- a/IIR_DeclarationList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_DeclarationList.h	2011-08-26 08:03:57.529913816 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_DECLARATIONLIST_H_
@@ -2525,8 +2524,8 @@ diff -uN build//IIR_DeclarationList.h b/IIR_DeclarationList.h
 +typedef _TemplatedList<IIR_Declaration> IIR_DeclarationList;
  
  #endif /*!_AIRE_IIR_DECLARATIONLIST_H_*/
-diff -uN build//IIR_DelayedAttribute.cpp b/IIR_DelayedAttribute.cpp
---- build//IIR_DelayedAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_DelayedAttribute.cpp b/IIR_DelayedAttribute.cpp
+--- a/IIR_DelayedAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_DelayedAttribute.cpp	2011-08-26 08:03:57.529913816 +0100
 @@ -2,6 +2,7 @@
  
@@ -2548,8 +2547,8 @@ diff -uN build//IIR_DelayedAttribute.cpp b/IIR_DelayedAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_DesignatorByAll.cpp b/IIR_DesignatorByAll.cpp
---- build//IIR_DesignatorByAll.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_DesignatorByAll.cpp b/IIR_DesignatorByAll.cpp
+--- a/IIR_DesignatorByAll.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_DesignatorByAll.cpp	2011-08-26 08:03:57.533913827 +0100
 @@ -2,6 +2,7 @@
  
@@ -2559,8 +2558,8 @@ diff -uN build//IIR_DesignatorByAll.cpp b/IIR_DesignatorByAll.cpp
  }
  
  IIR_DesignatorByAll::~IIR_DesignatorByAll(void)
-diff -uN build//IIR_DesignatorByOthers.cpp b/IIR_DesignatorByOthers.cpp
---- build//IIR_DesignatorByOthers.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_DesignatorByOthers.cpp b/IIR_DesignatorByOthers.cpp
+--- a/IIR_DesignatorByOthers.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_DesignatorByOthers.cpp	2011-08-26 08:03:57.533913827 +0100
 @@ -2,6 +2,7 @@
  
@@ -2570,8 +2569,8 @@ diff -uN build//IIR_DesignatorByOthers.cpp b/IIR_DesignatorByOthers.cpp
  }
  
  IIR_DesignatorByOthers::~IIR_DesignatorByOthers(void)
-diff -uN build//IIR_DesignatorExplicit.cpp b/IIR_DesignatorExplicit.cpp
---- build//IIR_DesignatorExplicit.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_DesignatorExplicit.cpp b/IIR_DesignatorExplicit.cpp
+--- a/IIR_DesignatorExplicit.cpp	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_DesignatorExplicit.cpp	2011-08-26 08:03:57.533913827 +0100
 @@ -2,6 +2,7 @@
  
@@ -2603,8 +2602,8 @@ diff -uN build//IIR_DesignatorExplicit.cpp b/IIR_DesignatorExplicit.cpp
 +	return this->_signature;
  }
  
-diff -uN build//IIR_Designator.h b/IIR_Designator.h
---- build//IIR_Designator.h	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_Designator.h b/IIR_Designator.h
+--- a/IIR_Designator.h	2011-08-26 17:07:17.380641167 +0100
 +++ b/IIR_Designator.h	2011-08-26 08:03:57.533913827 +0100
 @@ -3,10 +3,12 @@
  
@@ -2620,8 +2619,8 @@ diff -uN build//IIR_Designator.h b/IIR_Designator.h
  };
  
  
-diff -uN build//IIR_DesignatorList.cpp b/IIR_DesignatorList.cpp
---- build//IIR_DesignatorList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_DesignatorList.cpp b/IIR_DesignatorList.cpp
+--- a/IIR_DesignatorList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_DesignatorList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_DesignatorList.h"
@@ -2678,8 +2677,8 @@ diff -uN build//IIR_DesignatorList.cpp b/IIR_DesignatorList.cpp
 -{
 -}
 -
-diff -uN build//IIR_DesignatorList.h b/IIR_DesignatorList.h
---- build//IIR_DesignatorList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_DesignatorList.h b/IIR_DesignatorList.h
+--- a/IIR_DesignatorList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_DesignatorList.h	2011-08-26 08:03:57.533913827 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_DESIGNATORLIST_H_
@@ -2713,8 +2712,8 @@ diff -uN build//IIR_DesignatorList.h b/IIR_DesignatorList.h
 +typedef _TemplatedList<IIR_Designator> IIR_DesignatorList;
  
  #endif /*!_AIRE_IIR_DESIGNATORLIST_H_*/
-diff -uN build//IIR_DesignFile.cpp b/IIR_DesignFile.cpp
---- build//IIR_DesignFile.cpp	2011-08-26 16:30:46.545777415 +0100
+diff -uN a/IIR_DesignFile.cpp b/IIR_DesignFile.cpp
+--- a/IIR_DesignFile.cpp	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_DesignFile.cpp	2011-08-26 08:03:57.533913827 +0100
 @@ -2,6 +2,7 @@
  
@@ -2746,8 +2745,8 @@ diff -uN build//IIR_DesignFile.cpp b/IIR_DesignFile.cpp
 +	return this->_source_language;
  }
  
-diff -uN build//IIR_DesignFile.h b/IIR_DesignFile.h
---- build//IIR_DesignFile.h	2011-08-26 16:30:46.545777415 +0100
+diff -uN a/IIR_DesignFile.h b/IIR_DesignFile.h
+--- a/IIR_DesignFile.h	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_DesignFile.h	2011-08-26 08:03:57.537913848 +0100
 @@ -7,6 +7,7 @@
  #include "IIR_DesignFileList.h"
@@ -2765,8 +2764,8 @@ diff -uN build//IIR_DesignFile.h b/IIR_DesignFile.h
  public:
  	IIR_DesignFile(void);
  	~IIR_DesignFile(void);
-diff -uN build//IIR_DesignFileList.cpp b/IIR_DesignFileList.cpp
---- build//IIR_DesignFileList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_DesignFileList.cpp b/IIR_DesignFileList.cpp
+--- a/IIR_DesignFileList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_DesignFileList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_DesignFileList.h"
@@ -2823,8 +2822,8 @@ diff -uN build//IIR_DesignFileList.cpp b/IIR_DesignFileList.cpp
 -{
 -}
 -
-diff -uN build//IIR_DesignFileList.h b/IIR_DesignFileList.h
---- build//IIR_DesignFileList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_DesignFileList.h b/IIR_DesignFileList.h
+--- a/IIR_DesignFileList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_DesignFileList.h	2011-08-26 08:03:57.537913848 +0100
 @@ -1,28 +1,14 @@
  #ifndef _AIRE_IIR_DESIGNFILELIST_H_
@@ -2861,8 +2860,8 @@ diff -uN build//IIR_DesignFileList.h b/IIR_DesignFileList.h
 +typedef _TemplatedList<IIR_DesignFile> IIR_DesignFileList;
  
  #endif /*!_AIRE_IIR_DESIGNFILELIST_H_*/
-diff -uN build//IIR_DisconnectionSpecification.cpp b/IIR_DisconnectionSpecification.cpp
---- build//IIR_DisconnectionSpecification.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_DisconnectionSpecification.cpp b/IIR_DisconnectionSpecification.cpp
+--- a/IIR_DisconnectionSpecification.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_DisconnectionSpecification.cpp	2011-08-26 08:03:57.537913848 +0100
 @@ -2,6 +2,7 @@
  
@@ -2894,8 +2893,8 @@ diff -uN build//IIR_DisconnectionSpecification.cpp b/IIR_DisconnectionSpecificat
 +	return this->_time_expression;
  }
  
-diff -uN build//IIR_DivisionOperator.cpp b/IIR_DivisionOperator.cpp
---- build//IIR_DivisionOperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_DivisionOperator.cpp b/IIR_DivisionOperator.cpp
+--- a/IIR_DivisionOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_DivisionOperator.cpp	2011-08-26 08:03:57.537913848 +0100
 @@ -2,6 +2,7 @@
  
@@ -2905,8 +2904,8 @@ diff -uN build//IIR_DivisionOperator.cpp b/IIR_DivisionOperator.cpp
  }
  
  IIR_DivisionOperator::~IIR_DivisionOperator(void)
-diff -uN build//IIR_DotAttribute.cpp b/IIR_DotAttribute.cpp
---- build//IIR_DotAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_DotAttribute.cpp b/IIR_DotAttribute.cpp
+--- a/IIR_DotAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_DotAttribute.cpp	2011-08-26 08:03:57.541913875 +0100
 @@ -2,6 +2,7 @@
  
@@ -2916,8 +2915,8 @@ diff -uN build//IIR_DotAttribute.cpp b/IIR_DotAttribute.cpp
  }
  
  IIR_DotAttribute::~IIR_DotAttribute(void)
-diff -uN build//IIR_DrivingAttribute.cpp b/IIR_DrivingAttribute.cpp
---- build//IIR_DrivingAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_DrivingAttribute.cpp b/IIR_DrivingAttribute.cpp
+--- a/IIR_DrivingAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_DrivingAttribute.cpp	2011-08-26 08:03:57.541913875 +0100
 @@ -2,6 +2,7 @@
  
@@ -2927,8 +2926,8 @@ diff -uN build//IIR_DrivingAttribute.cpp b/IIR_DrivingAttribute.cpp
  }
  
  IIR_DrivingAttribute::~IIR_DrivingAttribute(void)
-diff -uN build//IIR_DrivingValueAttribute.cpp b/IIR_DrivingValueAttribute.cpp
---- build//IIR_DrivingValueAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_DrivingValueAttribute.cpp b/IIR_DrivingValueAttribute.cpp
+--- a/IIR_DrivingValueAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_DrivingValueAttribute.cpp	2011-08-26 08:03:57.541913875 +0100
 @@ -2,6 +2,7 @@
  
@@ -2938,8 +2937,8 @@ diff -uN build//IIR_DrivingValueAttribute.cpp b/IIR_DrivingValueAttribute.cpp
  }
  
  IIR_DrivingValueAttribute::~IIR_DrivingValueAttribute(void)
-diff -uN build//IIR_DyadicOperator.cpp b/IIR_DyadicOperator.cpp
---- build//IIR_DyadicOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_DyadicOperator.cpp b/IIR_DyadicOperator.cpp
+--- a/IIR_DyadicOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_DyadicOperator.cpp	2011-08-26 08:03:57.541913875 +0100
 @@ -2,25 +2,31 @@
  
@@ -2973,8 +2972,8 @@ diff -uN build//IIR_DyadicOperator.cpp b/IIR_DyadicOperator.cpp
 +	return this->_right_operand;
  }
  
-diff -uN build//IIR_ElementDeclaration.cpp b/IIR_ElementDeclaration.cpp
---- build//IIR_ElementDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_ElementDeclaration.cpp b/IIR_ElementDeclaration.cpp
+--- a/IIR_ElementDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_ElementDeclaration.cpp	2011-08-26 08:03:57.541913875 +0100
 @@ -2,6 +2,7 @@
  
@@ -2996,8 +2995,8 @@ diff -uN build//IIR_ElementDeclaration.cpp b/IIR_ElementDeclaration.cpp
 +	return this->_subtype;
  }
  
-diff -uN build//IIR_ElementDeclaration.h b/IIR_ElementDeclaration.h
---- build//IIR_ElementDeclaration.h	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_ElementDeclaration.h b/IIR_ElementDeclaration.h
+--- a/IIR_ElementDeclaration.h	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_ElementDeclaration.h	2011-08-26 08:03:57.545913890 +0100
 @@ -3,6 +3,7 @@
  
@@ -3015,8 +3014,8 @@ diff -uN build//IIR_ElementDeclaration.h b/IIR_ElementDeclaration.h
  public:
  	IIR_ElementDeclaration(void);
  	~IIR_ElementDeclaration(void);
-diff -uN build//IIR_ElementDeclarationList.cpp b/IIR_ElementDeclarationList.cpp
---- build//IIR_ElementDeclarationList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_ElementDeclarationList.cpp b/IIR_ElementDeclarationList.cpp
+--- a/IIR_ElementDeclarationList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ElementDeclarationList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_ElementDeclarationList.h"
@@ -3073,8 +3072,8 @@ diff -uN build//IIR_ElementDeclarationList.cpp b/IIR_ElementDeclarationList.cpp
 -{
 -}
 -
-diff -uN build//IIR_ElementDeclarationList.h b/IIR_ElementDeclarationList.h
---- build//IIR_ElementDeclarationList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_ElementDeclarationList.h b/IIR_ElementDeclarationList.h
+--- a/IIR_ElementDeclarationList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_ElementDeclarationList.h	2011-08-26 08:03:57.545913890 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_ELEMENTDECLARATIONLIST_H_
@@ -3108,8 +3107,8 @@ diff -uN build//IIR_ElementDeclarationList.h b/IIR_ElementDeclarationList.h
 +typedef _TemplatedList<IIR_ElementDeclaration> IIR_ElementDeclarationList;
  
  #endif /*!_AIRE_IIR_ELEMENTDECLARATIONLIST_H_*/
-diff -uN build//IIR_Elsif.cpp b/IIR_Elsif.cpp
---- build//IIR_Elsif.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_Elsif.cpp b/IIR_Elsif.cpp
+--- a/IIR_Elsif.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_Elsif.cpp	2011-08-26 08:03:57.545913890 +0100
 @@ -2,6 +2,7 @@
  
@@ -3141,8 +3140,8 @@ diff -uN build//IIR_Elsif.cpp b/IIR_Elsif.cpp
 +	return this->_else_clause;
  }
  
-diff -uN build//IIR_EntityClassEntry.cpp b/IIR_EntityClassEntry.cpp
---- build//IIR_EntityClassEntry.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_EntityClassEntry.cpp b/IIR_EntityClassEntry.cpp
+--- a/IIR_EntityClassEntry.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_EntityClassEntry.cpp	2011-08-26 08:03:57.545913890 +0100
 @@ -2,10 +2,12 @@
  
@@ -3169,8 +3168,8 @@ diff -uN build//IIR_EntityClassEntry.cpp b/IIR_EntityClassEntry.cpp
 +	return this->_boxed;
  }
  
-diff -uN build//IIR_EntityClassEntry.h b/IIR_EntityClassEntry.h
---- build//IIR_EntityClassEntry.h	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_EntityClassEntry.h b/IIR_EntityClassEntry.h
+--- a/IIR_EntityClassEntry.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_EntityClassEntry.h	2011-08-26 08:03:57.545913890 +0100
 @@ -4,13 +4,14 @@
  #include "primitive_types.h"
@@ -3188,8 +3187,8 @@ diff -uN build//IIR_EntityClassEntry.h b/IIR_EntityClassEntry.h
  public:
  	void set_entity_kind(enum IR_Kind entity_kind);
  	enum IR_Kind get_entity_kind(void);
-diff -uN build//IIR_EntityClassEntryList.cpp b/IIR_EntityClassEntryList.cpp
---- build//IIR_EntityClassEntryList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_EntityClassEntryList.cpp b/IIR_EntityClassEntryList.cpp
+--- a/IIR_EntityClassEntryList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_EntityClassEntryList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_EntityClassEntryList.h"
@@ -3246,8 +3245,8 @@ diff -uN build//IIR_EntityClassEntryList.cpp b/IIR_EntityClassEntryList.cpp
 -{
 -}
 -
-diff -uN build//IIR_EntityClassEntryList.h b/IIR_EntityClassEntryList.h
---- build//IIR_EntityClassEntryList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_EntityClassEntryList.h b/IIR_EntityClassEntryList.h
+--- a/IIR_EntityClassEntryList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_EntityClassEntryList.h	2011-08-26 08:03:57.549913909 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_ENTITYCLASSENTRYLIST_H_
@@ -3281,8 +3280,8 @@ diff -uN build//IIR_EntityClassEntryList.h b/IIR_EntityClassEntryList.h
 +typedef _TemplatedList<IIR_EntityClassEntry> IIR_EntityClassEntryList;
  
  #endif /*!_AIRE_IIR_ENTITYCLASSENTRYLIST_H_*/
-diff -uN build//IIR_EntityDeclaration.cpp b/IIR_EntityDeclaration.cpp
---- build//IIR_EntityDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_EntityDeclaration.cpp b/IIR_EntityDeclaration.cpp
+--- a/IIR_EntityDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_EntityDeclaration.cpp	2011-08-26 08:03:57.549913909 +0100
 @@ -2,6 +2,7 @@
  
@@ -3304,8 +3303,8 @@ diff -uN build//IIR_EntityDeclaration.cpp b/IIR_EntityDeclaration.cpp
 +	return this->_last_analyzed_architecture;
  }
  
-diff -uN build//IIR_EnumerationLiteral.cpp b/IIR_EnumerationLiteral.cpp
---- build//IIR_EnumerationLiteral.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_EnumerationLiteral.cpp b/IIR_EnumerationLiteral.cpp
+--- a/IIR_EnumerationLiteral.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_EnumerationLiteral.cpp	2011-08-26 08:03:57.549913909 +0100
 @@ -2,6 +2,7 @@
  
@@ -3337,8 +3336,8 @@ diff -uN build//IIR_EnumerationLiteral.cpp b/IIR_EnumerationLiteral.cpp
 +	return this->_subtype;
  }
  
-diff -uN build//IIR_EnumerationLiteral.h b/IIR_EnumerationLiteral.h
---- build//IIR_EnumerationLiteral.h	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_EnumerationLiteral.h b/IIR_EnumerationLiteral.h
+--- a/IIR_EnumerationLiteral.h	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_EnumerationLiteral.h	2011-08-26 08:03:57.549913909 +0100
 @@ -4,12 +4,15 @@
  #include "primitive_types.h"
@@ -3356,8 +3355,8 @@ diff -uN build//IIR_EnumerationLiteral.h b/IIR_EnumerationLiteral.h
  public:
  	IIR_AttributeSpecificationList attributes;
  private:
-diff -uN build//IIR_EnumerationLiteralList.cpp b/IIR_EnumerationLiteralList.cpp
---- build//IIR_EnumerationLiteralList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_EnumerationLiteralList.cpp b/IIR_EnumerationLiteralList.cpp
+--- a/IIR_EnumerationLiteralList.cpp	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_EnumerationLiteralList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_EnumerationLiteralList.h"
@@ -3414,8 +3413,8 @@ diff -uN build//IIR_EnumerationLiteralList.cpp b/IIR_EnumerationLiteralList.cpp
 -{
 -}
 -
-diff -uN build//IIR_EnumerationLiteralList.h b/IIR_EnumerationLiteralList.h
---- build//IIR_EnumerationLiteralList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_EnumerationLiteralList.h b/IIR_EnumerationLiteralList.h
+--- a/IIR_EnumerationLiteralList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_EnumerationLiteralList.h	2011-08-26 08:03:57.549913909 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_ENUMERATIONLITERALLIST_H_
@@ -3449,8 +3448,8 @@ diff -uN build//IIR_EnumerationLiteralList.h b/IIR_EnumerationLiteralList.h
 +typedef _TemplatedList<IIR_EnumerationLiteral> IIR_EnumerationLiteralList;
  
  #endif /*!_AIRE_IIR_ENUMERATIONLITERALLIST_H_*/
-diff -uN build//IIR_EnumerationSubtypeDefinition.cpp b/IIR_EnumerationSubtypeDefinition.cpp
---- build//IIR_EnumerationSubtypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_EnumerationSubtypeDefinition.cpp b/IIR_EnumerationSubtypeDefinition.cpp
+--- a/IIR_EnumerationSubtypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_EnumerationSubtypeDefinition.cpp	2011-08-26 08:03:57.549913909 +0100
 @@ -6,18 +6,22 @@
  
@@ -3475,8 +3474,8 @@ diff -uN build//IIR_EnumerationSubtypeDefinition.cpp b/IIR_EnumerationSubtypeDef
  }
  
  void IIR_EnumerationSubtypeDefinition::release(void)
-diff -uN build//IIR_EnumerationTypeDefinition.cpp b/IIR_EnumerationTypeDefinition.cpp
---- build//IIR_EnumerationTypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_EnumerationTypeDefinition.cpp b/IIR_EnumerationTypeDefinition.cpp
+--- a/IIR_EnumerationTypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_EnumerationTypeDefinition.cpp	2011-08-26 08:03:57.553913935 +0100
 @@ -2,6 +2,7 @@
  
@@ -3486,8 +3485,8 @@ diff -uN build//IIR_EnumerationTypeDefinition.cpp b/IIR_EnumerationTypeDefinitio
  }
  
  IIR_EnumerationTypeDefinition::~IIR_EnumerationTypeDefinition(void)
-diff -uN build//IIR_EnumerationTypeDefinition.h b/IIR_EnumerationTypeDefinition.h
---- build//IIR_EnumerationTypeDefinition.h	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_EnumerationTypeDefinition.h b/IIR_EnumerationTypeDefinition.h
+--- a/IIR_EnumerationTypeDefinition.h	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_EnumerationTypeDefinition.h	2011-08-26 08:03:57.553913935 +0100
 @@ -5,7 +5,6 @@
  #include "IIR_ScalarTypeDefinition.h"
@@ -3497,8 +3496,8 @@ diff -uN build//IIR_EnumerationTypeDefinition.h b/IIR_EnumerationTypeDefinition.
  class IIR_EnumerationTypeDefinition : public IIR_ScalarTypeDefinition
  {
  public:
-diff -uN build//IIR_EqualityOperator.cpp b/IIR_EqualityOperator.cpp
---- build//IIR_EqualityOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_EqualityOperator.cpp b/IIR_EqualityOperator.cpp
+--- a/IIR_EqualityOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_EqualityOperator.cpp	2011-08-26 08:03:57.553913935 +0100
 @@ -2,6 +2,7 @@
  
@@ -3508,8 +3507,8 @@ diff -uN build//IIR_EqualityOperator.cpp b/IIR_EqualityOperator.cpp
  }
  
  IIR_EqualityOperator::~IIR_EqualityOperator(void)
-diff -uN build//IIR_EventAttribute.cpp b/IIR_EventAttribute.cpp
---- build//IIR_EventAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_EventAttribute.cpp b/IIR_EventAttribute.cpp
+--- a/IIR_EventAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_EventAttribute.cpp	2011-08-26 08:03:57.553913935 +0100
 @@ -2,6 +2,7 @@
  
@@ -3519,8 +3518,8 @@ diff -uN build//IIR_EventAttribute.cpp b/IIR_EventAttribute.cpp
  }
  
  IIR_EventAttribute::~IIR_EventAttribute(void)
-diff -uN build//IIR_ExitStatement.cpp b/IIR_ExitStatement.cpp
---- build//IIR_ExitStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_ExitStatement.cpp b/IIR_ExitStatement.cpp
+--- a/IIR_ExitStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_ExitStatement.cpp	2011-08-26 08:03:57.553913935 +0100
 @@ -2,6 +2,7 @@
  
@@ -3552,8 +3551,8 @@ diff -uN build//IIR_ExitStatement.cpp b/IIR_ExitStatement.cpp
 +	return this->_condition;
  }
  
-diff -uN build//IIR_ExponentiationOperator.cpp b/IIR_ExponentiationOperator.cpp
---- build//IIR_ExponentiationOperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_ExponentiationOperator.cpp b/IIR_ExponentiationOperator.cpp
+--- a/IIR_ExponentiationOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_ExponentiationOperator.cpp	2011-08-26 08:03:57.557913946 +0100
 @@ -2,6 +2,7 @@
  
@@ -3563,8 +3562,8 @@ diff -uN build//IIR_ExponentiationOperator.cpp b/IIR_ExponentiationOperator.cpp
  }
  
  IIR_ExponentiationOperator::~IIR_ExponentiationOperator(void)
-diff -uN build//IIR_Expression.cpp b/IIR_Expression.cpp
---- build//IIR_Expression.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_Expression.cpp b/IIR_Expression.cpp
+--- a/IIR_Expression.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_Expression.cpp	2011-08-26 08:03:57.557913946 +0100
 @@ -2,9 +2,11 @@
  
@@ -3578,8 +3577,8 @@ diff -uN build//IIR_Expression.cpp b/IIR_Expression.cpp
 +	return this->_subtype;
  }
  
-diff -uN build//IIR_FileDeclaration.cpp b/IIR_FileDeclaration.cpp
---- build//IIR_FileDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_FileDeclaration.cpp b/IIR_FileDeclaration.cpp
+--- a/IIR_FileDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_FileDeclaration.cpp	2011-08-26 08:03:57.557913946 +0100
 @@ -2,18 +2,22 @@
  
@@ -3604,8 +3603,8 @@ diff -uN build//IIR_FileDeclaration.cpp b/IIR_FileDeclaration.cpp
  }
  
  IIR_FileDeclaration::IIR_FileDeclaration(void)
-diff -uN build//IIR_FileInterfaceDeclaration.cpp b/IIR_FileInterfaceDeclaration.cpp
---- build//IIR_FileInterfaceDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_FileInterfaceDeclaration.cpp b/IIR_FileInterfaceDeclaration.cpp
+--- a/IIR_FileInterfaceDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_FileInterfaceDeclaration.cpp	2011-08-26 08:03:57.557913946 +0100
 @@ -2,6 +2,7 @@
  
@@ -3615,8 +3614,8 @@ diff -uN build//IIR_FileInterfaceDeclaration.cpp b/IIR_FileInterfaceDeclaration.
  }
  
  IIR_FileInterfaceDeclaration::~IIR_FileInterfaceDeclaration(void)
-diff -uN build//IIR_FileTypeDefinition.cpp b/IIR_FileTypeDefinition.cpp
---- build//IIR_FileTypeDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_FileTypeDefinition.cpp b/IIR_FileTypeDefinition.cpp
+--- a/IIR_FileTypeDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_FileTypeDefinition.cpp	2011-08-26 08:03:57.557913946 +0100
 @@ -2,6 +2,7 @@
  
@@ -3638,8 +3637,8 @@ diff -uN build//IIR_FileTypeDefinition.cpp b/IIR_FileTypeDefinition.cpp
 +	return this->_type_mark;
  }
  
-diff -uN build//IIR_FloatingSubtypeDefinition.cpp b/IIR_FloatingSubtypeDefinition.cpp
---- build//IIR_FloatingSubtypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_FloatingSubtypeDefinition.cpp b/IIR_FloatingSubtypeDefinition.cpp
+--- a/IIR_FloatingSubtypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_FloatingSubtypeDefinition.cpp	2011-08-26 08:03:57.561913967 +0100
 @@ -6,18 +6,22 @@
  
@@ -3664,8 +3663,8 @@ diff -uN build//IIR_FloatingSubtypeDefinition.cpp b/IIR_FloatingSubtypeDefinitio
  }
  
  void IIR_FloatingSubtypeDefinition::release(void)
-diff -uN build//IIR_FloatingTypeDefinition.cpp b/IIR_FloatingTypeDefinition.cpp
---- build//IIR_FloatingTypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_FloatingTypeDefinition.cpp b/IIR_FloatingTypeDefinition.cpp
+--- a/IIR_FloatingTypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_FloatingTypeDefinition.cpp	2011-08-26 08:03:57.561913967 +0100
 @@ -2,6 +2,7 @@
  
@@ -3675,8 +3674,8 @@ diff -uN build//IIR_FloatingTypeDefinition.cpp b/IIR_FloatingTypeDefinition.cpp
  }
  
  IIR_FloatingTypeDefinition::~IIR_FloatingTypeDefinition(void)
-diff -uN build//IIR_ForLoopStatement.cpp b/IIR_ForLoopStatement.cpp
---- build//IIR_ForLoopStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_ForLoopStatement.cpp b/IIR_ForLoopStatement.cpp
+--- a/IIR_ForLoopStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_ForLoopStatement.cpp	2011-08-26 08:03:57.561913967 +0100
 @@ -2,6 +2,7 @@
  
@@ -3698,8 +3697,8 @@ diff -uN build//IIR_ForLoopStatement.cpp b/IIR_ForLoopStatement.cpp
 +	return this->_iteration_scheme;
  }
  
-diff -uN build//IIR_FreeQuantityDeclaration.cpp b/IIR_FreeQuantityDeclaration.cpp
---- build//IIR_FreeQuantityDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_FreeQuantityDeclaration.cpp b/IIR_FreeQuantityDeclaration.cpp
+--- a/IIR_FreeQuantityDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_FreeQuantityDeclaration.cpp	2011-08-26 08:03:57.561913967 +0100
 @@ -2,10 +2,12 @@
  
@@ -3714,8 +3713,8 @@ diff -uN build//IIR_FreeQuantityDeclaration.cpp b/IIR_FreeQuantityDeclaration.cp
  }
  
  IIR_FreeQuantityDeclaration::IIR_FreeQuantityDeclaration(void)
-diff -uN build//IIR_FunctionCall.cpp b/IIR_FunctionCall.cpp
---- build//IIR_FunctionCall.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_FunctionCall.cpp b/IIR_FunctionCall.cpp
+--- a/IIR_FunctionCall.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_FunctionCall.cpp	2011-08-26 08:03:57.561913967 +0100
 @@ -2,6 +2,7 @@
  
@@ -3737,8 +3736,8 @@ diff -uN build//IIR_FunctionCall.cpp b/IIR_FunctionCall.cpp
 +	return this->_implementation;
  }
  
-diff -uN build//IIR_FunctionDeclaration.cpp b/IIR_FunctionDeclaration.cpp
---- build//IIR_FunctionDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_FunctionDeclaration.cpp b/IIR_FunctionDeclaration.cpp
+--- a/IIR_FunctionDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_FunctionDeclaration.cpp	2011-08-26 08:03:57.565913994 +0100
 @@ -2,6 +2,7 @@
  
@@ -3770,8 +3769,8 @@ diff -uN build//IIR_FunctionDeclaration.cpp b/IIR_FunctionDeclaration.cpp
 +	return this->_return_type;
  }
  
-diff -uN build//IIR_GenericList.cpp b/IIR_GenericList.cpp
---- build//IIR_GenericList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_GenericList.cpp b/IIR_GenericList.cpp
+--- a/IIR_GenericList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_GenericList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_GenericList.h"
@@ -3828,8 +3827,8 @@ diff -uN build//IIR_GenericList.cpp b/IIR_GenericList.cpp
 -{
 -}
 -
-diff -uN build//IIR_GenericList.h b/IIR_GenericList.h
---- build//IIR_GenericList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_GenericList.h b/IIR_GenericList.h
+--- a/IIR_GenericList.h	2011-08-26 17:07:17.388641211 +0100
 +++ b/IIR_GenericList.h	2011-08-26 08:03:57.565913994 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_GENERICLIST_H_
@@ -3863,8 +3862,8 @@ diff -uN build//IIR_GenericList.h b/IIR_GenericList.h
 +typedef _TemplatedList<IIR_ConstantInterfaceDeclaration> IIR_GenericList;
  
  #endif /*!_AIRE_IIR_GENERICLIST_H_*/
-diff -uN build//IIR_GreaterThanOperator.cpp b/IIR_GreaterThanOperator.cpp
---- build//IIR_GreaterThanOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_GreaterThanOperator.cpp b/IIR_GreaterThanOperator.cpp
+--- a/IIR_GreaterThanOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_GreaterThanOperator.cpp	2011-08-26 08:03:57.565913994 +0100
 @@ -2,6 +2,7 @@
  
@@ -3874,8 +3873,8 @@ diff -uN build//IIR_GreaterThanOperator.cpp b/IIR_GreaterThanOperator.cpp
  }
  
  IIR_GreaterThanOperator::~IIR_GreaterThanOperator(void)
-diff -uN build//IIR_GreaterThanOrEqualOperator.cpp b/IIR_GreaterThanOrEqualOperator.cpp
---- build//IIR_GreaterThanOrEqualOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_GreaterThanOrEqualOperator.cpp b/IIR_GreaterThanOrEqualOperator.cpp
+--- a/IIR_GreaterThanOrEqualOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_GreaterThanOrEqualOperator.cpp	2011-08-26 08:03:57.565913994 +0100
 @@ -2,6 +2,7 @@
  
@@ -3885,8 +3884,8 @@ diff -uN build//IIR_GreaterThanOrEqualOperator.cpp b/IIR_GreaterThanOrEqualOpera
  }
  
  IIR_GreaterThanOrEqualOperator::~IIR_GreaterThanOrEqualOperator(void)
-diff -uN build//IIR_GroupDeclaration.cpp b/IIR_GroupDeclaration.cpp
---- build//IIR_GroupDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_GroupDeclaration.cpp b/IIR_GroupDeclaration.cpp
+--- a/IIR_GroupDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_GroupDeclaration.cpp	2011-08-26 08:03:57.569914009 +0100
 @@ -2,6 +2,7 @@
  
@@ -3908,8 +3907,8 @@ diff -uN build//IIR_GroupDeclaration.cpp b/IIR_GroupDeclaration.cpp
 +	return this->_group_template_name;
  }
  
-diff -uN build//IIR_GroupTemplateDeclaration.cpp b/IIR_GroupTemplateDeclaration.cpp
---- build//IIR_GroupTemplateDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_GroupTemplateDeclaration.cpp b/IIR_GroupTemplateDeclaration.cpp
+--- a/IIR_GroupTemplateDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_GroupTemplateDeclaration.cpp	2011-08-26 08:03:57.569914009 +0100
 @@ -2,6 +2,7 @@
  
@@ -3919,8 +3918,8 @@ diff -uN build//IIR_GroupTemplateDeclaration.cpp b/IIR_GroupTemplateDeclaration.
  }
  
  IIR_GroupTemplateDeclaration::~IIR_GroupTemplateDeclaration(void)
-diff -uN build//IIR_HighAttribute.cpp b/IIR_HighAttribute.cpp
---- build//IIR_HighAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_HighAttribute.cpp b/IIR_HighAttribute.cpp
+--- a/IIR_HighAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_HighAttribute.cpp	2011-08-26 08:03:57.569914009 +0100
 @@ -2,6 +2,7 @@
  
@@ -3942,8 +3941,8 @@ diff -uN build//IIR_HighAttribute.cpp b/IIR_HighAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_Identifier.cpp b/IIR_Identifier.cpp
---- build//IIR_Identifier.cpp	2011-08-26 16:30:46.545777415 +0100
+diff -uN a/IIR_Identifier.cpp b/IIR_Identifier.cpp
+--- a/IIR_Identifier.cpp	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_Identifier.cpp	2011-08-26 08:03:57.569914009 +0100
 @@ -6,10 +6,12 @@
  
@@ -3958,8 +3957,8 @@ diff -uN build//IIR_Identifier.cpp b/IIR_Identifier.cpp
  }
  
  IIR_Identifier::~IIR_Identifier(void)
-diff -uN build//IIR_IdentityOperator.cpp b/IIR_IdentityOperator.cpp
---- build//IIR_IdentityOperator.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_IdentityOperator.cpp b/IIR_IdentityOperator.cpp
+--- a/IIR_IdentityOperator.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_IdentityOperator.cpp	2011-08-26 08:03:57.569914009 +0100
 @@ -2,6 +2,7 @@
  
@@ -3969,8 +3968,8 @@ diff -uN build//IIR_IdentityOperator.cpp b/IIR_IdentityOperator.cpp
  }
  
  IIR_IdentityOperator::~IIR_IdentityOperator(void)
-diff -uN build//IIR_IfStatement.cpp b/IIR_IfStatement.cpp
---- build//IIR_IfStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_IfStatement.cpp b/IIR_IfStatement.cpp
+--- a/IIR_IfStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_IfStatement.cpp	2011-08-26 08:03:57.573914028 +0100
 @@ -2,6 +2,7 @@
  
@@ -4002,8 +4001,8 @@ diff -uN build//IIR_IfStatement.cpp b/IIR_IfStatement.cpp
 +	return this->_elsif;
  }
  
-diff -uN build//IIR_ImageAttribute.cpp b/IIR_ImageAttribute.cpp
---- build//IIR_ImageAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_ImageAttribute.cpp b/IIR_ImageAttribute.cpp
+--- a/IIR_ImageAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_ImageAttribute.cpp	2011-08-26 08:03:57.573914028 +0100
 @@ -2,6 +2,7 @@
  
@@ -4025,8 +4024,8 @@ diff -uN build//IIR_ImageAttribute.cpp b/IIR_ImageAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_IndexedName.cpp b/IIR_IndexedName.cpp
---- build//IIR_IndexedName.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_IndexedName.cpp b/IIR_IndexedName.cpp
+--- a/IIR_IndexedName.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_IndexedName.cpp	2011-08-26 08:03:57.573914028 +0100
 @@ -10,9 +10,11 @@
  
@@ -4040,8 +4039,8 @@ diff -uN build//IIR_IndexedName.cpp b/IIR_IndexedName.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_InequalityOperator.cpp b/IIR_InequalityOperator.cpp
---- build//IIR_InequalityOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_InequalityOperator.cpp b/IIR_InequalityOperator.cpp
+--- a/IIR_InequalityOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_InequalityOperator.cpp	2011-08-26 08:03:57.573914028 +0100
 @@ -2,6 +2,7 @@
  
@@ -4051,8 +4050,8 @@ diff -uN build//IIR_InequalityOperator.cpp b/IIR_InequalityOperator.cpp
  }
  
  IIR_InequalityOperator::~IIR_InequalityOperator(void)
-diff -uN build//IIR_IntegAttribute.cpp b/IIR_IntegAttribute.cpp
---- build//IIR_IntegAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_IntegAttribute.cpp b/IIR_IntegAttribute.cpp
+--- a/IIR_IntegAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_IntegAttribute.cpp	2011-08-26 08:03:57.577914054 +0100
 @@ -2,6 +2,7 @@
  
@@ -4062,8 +4061,8 @@ diff -uN build//IIR_IntegAttribute.cpp b/IIR_IntegAttribute.cpp
  }
  
  IIR_IntegAttribute::~IIR_IntegAttribute(void)
-diff -uN build//IIR_IntegerSubtypeDefinition.cpp b/IIR_IntegerSubtypeDefinition.cpp
---- build//IIR_IntegerSubtypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_IntegerSubtypeDefinition.cpp b/IIR_IntegerSubtypeDefinition.cpp
+--- a/IIR_IntegerSubtypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_IntegerSubtypeDefinition.cpp	2011-08-26 08:03:57.577914054 +0100
 @@ -6,18 +6,22 @@
  
@@ -4088,8 +4087,8 @@ diff -uN build//IIR_IntegerSubtypeDefinition.cpp b/IIR_IntegerSubtypeDefinition.
  }
  
  void IIR_IntegerSubtypeDefinition::release(void)
-diff -uN build//IIR_IntegerTypeDefinition.cpp b/IIR_IntegerTypeDefinition.cpp
---- build//IIR_IntegerTypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_IntegerTypeDefinition.cpp b/IIR_IntegerTypeDefinition.cpp
+--- a/IIR_IntegerTypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_IntegerTypeDefinition.cpp	2011-08-26 08:03:57.577914054 +0100
 @@ -2,6 +2,7 @@
  
@@ -4099,8 +4098,8 @@ diff -uN build//IIR_IntegerTypeDefinition.cpp b/IIR_IntegerTypeDefinition.cpp
  }
  
  IIR_IntegerTypeDefinition::~IIR_IntegerTypeDefinition(void)
-diff -uN build//IIR_InterfaceDeclaration.cpp b/IIR_InterfaceDeclaration.cpp
---- build//IIR_InterfaceDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_InterfaceDeclaration.cpp b/IIR_InterfaceDeclaration.cpp
+--- a/IIR_InterfaceDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_InterfaceDeclaration.cpp	2011-08-26 08:03:57.577914054 +0100
 @@ -2,25 +2,31 @@
  
@@ -4134,8 +4133,8 @@ diff -uN build//IIR_InterfaceDeclaration.cpp b/IIR_InterfaceDeclaration.cpp
 +	return this->_value;
  }
  
-diff -uN build//IIR_InterfaceDeclaration.h b/IIR_InterfaceDeclaration.h
---- build//IIR_InterfaceDeclaration.h	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_InterfaceDeclaration.h b/IIR_InterfaceDeclaration.h
+--- a/IIR_InterfaceDeclaration.h	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_InterfaceDeclaration.h	2011-08-26 08:03:57.577914054 +0100
 @@ -5,6 +5,7 @@
  #include "IIR_Declaration.h"
@@ -4153,8 +4152,8 @@ diff -uN build//IIR_InterfaceDeclaration.h b/IIR_InterfaceDeclaration.h
  public:
  	void set_mode(enum IR_Mode mode);
  	enum IR_Mode get_mode(void);
-diff -uN build//IIR_InterfaceList.cpp b/IIR_InterfaceList.cpp
---- build//IIR_InterfaceList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_InterfaceList.cpp b/IIR_InterfaceList.cpp
+--- a/IIR_InterfaceList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_InterfaceList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_InterfaceList.h"
@@ -4211,8 +4210,8 @@ diff -uN build//IIR_InterfaceList.cpp b/IIR_InterfaceList.cpp
 -{
 -}
 -
-diff -uN build//IIR_InterfaceList.h b/IIR_InterfaceList.h
---- build//IIR_InterfaceList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_InterfaceList.h b/IIR_InterfaceList.h
+--- a/IIR_InterfaceList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_InterfaceList.h	2011-08-26 08:03:57.581914065 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_INTERFACELIST_H_
@@ -4246,8 +4245,8 @@ diff -uN build//IIR_InterfaceList.h b/IIR_InterfaceList.h
 +typedef _TemplatedList<IIR_InterfaceDeclaration> IIR_InterfaceList;
  
  #endif /*!_AIRE_IIR_INTERFACELIST_H_*/
-diff -uN build//IIR_Label.cpp b/IIR_Label.cpp
---- build//IIR_Label.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_Label.cpp b/IIR_Label.cpp
+--- a/IIR_Label.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_Label.cpp	2011-08-26 08:03:57.581914065 +0100
 @@ -2,6 +2,7 @@
  
@@ -4269,8 +4268,8 @@ diff -uN build//IIR_Label.cpp b/IIR_Label.cpp
 +	return this->_statement;
  }
  
-diff -uN build//IIR_LastActiveAttribute.cpp b/IIR_LastActiveAttribute.cpp
---- build//IIR_LastActiveAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_LastActiveAttribute.cpp b/IIR_LastActiveAttribute.cpp
+--- a/IIR_LastActiveAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_LastActiveAttribute.cpp	2011-08-26 08:03:57.581914065 +0100
 @@ -2,6 +2,7 @@
  
@@ -4280,8 +4279,8 @@ diff -uN build//IIR_LastActiveAttribute.cpp b/IIR_LastActiveAttribute.cpp
  }
  
  IIR_LastActiveAttribute::~IIR_LastActiveAttribute(void)
-diff -uN build//IIR_LastEventAttribute.cpp b/IIR_LastEventAttribute.cpp
---- build//IIR_LastEventAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_LastEventAttribute.cpp b/IIR_LastEventAttribute.cpp
+--- a/IIR_LastEventAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_LastEventAttribute.cpp	2011-08-26 08:03:57.581914065 +0100
 @@ -2,6 +2,7 @@
  
@@ -4291,8 +4290,8 @@ diff -uN build//IIR_LastEventAttribute.cpp b/IIR_LastEventAttribute.cpp
  }
  
  IIR_LastEventAttribute::~IIR_LastEventAttribute(void)
-diff -uN build//IIR_LastValueAttribute.cpp b/IIR_LastValueAttribute.cpp
---- build//IIR_LastValueAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_LastValueAttribute.cpp b/IIR_LastValueAttribute.cpp
+--- a/IIR_LastValueAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_LastValueAttribute.cpp	2011-08-26 08:03:57.585914086 +0100
 @@ -2,6 +2,7 @@
  
@@ -4302,8 +4301,8 @@ diff -uN build//IIR_LastValueAttribute.cpp b/IIR_LastValueAttribute.cpp
  }
  
  IIR_LastValueAttribute::~IIR_LastValueAttribute(void)
-diff -uN build//IIR_LeftAttribute.cpp b/IIR_LeftAttribute.cpp
---- build//IIR_LeftAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_LeftAttribute.cpp b/IIR_LeftAttribute.cpp
+--- a/IIR_LeftAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_LeftAttribute.cpp	2011-08-26 08:03:57.585914086 +0100
 @@ -2,6 +2,7 @@
  
@@ -4325,8 +4324,8 @@ diff -uN build//IIR_LeftAttribute.cpp b/IIR_LeftAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_LeftOfAttribute.cpp b/IIR_LeftOfAttribute.cpp
---- build//IIR_LeftOfAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_LeftOfAttribute.cpp b/IIR_LeftOfAttribute.cpp
+--- a/IIR_LeftOfAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_LeftOfAttribute.cpp	2011-08-26 08:03:57.585914086 +0100
 @@ -2,6 +2,7 @@
  
@@ -4348,8 +4347,8 @@ diff -uN build//IIR_LeftOfAttribute.cpp b/IIR_LeftOfAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_LengthAttribute.cpp b/IIR_LengthAttribute.cpp
---- build//IIR_LengthAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_LengthAttribute.cpp b/IIR_LengthAttribute.cpp
+--- a/IIR_LengthAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_LengthAttribute.cpp	2011-08-26 08:03:57.585914086 +0100
 @@ -2,6 +2,7 @@
  
@@ -4371,8 +4370,8 @@ diff -uN build//IIR_LengthAttribute.cpp b/IIR_LengthAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_LessThanOperator.cpp b/IIR_LessThanOperator.cpp
---- build//IIR_LessThanOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_LessThanOperator.cpp b/IIR_LessThanOperator.cpp
+--- a/IIR_LessThanOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_LessThanOperator.cpp	2011-08-26 08:03:57.585914086 +0100
 @@ -2,6 +2,7 @@
  
@@ -4382,8 +4381,8 @@ diff -uN build//IIR_LessThanOperator.cpp b/IIR_LessThanOperator.cpp
  }
  
  IIR_LessThanOperator::~IIR_LessThanOperator(void)
-diff -uN build//IIR_LessThanOrEqualOperator.cpp b/IIR_LessThanOrEqualOperator.cpp
---- build//IIR_LessThanOrEqualOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_LessThanOrEqualOperator.cpp b/IIR_LessThanOrEqualOperator.cpp
+--- a/IIR_LessThanOrEqualOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_LessThanOrEqualOperator.cpp	2011-08-26 08:03:57.589914113 +0100
 @@ -2,6 +2,7 @@
  
@@ -4393,8 +4392,8 @@ diff -uN build//IIR_LessThanOrEqualOperator.cpp b/IIR_LessThanOrEqualOperator.cp
  }
  
  IIR_LessThanOrEqualOperator::~IIR_LessThanOrEqualOperator(void)
-diff -uN build//IIR_LibraryClause.cpp b/IIR_LibraryClause.cpp
---- build//IIR_LibraryClause.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_LibraryClause.cpp b/IIR_LibraryClause.cpp
+--- a/IIR_LibraryClause.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_LibraryClause.cpp	2011-08-26 08:03:57.589914113 +0100
 @@ -2,6 +2,7 @@
  
@@ -4416,8 +4415,8 @@ diff -uN build//IIR_LibraryClause.cpp b/IIR_LibraryClause.cpp
 +	return this->_logical_name;
  }
  
-diff -uN build//IIR_LibraryUnit.h b/IIR_LibraryUnit.h
---- build//IIR_LibraryUnit.h	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_LibraryUnit.h b/IIR_LibraryUnit.h
+--- a/IIR_LibraryUnit.h	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_LibraryUnit.h	2011-08-26 08:03:57.589914113 +0100
 @@ -5,10 +5,12 @@
  #include "IIR_Declaration.h"
@@ -4433,8 +4432,8 @@ diff -uN build//IIR_LibraryUnit.h b/IIR_LibraryUnit.h
  public:
  	IIR_DeclarationList context_items;
  	IIR_AttributeSpecificationList attributes;
-diff -uN build//IIR_LibraryUnitList.cpp b/IIR_LibraryUnitList.cpp
---- build//IIR_LibraryUnitList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_LibraryUnitList.cpp b/IIR_LibraryUnitList.cpp
+--- a/IIR_LibraryUnitList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_LibraryUnitList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_LibraryUnitList.h"
@@ -4491,8 +4490,8 @@ diff -uN build//IIR_LibraryUnitList.cpp b/IIR_LibraryUnitList.cpp
 -{
 -}
 -
-diff -uN build//IIR_LibraryUnitList.h b/IIR_LibraryUnitList.h
---- build//IIR_LibraryUnitList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_LibraryUnitList.h b/IIR_LibraryUnitList.h
+--- a/IIR_LibraryUnitList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_LibraryUnitList.h	2011-08-26 08:03:57.589914113 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_LIBRARYUNITLIST_H_
@@ -4526,8 +4525,8 @@ diff -uN build//IIR_LibraryUnitList.h b/IIR_LibraryUnitList.h
 +typedef _TemplatedList<IIR_LibraryUnit> IIR_LibraryUnitList;
  
  #endif /*!_AIRE_IIR_LIBRARYUNITLIST_H_*/
-diff -uN build//IIR_List.cpp b/IIR_List.cpp
---- build//IIR_List.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_List.cpp b/IIR_List.cpp
+--- a/IIR_List.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_List.cpp	2011-08-26 08:34:51.119105173 +0100
 @@ -2,5 +2,10 @@
  
@@ -4540,8 +4539,8 @@ diff -uN build//IIR_List.cpp b/IIR_List.cpp
 +{
 +	this->_elements = 0;
 +}
-diff -uN build//IIR_List.h b/IIR_List.h
---- build//IIR_List.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_List.h b/IIR_List.h
+--- a/IIR_List.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_List.h	2011-08-26 08:34:57.255135677 +0100
 @@ -11,6 +11,8 @@
  	IR_Int32 _elements;
@@ -4552,8 +4551,8 @@ diff -uN build//IIR_List.h b/IIR_List.h
  };
  
  
-diff -uN build//IIR_LowAttribute.cpp b/IIR_LowAttribute.cpp
---- build//IIR_LowAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_LowAttribute.cpp b/IIR_LowAttribute.cpp
+--- a/IIR_LowAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_LowAttribute.cpp	2011-08-26 08:03:57.593914128 +0100
 @@ -2,6 +2,7 @@
  
@@ -4575,8 +4574,8 @@ diff -uN build//IIR_LowAttribute.cpp b/IIR_LowAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_LTFAttribute.cpp b/IIR_LTFAttribute.cpp
---- build//IIR_LTFAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_LTFAttribute.cpp b/IIR_LTFAttribute.cpp
+--- a/IIR_LTFAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_LTFAttribute.cpp	2011-08-26 08:03:57.593914128 +0100
 @@ -2,6 +2,7 @@
  
@@ -4608,8 +4607,8 @@ diff -uN build//IIR_LTFAttribute.cpp b/IIR_LTFAttribute.cpp
 +	return this->_den;
  }
  
-diff -uN build//IIR_ModulusOperator.cpp b/IIR_ModulusOperator.cpp
---- build//IIR_ModulusOperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_ModulusOperator.cpp b/IIR_ModulusOperator.cpp
+--- a/IIR_ModulusOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_ModulusOperator.cpp	2011-08-26 08:03:57.597914147 +0100
 @@ -2,6 +2,7 @@
  
@@ -4619,8 +4618,8 @@ diff -uN build//IIR_ModulusOperator.cpp b/IIR_ModulusOperator.cpp
  }
  
  IIR_ModulusOperator::~IIR_ModulusOperator(void)
-diff -uN build//IIR_MonadicOperator.cpp b/IIR_MonadicOperator.cpp
---- build//IIR_MonadicOperator.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_MonadicOperator.cpp b/IIR_MonadicOperator.cpp
+--- a/IIR_MonadicOperator.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_MonadicOperator.cpp	2011-08-26 08:03:57.597914147 +0100
 @@ -2,17 +2,21 @@
  
@@ -4644,8 +4643,8 @@ diff -uN build//IIR_MonadicOperator.cpp b/IIR_MonadicOperator.cpp
 +	return this->_operand;
  }
  
-diff -uN build//IIR_MultiplicationOperator.cpp b/IIR_MultiplicationOperator.cpp
---- build//IIR_MultiplicationOperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_MultiplicationOperator.cpp b/IIR_MultiplicationOperator.cpp
+--- a/IIR_MultiplicationOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_MultiplicationOperator.cpp	2011-08-26 08:03:57.597914147 +0100
 @@ -2,6 +2,7 @@
  
@@ -4655,8 +4654,8 @@ diff -uN build//IIR_MultiplicationOperator.cpp b/IIR_MultiplicationOperator.cpp
  }
  
  IIR_MultiplicationOperator::~IIR_MultiplicationOperator(void)
-diff -uN build//IIR_Name.cpp b/IIR_Name.cpp
---- build//IIR_Name.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_Name.cpp b/IIR_Name.cpp
+--- a/IIR_Name.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_Name.cpp	2011-08-26 08:03:57.597914147 +0100
 @@ -10,9 +10,11 @@
  
@@ -4670,8 +4669,8 @@ diff -uN build//IIR_Name.cpp b/IIR_Name.cpp
 +	return this->_prefix;
  }
  
-diff -uN build//IIR_NandOperator.cpp b/IIR_NandOperator.cpp
---- build//IIR_NandOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_NandOperator.cpp b/IIR_NandOperator.cpp
+--- a/IIR_NandOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_NandOperator.cpp	2011-08-26 08:03:57.597914147 +0100
 @@ -2,6 +2,7 @@
  
@@ -4681,8 +4680,8 @@ diff -uN build//IIR_NandOperator.cpp b/IIR_NandOperator.cpp
  }
  
  IIR_NandOperator::~IIR_NandOperator(void)
-diff -uN build//IIR_NatureDeclaration.cpp b/IIR_NatureDeclaration.cpp
---- build//IIR_NatureDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_NatureDeclaration.cpp b/IIR_NatureDeclaration.cpp
+--- a/IIR_NatureDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_NatureDeclaration.cpp	2011-08-26 08:03:57.601914173 +0100
 @@ -2,6 +2,7 @@
  
@@ -4704,8 +4703,8 @@ diff -uN build//IIR_NatureDeclaration.cpp b/IIR_NatureDeclaration.cpp
 +	return this->_nature;
  }
  
-diff -uN build//IIR_NatureElementDeclaration.cpp b/IIR_NatureElementDeclaration.cpp
---- build//IIR_NatureElementDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_NatureElementDeclaration.cpp b/IIR_NatureElementDeclaration.cpp
+--- a/IIR_NatureElementDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_NatureElementDeclaration.cpp	2011-08-26 08:03:57.601914173 +0100
 @@ -2,6 +2,7 @@
  
@@ -4727,8 +4726,8 @@ diff -uN build//IIR_NatureElementDeclaration.cpp b/IIR_NatureElementDeclaration.
 +	return this->_subnature;
  }
  
-diff -uN build//IIR_NatureElementDeclaration.h b/IIR_NatureElementDeclaration.h
---- build//IIR_NatureElementDeclaration.h	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_NatureElementDeclaration.h b/IIR_NatureElementDeclaration.h
+--- a/IIR_NatureElementDeclaration.h	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_NatureElementDeclaration.h	2011-08-26 08:03:57.601914173 +0100
 @@ -3,6 +3,7 @@
  
@@ -4746,8 +4745,8 @@ diff -uN build//IIR_NatureElementDeclaration.h b/IIR_NatureElementDeclaration.h
  public:
  	IIR_NatureElementDeclaration(void);
  	~IIR_NatureElementDeclaration(void);
-diff -uN build//IIR_NatureElementDeclarationList.cpp b/IIR_NatureElementDeclarationList.cpp
---- build//IIR_NatureElementDeclarationList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_NatureElementDeclarationList.cpp b/IIR_NatureElementDeclarationList.cpp
+--- a/IIR_NatureElementDeclarationList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_NatureElementDeclarationList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_NatureElementDeclarationList.h"
@@ -4804,8 +4803,8 @@ diff -uN build//IIR_NatureElementDeclarationList.cpp b/IIR_NatureElementDeclarat
 -{
 -}
 -
-diff -uN build//IIR_NatureElementDeclarationList.h b/IIR_NatureElementDeclarationList.h
---- build//IIR_NatureElementDeclarationList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_NatureElementDeclarationList.h b/IIR_NatureElementDeclarationList.h
+--- a/IIR_NatureElementDeclarationList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_NatureElementDeclarationList.h	2011-08-26 08:03:57.605914184 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_NATUREELEMENTDECLARATIONLIST_H_
@@ -4839,8 +4838,8 @@ diff -uN build//IIR_NatureElementDeclarationList.h b/IIR_NatureElementDeclaratio
 +typedef _TemplatedList<IIR_NatureElementDeclaration> IIR_NatureElementDeclarationList;
  
  #endif /*!_AIRE_IIR_NATUREELEMENTDECLARATIONLIST_H_*/
-diff -uN build//IIR_NegationOperator.cpp b/IIR_NegationOperator.cpp
---- build//IIR_NegationOperator.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_NegationOperator.cpp b/IIR_NegationOperator.cpp
+--- a/IIR_NegationOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_NegationOperator.cpp	2011-08-26 08:03:57.605914184 +0100
 @@ -2,6 +2,7 @@
  
@@ -4850,8 +4849,8 @@ diff -uN build//IIR_NegationOperator.cpp b/IIR_NegationOperator.cpp
  }
  
  IIR_NegationOperator::~IIR_NegationOperator(void)
-diff -uN build//IIR_NextStatement.cpp b/IIR_NextStatement.cpp
---- build//IIR_NextStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_NextStatement.cpp b/IIR_NextStatement.cpp
+--- a/IIR_NextStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_NextStatement.cpp	2011-08-26 08:03:57.605914184 +0100
 @@ -2,6 +2,7 @@
  
@@ -4883,8 +4882,8 @@ diff -uN build//IIR_NextStatement.cpp b/IIR_NextStatement.cpp
 +	return this->_condition;
  }
  
-diff -uN build//IIR_NoiseSourceQuantityDeclaration.cpp b/IIR_NoiseSourceQuantityDeclaration.cpp
---- build//IIR_NoiseSourceQuantityDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_NoiseSourceQuantityDeclaration.cpp b/IIR_NoiseSourceQuantityDeclaration.cpp
+--- a/IIR_NoiseSourceQuantityDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_NoiseSourceQuantityDeclaration.cpp	2011-08-26 08:03:57.605914184 +0100
 @@ -2,6 +2,7 @@
  
@@ -4916,8 +4915,8 @@ diff -uN build//IIR_NoiseSourceQuantityDeclaration.cpp b/IIR_NoiseSourceQuantity
 +	return this->_magnitude_simple_expression;
  }
  
-diff -uN build//IIR_NorOperator.cpp b/IIR_NorOperator.cpp
---- build//IIR_NorOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_NorOperator.cpp b/IIR_NorOperator.cpp
+--- a/IIR_NorOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_NorOperator.cpp	2011-08-26 08:03:57.609914205 +0100
 @@ -2,6 +2,7 @@
  
@@ -4927,8 +4926,8 @@ diff -uN build//IIR_NorOperator.cpp b/IIR_NorOperator.cpp
  }
  
  IIR_NorOperator::~IIR_NorOperator(void)
-diff -uN build//IIR_NotOperator.cpp b/IIR_NotOperator.cpp
---- build//IIR_NotOperator.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_NotOperator.cpp b/IIR_NotOperator.cpp
+--- a/IIR_NotOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_NotOperator.cpp	2011-08-26 08:03:57.609914205 +0100
 @@ -2,6 +2,7 @@
  
@@ -4938,8 +4937,8 @@ diff -uN build//IIR_NotOperator.cpp b/IIR_NotOperator.cpp
  }
  
  IIR_NotOperator::~IIR_NotOperator(void)
-diff -uN build//IIR_NullStatement.cpp b/IIR_NullStatement.cpp
---- build//IIR_NullStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_NullStatement.cpp b/IIR_NullStatement.cpp
+--- a/IIR_NullStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_NullStatement.cpp	2011-08-26 08:03:57.609914205 +0100
 @@ -2,6 +2,7 @@
  
@@ -4949,8 +4948,8 @@ diff -uN build//IIR_NullStatement.cpp b/IIR_NullStatement.cpp
  }
  
  IIR_NullStatement::~IIR_NullStatement(void)
-diff -uN build//IIR_ObjectDeclaration.cpp b/IIR_ObjectDeclaration.cpp
---- build//IIR_ObjectDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_ObjectDeclaration.cpp b/IIR_ObjectDeclaration.cpp
+--- a/IIR_ObjectDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_ObjectDeclaration.cpp	2011-08-26 08:03:57.609914205 +0100
 @@ -2,9 +2,11 @@
  
@@ -4964,8 +4963,8 @@ diff -uN build//IIR_ObjectDeclaration.cpp b/IIR_ObjectDeclaration.cpp
 +	return this->_subtype;
  }
  
-diff -uN build//IIR_OrOperator.cpp b/IIR_OrOperator.cpp
---- build//IIR_OrOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_OrOperator.cpp b/IIR_OrOperator.cpp
+--- a/IIR_OrOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_OrOperator.cpp	2011-08-26 08:03:57.609914205 +0100
 @@ -2,6 +2,7 @@
  
@@ -4975,8 +4974,8 @@ diff -uN build//IIR_OrOperator.cpp b/IIR_OrOperator.cpp
  }
  
  IIR_OrOperator::~IIR_OrOperator(void)
-diff -uN build//IIR_OthersInitialization.cpp b/IIR_OthersInitialization.cpp
---- build//IIR_OthersInitialization.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_OthersInitialization.cpp b/IIR_OthersInitialization.cpp
+--- a/IIR_OthersInitialization.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_OthersInitialization.cpp	2011-08-26 08:03:57.613914232 +0100
 @@ -2,6 +2,7 @@
  
@@ -4998,8 +4997,8 @@ diff -uN build//IIR_OthersInitialization.cpp b/IIR_OthersInitialization.cpp
 +	return this->_expression;
  }
  
-diff -uN build//IIR_PackageBodyDeclaration.cpp b/IIR_PackageBodyDeclaration.cpp
---- build//IIR_PackageBodyDeclaration.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_PackageBodyDeclaration.cpp b/IIR_PackageBodyDeclaration.cpp
+--- a/IIR_PackageBodyDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_PackageBodyDeclaration.cpp	2011-08-26 08:03:57.613914232 +0100
 @@ -2,6 +2,7 @@
  
@@ -5009,8 +5008,8 @@ diff -uN build//IIR_PackageBodyDeclaration.cpp b/IIR_PackageBodyDeclaration.cpp
  }
  
  IIR_PackageBodyDeclaration::~IIR_PackageBodyDeclaration(void)
-diff -uN build//IIR_PackageDeclaration.cpp b/IIR_PackageDeclaration.cpp
---- build//IIR_PackageDeclaration.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_PackageDeclaration.cpp b/IIR_PackageDeclaration.cpp
+--- a/IIR_PackageDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_PackageDeclaration.cpp	2011-08-26 08:03:57.613914232 +0100
 @@ -2,6 +2,7 @@
  
@@ -5027,8 +5026,8 @@ diff -uN build//IIR_PackageDeclaration.cpp b/IIR_PackageDeclaration.cpp
 +	return this->_package_body;
  }
  
-diff -uN build//IIR_PathNameAttribute.cpp b/IIR_PathNameAttribute.cpp
---- build//IIR_PathNameAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_PathNameAttribute.cpp b/IIR_PathNameAttribute.cpp
+--- a/IIR_PathNameAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_PathNameAttribute.cpp	2011-08-26 08:03:57.613914232 +0100
 @@ -2,6 +2,7 @@
  
@@ -5038,8 +5037,8 @@ diff -uN build//IIR_PathNameAttribute.cpp b/IIR_PathNameAttribute.cpp
  }
  
  IIR_PathNameAttribute::~IIR_PathNameAttribute(void)
-diff -uN build//IIR_PhysicalLiteral.cpp b/IIR_PhysicalLiteral.cpp
---- build//IIR_PhysicalLiteral.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_PhysicalLiteral.cpp b/IIR_PhysicalLiteral.cpp
+--- a/IIR_PhysicalLiteral.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_PhysicalLiteral.cpp	2011-08-26 08:03:57.617914247 +0100
 @@ -2,6 +2,7 @@
  
@@ -5071,8 +5070,8 @@ diff -uN build//IIR_PhysicalLiteral.cpp b/IIR_PhysicalLiteral.cpp
 +	return this->_unit_name;
  }
  
-diff -uN build//IIR_PhysicalSubtypeDefinition.cpp b/IIR_PhysicalSubtypeDefinition.cpp
---- build//IIR_PhysicalSubtypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_PhysicalSubtypeDefinition.cpp b/IIR_PhysicalSubtypeDefinition.cpp
+--- a/IIR_PhysicalSubtypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_PhysicalSubtypeDefinition.cpp	2011-08-26 08:03:57.617914247 +0100
 @@ -6,18 +6,22 @@
  
@@ -5097,8 +5096,8 @@ diff -uN build//IIR_PhysicalSubtypeDefinition.cpp b/IIR_PhysicalSubtypeDefinitio
  }
  
  void IIR_PhysicalSubtypeDefinition::release(void)
-diff -uN build//IIR_PhysicalTypeDefinition.cpp b/IIR_PhysicalTypeDefinition.cpp
---- build//IIR_PhysicalTypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_PhysicalTypeDefinition.cpp b/IIR_PhysicalTypeDefinition.cpp
+--- a/IIR_PhysicalTypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_PhysicalTypeDefinition.cpp	2011-08-26 08:03:57.617914247 +0100
 @@ -2,6 +2,7 @@
  
@@ -5120,8 +5119,8 @@ diff -uN build//IIR_PhysicalTypeDefinition.cpp b/IIR_PhysicalTypeDefinition.cpp
 +	return this->_primary_unit;
  }
  
-diff -uN build//IIR_PhysicalUnit.cpp b/IIR_PhysicalUnit.cpp
---- build//IIR_PhysicalUnit.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_PhysicalUnit.cpp b/IIR_PhysicalUnit.cpp
+--- a/IIR_PhysicalUnit.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_PhysicalUnit.cpp	2011-08-26 08:03:57.617914247 +0100
 @@ -2,6 +2,7 @@
  
@@ -5153,8 +5152,8 @@ diff -uN build//IIR_PhysicalUnit.cpp b/IIR_PhysicalUnit.cpp
 +	return this->_unit_name;
  }
  
-diff -uN build//IIR_PhysicalUnit.h b/IIR_PhysicalUnit.h
---- build//IIR_PhysicalUnit.h	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_PhysicalUnit.h b/IIR_PhysicalUnit.h
+--- a/IIR_PhysicalUnit.h	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_PhysicalUnit.h	2011-08-26 08:03:57.617914247 +0100
 @@ -4,6 +4,7 @@
  #include "primitive_types.h"
@@ -5172,8 +5171,8 @@ diff -uN build//IIR_PhysicalUnit.h b/IIR_PhysicalUnit.h
  public:
  	IIR_PhysicalUnit(void);
  	~IIR_PhysicalUnit(void);
-diff -uN build//IIR_PortList.cpp b/IIR_PortList.cpp
---- build//IIR_PortList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_PortList.cpp b/IIR_PortList.cpp
+--- a/IIR_PortList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_PortList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_PortList.h"
@@ -5230,8 +5229,8 @@ diff -uN build//IIR_PortList.cpp b/IIR_PortList.cpp
 -{
 -}
 -
-diff -uN build//IIR_PortList.h b/IIR_PortList.h
---- build//IIR_PortList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_PortList.h b/IIR_PortList.h
+--- a/IIR_PortList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_PortList.h	2011-08-26 08:03:57.621914266 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_PORTLIST_H_
@@ -5265,8 +5264,8 @@ diff -uN build//IIR_PortList.h b/IIR_PortList.h
 +typedef _TemplatedList<IIR_SignalInterfaceDeclaration> IIR_PortList;
  
  #endif /*!_AIRE_IIR_PORTLIST_H_*/
-diff -uN build//IIR_PosAttribute.cpp b/IIR_PosAttribute.cpp
---- build//IIR_PosAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_PosAttribute.cpp b/IIR_PosAttribute.cpp
+--- a/IIR_PosAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_PosAttribute.cpp	2011-08-26 08:03:57.621914266 +0100
 @@ -2,6 +2,7 @@
  
@@ -5288,8 +5287,8 @@ diff -uN build//IIR_PosAttribute.cpp b/IIR_PosAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_PredAttribute.cpp b/IIR_PredAttribute.cpp
---- build//IIR_PredAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_PredAttribute.cpp b/IIR_PredAttribute.cpp
+--- a/IIR_PredAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_PredAttribute.cpp	2011-08-26 08:03:57.621914266 +0100
 @@ -2,6 +2,7 @@
  
@@ -5311,8 +5310,8 @@ diff -uN build//IIR_PredAttribute.cpp b/IIR_PredAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_ProcedureCallStatement.cpp b/IIR_ProcedureCallStatement.cpp
---- build//IIR_ProcedureCallStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_ProcedureCallStatement.cpp b/IIR_ProcedureCallStatement.cpp
+--- a/IIR_ProcedureCallStatement.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_ProcedureCallStatement.cpp	2011-08-26 08:03:57.625914292 +0100
 @@ -2,10 +2,12 @@
  
@@ -5327,8 +5326,8 @@ diff -uN build//IIR_ProcedureCallStatement.cpp b/IIR_ProcedureCallStatement.cpp
  }
  
  IIR_ProcedureCallStatement::IIR_ProcedureCallStatement(void)
-diff -uN build//IIR_ProcedureDeclaration.cpp b/IIR_ProcedureDeclaration.cpp
---- build//IIR_ProcedureDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_ProcedureDeclaration.cpp b/IIR_ProcedureDeclaration.cpp
+--- a/IIR_ProcedureDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_ProcedureDeclaration.cpp	2011-08-26 08:03:57.625914292 +0100
 @@ -2,6 +2,7 @@
  
@@ -5338,8 +5337,8 @@ diff -uN build//IIR_ProcedureDeclaration.cpp b/IIR_ProcedureDeclaration.cpp
  }
  
  IIR_ProcedureDeclaration::~IIR_ProcedureDeclaration(void)
-diff -uN build//IIR_ProcessStatement.cpp b/IIR_ProcessStatement.cpp
---- build//IIR_ProcessStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_ProcessStatement.cpp b/IIR_ProcessStatement.cpp
+--- a/IIR_ProcessStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_ProcessStatement.cpp	2011-08-26 08:03:57.625914292 +0100
 @@ -2,6 +2,7 @@
  
@@ -5361,8 +5360,8 @@ diff -uN build//IIR_ProcessStatement.cpp b/IIR_ProcessStatement.cpp
 +	return this->_postponed;
  }
  
-diff -uN build//IIR_QualifiedExpression.cpp b/IIR_QualifiedExpression.cpp
---- build//IIR_QualifiedExpression.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_QualifiedExpression.cpp b/IIR_QualifiedExpression.cpp
+--- a/IIR_QualifiedExpression.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_QualifiedExpression.cpp	2011-08-26 08:03:57.625914292 +0100
 @@ -10,17 +10,21 @@
  
@@ -5386,8 +5385,8 @@ diff -uN build//IIR_QualifiedExpression.cpp b/IIR_QualifiedExpression.cpp
 +	return this->_expression;
  }
  
-diff -uN build//IIR_QuantityInterfaceDeclaration.cpp b/IIR_QuantityInterfaceDeclaration.cpp
---- build//IIR_QuantityInterfaceDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_QuantityInterfaceDeclaration.cpp b/IIR_QuantityInterfaceDeclaration.cpp
+--- a/IIR_QuantityInterfaceDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_QuantityInterfaceDeclaration.cpp	2011-08-26 08:03:57.625914292 +0100
 @@ -2,6 +2,7 @@
  
@@ -5409,8 +5408,8 @@ diff -uN build//IIR_QuantityInterfaceDeclaration.cpp b/IIR_QuantityInterfaceDecl
 +	return this->_subnature_indication;
  }
  
-diff -uN build//IIR_QuietAttribute.cpp b/IIR_QuietAttribute.cpp
---- build//IIR_QuietAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_QuietAttribute.cpp b/IIR_QuietAttribute.cpp
+--- a/IIR_QuietAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_QuietAttribute.cpp	2011-08-26 08:03:57.629914303 +0100
 @@ -2,6 +2,7 @@
  
@@ -5432,8 +5431,8 @@ diff -uN build//IIR_QuietAttribute.cpp b/IIR_QuietAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_RangeAttribute.cpp b/IIR_RangeAttribute.cpp
---- build//IIR_RangeAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_RangeAttribute.cpp b/IIR_RangeAttribute.cpp
+--- a/IIR_RangeAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_RangeAttribute.cpp	2011-08-26 08:03:57.629914303 +0100
 @@ -2,6 +2,7 @@
  
@@ -5455,8 +5454,8 @@ diff -uN build//IIR_RangeAttribute.cpp b/IIR_RangeAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_RangeTypeDefinition.cpp b/IIR_RangeTypeDefinition.cpp
---- build//IIR_RangeTypeDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_RangeTypeDefinition.cpp b/IIR_RangeTypeDefinition.cpp
+--- a/IIR_RangeTypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_RangeTypeDefinition.cpp	2011-08-26 08:03:57.629914303 +0100
 @@ -2,6 +2,7 @@
  
@@ -5466,8 +5465,8 @@ diff -uN build//IIR_RangeTypeDefinition.cpp b/IIR_RangeTypeDefinition.cpp
  }
  
  IIR_RangeTypeDefinition::~IIR_RangeTypeDefinition(void)
-diff -uN build//IIR_RecordNatureDefinition.cpp b/IIR_RecordNatureDefinition.cpp
---- build//IIR_RecordNatureDefinition.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_RecordNatureDefinition.cpp b/IIR_RecordNatureDefinition.cpp
+--- a/IIR_RecordNatureDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_RecordNatureDefinition.cpp	2011-08-26 08:03:57.629914303 +0100
 @@ -2,6 +2,7 @@
  
@@ -5477,8 +5476,8 @@ diff -uN build//IIR_RecordNatureDefinition.cpp b/IIR_RecordNatureDefinition.cpp
  }
  
  IIR_RecordNatureDefinition::~IIR_RecordNatureDefinition(void)
-diff -uN build//IIR_RecordSubnatureDefinition.cpp b/IIR_RecordSubnatureDefinition.cpp
---- build//IIR_RecordSubnatureDefinition.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_RecordSubnatureDefinition.cpp b/IIR_RecordSubnatureDefinition.cpp
+--- a/IIR_RecordSubnatureDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_RecordSubnatureDefinition.cpp	2011-08-26 08:03:57.633914324 +0100
 @@ -2,6 +2,7 @@
  
@@ -5515,8 +5514,8 @@ diff -uN build//IIR_RecordSubnatureDefinition.cpp b/IIR_RecordSubnatureDefinitio
 +	return static_cast<IIR_RecordNatureDefinition *>(this);
  }
  
-diff -uN build//IIR_RecordSubtypeDefinition.cpp b/IIR_RecordSubtypeDefinition.cpp
---- build//IIR_RecordSubtypeDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_RecordSubtypeDefinition.cpp b/IIR_RecordSubtypeDefinition.cpp
+--- a/IIR_RecordSubtypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_RecordSubtypeDefinition.cpp	2011-08-26 08:03:57.633914324 +0100
 @@ -6,18 +6,22 @@
  
@@ -5541,8 +5540,8 @@ diff -uN build//IIR_RecordSubtypeDefinition.cpp b/IIR_RecordSubtypeDefinition.cp
  }
  
  void IIR_RecordSubtypeDefinition::release(void)
-diff -uN build//IIR_RecordTypeDefinition.cpp b/IIR_RecordTypeDefinition.cpp
---- build//IIR_RecordTypeDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_RecordTypeDefinition.cpp b/IIR_RecordTypeDefinition.cpp
+--- a/IIR_RecordTypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_RecordTypeDefinition.cpp	2011-08-26 08:03:57.633914324 +0100
 @@ -2,6 +2,7 @@
  
@@ -5552,8 +5551,8 @@ diff -uN build//IIR_RecordTypeDefinition.cpp b/IIR_RecordTypeDefinition.cpp
  }
  
  IIR_RecordTypeDefinition::~IIR_RecordTypeDefinition(void)
-diff -uN build//IIR_ReferenceAttribute.cpp b/IIR_ReferenceAttribute.cpp
---- build//IIR_ReferenceAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_ReferenceAttribute.cpp b/IIR_ReferenceAttribute.cpp
+--- a/IIR_ReferenceAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_ReferenceAttribute.cpp	2011-08-26 08:03:57.633914324 +0100
 @@ -2,6 +2,7 @@
  
@@ -5563,8 +5562,8 @@ diff -uN build//IIR_ReferenceAttribute.cpp b/IIR_ReferenceAttribute.cpp
  }
  
  IIR_ReferenceAttribute::~IIR_ReferenceAttribute(void)
-diff -uN build//IIR_RemainderOperator.cpp b/IIR_RemainderOperator.cpp
---- build//IIR_RemainderOperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_RemainderOperator.cpp b/IIR_RemainderOperator.cpp
+--- a/IIR_RemainderOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_RemainderOperator.cpp	2011-08-26 08:03:57.633914324 +0100
 @@ -2,6 +2,7 @@
  
@@ -5574,8 +5573,8 @@ diff -uN build//IIR_RemainderOperator.cpp b/IIR_RemainderOperator.cpp
  }
  
  IIR_RemainderOperator::~IIR_RemainderOperator(void)
-diff -uN build//IIR_ReportStatement.cpp b/IIR_ReportStatement.cpp
---- build//IIR_ReportStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_ReportStatement.cpp b/IIR_ReportStatement.cpp
+--- a/IIR_ReportStatement.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_ReportStatement.cpp	2011-08-26 08:03:57.637914351 +0100
 @@ -2,18 +2,22 @@
  
@@ -5600,8 +5599,8 @@ diff -uN build//IIR_ReportStatement.cpp b/IIR_ReportStatement.cpp
  }
  
  IIR_ReportStatement::IIR_ReportStatement(void)
-diff -uN build//IIR_ReturnStatement.cpp b/IIR_ReturnStatement.cpp
---- build//IIR_ReturnStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_ReturnStatement.cpp b/IIR_ReturnStatement.cpp
+--- a/IIR_ReturnStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_ReturnStatement.cpp	2011-08-26 08:03:57.637914351 +0100
 @@ -2,6 +2,7 @@
  
@@ -5633,8 +5632,8 @@ diff -uN build//IIR_ReturnStatement.cpp b/IIR_ReturnStatement.cpp
 +	return this->_return_expression;
  }
  
-diff -uN build//IIR_ReverseRangeAttribute.cpp b/IIR_ReverseRangeAttribute.cpp
---- build//IIR_ReverseRangeAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_ReverseRangeAttribute.cpp b/IIR_ReverseRangeAttribute.cpp
+--- a/IIR_ReverseRangeAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_ReverseRangeAttribute.cpp	2011-08-26 08:03:57.637914351 +0100
 @@ -2,6 +2,7 @@
  
@@ -5656,8 +5655,8 @@ diff -uN build//IIR_ReverseRangeAttribute.cpp b/IIR_ReverseRangeAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_RightAttribute.cpp b/IIR_RightAttribute.cpp
---- build//IIR_RightAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_RightAttribute.cpp b/IIR_RightAttribute.cpp
+--- a/IIR_RightAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_RightAttribute.cpp	2011-08-26 08:03:57.637914351 +0100
 @@ -2,6 +2,7 @@
  
@@ -5679,8 +5678,8 @@ diff -uN build//IIR_RightAttribute.cpp b/IIR_RightAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_RightOfAttribute.cpp b/IIR_RightOfAttribute.cpp
---- build//IIR_RightOfAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_RightOfAttribute.cpp b/IIR_RightOfAttribute.cpp
+--- a/IIR_RightOfAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_RightOfAttribute.cpp	2011-08-26 08:03:57.641914366 +0100
 @@ -2,6 +2,7 @@
  
@@ -5702,8 +5701,8 @@ diff -uN build//IIR_RightOfAttribute.cpp b/IIR_RightOfAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_ROLOperator.cpp b/IIR_ROLOperator.cpp
---- build//IIR_ROLOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_ROLOperator.cpp b/IIR_ROLOperator.cpp
+--- a/IIR_ROLOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_ROLOperator.cpp	2011-08-26 08:03:57.641914366 +0100
 @@ -2,6 +2,7 @@
  
@@ -5713,8 +5712,8 @@ diff -uN build//IIR_ROLOperator.cpp b/IIR_ROLOperator.cpp
  }
  
  IIR_ROLOperator::~IIR_ROLOperator(void)
-diff -uN build//IIR_ROROperator.cpp b/IIR_ROROperator.cpp
---- build//IIR_ROROperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_ROROperator.cpp b/IIR_ROROperator.cpp
+--- a/IIR_ROROperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_ROROperator.cpp	2011-08-26 08:03:57.641914366 +0100
 @@ -2,6 +2,7 @@
  
@@ -5724,8 +5723,8 @@ diff -uN build//IIR_ROROperator.cpp b/IIR_ROROperator.cpp
  }
  
  IIR_ROROperator::~IIR_ROROperator(void)
-diff -uN build//IIR_ScalarNatureDefinition.cpp b/IIR_ScalarNatureDefinition.cpp
---- build//IIR_ScalarNatureDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_ScalarNatureDefinition.cpp b/IIR_ScalarNatureDefinition.cpp
+--- a/IIR_ScalarNatureDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_ScalarNatureDefinition.cpp	2011-08-26 08:03:57.641914366 +0100
 @@ -6,18 +6,22 @@
  
@@ -5750,8 +5749,8 @@ diff -uN build//IIR_ScalarNatureDefinition.cpp b/IIR_ScalarNatureDefinition.cpp
  }
  
  IIR_ScalarNatureDefinition::~IIR_ScalarNatureDefinition(void)
-diff -uN build//IIR_ScalarSubnatureDefinition.cpp b/IIR_ScalarSubnatureDefinition.cpp
---- build//IIR_ScalarSubnatureDefinition.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_ScalarSubnatureDefinition.cpp b/IIR_ScalarSubnatureDefinition.cpp
+--- a/IIR_ScalarSubnatureDefinition.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_ScalarSubnatureDefinition.cpp	2011-08-26 08:03:57.641914366 +0100
 @@ -6,18 +6,22 @@
  
@@ -5783,8 +5782,8 @@ diff -uN build//IIR_ScalarSubnatureDefinition.cpp b/IIR_ScalarSubnatureDefinitio
 +	return static_cast<IIR_ScalarNatureDefinition *>(this);
  }
  
-diff -uN build//IIR_ScalarTypeDefinition.cpp b/IIR_ScalarTypeDefinition.cpp
---- build//IIR_ScalarTypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_ScalarTypeDefinition.cpp b/IIR_ScalarTypeDefinition.cpp
+--- a/IIR_ScalarTypeDefinition.cpp	2011-08-26 17:07:17.396641248 +0100
 +++ b/IIR_ScalarTypeDefinition.cpp	2011-08-26 08:03:57.645914385 +0100
 @@ -2,25 +2,31 @@
  
@@ -5818,8 +5817,8 @@ diff -uN build//IIR_ScalarTypeDefinition.cpp b/IIR_ScalarTypeDefinition.cpp
 +	return this->_right;
  }
  
-diff -uN build//IIR_SelectedNameByAll.cpp b/IIR_SelectedNameByAll.cpp
---- build//IIR_SelectedNameByAll.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_SelectedNameByAll.cpp b/IIR_SelectedNameByAll.cpp
+--- a/IIR_SelectedNameByAll.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_SelectedNameByAll.cpp	2011-08-26 08:03:57.645914385 +0100
 @@ -2,6 +2,7 @@
  
@@ -5829,8 +5828,8 @@ diff -uN build//IIR_SelectedNameByAll.cpp b/IIR_SelectedNameByAll.cpp
  }
  
  IIR_SelectedNameByAll::~IIR_SelectedNameByAll(void)
-diff -uN build//IIR_SelectedName.cpp b/IIR_SelectedName.cpp
---- build//IIR_SelectedName.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_SelectedName.cpp b/IIR_SelectedName.cpp
+--- a/IIR_SelectedName.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_SelectedName.cpp	2011-08-26 08:03:57.645914385 +0100
 @@ -2,6 +2,7 @@
  
@@ -5852,8 +5851,8 @@ diff -uN build//IIR_SelectedName.cpp b/IIR_SelectedName.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_SelectedWaveform.cpp b/IIR_SelectedWaveform.cpp
---- build//IIR_SelectedWaveform.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_SelectedWaveform.cpp b/IIR_SelectedWaveform.cpp
+--- a/IIR_SelectedWaveform.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_SelectedWaveform.cpp	2011-08-26 08:03:57.645914385 +0100
 @@ -2,6 +2,7 @@
  
@@ -5875,8 +5874,8 @@ diff -uN build//IIR_SelectedWaveform.cpp b/IIR_SelectedWaveform.cpp
 +	return this->_choice;
  }
  
-diff -uN build//IIR_SelectedWaveform.h b/IIR_SelectedWaveform.h
---- build//IIR_SelectedWaveform.h	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_SelectedWaveform.h b/IIR_SelectedWaveform.h
+--- a/IIR_SelectedWaveform.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_SelectedWaveform.h	2011-08-26 08:03:57.645914385 +0100
 @@ -4,6 +4,7 @@
  #include "primitive_types.h"
@@ -5894,8 +5893,8 @@ diff -uN build//IIR_SelectedWaveform.h b/IIR_SelectedWaveform.h
  public:
  	IIR_SelectedWaveform(void);
  	~IIR_SelectedWaveform(void);
-diff -uN build//IIR_SelectedWaveformList.cpp b/IIR_SelectedWaveformList.cpp
---- build//IIR_SelectedWaveformList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_SelectedWaveformList.cpp b/IIR_SelectedWaveformList.cpp
+--- a/IIR_SelectedWaveformList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_SelectedWaveformList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_SelectedWaveformList.h"
@@ -5952,8 +5951,8 @@ diff -uN build//IIR_SelectedWaveformList.cpp b/IIR_SelectedWaveformList.cpp
 -{
 -}
 -
-diff -uN build//IIR_SelectedWaveformList.h b/IIR_SelectedWaveformList.h
---- build//IIR_SelectedWaveformList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_SelectedWaveformList.h b/IIR_SelectedWaveformList.h
+--- a/IIR_SelectedWaveformList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_SelectedWaveformList.h	2011-08-26 08:03:57.645914385 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_SELECTEDWAVEFORMLIST_H_
@@ -5987,8 +5986,8 @@ diff -uN build//IIR_SelectedWaveformList.h b/IIR_SelectedWaveformList.h
 +typedef _TemplatedList<IIR_SelectedWaveform> IIR_SelectedWaveformList;
  
  #endif /*!_AIRE_IIR_SELECTEDWAVEFORMLIST_H_*/
-diff -uN build//IIR_SelectedWaveFormList.h b/IIR_SelectedWaveFormList.h
---- build//IIR_SelectedWaveFormList.h	1970-01-01 01:00:00.000000000 +0100
+diff -uN a/IIR_SelectedWaveFormList.h b/IIR_SelectedWaveFormList.h
+--- a/IIR_SelectedWaveFormList.h	1970-01-01 01:00:00.000000000 +0100
 +++ b/IIR_SelectedWaveFormList.h	2011-08-26 08:03:57.649914411 +0100
 @@ -0,0 +1,9 @@
 +#ifndef _AIRE_IIR_SELECTEDWAVEFORMLIST_H_
@@ -6000,8 +5999,8 @@ diff -uN build//IIR_SelectedWaveFormList.h b/IIR_SelectedWaveFormList.h
 +typedef _TemplatedList<IIR_SelectedWaveform> IIR_SelectedWaveformList;
 +
 +#endif /*!_AIRE_IIR_SELECTEDWAVEFORMLIST_H_*/
-diff -uN build//IIR_SensitizedProcessStatement.cpp b/IIR_SensitizedProcessStatement.cpp
---- build//IIR_SensitizedProcessStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_SensitizedProcessStatement.cpp b/IIR_SensitizedProcessStatement.cpp
+--- a/IIR_SensitizedProcessStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_SensitizedProcessStatement.cpp	2011-08-26 08:03:57.649914411 +0100
 @@ -2,6 +2,7 @@
  
@@ -6011,8 +6010,8 @@ diff -uN build//IIR_SensitizedProcessStatement.cpp b/IIR_SensitizedProcessStatem
  }
  
  IIR_SensitizedProcessStatement::~IIR_SensitizedProcessStatement(void)
-diff -uN build//IIR_SequentialStatement.h b/IIR_SequentialStatement.h
---- build//IIR_SequentialStatement.h	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_SequentialStatement.h b/IIR_SequentialStatement.h
+--- a/IIR_SequentialStatement.h	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_SequentialStatement.h	2011-08-26 08:03:57.649914411 +0100
 @@ -3,10 +3,12 @@
  
@@ -6028,8 +6027,8 @@ diff -uN build//IIR_SequentialStatement.h b/IIR_SequentialStatement.h
  };
  
  
-diff -uN build//IIR_SequentialStatementList.cpp b/IIR_SequentialStatementList.cpp
---- build//IIR_SequentialStatementList.cpp	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_SequentialStatementList.cpp b/IIR_SequentialStatementList.cpp
+--- a/IIR_SequentialStatementList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_SequentialStatementList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_SequentialStatementList.h"
@@ -6086,8 +6085,8 @@ diff -uN build//IIR_SequentialStatementList.cpp b/IIR_SequentialStatementList.cp
 -{
 -}
 -
-diff -uN build//IIR_SequentialStatementList.h b/IIR_SequentialStatementList.h
---- build//IIR_SequentialStatementList.h	2011-08-26 16:30:46.561777497 +0100
+diff -uN a/IIR_SequentialStatementList.h b/IIR_SequentialStatementList.h
+--- a/IIR_SequentialStatementList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_SequentialStatementList.h	2011-08-26 08:03:57.649914411 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_SEQUENTIALSTATEMENTLIST_H_
@@ -6121,8 +6120,8 @@ diff -uN build//IIR_SequentialStatementList.h b/IIR_SequentialStatementList.h
 +typedef _TemplatedList<IIR_SequentialStatement> IIR_SequentialStatementList;
  
  #endif /*!_AIRE_IIR_SEQUENTIALSTATEMENTLIST_H_*/
-diff -uN build//IIR_SharedVariableDeclaration.cpp b/IIR_SharedVariableDeclaration.cpp
---- build//IIR_SharedVariableDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_SharedVariableDeclaration.cpp b/IIR_SharedVariableDeclaration.cpp
+--- a/IIR_SharedVariableDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_SharedVariableDeclaration.cpp	2011-08-26 08:03:57.653914422 +0100
 @@ -2,6 +2,7 @@
  
@@ -6144,8 +6143,8 @@ diff -uN build//IIR_SharedVariableDeclaration.cpp b/IIR_SharedVariableDeclaratio
 +	return this->_value;
  }
  
-diff -uN build//IIR_SignalAssignmentStatement.cpp b/IIR_SignalAssignmentStatement.cpp
---- build//IIR_SignalAssignmentStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_SignalAssignmentStatement.cpp b/IIR_SignalAssignmentStatement.cpp
+--- a/IIR_SignalAssignmentStatement.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_SignalAssignmentStatement.cpp	2011-08-26 08:03:57.653914422 +0100
 @@ -2,6 +2,7 @@
  
@@ -6187,8 +6186,8 @@ diff -uN build//IIR_SignalAssignmentStatement.cpp b/IIR_SignalAssignmentStatemen
 +	return this->_reject_time_expression;
  }
  
-diff -uN build//IIR_SignalDeclaration.cpp b/IIR_SignalDeclaration.cpp
---- build//IIR_SignalDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_SignalDeclaration.cpp b/IIR_SignalDeclaration.cpp
+--- a/IIR_SignalDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_SignalDeclaration.cpp	2011-08-26 08:03:57.653914422 +0100
 @@ -2,6 +2,7 @@
  
@@ -6220,8 +6219,8 @@ diff -uN build//IIR_SignalDeclaration.cpp b/IIR_SignalDeclaration.cpp
 +	return this->_signal_kind;
  }
  
-diff -uN build//IIR_SignalInterfaceDeclaration.cpp b/IIR_SignalInterfaceDeclaration.cpp
---- build//IIR_SignalInterfaceDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_SignalInterfaceDeclaration.cpp b/IIR_SignalInterfaceDeclaration.cpp
+--- a/IIR_SignalInterfaceDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_SignalInterfaceDeclaration.cpp	2011-08-26 08:03:57.653914422 +0100
 @@ -2,6 +2,7 @@
  
@@ -6243,8 +6242,8 @@ diff -uN build//IIR_SignalInterfaceDeclaration.cpp b/IIR_SignalInterfaceDeclarat
 +	return this->_signal_kind;
  }
  
-diff -uN build//IIR_SignalInterfaceDeclaration.h b/IIR_SignalInterfaceDeclaration.h
---- build//IIR_SignalInterfaceDeclaration.h	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_SignalInterfaceDeclaration.h b/IIR_SignalInterfaceDeclaration.h
+--- a/IIR_SignalInterfaceDeclaration.h	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_SignalInterfaceDeclaration.h	2011-08-26 08:03:57.653914422 +0100
 @@ -4,12 +4,13 @@
  #include "primitive_types.h"
@@ -6261,8 +6260,8 @@ diff -uN build//IIR_SignalInterfaceDeclaration.h b/IIR_SignalInterfaceDeclaratio
  public:
  	IIR_SignalInterfaceDeclaration(void);
  	~IIR_SignalInterfaceDeclaration(void);
-diff -uN build//IIR_Signature.cpp b/IIR_Signature.cpp
---- build//IIR_Signature.cpp	2011-08-26 16:30:46.569777514 +0100
+diff -uN a/IIR_Signature.cpp b/IIR_Signature.cpp
+--- a/IIR_Signature.cpp	2011-08-26 17:07:17.400641271 +0100
 +++ b/IIR_Signature.cpp	2011-08-26 08:03:57.657914443 +0100
 @@ -6,10 +6,12 @@
  
@@ -6277,8 +6276,8 @@ diff -uN build//IIR_Signature.cpp b/IIR_Signature.cpp
  }
  
  IIR_Signature::~IIR_Signature(void)
-diff -uN build//IIR_SimpleNameAttribute.cpp b/IIR_SimpleNameAttribute.cpp
---- build//IIR_SimpleNameAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_SimpleNameAttribute.cpp b/IIR_SimpleNameAttribute.cpp
+--- a/IIR_SimpleNameAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_SimpleNameAttribute.cpp	2011-08-26 08:03:57.657914443 +0100
 @@ -6,5 +6,6 @@
  
@@ -6287,8 +6286,8 @@ diff -uN build//IIR_SimpleNameAttribute.cpp b/IIR_SimpleNameAttribute.cpp
 +	this->_kind = IR_SIMPLE_NAME_ATTRIBUTE;
  }
  
-diff -uN build//IIR_SimpleName.cpp b/IIR_SimpleName.cpp
---- build//IIR_SimpleName.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_SimpleName.cpp b/IIR_SimpleName.cpp
+--- a/IIR_SimpleName.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_SimpleName.cpp	2011-08-26 08:03:57.657914443 +0100
 @@ -10,9 +10,11 @@
  
@@ -6302,8 +6301,8 @@ diff -uN build//IIR_SimpleName.cpp b/IIR_SimpleName.cpp
 +	return this->_name;
  }
  
-diff -uN build//IIR_SimpleSimultaneousStatement.cpp b/IIR_SimpleSimultaneousStatement.cpp
---- build//IIR_SimpleSimultaneousStatement.cpp	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_SimpleSimultaneousStatement.cpp b/IIR_SimpleSimultaneousStatement.cpp
+--- a/IIR_SimpleSimultaneousStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_SimpleSimultaneousStatement.cpp	2011-08-26 08:03:57.657914443 +0100
 @@ -2,6 +2,7 @@
  
@@ -6345,8 +6344,8 @@ diff -uN build//IIR_SimpleSimultaneousStatement.cpp b/IIR_SimpleSimultaneousStat
 +	return this->_tolerance_aspect;
  }
  
-diff -uN build//IIR_SimultaneousAlternativeByChoices.cpp b/IIR_SimultaneousAlternativeByChoices.cpp
---- build//IIR_SimultaneousAlternativeByChoices.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_SimultaneousAlternativeByChoices.cpp b/IIR_SimultaneousAlternativeByChoices.cpp
+--- a/IIR_SimultaneousAlternativeByChoices.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_SimultaneousAlternativeByChoices.cpp	2011-08-26 08:03:57.661914470 +0100
 @@ -2,6 +2,7 @@
  
@@ -6356,8 +6355,8 @@ diff -uN build//IIR_SimultaneousAlternativeByChoices.cpp b/IIR_SimultaneousAlter
  }
  
  IIR_SimultaneousAlternativeByChoices::~IIR_SimultaneousAlternativeByChoices(void)
-diff -uN build//IIR_SimultaneousAlternativeByExpression.cpp b/IIR_SimultaneousAlternativeByExpression.cpp
---- build//IIR_SimultaneousAlternativeByExpression.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_SimultaneousAlternativeByExpression.cpp b/IIR_SimultaneousAlternativeByExpression.cpp
+--- a/IIR_SimultaneousAlternativeByExpression.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_SimultaneousAlternativeByExpression.cpp	2011-08-26 08:03:57.661914470 +0100
 @@ -2,6 +2,7 @@
  
@@ -6379,8 +6378,8 @@ diff -uN build//IIR_SimultaneousAlternativeByExpression.cpp b/IIR_SimultaneousAl
 +	return this->_choice;
  }
  
-diff -uN build//IIR_SimultaneousAlternativeByOthers.cpp b/IIR_SimultaneousAlternativeByOthers.cpp
---- build//IIR_SimultaneousAlternativeByOthers.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_SimultaneousAlternativeByOthers.cpp b/IIR_SimultaneousAlternativeByOthers.cpp
+--- a/IIR_SimultaneousAlternativeByOthers.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_SimultaneousAlternativeByOthers.cpp	2011-08-26 08:03:57.661914470 +0100
 @@ -2,6 +2,7 @@
  
@@ -6390,8 +6389,8 @@ diff -uN build//IIR_SimultaneousAlternativeByOthers.cpp b/IIR_SimultaneousAltern
  }
  
  IIR_SimultaneousAlternativeByOthers::~IIR_SimultaneousAlternativeByOthers(void)
-diff -uN build//IIR_SimultaneousAlternative.h b/IIR_SimultaneousAlternative.h
---- build//IIR_SimultaneousAlternative.h	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_SimultaneousAlternative.h b/IIR_SimultaneousAlternative.h
+--- a/IIR_SimultaneousAlternative.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_SimultaneousAlternative.h	2011-08-26 08:03:57.661914470 +0100
 @@ -4,10 +4,12 @@
  #include "primitive_types.h"
@@ -6407,8 +6406,8 @@ diff -uN build//IIR_SimultaneousAlternative.h b/IIR_SimultaneousAlternative.h
  public:
  	IIR_SimultaneousStatementList sequence_of_statements;
  public:
-diff -uN build//IIR_SimultaneousAlternativeList.cpp b/IIR_SimultaneousAlternativeList.cpp
---- build//IIR_SimultaneousAlternativeList.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_SimultaneousAlternativeList.cpp b/IIR_SimultaneousAlternativeList.cpp
+--- a/IIR_SimultaneousAlternativeList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_SimultaneousAlternativeList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_SimultaneousAlternativeList.h"
@@ -6465,8 +6464,8 @@ diff -uN build//IIR_SimultaneousAlternativeList.cpp b/IIR_SimultaneousAlternativ
 -{
 -}
 -
-diff -uN build//IIR_SimultaneousAlternativeList.h b/IIR_SimultaneousAlternativeList.h
---- build//IIR_SimultaneousAlternativeList.h	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_SimultaneousAlternativeList.h b/IIR_SimultaneousAlternativeList.h
+--- a/IIR_SimultaneousAlternativeList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_SimultaneousAlternativeList.h	2011-08-26 08:03:57.665914485 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_SIMULTANEOUSALTERNATIVELIST_H_
@@ -6500,8 +6499,8 @@ diff -uN build//IIR_SimultaneousAlternativeList.h b/IIR_SimultaneousAlternativeL
 +typedef _TemplatedList<IIR_SimultaneousAlternative> IIR_SimultaneousAlternativeList;
  
  #endif /*!_AIRE_IIR_SIMULTANEOUSALTERNATIVELIST_H_*/
-diff -uN build//IIR_SimultaneousCaseStatement.cpp b/IIR_SimultaneousCaseStatement.cpp
---- build//IIR_SimultaneousCaseStatement.cpp	2011-08-26 16:30:46.617777763 +0100
+diff -uN a/IIR_SimultaneousCaseStatement.cpp b/IIR_SimultaneousCaseStatement.cpp
+--- a/IIR_SimultaneousCaseStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_SimultaneousCaseStatement.cpp	2011-08-26 08:03:57.665914485 +0100
 @@ -2,6 +2,7 @@
  
@@ -6523,8 +6522,8 @@ diff -uN build//IIR_SimultaneousCaseStatement.cpp b/IIR_SimultaneousCaseStatemen
 +	return this->_expression;
  }
  
-diff -uN build//IIR_SimultaneousElsif.cpp b/IIR_SimultaneousElsif.cpp
---- build//IIR_SimultaneousElsif.cpp	2011-08-26 16:30:46.553777438 +0100
+diff -uN a/IIR_SimultaneousElsif.cpp b/IIR_SimultaneousElsif.cpp
+--- a/IIR_SimultaneousElsif.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_SimultaneousElsif.cpp	2011-08-26 08:03:57.665914485 +0100
 @@ -2,6 +2,7 @@
  
@@ -6556,8 +6555,8 @@ diff -uN build//IIR_SimultaneousElsif.cpp b/IIR_SimultaneousElsif.cpp
 +	return this->_else_clause;
  }
  
-diff -uN build//IIR_SimultaneousIfStatement.cpp b/IIR_SimultaneousIfStatement.cpp
---- build//IIR_SimultaneousIfStatement.cpp	2011-08-26 16:30:46.617777763 +0100
+diff -uN a/IIR_SimultaneousIfStatement.cpp b/IIR_SimultaneousIfStatement.cpp
+--- a/IIR_SimultaneousIfStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_SimultaneousIfStatement.cpp	2011-08-26 08:03:57.669914504 +0100
 @@ -2,6 +2,7 @@
  
@@ -6589,8 +6588,8 @@ diff -uN build//IIR_SimultaneousIfStatement.cpp b/IIR_SimultaneousIfStatement.cp
 +	return this->_elsif;
  }
  
-diff -uN build//IIR_SimultaneousNullStatement.cpp b/IIR_SimultaneousNullStatement.cpp
---- build//IIR_SimultaneousNullStatement.cpp	2011-08-26 16:30:46.617777763 +0100
+diff -uN a/IIR_SimultaneousNullStatement.cpp b/IIR_SimultaneousNullStatement.cpp
+--- a/IIR_SimultaneousNullStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_SimultaneousNullStatement.cpp	2011-08-26 08:03:57.669914504 +0100
 @@ -2,6 +2,7 @@
  
@@ -6600,8 +6599,8 @@ diff -uN build//IIR_SimultaneousNullStatement.cpp b/IIR_SimultaneousNullStatemen
  }
  
  IIR_SimultaneousNullStatement::~IIR_SimultaneousNullStatement(void)
-diff -uN build//IIR_SimultaneousProceduralStatement.cpp b/IIR_SimultaneousProceduralStatement.cpp
---- build//IIR_SimultaneousProceduralStatement.cpp	2011-08-26 16:30:46.617777763 +0100
+diff -uN a/IIR_SimultaneousProceduralStatement.cpp b/IIR_SimultaneousProceduralStatement.cpp
+--- a/IIR_SimultaneousProceduralStatement.cpp	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_SimultaneousProceduralStatement.cpp	2011-08-26 08:03:57.669914504 +0100
 @@ -2,6 +2,7 @@
  
@@ -6611,8 +6610,8 @@ diff -uN build//IIR_SimultaneousProceduralStatement.cpp b/IIR_SimultaneousProced
  }
  
  IIR_SimultaneousProceduralStatement::~IIR_SimultaneousProceduralStatement(void)
-diff -uN build//IIR_SimultaneousStatement.h b/IIR_SimultaneousStatement.h
---- build//IIR_SimultaneousStatement.h	2011-08-26 16:30:46.613777752 +0100
+diff -uN a/IIR_SimultaneousStatement.h b/IIR_SimultaneousStatement.h
+--- a/IIR_SimultaneousStatement.h	2011-08-26 17:07:17.448641506 +0100
 +++ b/IIR_SimultaneousStatement.h	2011-08-26 08:03:57.669914504 +0100
 @@ -3,10 +3,12 @@
  
@@ -6628,8 +6627,8 @@ diff -uN build//IIR_SimultaneousStatement.h b/IIR_SimultaneousStatement.h
  };
  
  
-diff -uN build//IIR_SimultaneousStatementList.cpp b/IIR_SimultaneousStatementList.cpp
---- build//IIR_SimultaneousStatementList.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_SimultaneousStatementList.cpp b/IIR_SimultaneousStatementList.cpp
+--- a/IIR_SimultaneousStatementList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_SimultaneousStatementList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_SimultaneousStatementList.h"
@@ -6686,8 +6685,8 @@ diff -uN build//IIR_SimultaneousStatementList.cpp b/IIR_SimultaneousStatementLis
 -{
 -}
 -
-diff -uN build//IIR_SimultaneousStatementList.h b/IIR_SimultaneousStatementList.h
---- build//IIR_SimultaneousStatementList.h	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_SimultaneousStatementList.h b/IIR_SimultaneousStatementList.h
+--- a/IIR_SimultaneousStatementList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_SimultaneousStatementList.h	2011-08-26 08:03:57.669914504 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_SIMULTANEOUSSTATEMENTLIST_H_
@@ -6721,8 +6720,8 @@ diff -uN build//IIR_SimultaneousStatementList.h b/IIR_SimultaneousStatementList.
 +typedef _TemplatedList<IIR_SimultaneousStatement> IIR_SimultaneousStatementList;
  
  #endif /*!_AIRE_IIR_SIMULTANEOUSSTATEMENTLIST_H_*/
-diff -uN build//IIR_SLAOperator.cpp b/IIR_SLAOperator.cpp
---- build//IIR_SLAOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_SLAOperator.cpp b/IIR_SLAOperator.cpp
+--- a/IIR_SLAOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_SLAOperator.cpp	2011-08-26 08:03:57.669914504 +0100
 @@ -2,6 +2,7 @@
  
@@ -6732,8 +6731,8 @@ diff -uN build//IIR_SLAOperator.cpp b/IIR_SLAOperator.cpp
  }
  
  IIR_SLAOperator::~IIR_SLAOperator(void)
-diff -uN build//IIR_SliceName.cpp b/IIR_SliceName.cpp
---- build//IIR_SliceName.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_SliceName.cpp b/IIR_SliceName.cpp
+--- a/IIR_SliceName.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_SliceName.cpp	2011-08-26 08:03:57.673914530 +0100
 @@ -2,6 +2,7 @@
  
@@ -6755,8 +6754,8 @@ diff -uN build//IIR_SliceName.cpp b/IIR_SliceName.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_SLLOperator.cpp b/IIR_SLLOperator.cpp
---- build//IIR_SLLOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_SLLOperator.cpp b/IIR_SLLOperator.cpp
+--- a/IIR_SLLOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_SLLOperator.cpp	2011-08-26 08:03:57.673914530 +0100
 @@ -2,6 +2,7 @@
  
@@ -6766,8 +6765,8 @@ diff -uN build//IIR_SLLOperator.cpp b/IIR_SLLOperator.cpp
  }
  
  IIR_SLLOperator::~IIR_SLLOperator(void)
-diff -uN build//IIR_SpectrumSourceQuantityDeclaration.cpp b/IIR_SpectrumSourceQuantityDeclaration.cpp
---- build//IIR_SpectrumSourceQuantityDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_SpectrumSourceQuantityDeclaration.cpp b/IIR_SpectrumSourceQuantityDeclaration.cpp
+--- a/IIR_SpectrumSourceQuantityDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_SpectrumSourceQuantityDeclaration.cpp	2011-08-26 08:03:57.673914530 +0100
 @@ -2,26 +2,32 @@
  
@@ -6802,8 +6801,8 @@ diff -uN build//IIR_SpectrumSourceQuantityDeclaration.cpp b/IIR_SpectrumSourceQu
  }
  
  IIR_SpectrumSourceQuantityDeclaration::IIR_SpectrumSourceQuantityDeclaration(void)
-diff -uN build//IIR_SRAOperator.cpp b/IIR_SRAOperator.cpp
---- build//IIR_SRAOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_SRAOperator.cpp b/IIR_SRAOperator.cpp
+--- a/IIR_SRAOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_SRAOperator.cpp	2011-08-26 08:03:57.673914530 +0100
 @@ -2,6 +2,7 @@
  
@@ -6813,8 +6812,8 @@ diff -uN build//IIR_SRAOperator.cpp b/IIR_SRAOperator.cpp
  }
  
  IIR_SRAOperator::~IIR_SRAOperator(void)
-diff -uN build//IIR_SRLOperator.cpp b/IIR_SRLOperator.cpp
---- build//IIR_SRLOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_SRLOperator.cpp b/IIR_SRLOperator.cpp
+--- a/IIR_SRLOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_SRLOperator.cpp	2011-08-26 08:03:57.673914530 +0100
 @@ -2,6 +2,7 @@
  
@@ -6824,8 +6823,8 @@ diff -uN build//IIR_SRLOperator.cpp b/IIR_SRLOperator.cpp
  }
  
  IIR_SRLOperator::~IIR_SRLOperator(void)
-diff -uN build//IIR_StableAttribute.cpp b/IIR_StableAttribute.cpp
---- build//IIR_StableAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_StableAttribute.cpp b/IIR_StableAttribute.cpp
+--- a/IIR_StableAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_StableAttribute.cpp	2011-08-26 08:03:57.673914530 +0100
 @@ -2,6 +2,7 @@
  
@@ -6847,8 +6846,8 @@ diff -uN build//IIR_StableAttribute.cpp b/IIR_StableAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_Statement.cpp b/IIR_Statement.cpp
---- build//IIR_Statement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_Statement.cpp b/IIR_Statement.cpp
+--- a/IIR_Statement.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_Statement.cpp	2011-08-26 08:03:57.677914541 +0100
 @@ -2,9 +2,11 @@
  
@@ -6862,8 +6861,8 @@ diff -uN build//IIR_Statement.cpp b/IIR_Statement.cpp
 +	return this->_label;
  }
  
-diff -uN build//IIR_Statement.h b/IIR_Statement.h
---- build//IIR_Statement.h	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_Statement.h b/IIR_Statement.h
+--- a/IIR_Statement.h	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_Statement.h	2011-08-26 08:03:57.677914541 +0100
 @@ -3,6 +3,7 @@
  
@@ -6881,8 +6880,8 @@ diff -uN build//IIR_Statement.h b/IIR_Statement.h
  public:
  	void set_label(IIR_Label *label);
  	IIR_Label *get_label(void);
-diff -uN build//IIR_StatementList.cpp b/IIR_StatementList.cpp
---- build//IIR_StatementList.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_StatementList.cpp b/IIR_StatementList.cpp
+--- a/IIR_StatementList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_StatementList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_StatementList.h"
@@ -6939,8 +6938,8 @@ diff -uN build//IIR_StatementList.cpp b/IIR_StatementList.cpp
 -{
 -}
 -
-diff -uN build//IIR_StatementList.h b/IIR_StatementList.h
---- build//IIR_StatementList.h	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_StatementList.h b/IIR_StatementList.h
+--- a/IIR_StatementList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_StatementList.h	2011-08-26 08:03:57.677914541 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_STATEMENTLIST_H_
@@ -6974,8 +6973,8 @@ diff -uN build//IIR_StatementList.h b/IIR_StatementList.h
 +typedef _TemplatedList<IIR_Statement> IIR_StatementList;
  
  #endif /*!_AIRE_IIR_STATEMENTLIST_H_*/
-diff -uN build//IIR_StringLiteral.cpp b/IIR_StringLiteral.cpp
---- build//IIR_StringLiteral.cpp	2011-08-26 16:30:46.545777415 +0100
+diff -uN a/IIR_StringLiteral.cpp b/IIR_StringLiteral.cpp
+--- a/IIR_StringLiteral.cpp	2011-08-26 17:07:17.376641149 +0100
 +++ b/IIR_StringLiteral.cpp	2011-08-26 08:03:57.681914562 +0100
 @@ -2,22 +2,27 @@
  
@@ -7005,8 +7004,8 @@ diff -uN build//IIR_StringLiteral.cpp b/IIR_StringLiteral.cpp
  }
  
  void IIR_StringLiteral::release(void)
-diff -uN build//IIR_SubnatureDeclaration.cpp b/IIR_SubnatureDeclaration.cpp
---- build//IIR_SubnatureDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_SubnatureDeclaration.cpp b/IIR_SubnatureDeclaration.cpp
+--- a/IIR_SubnatureDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_SubnatureDeclaration.cpp	2011-08-26 08:03:57.681914562 +0100
 @@ -2,6 +2,7 @@
  
@@ -7028,8 +7027,8 @@ diff -uN build//IIR_SubnatureDeclaration.cpp b/IIR_SubnatureDeclaration.cpp
 +	return this->_subnature;
  }
  
-diff -uN build//IIR_SubtractionOperator.cpp b/IIR_SubtractionOperator.cpp
---- build//IIR_SubtractionOperator.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_SubtractionOperator.cpp b/IIR_SubtractionOperator.cpp
+--- a/IIR_SubtractionOperator.cpp	2011-08-26 17:07:17.436641446 +0100
 +++ b/IIR_SubtractionOperator.cpp	2011-08-26 08:03:57.681914562 +0100
 @@ -2,6 +2,7 @@
  
@@ -7039,8 +7038,8 @@ diff -uN build//IIR_SubtractionOperator.cpp b/IIR_SubtractionOperator.cpp
  }
  
  IIR_SubtractionOperator::~IIR_SubtractionOperator(void)
-diff -uN build//IIR_SubtypeDeclaration.cpp b/IIR_SubtypeDeclaration.cpp
---- build//IIR_SubtypeDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_SubtypeDeclaration.cpp b/IIR_SubtypeDeclaration.cpp
+--- a/IIR_SubtypeDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_SubtypeDeclaration.cpp	2011-08-26 08:03:57.681914562 +0100
 @@ -2,6 +2,7 @@
  
@@ -7062,8 +7061,8 @@ diff -uN build//IIR_SubtypeDeclaration.cpp b/IIR_SubtypeDeclaration.cpp
 +	return this->_subtype;
  }
  
-diff -uN build//IIR_SuccAttribute.cpp b/IIR_SuccAttribute.cpp
---- build//IIR_SuccAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_SuccAttribute.cpp b/IIR_SuccAttribute.cpp
+--- a/IIR_SuccAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_SuccAttribute.cpp	2011-08-26 08:03:57.681914562 +0100
 @@ -2,6 +2,7 @@
  
@@ -7085,8 +7084,8 @@ diff -uN build//IIR_SuccAttribute.cpp b/IIR_SuccAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_TerminalDeclaration.cpp b/IIR_TerminalDeclaration.cpp
---- build//IIR_TerminalDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_TerminalDeclaration.cpp b/IIR_TerminalDeclaration.cpp
+--- a/IIR_TerminalDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_TerminalDeclaration.cpp	2011-08-26 08:03:57.685914589 +0100
 @@ -2,6 +2,7 @@
  
@@ -7108,8 +7107,8 @@ diff -uN build//IIR_TerminalDeclaration.cpp b/IIR_TerminalDeclaration.cpp
 +	return this->_nature;
  }
  
-diff -uN build//IIR_TerminalInterfaceDeclaration.cpp b/IIR_TerminalInterfaceDeclaration.cpp
---- build//IIR_TerminalInterfaceDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_TerminalInterfaceDeclaration.cpp b/IIR_TerminalInterfaceDeclaration.cpp
+--- a/IIR_TerminalInterfaceDeclaration.cpp	2011-08-26 17:07:17.412641324 +0100
 +++ b/IIR_TerminalInterfaceDeclaration.cpp	2011-08-26 08:03:57.685914589 +0100
 @@ -2,6 +2,7 @@
  
@@ -7131,8 +7130,8 @@ diff -uN build//IIR_TerminalInterfaceDeclaration.cpp b/IIR_TerminalInterfaceDecl
 +	return this->_subnature_indication;
  }
  
-diff -uN build//IIR_ThroughAttribute.cpp b/IIR_ThroughAttribute.cpp
---- build//IIR_ThroughAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_ThroughAttribute.cpp b/IIR_ThroughAttribute.cpp
+--- a/IIR_ThroughAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_ThroughAttribute.cpp	2011-08-26 08:03:57.685914589 +0100
 @@ -2,6 +2,7 @@
  
@@ -7142,8 +7141,8 @@ diff -uN build//IIR_ThroughAttribute.cpp b/IIR_ThroughAttribute.cpp
  }
  
  IIR_ThroughAttribute::~IIR_ThroughAttribute(void)
-diff -uN build//IIR_ThroughQuantityDeclaration.cpp b/IIR_ThroughQuantityDeclaration.cpp
---- build//IIR_ThroughQuantityDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_ThroughQuantityDeclaration.cpp b/IIR_ThroughQuantityDeclaration.cpp
+--- a/IIR_ThroughQuantityDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_ThroughQuantityDeclaration.cpp	2011-08-26 08:03:57.685914589 +0100
 @@ -2,6 +2,7 @@
  
@@ -7215,8 +7214,8 @@ diff -uN build//IIR_ThroughQuantityDeclaration.cpp b/IIR_ThroughQuantityDeclarat
 +	return this->_minus_terminal_name;
  }
  
-diff -uN build//IIR_ToleranceAttribute.cpp b/IIR_ToleranceAttribute.cpp
---- build//IIR_ToleranceAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_ToleranceAttribute.cpp b/IIR_ToleranceAttribute.cpp
+--- a/IIR_ToleranceAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_ToleranceAttribute.cpp	2011-08-26 08:03:57.685914589 +0100
 @@ -2,6 +2,7 @@
  
@@ -7226,8 +7225,8 @@ diff -uN build//IIR_ToleranceAttribute.cpp b/IIR_ToleranceAttribute.cpp
  }
  
  IIR_ToleranceAttribute::~IIR_ToleranceAttribute(void)
-diff -uN build//IIR_TransactionAttribute.cpp b/IIR_TransactionAttribute.cpp
---- build//IIR_TransactionAttribute.cpp	2011-08-26 16:30:46.593777650 +0100
+diff -uN a/IIR_TransactionAttribute.cpp b/IIR_TransactionAttribute.cpp
+--- a/IIR_TransactionAttribute.cpp	2011-08-26 17:07:17.424641386 +0100
 +++ b/IIR_TransactionAttribute.cpp	2011-08-26 08:03:57.689914604 +0100
 @@ -2,6 +2,7 @@
  
@@ -7237,8 +7236,8 @@ diff -uN build//IIR_TransactionAttribute.cpp b/IIR_TransactionAttribute.cpp
  }
  
  IIR_TransactionAttribute::~IIR_TransactionAttribute(void)
-diff -uN build//IIR_TypeConversion.cpp b/IIR_TypeConversion.cpp
---- build//IIR_TypeConversion.cpp	2011-08-26 16:30:46.605777704 +0100
+diff -uN a/IIR_TypeConversion.cpp b/IIR_TypeConversion.cpp
+--- a/IIR_TypeConversion.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_TypeConversion.cpp	2011-08-26 08:03:57.689914604 +0100
 @@ -2,6 +2,7 @@
  
@@ -7270,8 +7269,8 @@ diff -uN build//IIR_TypeConversion.cpp b/IIR_TypeConversion.cpp
 +	return this->_expression;
  }
  
-diff -uN build//IIR_TypeDeclaration.cpp b/IIR_TypeDeclaration.cpp
---- build//IIR_TypeDeclaration.cpp	2011-08-26 16:30:46.573777538 +0100
+diff -uN a/IIR_TypeDeclaration.cpp b/IIR_TypeDeclaration.cpp
+--- a/IIR_TypeDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_TypeDeclaration.cpp	2011-08-26 08:03:57.689914604 +0100
 @@ -2,6 +2,7 @@
  
@@ -7293,8 +7292,8 @@ diff -uN build//IIR_TypeDeclaration.cpp b/IIR_TypeDeclaration.cpp
 +	return this->_type;
  }
  
-diff -uN build//IIR_TypeDefinition.cpp b/IIR_TypeDefinition.cpp
---- build//IIR_TypeDefinition.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_TypeDefinition.cpp b/IIR_TypeDefinition.cpp
+--- a/IIR_TypeDefinition.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_TypeDefinition.cpp	2011-08-26 08:03:57.689914604 +0100
 @@ -2,9 +2,11 @@
  
@@ -7308,8 +7307,8 @@ diff -uN build//IIR_TypeDefinition.cpp b/IIR_TypeDefinition.cpp
 +	return this->_base_type;
  }
  
-diff -uN build//IIR_UnitList.cpp b/IIR_UnitList.cpp
---- build//IIR_UnitList.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_UnitList.cpp b/IIR_UnitList.cpp
+--- a/IIR_UnitList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_UnitList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_UnitList.h"
@@ -7366,8 +7365,8 @@ diff -uN build//IIR_UnitList.cpp b/IIR_UnitList.cpp
 -{
 -}
 -
-diff -uN build//IIR_UnitList.h b/IIR_UnitList.h
---- build//IIR_UnitList.h	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_UnitList.h b/IIR_UnitList.h
+--- a/IIR_UnitList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_UnitList.h	2011-08-26 08:03:57.693914623 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_UNITLIST_H_
@@ -7401,8 +7400,8 @@ diff -uN build//IIR_UnitList.h b/IIR_UnitList.h
 +typedef _TemplatedList<IIR_PhysicalUnit> IIR_UnitList;
  
  #endif /*!_AIRE_IIR_UNITLIST_H_*/
-diff -uN build//IIR_UseClause.cpp b/IIR_UseClause.cpp
---- build//IIR_UseClause.cpp	2011-08-26 16:30:46.585777597 +0100
+diff -uN a/IIR_UseClause.cpp b/IIR_UseClause.cpp
+--- a/IIR_UseClause.cpp	2011-08-26 17:07:17.416641346 +0100
 +++ b/IIR_UseClause.cpp	2011-08-26 08:03:57.693914623 +0100
 @@ -2,6 +2,7 @@
  
@@ -7424,8 +7423,8 @@ diff -uN build//IIR_UseClause.cpp b/IIR_UseClause.cpp
 +	return this->_selected_name;
  }
  
-diff -uN build//IIR_UserAttribute.cpp b/IIR_UserAttribute.cpp
---- build//IIR_UserAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_UserAttribute.cpp b/IIR_UserAttribute.cpp
+--- a/IIR_UserAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_UserAttribute.cpp	2011-08-26 08:03:57.693914623 +0100
 @@ -2,6 +2,7 @@
  
@@ -7447,8 +7446,8 @@ diff -uN build//IIR_UserAttribute.cpp b/IIR_UserAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_ValAttribute.cpp b/IIR_ValAttribute.cpp
---- build//IIR_ValAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_ValAttribute.cpp b/IIR_ValAttribute.cpp
+--- a/IIR_ValAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_ValAttribute.cpp	2011-08-26 08:03:57.693914623 +0100
 @@ -2,6 +2,7 @@
  
@@ -7470,8 +7469,8 @@ diff -uN build//IIR_ValAttribute.cpp b/IIR_ValAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_ValueAttribute.cpp b/IIR_ValueAttribute.cpp
---- build//IIR_ValueAttribute.cpp	2011-08-26 16:30:46.589777619 +0100
+diff -uN a/IIR_ValueAttribute.cpp b/IIR_ValueAttribute.cpp
+--- a/IIR_ValueAttribute.cpp	2011-08-26 17:07:17.420641370 +0100
 +++ b/IIR_ValueAttribute.cpp	2011-08-26 08:03:57.697914649 +0100
 @@ -2,6 +2,7 @@
  
@@ -7493,8 +7492,8 @@ diff -uN build//IIR_ValueAttribute.cpp b/IIR_ValueAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_VariableAssignmentStatement.cpp b/IIR_VariableAssignmentStatement.cpp
---- build//IIR_VariableAssignmentStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_VariableAssignmentStatement.cpp b/IIR_VariableAssignmentStatement.cpp
+--- a/IIR_VariableAssignmentStatement.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_VariableAssignmentStatement.cpp	2011-08-26 08:03:57.697914649 +0100
 @@ -2,6 +2,7 @@
  
@@ -7526,8 +7525,8 @@ diff -uN build//IIR_VariableAssignmentStatement.cpp b/IIR_VariableAssignmentStat
 +	return this->_expression;
  }
  
-diff -uN build//IIR_VariableDeclaration.cpp b/IIR_VariableDeclaration.cpp
---- build//IIR_VariableDeclaration.cpp	2011-08-26 16:30:46.577777576 +0100
+diff -uN a/IIR_VariableDeclaration.cpp b/IIR_VariableDeclaration.cpp
+--- a/IIR_VariableDeclaration.cpp	2011-08-26 17:07:17.404641286 +0100
 +++ b/IIR_VariableDeclaration.cpp	2011-08-26 08:03:57.697914649 +0100
 @@ -2,6 +2,7 @@
  
@@ -7549,8 +7548,8 @@ diff -uN build//IIR_VariableDeclaration.cpp b/IIR_VariableDeclaration.cpp
 +	return this->_value;
  }
  
-diff -uN build//IIR_VariableInterfaceDeclaration.cpp b/IIR_VariableInterfaceDeclaration.cpp
---- build//IIR_VariableInterfaceDeclaration.cpp	2011-08-26 16:30:46.581777586 +0100
+diff -uN a/IIR_VariableInterfaceDeclaration.cpp b/IIR_VariableInterfaceDeclaration.cpp
+--- a/IIR_VariableInterfaceDeclaration.cpp	2011-08-26 17:07:17.408641309 +0100
 +++ b/IIR_VariableInterfaceDeclaration.cpp	2011-08-26 08:03:57.697914649 +0100
 @@ -2,6 +2,7 @@
  
@@ -7560,8 +7559,8 @@ diff -uN build//IIR_VariableInterfaceDeclaration.cpp b/IIR_VariableInterfaceDecl
  }
  
  IIR_VariableInterfaceDeclaration::~IIR_VariableInterfaceDeclaration(void)
-diff -uN build//IIR_WaitStatement.cpp b/IIR_WaitStatement.cpp
---- build//IIR_WaitStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_WaitStatement.cpp b/IIR_WaitStatement.cpp
+--- a/IIR_WaitStatement.cpp	2011-08-26 17:07:17.440641470 +0100
 +++ b/IIR_WaitStatement.cpp	2011-08-26 08:03:57.701914660 +0100
 @@ -2,6 +2,7 @@
  
@@ -7593,8 +7592,8 @@ diff -uN build//IIR_WaitStatement.cpp b/IIR_WaitStatement.cpp
 +	return this->_timeout_clause;
  }
  
-diff -uN build//IIR_WaveformElement.cpp b/IIR_WaveformElement.cpp
---- build//IIR_WaveformElement.cpp	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_WaveformElement.cpp b/IIR_WaveformElement.cpp
+--- a/IIR_WaveformElement.cpp	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_WaveformElement.cpp	2011-08-26 08:03:57.701914660 +0100
 @@ -2,6 +2,7 @@
  
@@ -7626,8 +7625,8 @@ diff -uN build//IIR_WaveformElement.cpp b/IIR_WaveformElement.cpp
 +	return this->_time;
  }
  
-diff -uN build//IIR_WaveformElement.h b/IIR_WaveformElement.h
---- build//IIR_WaveformElement.h	2011-08-26 16:30:46.557777461 +0100
+diff -uN a/IIR_WaveformElement.h b/IIR_WaveformElement.h
+--- a/IIR_WaveformElement.h	2011-08-26 17:07:17.384641188 +0100
 +++ b/IIR_WaveformElement.h	2011-08-26 08:03:57.701914660 +0100
 @@ -3,6 +3,7 @@
  
@@ -7645,8 +7644,8 @@ diff -uN build//IIR_WaveformElement.h b/IIR_WaveformElement.h
  public:
  	IIR_WaveformElement(void);
  	~IIR_WaveformElement(void);
-diff -uN build//IIR_WaveformList.cpp b/IIR_WaveformList.cpp
---- build//IIR_WaveformList.cpp	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_WaveformList.cpp b/IIR_WaveformList.cpp
+--- a/IIR_WaveformList.cpp	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_WaveformList.cpp	1970-01-01 01:00:00.000000000 +0100
 @@ -1,54 +0,0 @@
 -#include "IIR_WaveformList.h"
@@ -7703,8 +7702,8 @@ diff -uN build//IIR_WaveformList.cpp b/IIR_WaveformList.cpp
 -{
 -}
 -
-diff -uN build//IIR_WaveformList.h b/IIR_WaveformList.h
---- build//IIR_WaveformList.h	2011-08-26 16:30:46.565777502 +0100
+diff -uN a/IIR_WaveformList.h b/IIR_WaveformList.h
+--- a/IIR_WaveformList.h	2011-08-26 17:07:17.392641226 +0100
 +++ b/IIR_WaveformList.h	2011-08-26 08:03:57.705914681 +0100
 @@ -1,28 +1,9 @@
  #ifndef _AIRE_IIR_WAVEFORMLIST_H_
@@ -7738,8 +7737,8 @@ diff -uN build//IIR_WaveformList.h b/IIR_WaveformList.h
 +typedef _TemplatedList<IIR_WaveformElement> IIR_WaveformList;
  
  #endif /*!_AIRE_IIR_WAVEFORMLIST_H_*/
-diff -uN build//IIR_WhileLoopStatement.cpp b/IIR_WhileLoopStatement.cpp
---- build//IIR_WhileLoopStatement.cpp	2011-08-26 16:30:46.609777725 +0100
+diff -uN a/IIR_WhileLoopStatement.cpp b/IIR_WhileLoopStatement.cpp
+--- a/IIR_WhileLoopStatement.cpp	2011-08-26 17:07:17.444641486 +0100
 +++ b/IIR_WhileLoopStatement.cpp	2011-08-26 08:03:57.705914681 +0100
 @@ -2,6 +2,7 @@
  
@@ -7761,8 +7760,8 @@ diff -uN build//IIR_WhileLoopStatement.cpp b/IIR_WhileLoopStatement.cpp
 +	return this->_while_condition;
  }
  
-diff -uN build//IIR_XnorOperator.cpp b/IIR_XnorOperator.cpp
---- build//IIR_XnorOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_XnorOperator.cpp b/IIR_XnorOperator.cpp
+--- a/IIR_XnorOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_XnorOperator.cpp	2011-08-26 08:03:57.705914681 +0100
 @@ -2,6 +2,7 @@
  
@@ -7772,8 +7771,8 @@ diff -uN build//IIR_XnorOperator.cpp b/IIR_XnorOperator.cpp
  }
  
  IIR_XnorOperator::~IIR_XnorOperator(void)
-diff -uN build//IIR_XorOperator.cpp b/IIR_XorOperator.cpp
---- build//IIR_XorOperator.cpp	2011-08-26 16:30:46.601777685 +0100
+diff -uN a/IIR_XorOperator.cpp b/IIR_XorOperator.cpp
+--- a/IIR_XorOperator.cpp	2011-08-26 17:07:17.432641426 +0100
 +++ b/IIR_XorOperator.cpp	2011-08-26 08:03:57.705914681 +0100
 @@ -2,6 +2,7 @@
  
@@ -7783,8 +7782,8 @@ diff -uN build//IIR_XorOperator.cpp b/IIR_XorOperator.cpp
  }
  
  IIR_XorOperator::~IIR_XorOperator(void)
-diff -uN build//IIR_ZOHAttribute.cpp b/IIR_ZOHAttribute.cpp
---- build//IIR_ZOHAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_ZOHAttribute.cpp b/IIR_ZOHAttribute.cpp
+--- a/IIR_ZOHAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_ZOHAttribute.cpp	2011-08-26 08:03:57.705914681 +0100
 @@ -2,6 +2,7 @@
  
@@ -7806,8 +7805,8 @@ diff -uN build//IIR_ZOHAttribute.cpp b/IIR_ZOHAttribute.cpp
 +	return this->_suffix;
  }
  
-diff -uN build//IIR_ZTFAttribute.cpp b/IIR_ZTFAttribute.cpp
---- build//IIR_ZTFAttribute.cpp	2011-08-26 16:30:46.597777668 +0100
+diff -uN a/IIR_ZTFAttribute.cpp b/IIR_ZTFAttribute.cpp
+--- a/IIR_ZTFAttribute.cpp	2011-08-26 17:07:17.428641410 +0100
 +++ b/IIR_ZTFAttribute.cpp	2011-08-26 08:03:57.709914708 +0100
 @@ -2,6 +2,7 @@
  
@@ -7859,8 +7858,8 @@ diff -uN build//IIR_ZTFAttribute.cpp b/IIR_ZTFAttribute.cpp
 +	return this->_initial_delay;
  }
  
-diff -uN build//_ListLink.h b/_ListLink.h
---- build//_ListLink.h	1970-01-01 01:00:00.000000000 +0100
+diff -uN a/_ListLink.h b/_ListLink.h
+--- a/_ListLink.h	1970-01-01 01:00:00.000000000 +0100
 +++ b/_ListLink.h	2011-08-26 08:03:57.709914708 +0100
 @@ -0,0 +1,31 @@
 +#ifndef _AIRE_LISTLINK_H_
@@ -7894,9 +7893,9 @@ diff -uN build//_ListLink.h b/_ListLink.h
 +}
 +
 +#endif /*!_AIRE_LISTLINK_H_*/
-diff -uN build//Makefile b/Makefile
---- build//Makefile	2011-08-26 16:30:46.617777763 +0100
-+++ b/Makefile	2011-08-26 16:29:18.825342552 +0100
+diff -uN a/Makefile b/Makefile
+--- a/Makefile	2011-08-26 17:07:17.452641528 +0100
++++ b/Makefile	2011-08-26 16:53:05.996419382 +0100
 @@ -52,33 +52,6 @@
  $(OBJDIR)/IIR_SimultaneousAlternativeByOthers.o\
  $(OBJDIR)/IIR_WaveformElement.o\
@@ -7931,12 +7930,10 @@ diff -uN build//Makefile b/Makefile
  $(OBJDIR)/IIR_TypeDefinition.o\
  $(OBJDIR)/IIR_ScalarTypeDefinition.o\
  $(OBJDIR)/IIR_EnumerationTypeDefinition.o\
-@@ -288,8 +261,17 @@
- $(OBJDIR)/IIR_SimultaneousProceduralStatement.o\
+@@ -289,7 +262,16 @@
  $(OBJDIR)/IIR_SimultaneousNullStatement.o\
  $(OBJDIR)/IIR_Driver.o\
--$(OBJDIR)/IIR_EffectiveValue.o
-+$(OBJDIR)/IIR_EffectiveValue.o\
+ $(OBJDIR)/IIR_EffectiveValue.o
 +
 +TESTOBJECTS :=\
 +$(OBJDIR)/_TemplatedListTest.o
@@ -7955,8 +7952,8 @@ diff -uN build//Makefile b/Makefile
  	rm -f *.o *.a *.d *~
  	rm -f lib$(LIBNAME).a
 +	rm -f unit
-diff -uN build//primitive_types.h b/primitive_types.h
---- build//primitive_types.h	2011-08-26 16:30:46.617777763 +0100
+diff -uN a/primitive_types.h b/primitive_types.h
+--- a/primitive_types.h	2011-08-26 17:07:17.452641528 +0100
 +++ b/primitive_types.h	2011-08-26 08:03:57.709914708 +0100
 @@ -1,11 +1,11 @@
  #ifndef _AIRE_PRIMITIVE_TYPES_H_
@@ -7976,10 +7973,10 @@ diff -uN build//primitive_types.h b/primitive_types.h
 +typedef double       IR_FP64;
  
  #endif /*!_AIRE_PRIMITIVE_TYPES_H_*/
-diff -uN build//_TemplatedList.h b/_TemplatedList.h
---- build//_TemplatedList.h	1970-01-01 01:00:00.000000000 +0100
-+++ b/_TemplatedList.h	2011-08-26 16:23:45.459689134 +0100
-@@ -0,0 +1,252 @@
+diff -uN a/_TemplatedList.h b/_TemplatedList.h
+--- a/_TemplatedList.h	1970-01-01 01:00:00.000000000 +0100
++++ b/_TemplatedList.h	2011-08-26 16:57:59.685876127 +0100
+@@ -0,0 +1,256 @@
 +#ifndef _AIRE_TEMPLATEDLIST_H_
 +#define _AIRE_TEMPLATEDLIST_H_
 +
@@ -8103,6 +8100,8 @@ diff -uN build//_TemplatedList.h b/_TemplatedList.h
 +	}
 +
 +	this->_elements++;
++
++	return true;
 +}
 +
 +template<class T> IR_Boolean _TemplatedList<T>::insert_before_element(T *existing_element, T *new_element)
@@ -8128,6 +8127,8 @@ diff -uN build//_TemplatedList.h b/_TemplatedList.h
 +	}
 +
 +	this->_elements++;
++
++	return true;
 +}
 +
 +template<class T> IR_Boolean _TemplatedList<T>::remove_element(T *existing_element)
@@ -8232,10 +8233,10 @@ diff -uN build//_TemplatedList.h b/_TemplatedList.h
 +}
 +
 +#endif /*!_AIRE_TEMPLATEDLIST_H_*/
-diff -uN build//_TemplatedListTest.cpp b/_TemplatedListTest.cpp
---- build//_TemplatedListTest.cpp	1970-01-01 01:00:00.000000000 +0100
-+++ b/_TemplatedListTest.cpp	2011-08-26 16:23:13.199529380 +0100
-@@ -0,0 +1,217 @@
+diff -uN a/_TemplatedListTest.cpp b/_TemplatedListTest.cpp
+--- a/_TemplatedListTest.cpp	1970-01-01 01:00:00.000000000 +0100
++++ b/_TemplatedListTest.cpp	2011-08-26 17:06:40.444458001 +0100
+@@ -0,0 +1,218 @@
 +#include <cppunit/TestAssert.h>
 +
 +#include "_TemplatedListTest.h"
@@ -8344,7 +8345,8 @@ diff -uN build//_TemplatedListTest.cpp b/_TemplatedListTest.cpp
 +	for( i = 1; i < TEST_SIZE; i++ )
 +	{
 +		statements[i] = new IIR_Statement();
-+		list->insert_after_element(statements[i-1], statements[i]);
++		int result = list->insert_after_element(statements[i-1], statements[i]);
++		CPPUNIT_ASSERT_MESSAGE( "insert_after_element failed to return true.", 0 != result );
 +	}
 +
 +	/* Check number of elements */
@@ -8390,7 +8392,8 @@ diff -uN build//_TemplatedListTest.cpp b/_TemplatedListTest.cpp
 +	for( i = 1; i < TEST_SIZE; i++ )
 +	{
 +		statements[i] = new IIR_Statement();
-+		list->insert_before_element(statements[i-1], statements[i]);
++		int result = list->insert_before_element(statements[i-1], statements[i]);
++		CPPUNIT_ASSERT_MESSAGE( "insert_before_element failed to return true.", 0 != result );
 +	}
 +
 +	/* Check number of elements */
@@ -8429,7 +8432,6 @@ diff -uN build//_TemplatedListTest.cpp b/_TemplatedListTest.cpp
 +	int i;
 +	IIR_StatementList *list = new IIR_StatementList();
 +	IIR_Statement *statements[TEST_SIZE];
-+	IIR_Statement *iter;
 +
 +	CPPUNIT_ASSERT_EQUAL_MESSAGE( "Incorrect number of elements.", 0, list->number_of_elements() );
 +	for( i = 0; i < TEST_SIZE; i++ )
@@ -8453,8 +8455,8 @@ diff -uN build//_TemplatedListTest.cpp b/_TemplatedListTest.cpp
 +		                              0, int(list->remove_element(statements[i])) );
 +	}
 +}
-diff -uN build//_TemplatedListTest.h b/_TemplatedListTest.h
---- build//_TemplatedListTest.h	1970-01-01 01:00:00.000000000 +0100
+diff -uN a/_TemplatedListTest.h b/_TemplatedListTest.h
+--- a/_TemplatedListTest.h	1970-01-01 01:00:00.000000000 +0100
 +++ b/_TemplatedListTest.h	2011-08-26 16:20:03.958590930 +0100
 @@ -0,0 +1,24 @@
 +#ifndef _AIRE_TEMPLATEDLIST_TEST_H_
@@ -8481,10 +8483,10 @@ diff -uN build//_TemplatedListTest.h b/_TemplatedListTest.h
 +};
 +
 +#endif /*!_AIRE_TEMPLATEDLIST_TEST_H_*/
-diff -uN build//unit.cpp b/unit.cpp
---- build//unit.cpp	1970-01-01 01:00:00.000000000 +0100
-+++ b/unit.cpp	2011-08-26 15:50:46.969878802 +0100
-@@ -0,0 +1,10 @@
+diff -uN a/unit.cpp b/unit.cpp
+--- a/unit.cpp	1970-01-01 01:00:00.000000000 +0100
++++ b/unit.cpp	2011-08-26 16:59:17.522261652 +0100
+@@ -0,0 +1,9 @@
 +#include <cppunit/ui/text/TestRunner.h>
 +#include "_TemplatedListTest.h"
 +
@@ -8492,6 +8494,5 @@ diff -uN build//unit.cpp b/unit.cpp
 +{
 +	CppUnit::TextUi::TestRunner runner;
 +	runner.addTest( TemplatedListTest::suite() );
-+	runner.run();
-+	return 0;
++	return !runner.run();
 +}
