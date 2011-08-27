@@ -722,6 +722,15 @@ static List *nv_xmlr_datatypes(xmlNode *a_node, const char *nested)
 	return l;
 }
 
+static void nv_xmlr_class_qualifiers(xmlNode *a_node, struct UMLClass *c)
+{
+	xmlChar *n = xmlGetProp(a_node, "isAbstract");
+	if (n != NULL && !strcmp(n, "true")) {
+		nv_uml_class_set_qualifier(c, NV_ABSTRACT);
+	}
+	xmlFree(n);
+}
+
 static struct UMLClass *nv_xmlr_class(xmlNode *a_node)
 {
 	struct UMLClass *c;
@@ -735,6 +744,8 @@ static struct UMLClass *nv_xmlr_class(xmlNode *a_node)
 	hash_table_insert(types_hash, id, c);
 	xmlFree(name);
 	/* xmlFree(id) This will be free'd with the hash */
+
+	nv_xmlr_class_qualifiers(a_node, c);
 	nv_set_comments(c, nv_xmlr_get_comments(a_node));
 	nv_set_constraints(c, nv_xmlr_get_constraints(a_node));
 	nv_set_visibility(c, nv_xmlr_get_visibility(a_node));

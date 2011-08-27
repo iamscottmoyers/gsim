@@ -609,7 +609,11 @@ static void nv_cpp_write_library_header(const char *dir, struct UMLModel *m)
 	nv_cpp_write_guard_start(fp, nv_get_name(m), "");
 	fprintf(fp, "#include \"primitive_types.h\"\n");
 	for(l = nv_uml_model_get_classes(m);l ;l = l->next) {
-		fprintf(fp, "#include \"%s.h\"\n", nv_get_name(l->data));
+		struct UMLClass *c = (struct UMLClass *) l->data;
+		if( !nv_uml_class_get_qualifier(c, NV_ABSTRACT) )
+		{
+			fprintf(fp, "#include \"%s.h\"\n", nv_get_name(c));
+		}
 	}
 	nv_cpp_write_guard_end(fp, nv_get_name(m), "");
 	fclose(fp);

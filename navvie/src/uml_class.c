@@ -23,6 +23,7 @@ struct UMLClass *nv_uml_class_new()
 	init_list(&c->datatypes);
 	init_list(&c->nested_classes);
 	init_list(&c->associations);
+	c->qualifiers = 0;
 	return c;
 }
 
@@ -89,6 +90,21 @@ void nv_uml_class_delete(struct UMLClass *c)
 		delete_list(c->associations);
 		free(c);
 	}
+}
+
+void nv_uml_class_set_qualifier(struct UMLClass *c, enum UMLQualifier q)
+{
+	c->qualifiers |= q;
+}
+
+void nv_uml_class_clear_qualifier(struct UMLClass *c, enum UMLQualifier q)
+{
+	c->qualifiers &= ~q;
+}
+
+int nv_uml_class_get_qualifier(struct UMLClass *c, enum UMLQualifier q)
+{
+	return !!(c->qualifiers & q);
 }
 
 void nv_uml_class_set_attributes(struct UMLClass *c, List *l)
