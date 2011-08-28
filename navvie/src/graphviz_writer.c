@@ -105,9 +105,12 @@ static void nv_graphviz_write_class(FILE *fp, struct UMLClass *c)
 	fprintf(fp, "\t\tlabel = \"{%s|", name);
 
 	/* print attributes */
-	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
-		struct UMLAttribute *a = (struct UMLAttribute *)l->data;
-		nv_graphviz_write_attribute(fp, a);
+	{
+		struct UMLListLink *iter;
+		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			nv_graphviz_write_attribute(fp, a);
+		}
 	}
 	fprintf(fp, "|");
 
@@ -149,9 +152,8 @@ static void nv_graphviz_write_multiplicity(FILE *fp, int m[])
 
 static void nv_graphviz_write_ownedend(FILE *fp, struct UMLOwnedEnd *o)
 {
-	List *l;
-	struct UMLClass *type = nv_uml_ownedend_get_type(o);
-	const char *name = nv_uml_element_get_name((struct UMLElement *)type);
+	struct UMLClass *c = nv_uml_ownedend_get_type(o);
+	const char *name = nv_uml_element_get_name((struct UMLElement *)c);
 	fprintf(fp, "\tedge [\n");
 	fprintf(fp, "\t\tarrowhead = \"open\"\n");
 	fprintf(fp, "\t\ttaillabel = \"");
@@ -160,16 +162,19 @@ static void nv_graphviz_write_ownedend(FILE *fp, struct UMLOwnedEnd *o)
 	fprintf(fp, "\t]\n");
 
 	fprintf(fp, "\t%s -> ", name);
-	for(l = nv_uml_class_get_attributes(type); l; l = l->next) {
-		struct UMLAttribute *a = (struct UMLAttribute *)l->data;
-		if(nv_uml_attribute_get_association(a) == nv_uml_ownedend_get_association(o)) {
-			struct UMLType *t = nv_uml_attribute_get_type(a);
-			fprintf(fp, "%s ", nv_uml_element_get_name((struct UMLElement *)t));
-			fprintf(fp, "[headlabel = \"");
-			nv_graphviz_write_multiplicity(fp, a->multiplicity);
-			fprintf(fp, "\"]");
-			fprintf(fp, "\n");
-			break;
+	{
+		struct UMLListLink *iter;
+		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			if(nv_uml_attribute_get_association(a) == nv_uml_ownedend_get_association(o)) {
+				struct UMLType *t = nv_uml_attribute_get_type(a);
+				fprintf(fp, "%s ", nv_uml_element_get_name((struct UMLElement *)t));
+				fprintf(fp, "[headlabel = \"");
+				nv_graphviz_write_multiplicity(fp, a->multiplicity);
+				fprintf(fp, "\"]");
+				fprintf(fp, "\n");
+				break;
+			}
 		}
 	}
 }

@@ -14,6 +14,7 @@ $(OBJDIR)/xml_reader.o \
 $(OBJDIR)/c_writer.o \
 $(OBJDIR)/cpp_writer.o \
 $(OBJDIR)/graphviz_writer.o \
+$(OBJDIR)/uml_list.o \
 $(OBJDIR)/uml_package.o \
 $(OBJDIR)/uml_model.o \
 $(OBJDIR)/uml_class.o \

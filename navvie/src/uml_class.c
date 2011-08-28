@@ -16,7 +16,7 @@ struct UMLClass *nv_uml_class_new()
 		return NULL;
 	}
 	nv_uml_type_init(&c->super, NV_CLASS);
-	init_list(&c->attributes);
+	nv_uml_list_init(&c->attributes);
 	init_list(&c->operations);
 	init_list(&c->enumerations);
 	init_list(&c->primitivetypes);
@@ -33,13 +33,13 @@ void nv_uml_class_delete(struct UMLClass *c)
 		List *work;
 		nv_uml_type_clear(&c->super);
 
-		work = c->attributes;
-		while(work != NULL) {
-			struct UMLAttribute *a = (struct UMLAttribute *) work->data;
-			nv_uml_attribute_delete(a);
-			work = work->next;
+		{
+			struct UMLListLink *iter = nv_uml_list_front( &(c->attributes) );
+			for( iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next( iter ) ) {
+				struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+				nv_uml_attribute_delete(a);
+			}
 		}
-		delete_list(c->attributes);
 
 		work = c->operations;
 		while(work != NULL) {
@@ -105,16 +105,6 @@ void nv_uml_class_clear_qualifier(struct UMLClass *c, enum UMLQualifier q)
 int nv_uml_class_get_qualifier(struct UMLClass *c, enum UMLQualifier q)
 {
 	return !!(c->qualifiers & q);
-}
-
-void nv_uml_class_set_attributes(struct UMLClass *c, List *l)
-{
-	c->attributes = l;
-}
-
-List *nv_uml_class_get_attributes(struct UMLClass *c)
-{
-	return c->attributes;
 }
 
 void nv_uml_class_set_operations(struct UMLClass *c, List *l)

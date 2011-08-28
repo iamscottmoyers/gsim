@@ -15,6 +15,7 @@
 #include "list.h"
 #include "util.h"
 
+#include "uml_list.h"
 #include "uml_class.h"
 #include "uml_package.h"
 #include "uml_datatype.h"
@@ -54,7 +55,7 @@ static struct UMLModel *nv_xmlr_model(xmlNode *a_node);
 static void nv_xmlr_multiplicity(xmlNode *a_node, int *multiplicity);
 
 static void nv_xmlr_attribute_qualifiers(xmlNode *a_node, struct UMLAttribute *a);
-static List *nv_xmlr_attributes(xmlNode *a_node);
+static void nv_xmlr_attributes(struct UMLList *l, xmlNode *a_node);
 
 static void nv_xmlr_operation_parameters(xmlNode *a_node, struct UMLOperation *o);
 static void nv_xmlr_operation_qualifiers(xmlNode *a_node, struct UMLOperation *o);
@@ -378,16 +379,14 @@ static void nv_xmlr_multiplicity(xmlNode *a_node, int *multiplicity)
 	}
 }
 
-static List *nv_xmlr_attributes(xmlNode *a_node)
+static void nv_xmlr_attributes(struct UMLList *l, xmlNode *a_node)
 {
-	List *l;
 	int multiplicity[2];
 	xmlNode *cur_node = a_node->children;
-	init_list(&l);
 	nv_xml_on_node(cur_node, "ownedAttribute") {
 		xmlChar *n;
 		struct UMLAttribute *a = nv_uml_attribute_new();
-		push_back_list(&l, a);
+		nv_uml_list_push_back(l, &a->link);
 
 		n = xmlGetProp(cur_node, "name");
 		nv_set_name(a, n);
@@ -434,7 +433,6 @@ static List *nv_xmlr_attributes(xmlNode *a_node)
 		nv_uml_attribute_set_multiplicity(a, multiplicity[NV_LOWER], NV_LOWER);
 		nv_uml_attribute_set_multiplicity(a, multiplicity[NV_UPPER], NV_UPPER);
 	}
-	return l;
 }
 
 static void nv_xmlr_operation_parameters(xmlNode *a_node, struct UMLOperation *o)
@@ -699,7 +697,8 @@ static struct UMLDataType *nv_xmlr_datatype(xmlNode *a_node)
 	nv_set_constraints(d, nv_xmlr_get_constraints(a_node));
 	nv_set_visibility(d, nv_xmlr_get_visibility(a_node));
 
-	nv_uml_datatype_set_attributes(d, nv_xmlr_attributes(a_node));
+	/* TODO HACK FOR TESTING NEW LISTS WITH CLASSES */
+	/*nv_uml_datatype_set_attributes(d, nv_xmlr_attributes(a_node));*/
 	nv_uml_datatype_set_operations(d, nv_xmlr_operations(a_node));
 	nv_xmlr_generalisations(a_node, (struct UMLType *) d);
 
@@ -750,7 +749,7 @@ static struct UMLClass *nv_xmlr_class(xmlNode *a_node)
 	nv_set_constraints(c, nv_xmlr_get_constraints(a_node));
 	nv_set_visibility(c, nv_xmlr_get_visibility(a_node));
 
-	nv_uml_class_set_attributes(c, nv_xmlr_attributes(a_node));
+	nv_xmlr_attributes(&c->attributes, a_node);
 	nv_uml_class_set_operations(c, nv_xmlr_operations(a_node));
 	nv_uml_class_set_enumerations(c, nv_xmlr_enumerations(a_node, "nestedClassifier"));
 	nv_uml_class_set_primitivetypes(c, nv_xmlr_primitivetypes(a_node, "nestedClassifier"));

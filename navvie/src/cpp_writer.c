@@ -305,34 +305,42 @@ static void nv_cpp_write_function_prototypes(FILE *fp, struct UMLModel *m, struc
 
 static void nv_cpp_write_attributes(FILE *fp, struct UMLClass *c)
 {
-	List *l;
 	const char *prefix = "public:\n";
-	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
-		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
-		if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PUBLIC) {
-			fprintf(fp, "%s", prefix);
-			prefix = "";
-			nv_cpp_write_attribute(fp, a);
+	{
+		struct UMLListLink *iter;
+		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PUBLIC) {
+				fprintf(fp, "%s", prefix);
+				prefix = "";
+				nv_cpp_write_attribute(fp, a);
+			}
 		}
 	}
 
 	prefix = "protected:\n";
-	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
-		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
-		if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PROTECTED) {
-			fprintf(fp, "%s", prefix);
-			prefix = "";
-			nv_cpp_write_attribute(fp, a);
+	{
+		struct UMLListLink *iter;
+		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PROTECTED) {
+				fprintf(fp, "%s", prefix);
+				prefix = "";
+				nv_cpp_write_attribute(fp, a);
+			}
 		}
 	}
 
 	prefix = "private:\n";
-	for(l = nv_uml_class_get_attributes(c); l; l = l->next) {
-		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
-		if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PRIVATE) {
-			fprintf(fp, "%s", prefix);
-			prefix = "";
-			nv_cpp_write_attribute(fp, a);
+	{
+		struct UMLListLink *iter;
+		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			if(nv_uml_element_get_visibility((struct UMLElement *)a) == NV_PRIVATE) {
+				fprintf(fp, "%s", prefix);
+				prefix = "";
+				nv_cpp_write_attribute(fp, a);
+			}
 		}
 	}
 }
@@ -374,15 +382,18 @@ static void nv_cpp_write_header_includes(FILE *fp, struct UMLClass *c)
 	}
 
 	/* Class attribute includes */
-	for( l = nv_uml_class_get_attributes(c); l; l = l->next ) {
-		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
-		struct UMLType *t = nv_uml_attribute_get_type(a);
-		if( NV_CLASS == nv_uml_type_get_base_type(t) ||
-		    NV_ENUMERATION == nv_uml_type_get_base_type(t) ) {
-			if( NV_COMPOSITE == nv_uml_attribute_get_aggregation(a) &&
-			    !hash_table_lookup(includes, t) ) {
-				fprintf(fp, "#include \"%s.h\"\n", nv_get_name(t));
-				hash_table_insert(includes, t, (void *)INCLUDE);
+	{
+		struct UMLListLink *iter;
+		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			struct UMLType *t = nv_uml_attribute_get_type(a);
+			if( NV_CLASS == nv_uml_type_get_base_type(t) ||
+			    NV_ENUMERATION == nv_uml_type_get_base_type(t) ) {
+				if( NV_COMPOSITE == nv_uml_attribute_get_aggregation(a) &&
+				    !hash_table_lookup(includes, t) ) {
+					fprintf(fp, "#include \"%s.h\"\n", nv_get_name(t));
+					hash_table_insert(includes, t, (void *)INCLUDE);
+				}
 			}
 		}
 	}
@@ -405,15 +416,18 @@ static void nv_cpp_write_header_includes(FILE *fp, struct UMLClass *c)
 	fprintf(fp, "\n");
 
 	/* Class attribute forward declarations */
-	for( l = nv_uml_class_get_attributes(c); l; l = l->next ) {
-		struct UMLAttribute *a = (struct UMLAttribute *) l->data;
-		struct UMLType *t = nv_uml_attribute_get_type(a);
-		if( NV_CLASS == nv_uml_type_get_base_type(t) ||
-		    NV_ENUMERATION == nv_uml_type_get_base_type(t) ) {
-			if( NV_COMPOSITE != nv_uml_attribute_get_aggregation(a) &&
-			    !hash_table_lookup(includes, t) ) {
-				fprintf(fp, "class %s;\n", nv_get_name(t));
-				hash_table_insert(includes, t, (void *)FORWARD_DECLARATION);
+	{
+		struct UMLListLink *iter;
+		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			struct UMLType *t = nv_uml_attribute_get_type(a);
+			if( NV_CLASS == nv_uml_type_get_base_type(t) ||
+			    NV_ENUMERATION == nv_uml_type_get_base_type(t) ) {
+				if( NV_COMPOSITE != nv_uml_attribute_get_aggregation(a) &&
+				    !hash_table_lookup(includes, t) ) {
+					fprintf(fp, "class %s;\n", nv_get_name(t));
+					hash_table_insert(includes, t, (void *)FORWARD_DECLARATION);
+				}
 			}
 		}
 	}

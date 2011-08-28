@@ -2,12 +2,13 @@
 #define _NAVVIE_UML_CLASS_H_
 
 #include "list.h"
+#include "uml_list.h"
 #include "uml_type.h"
 #include "uml_qualifier.h"
 
 struct UMLClass {
 	struct UMLType super;
-	List *attributes;
+	struct UMLList attributes;
 	List *operations;
 	List *enumerations;
 	List *primitivetypes;
@@ -23,9 +24,6 @@ void nv_uml_class_delete(struct UMLClass *c);
 void nv_uml_class_set_qualifier(struct UMLClass *c, enum UMLQualifier q);
 void nv_uml_class_clear_qualifier(struct UMLClass *c, enum UMLQualifier q);
 int nv_uml_class_get_qualifier(struct UMLClass *c, enum UMLQualifier q);
-
-void nv_uml_class_set_attributes(struct UMLClass *c, List *l);
-List *nv_uml_class_get_attributes(struct UMLClass *c);
 
 void nv_uml_class_set_operations(struct UMLClass *c, List *l);
 List *nv_uml_class_get_operations(struct UMLClass *c);
