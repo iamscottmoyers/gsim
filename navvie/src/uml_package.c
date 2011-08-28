@@ -18,7 +18,7 @@ struct UMLPackage *nv_uml_package_new()
 	init_list(&p->packages);
 	init_list(&p->classes);
 	init_list(&p->datatypes);
-	init_list(&p->enumerations);
+	nv_uml_list_init(&p->enumerations);
 	init_list(&p->primitivetypes);
 	init_list(&p->associations);
 	return p;
@@ -53,13 +53,13 @@ void nv_uml_package_delete(struct UMLPackage *p)
 		}
 		delete_list(p->datatypes);
 
-		work = p->enumerations;
-		while(work != NULL) {
-			struct UMLEnumeration *e = (struct UMLEnumeration *) work->data;
-			nv_uml_enumeration_delete(e);
-			work = work->next;
+		{
+			struct UMLListLink *iter;
+			for(iter = nv_uml_list_front(&p->enumerations); iter; iter = nv_uml_list_next(iter)) {
+				struct UMLEnumeration *e = NV_UML_LIST_GET_DATA(iter, struct UMLEnumeration, link);
+				nv_uml_enumeration_delete(e);
+			}
 		}
-		delete_list(p->enumerations);
 
 		work = p->primitivetypes;
 		while(work != NULL) {
@@ -108,16 +108,6 @@ void nv_uml_package_set_datatypes(struct UMLPackage *p, List *l)
 List *nv_uml_package_get_datatypes(struct UMLPackage *p)
 {
 	return p->datatypes;
-}
-
-void nv_uml_package_set_enumerations(struct UMLPackage *p, List *l)
-{
-	p->enumerations = l;
-}
-
-List *nv_uml_package_get_enumerations(struct UMLPackage *p)
-{
-	return p->enumerations;
 }
 
 void nv_uml_package_set_primitivetypes(struct UMLPackage *p, List *l)

@@ -3,12 +3,14 @@
 
 #include "list.h"
 #include "uml_type.h"
+#include "uml_list.h"
 
 struct UMLLiteral;
 
 struct UMLEnumeration {
 	struct UMLType super;
 	List *literals;
+	struct UMLListLink link;
 };
 
 struct UMLEnumeration *nv_uml_enumeration_new();

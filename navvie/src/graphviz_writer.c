@@ -98,7 +98,7 @@ static void nv_graphviz_write_operation(FILE *fp, struct UMLOperation *o)
 
 static void nv_graphviz_write_class(FILE *fp, struct UMLClass *c)
 {
-	List *l;
+	struct UMLListLink *iter;
 	const char *name = nv_uml_element_get_name((struct UMLElement *)c);
 	fprintf(fp, "\tnode [shape = \"record\"]\n");
 	fprintf(fp, "\t%s [\n", name);
@@ -115,9 +115,8 @@ static void nv_graphviz_write_class(FILE *fp, struct UMLClass *c)
 	fprintf(fp, "|");
 
 	/* print operations */
-	l = nv_uml_class_get_operations(c);
-	for(;l ;l = l->next) {
-		struct UMLOperation *o = (struct UMLOperation *) l->data;
+	for(iter = nv_uml_list_front(&c->operations); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLOperation *o = NV_UML_LIST_GET_DATA( iter, struct UMLOperation, link );
 		nv_graphviz_write_operation(fp, o);
 	}
 	fprintf(fp, "}\"\n\t]\n");

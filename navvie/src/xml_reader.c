@@ -60,7 +60,7 @@ static void nv_xmlr_attributes(struct UMLList *l, xmlNode *a_node);
 static void nv_xmlr_operation_parameters(xmlNode *a_node, struct UMLOperation *o);
 static void nv_xmlr_operation_qualifiers(xmlNode *a_node, struct UMLOperation *o);
 static struct UMLOperation *nv_xmlr_operation(xmlNode *a_node);
-static List *nv_xmlr_operations(xmlNode *a_node);
+static void nv_xmlr_operations(struct UMLList *l, xmlNode *a_node);
 
 static void nv_xmlr_ownedends(xmlNode *a_node, struct UMLAssociation *a);
 static struct UMLAssociation *nv_xmlr_association(xmlNode *a_node);
@@ -68,7 +68,7 @@ static List *nv_xmlr_associations(xmlNode *a_node, const char *nested);
 
 static void nv_xmlr_enumeration_literals(xmlNode *a_node, struct UMLEnumeration *e);
 static struct UMLEnumeration *nv_xmlr_enumeration(xmlNode *a_node);
-static List *nv_xmlr_enumerations(xmlNode *a_node, const char *nested);
+static void nv_xmlr_enumerations(struct UMLList *l, xmlNode *a_node, const char *nested);
 
 static struct UMLDataType *nv_xmlr_datatype(xmlNode *a_node);
 static List *nv_xmlr_datatypes(xmlNode *a_node, const char *nested);
@@ -281,7 +281,7 @@ static struct UMLModel *nv_xmlr_model(xmlNode *a_node)
 		nv_uml_model_set_primitivetypes(m, nv_xmlr_primitivetypes(cur_node, "packagedElement"));
 		nv_uml_model_set_classes(m, nv_xmlr_classes(cur_node, "packagedElement"));
 		nv_uml_model_set_datatypes(m, nv_xmlr_datatypes(cur_node, "packagedElement"));
-		nv_uml_model_set_enumerations(m, nv_xmlr_enumerations(cur_node, "packagedElement"));
+		nv_xmlr_enumerations(&m->super.enumerations, cur_node, "packagedElement");
 		nv_uml_model_set_packages(m, nv_xmlr_packages(cur_node, "packagedElement"));
 		nv_uml_model_set_associations(m, nv_xmlr_associations(cur_node, "packagedElement"));
 
@@ -533,16 +533,13 @@ static struct UMLOperation *nv_xmlr_operation(xmlNode *a_node)
 	return o;
 }
 
-static List *nv_xmlr_operations(xmlNode *a_node)
+static void nv_xmlr_operations(struct UMLList *l, xmlNode *a_node)
 {
-	List *l;
 	xmlNode *cur_node = a_node->children;
-	init_list(&l);
 	nv_xml_on_node(cur_node, "ownedOperation") {
 		struct UMLOperation *o = nv_xmlr_operation(cur_node);
-		push_back_list(&l, o);
+		nv_uml_list_push_back(l, &o->link);
 	}
-	return l;
 }
 
 static void nv_xmlr_ownedends(xmlNode *a_node, struct UMLAssociation *a)
@@ -664,20 +661,17 @@ static struct UMLEnumeration *nv_xmlr_enumeration(xmlNode *a_node)
 	return e;
 }
 
-static List *nv_xmlr_enumerations(xmlNode *a_node, const char *nested)
+static void nv_xmlr_enumerations(struct UMLList *l, xmlNode *a_node, const char *nested)
 {
-	List *l;
 	xmlNode *cur_node = a_node->children;
-	init_list(&l);
 	nv_xml_on_node(cur_node, nested) {
 		xmlChar *t = xmlGetProp(cur_node, "type");
 		if (!strcmp((char *)t, "uml:Enumeration")) {
 			struct UMLEnumeration *e = nv_xmlr_enumeration(cur_node);
-			push_back_list(&l, e);
+			nv_uml_list_push_back(l, &e->link);
 		}
 		xmlFree(t);
 	}
-	return l;
 }
 
 static struct UMLDataType *nv_xmlr_datatype(xmlNode *a_node)
@@ -698,8 +692,8 @@ static struct UMLDataType *nv_xmlr_datatype(xmlNode *a_node)
 	nv_set_visibility(d, nv_xmlr_get_visibility(a_node));
 
 	/* TODO HACK FOR TESTING NEW LISTS WITH CLASSES */
-	/*nv_uml_datatype_set_attributes(d, nv_xmlr_attributes(a_node));*/
-	nv_uml_datatype_set_operations(d, nv_xmlr_operations(a_node));
+	/*nv_uml_datatype_set_attributes(d, nv_xmlr_attributes(a_node));
+	  nv_uml_datatype_set_operations(d, nv_xmlr_operations(a_node));*/
 	nv_xmlr_generalisations(a_node, (struct UMLType *) d);
 
 	return d;
@@ -750,8 +744,8 @@ static struct UMLClass *nv_xmlr_class(xmlNode *a_node)
 	nv_set_visibility(c, nv_xmlr_get_visibility(a_node));
 
 	nv_xmlr_attributes(&c->attributes, a_node);
-	nv_uml_class_set_operations(c, nv_xmlr_operations(a_node));
-	nv_uml_class_set_enumerations(c, nv_xmlr_enumerations(a_node, "nestedClassifier"));
+	nv_xmlr_operations(&c->operations, a_node);
+	nv_xmlr_enumerations(&c->enumerations, a_node, "nestedClassifier");
 	nv_uml_class_set_primitivetypes(c, nv_xmlr_primitivetypes(a_node, "nestedClassifier"));
 	nv_uml_class_set_datatypes(c, nv_xmlr_datatypes(a_node, "nestedClassifier"));
 	nv_uml_class_set_classes(c, nv_xmlr_classes(a_node, "nestedClassifier"));
@@ -794,7 +788,7 @@ static struct UMLPackage *nv_xmlr_package(xmlNode *a_node)
 	nv_set_constraints(p, nv_xmlr_get_constraints(a_node));
 	nv_set_visibility(p, nv_xmlr_get_visibility(a_node));
 
-	nv_uml_package_set_enumerations(p, nv_xmlr_enumerations(a_node, "packagedElement"));
+	nv_xmlr_enumerations(&p->enumerations, a_node, "packagedElement");
 	nv_uml_package_set_primitivetypes(p, nv_xmlr_primitivetypes(a_node, "packagedElement"));
 	nv_uml_package_set_datatypes(p, nv_xmlr_datatypes(a_node, "packagedElement"));
 	nv_uml_package_set_associations(p, nv_xmlr_associations(a_node, "packagedElement"));

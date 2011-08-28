@@ -22,9 +22,6 @@ struct UMLModel {
 #define nv_uml_model_set_datatypes(m, l) nv_uml_package_set_datatypes((struct UMLPackage *) m, l)
 #define nv_uml_model_get_datatypes(a) nv_uml_package_get_datatypes((struct UMLPackage *) a)
 
-#define nv_uml_model_set_enumerations(m, l) nv_uml_package_set_enumerations((struct UMLPackage *) m, l)
-#define nv_uml_model_get_enumerations(a) nv_uml_package_get_enumerations((struct UMLPackage *) a)
-
 #define nv_uml_model_set_primitivetypes(m, l) nv_uml_package_set_primitivetypes((struct UMLPackage *) m, l)
 #define nv_uml_model_get_primitivetypes(a) nv_uml_package_get_primitivetypes((struct UMLPackage *) a)
 

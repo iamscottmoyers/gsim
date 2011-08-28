@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #include "list.h"
+#include "uml_list.h"
 #include "uml_element.h"
 
 struct UMLPackage {
@@ -11,7 +12,7 @@ struct UMLPackage {
 	List *packages;
 	List *classes;
 	List *datatypes;
-	List *enumerations;
+	struct UMLList enumerations;
 	List *primitivetypes;
 	List *associations;
 };
@@ -27,9 +28,6 @@ List *nv_uml_package_get_classes(struct UMLPackage *p);
 
 void nv_uml_package_set_datatypes(struct UMLPackage *p, List *l);
 List *nv_uml_package_get_datatypes(struct UMLPackage *p);
-
-void nv_uml_package_set_enumerations(struct UMLPackage *p, List *l);
-List *nv_uml_package_get_enumerations(struct UMLPackage *p);
 
 void nv_uml_package_set_primitivetypes(struct UMLPackage *p, List *l);
 List *nv_uml_package_get_primitivetypes(struct UMLPackage *p);
