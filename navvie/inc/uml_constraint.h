@@ -1,8 +1,11 @@
 #ifndef _NAVVIE_UML_CONSTRAINT_H_
 #define _NAVVIE_UML_CONSTRAINT_H_
 
+#include "uml_list.h"
+
 struct UMLConstraint {
 	char *body;
+	struct UMLListLink link;
 };
 
 struct UMLConstraint *nv_uml_constraint_new();

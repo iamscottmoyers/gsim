@@ -2,9 +2,11 @@
 #define _NAVVIE_UML_PRIMITIVETYPE_H_
 
 #include "uml_type.h"
+#include "uml_list.h"
 
 struct UMLPrimitiveType {
 	struct UMLType super;
+	struct UMLListLink link;
 };
 
 struct UMLPrimitiveType *nv_uml_primitivetype_new();

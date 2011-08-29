@@ -11,32 +11,28 @@ void nv_uml_element_init(struct UMLElement *e)
 	e->name = (char *)malloc(sizeof(char));
 	e->name[0] = '\0';
 	e->visibility = NV_PUBLIC;
-	init_list(&e->comments);
-	init_list(&e->constraints);
+	nv_uml_list_init(&e->comments);
+	nv_uml_list_init(&e->constraints);
 	e->stereotypes = 0;
 }
 
 void nv_uml_element_clear(struct UMLElement *e)
 {
 	if (e != NULL) {
-		List *work;
+		struct UMLListLink *iter;
 		free(e->name);
 
-		work = e->comments;
-		while(work != NULL) {
-			struct UMLComment *com = (struct UMLComment *) work->data;
+		for(iter = nv_uml_list_front(&e->comments); iter;) {
+			struct UMLComment *com = NV_UML_LIST_GET_DATA(iter, struct UMLComment, link);
+			iter = nv_uml_list_next(iter);
 			nv_uml_comment_delete(com);
-			work = work->next;
 		}
-		delete_list(e->comments);
 
-		work = e->constraints;
-		while(work != NULL) {
-			struct UMLConstraint *con = (struct UMLConstraint *) work->data;
+		for(iter = nv_uml_list_front(&e->constraints); iter;) {
+			struct UMLConstraint *con = NV_UML_LIST_GET_DATA(iter, struct UMLConstraint, link);
+			iter = nv_uml_list_next(iter);
 			nv_uml_constraint_delete(con);
-			work = work->next;
 		}
-		delete_list(e->constraints);
 	}
 }
 
@@ -53,36 +49,6 @@ void nv_uml_element_set_name(struct UMLElement *e, const char *name)
 const char *nv_uml_element_get_name(struct UMLElement *e)
 {
 	return e->name;
-}
-
-void nv_uml_element_add_comment(struct UMLElement *e, struct UMLComment *com)
-{
-	push_back_list(&e->comments, com);
-}
-
-void nv_uml_element_set_comments(struct UMLElement *e, List *coms)
-{
-	e->comments = coms;
-}
-
-List *nv_uml_element_get_comments(struct UMLElement *e)
-{
-	return e->comments;
-}
-
-void nv_uml_element_add_constraint(struct UMLElement *e, struct UMLConstraint *con)
-{
-	push_back_list(&e->constraints, con);
-}
-
-void nv_uml_element_set_constraints(struct UMLElement *e, List *cons)
-{
-	e->constraints = cons;
-}
-
-List *nv_uml_element_get_constraints(struct UMLElement *e)
-{
-	return e->constraints;
 }
 
 void nv_uml_element_set_visibility(struct UMLElement *e, enum UMLVisibility v)

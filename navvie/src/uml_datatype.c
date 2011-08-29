@@ -12,53 +12,29 @@ struct UMLDataType *nv_uml_datatype_new()
 		return NULL;
 	}
 	nv_uml_type_init(&d->super, NV_DATATYPE);
-	init_list(&d->attributes);
-	init_list(&d->operations);
+	nv_uml_list_init(&d->attributes);
+	nv_uml_list_init(&d->operations);
 	return d;
 }
 
 void nv_uml_datatype_delete(struct UMLDataType *d)
 {
 	if (d != NULL) {
-		List *work;
+		struct UMLListLink *iter;
 		nv_uml_type_clear(&d->super);
 
-		work = d->attributes;
-		while(work != NULL) {
-			struct UMLAttribute *a = (struct UMLAttribute *) work->data;
+		for(iter = nv_uml_list_front(&d->attributes); iter;) {
+			struct UMLAttribute *a = NV_UML_LIST_GET_DATA(iter, struct UMLAttribute, link);
+			iter = nv_uml_list_next(iter);
 			nv_uml_attribute_delete(a);
-			work = work->next;
 		}
-		delete_list(d->attributes);
 
-		work = d->operations;
-		while(work != NULL) {
-			struct UMLOperation *o = (struct UMLOperation *) work->data;
+		for(iter = nv_uml_list_front(&d->operations); iter;) {
+			struct UMLOperation *o = NV_UML_LIST_GET_DATA(iter, struct UMLOperation, link);
+			iter = nv_uml_list_next(iter);
 			nv_uml_operation_delete(o);
-			work = work->next;
 		}
-		delete_list(d->operations);
 
 		free(d);
 	}
-}
-
-void nv_uml_datatype_set_attributes(struct UMLDataType *d, List *l)
-{
-	d->attributes = l;
-}
-
-List *nv_uml_datatype_get_attributes(struct UMLDataType *d)
-{
-	return d->attributes;
-}
-
-void nv_uml_datatype_set_operations(struct UMLDataType *d, List *l)
-{
-	d->operations = l;
-}
-
-List *nv_uml_datatype_get_operations(struct UMLDataType *d)
-{
-	return d->operations;
 }

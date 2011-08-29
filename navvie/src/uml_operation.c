@@ -12,7 +12,7 @@ struct UMLOperation *nv_uml_operation_new()
 		return NULL;
 	}
 
-	init_list(&o->parameters);
+	nv_uml_list_init(&o->parameters);
 	o->return_parameter = NULL;
 	o->qualifiers = 0;
 	nv_uml_element_init(&o->super);
@@ -22,15 +22,13 @@ struct UMLOperation *nv_uml_operation_new()
 void nv_uml_operation_delete(struct UMLOperation *o)
 {
 	if (o != NULL) {
-		List *work;
+		struct UMLListLink *iter;
 		nv_uml_element_clear(&o->super);
-		work =  o->parameters;
-		while(work != NULL) {
-			struct UMLParameter *p = (struct UMLParameter *) work->data;
+		for(iter = nv_uml_list_front(&o->parameters); iter;) {
+			struct UMLParameter *p = NV_UML_LIST_GET_DATA(iter, struct UMLParameter, link);
+			iter = nv_uml_list_next(iter);
 			nv_uml_parameter_delete(p);
-			work = work->next;
 		}
-		delete_list(o->parameters);
 
 		free(o);
 	}
@@ -48,13 +46,8 @@ void nv_uml_operation_add_parameter(struct UMLOperation *o, struct UMLParameter 
 			nv_uml_parameter_set_direction(p, NV_IN);
 		}
 	}
-	/* order matters here so best push back */
-	push_back_list(&o->parameters, p);
-}
 
-List *nv_uml_operation_get_parameters(struct UMLOperation *o)
-{
-	return o->parameters;
+	nv_uml_list_push_back(&o->parameters, &p->link);
 }
 
 struct UMLParameter *nv_uml_operation_get_return_parameter(struct UMLOperation *o)

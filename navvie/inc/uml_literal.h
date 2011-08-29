@@ -5,6 +5,7 @@
 
 struct UMLLiteral {
 	struct UMLElement super;
+	struct UMLListLink link;
 };
 
 struct UMLLiteral *nv_uml_literal_new();

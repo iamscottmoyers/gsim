@@ -97,7 +97,7 @@ static void nv_c_write_function_name(FILE *fp, struct UMLModel *m, struct UMLCla
 
 static void nv_c_write_function_head(FILE *fp, struct UMLModel *m, struct UMLClass *c, struct UMLOperation *o)
 {
-	List *l;
+	struct UMLListLink *iter;
 	struct UMLParameter *p;
 
 	p = nv_uml_operation_get_return_parameter(o);
@@ -121,8 +121,8 @@ static void nv_c_write_function_head(FILE *fp, struct UMLModel *m, struct UMLCla
 	nv_c_write_type(fp, (struct UMLType *)c, NV_AGGREGATION);
 	fprintf(fp, "object");
 
-	for(l = nv_uml_operation_get_parameters(o);l ;l = l->next) {
-		struct UMLParameter *p = (struct UMLParameter *) l->data;
+	for(iter = nv_uml_list_front(&o->parameters); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLParameter *p = NV_UML_LIST_GET_DATA( iter, struct UMLParameter, link );
 		if (nv_uml_parameter_get_direction(p) != NV_RETURN) {
 			fprintf(fp, ", ");
 			nv_c_write_function_argument(fp, p);
@@ -154,19 +154,17 @@ static void nv_c_write_literal(FILE *fp, struct UMLLiteral *l)
 
 static void nv_c_write_enumeration(FILE *fp, struct UMLEnumeration *e)
 {
-	List *work;
+	struct UMLListLink *iter;
 	int comma = 0;
-	work = nv_uml_enumeration_get_literals(e);
 	fprintf(fp, "enum %s {", nv_get_name(e));
-	while(work != NULL) {
-		struct UMLLiteral *l = (struct UMLLiteral *) work->data;
+	for(iter = nv_uml_list_front(&e->literals); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLLiteral *l = NV_UML_LIST_GET_DATA( iter, struct UMLLiteral, link );
 		if (comma == 1) {
 			fprintf(fp, ",");
 		}
 		fprintf(fp, "\n");
 		nv_c_write_literal(fp, l);
 		comma = 1;
-		work = work->next;
 	}
 	fprintf(fp, "\n};\n\n");
 }
@@ -192,23 +190,20 @@ static void nv_c_write_guard_start(FILE *fp, const char *mn, const char *n)
 
 static void nv_c_write_class_declaration(FILE *fp, struct UMLModel *m, struct UMLClass *c)
 {
-	List *l;
+	struct UMLListLink *iter;
 	fprintf(fp, "struct %s\n{\n", nv_get_name(c));
-	for(l = nv_uml_type_get_supers((struct UMLType *) c); l; l = l->next) {
-		struct UMLType *ty = (struct UMLType *) l->data;
+	for(iter = nv_uml_list_front(&((struct UMLType*)c)->super_types); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLType *ty = NV_UML_LIST_GET_DATA( iter, struct UMLType, link );
 		fprintf(fp, "\t");
 		nv_c_write_type(fp, ty, NV_COMPOSITE);
 		fprintf(fp, "super; /**< 'super' must be the first member in the structure */\n");
 	}
 
-	{
-		struct UMLListLink *iter;
-		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
-			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
-			if(!nv_uml_attribute_get_qualifier(a, NV_STATIC)) {
-				fprintf(fp, "\t");
-				nv_c_write_attribute(fp, m, c, a);
-			}
+	for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+		if(!nv_uml_attribute_get_qualifier(a, NV_STATIC)) {
+			fprintf(fp, "\t");
+			nv_c_write_attribute(fp, m, c, a);
 		}
 	}
 	fprintf(fp, "};\n\n");
@@ -230,88 +225,76 @@ static void nv_c_write_function_prototypes(FILE *fp, struct UMLModel *m, struct 
 
 static void nv_c_write_header_includes(FILE *fp, struct UMLClass *c)
 {
-	List *l;
+	struct UMLListLink *iter;
 	HashTable *includes;
 
 	fprintf(fp, "#include \"primitive_types.h\"\n");
 	includes = hash_table_new(pointer_hash, pointer_equal);
 
 	/* Class generalization includes */
-	for(l = nv_uml_type_get_supers((struct UMLType *) c); l; l = l->next) {
-		struct UMLType *t = (struct UMLType *) l->data;
+	for(iter = nv_uml_list_front(&((struct UMLType*)c)->super_types); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLType *t = NV_UML_LIST_GET_DATA( iter, struct UMLType, link );
 		fprintf(fp, "#include \"%s.h\"\n", nv_get_name(t));
 		hash_table_insert(includes, t, (void *)INCLUDE);
 	}
 
 	/* Class attribute includes */
-	{
-		struct UMLListLink *iter;
-		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
-			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
-			struct UMLType *t = nv_uml_attribute_get_type(a);
-			if( NV_CLASS == nv_uml_type_get_base_type(t) ||
-			    NV_ENUMERATION == nv_uml_type_get_base_type(t) ) {
-				if( NV_COMPOSITE == nv_uml_attribute_get_aggregation(a) &&
-				    !hash_table_lookup(includes, t) ) {
-					fprintf(fp, "#include \"%s.h\"\n", nv_get_name(t));
-					hash_table_insert(includes, t, (void *)INCLUDE);
-				}
+	for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+		struct UMLType *t = nv_uml_attribute_get_type(a);
+		if( NV_CLASS == nv_uml_type_get_base_type(t) ||
+		    NV_ENUMERATION == nv_uml_type_get_base_type(t) ) {
+			if( NV_COMPOSITE == nv_uml_attribute_get_aggregation(a) &&
+			    !hash_table_lookup(includes, t) ) {
+				fprintf(fp, "#include \"%s.h\"\n", nv_get_name(t));
+				hash_table_insert(includes, t, (void *)INCLUDE);
 			}
 		}
 	}
 
 	/* Class operation parameter includes */
-	{
-		struct UMLListLink *iter;
-		for(iter = nv_uml_list_front(&c->operations); iter; iter = nv_uml_list_next(iter)) {
-			struct UMLOperation *o = NV_UML_LIST_GET_DATA( iter, struct UMLOperation, link );
-			List *l2;
-			for( l2 = nv_uml_operation_get_parameters(o); l2; l2 = l2->next ) {
-				struct UMLParameter *p = (struct UMLParameter *) l2->data;
-				struct UMLType *t = nv_uml_parameter_get_type(p);
-				/* TODO: Assume enumerations are pass by value for now */
-				if( NV_ENUMERATION == nv_uml_type_get_base_type(t) &&
-				    !hash_table_lookup(includes, t) ) {
-					fprintf(fp, "#include \"%s.h\"\n", nv_get_name(t));
-					hash_table_insert(includes, t, (void *)INCLUDE);
-				}
+	for(iter = nv_uml_list_front(&c->operations); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLOperation *o = NV_UML_LIST_GET_DATA( iter, struct UMLOperation, link );
+		struct UMLListLink *iter2;
+		for( iter2 = nv_uml_list_front(&o->parameters); iter2; iter2 = nv_uml_list_next(iter2) ) {
+			struct UMLParameter *p = NV_UML_LIST_GET_DATA( iter2, struct UMLParameter, link );
+			struct UMLType *t = nv_uml_parameter_get_type(p);
+			/* TODO: Assume enumerations are pass by value for now */
+			if( NV_ENUMERATION == nv_uml_type_get_base_type(t) &&
+			    !hash_table_lookup(includes, t) ) {
+				fprintf(fp, "#include \"%s.h\"\n", nv_get_name(t));
+				hash_table_insert(includes, t, (void *)INCLUDE);
 			}
 		}
 	}
 	fprintf(fp, "\n");
 
 	/* Class attribute forward declarations */
-	{
-		struct UMLListLink *iter;
-		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
-			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
-			struct UMLType *t = nv_uml_attribute_get_type(a);
-			if( NV_CLASS == nv_uml_type_get_base_type(t) ||
-			    NV_ENUMERATION == nv_uml_type_get_base_type(t) ) {
-				if( NV_COMPOSITE != nv_uml_attribute_get_aggregation(a) &&
-				    !hash_table_lookup(includes, t) ) {
-					fprintf(fp, "struct %s;\n", nv_get_name(t));
-					hash_table_insert(includes, t, (void *)FORWARD_DECLARATION);
-				}
+	for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+		struct UMLType *t = nv_uml_attribute_get_type(a);
+		if( NV_CLASS == nv_uml_type_get_base_type(t) ||
+		    NV_ENUMERATION == nv_uml_type_get_base_type(t) ) {
+			if( NV_COMPOSITE != nv_uml_attribute_get_aggregation(a) &&
+			    !hash_table_lookup(includes, t) ) {
+				fprintf(fp, "struct %s;\n", nv_get_name(t));
+				hash_table_insert(includes, t, (void *)FORWARD_DECLARATION);
 			}
 		}
 	}
 
 	/* Class operation parameter forward declarations */
-	{
-		struct UMLListLink *iter;
-		for(iter = nv_uml_list_front(&c->operations); iter; iter = nv_uml_list_next(iter)) {
-			struct UMLOperation *o = NV_UML_LIST_GET_DATA( iter, struct UMLOperation, link );
-			List *l2;
-			for( l2 = nv_uml_operation_get_parameters(o); l2; l2 = l2->next ) {
-				struct UMLParameter *p = (struct UMLParameter *) l2->data;
-				struct UMLType *t = nv_uml_parameter_get_type(p);
-				/* TODO: Assume classes are call by reference for now */
-				if( NV_CLASS == nv_uml_type_get_base_type(t) &&
-				    !hash_table_lookup(includes, t) ) {
-					fprintf(fp, "struct %s;\n", nv_get_name(t));
-					hash_table_insert(includes, t, (void *)FORWARD_DECLARATION);
-				}
+	for(iter = nv_uml_list_front(&c->operations); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLOperation *o = NV_UML_LIST_GET_DATA( iter, struct UMLOperation, link );
+		struct UMLListLink *iter2;
+		for( iter2 = nv_uml_list_front(&o->parameters); iter2; iter2 = nv_uml_list_next(iter2) ) {
+			struct UMLParameter *p = NV_UML_LIST_GET_DATA( iter2, struct UMLParameter, link );
+			struct UMLType *t = nv_uml_parameter_get_type(p);
+			/* TODO: Assume classes are call by reference for now */
+			if( NV_CLASS == nv_uml_type_get_base_type(t) &&
+			    !hash_table_lookup(includes, t) ) {
+				fprintf(fp, "struct %s;\n", nv_get_name(t));
+				hash_table_insert(includes, t, (void *)FORWARD_DECLARATION);
 			}
 		}
 	}
@@ -432,8 +415,8 @@ static void nv_c_write_model_enumeration(const char *dir, struct UMLModel *m, st
 
 static void nv_c_write_primitive_types(const char *dir, struct UMLModel *m)
 {
-	List *l;
 	FILE *fp;
+	struct UMLListLink *iter;
 	const char *types_name = "primitive_types";
 	char *source = (char *) malloc(sizeof(char) * (strlen(dir) + strlen(types_name) + 4));
 
@@ -446,8 +429,9 @@ static void nv_c_write_primitive_types(const char *dir, struct UMLModel *m)
 	free(source);
 
 	nv_c_write_guard_start(fp, nv_get_name(m), types_name);
-	for(l = nv_uml_model_get_primitivetypes(m);l ;l = l->next) {
-		fprintf(fp, "typedef unsigned int %s; ", nv_get_name(l->data));
+	for(iter = nv_uml_list_front(&m->super.primitivetypes); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLPrimitiveType *p = NV_UML_LIST_GET_DATA( iter, struct UMLPrimitiveType, link );
+		fprintf(fp, "typedef unsigned int %s; ", nv_get_name(p));
 		fprintf(fp, "/* TODO: select correct C type. */\n");
 	}
 	nv_c_write_guard_end(fp, nv_get_name(m), types_name);
@@ -457,8 +441,8 @@ static void nv_c_write_primitive_types(const char *dir, struct UMLModel *m)
 
 static void nv_c_write_makefile(const char *dir, struct UMLModel *m)
 {
-	List *l;
 	FILE *fp;
+	struct UMLListLink *iter;
 	const char *makefile_name = "Makefile";
 	char *source = (char *) malloc(sizeof(char) * (strlen(dir) + strlen(makefile_name) + 2));
 	sprintf(source, "%s/%s", dir, makefile_name);
@@ -479,8 +463,9 @@ static void nv_c_write_makefile(const char *dir, struct UMLModel *m)
 	fprintf(fp, "INCDIR := .\n");
 	fprintf(fp, "INCLUDE := -I $(INCDIR)\n");
 	fprintf(fp, "OBJECTS :=");
-	for(l = nv_uml_model_get_classes(m);l ;l = l->next) {
-		fprintf(fp, "\\\n$(OBJDIR)/%s.o", nv_get_name(l->data));
+	for(iter = nv_uml_list_front(&m->super.classes); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLClass *c = NV_UML_LIST_GET_DATA( iter, struct UMLClass, link );
+		fprintf(fp, "\\\n$(OBJDIR)/%s.o", nv_get_name(c));
 	}
 	fprintf(fp, "\n");
 	fprintf(fp, "DEPS = $(OBJECTS:.o=.d)\n");
@@ -503,21 +488,19 @@ static void nv_c_write_makefile(const char *dir, struct UMLModel *m)
 
 void nv_c_write_model(struct UMLModel *m, const char *dir)
 {
-	List *l;
-	for(l = nv_uml_model_get_classes(m);l ;l = l->next) {
-		nv_c_write_class(dir, m, (struct UMLClass *) l->data);
+	struct UMLListLink *iter;
+	for(iter = nv_uml_list_front(&m->super.classes); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLClass *c = NV_UML_LIST_GET_DATA( iter, struct UMLClass, link );
+		nv_c_write_class(dir, m, c);
 	}
 
 	/*for(l = nv_uml_model_get_datatypes(m);l ;l = l->next) {
 		nv_c_write_datatype(dir, m, (struct UMLDataType *) l->data);
 		}*/
 
-	{
-		struct UMLListLink *iter;
-		for(iter = nv_uml_list_front(&m->super.enumerations); iter; iter = nv_uml_list_next(iter)) {
-			struct UMLEnumeration *e = NV_UML_LIST_GET_DATA( iter, struct UMLEnumeration, link );
-			nv_c_write_model_enumeration(dir, m, e);
-		}
+	for(iter = nv_uml_list_front(&m->super.enumerations); iter; iter = nv_uml_list_next(iter)) {
+		struct UMLEnumeration *e = NV_UML_LIST_GET_DATA( iter, struct UMLEnumeration, link );
+		nv_c_write_model_enumeration(dir, m, e);
 	}
 
 	nv_c_write_primitive_types(dir, m);
