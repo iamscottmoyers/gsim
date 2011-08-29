@@ -25,7 +25,7 @@ void nv_uml_operation_delete(struct UMLOperation *o)
 		struct ListLink *iter;
 		nv_uml_element_clear(&o->super);
 		for(iter = nv_list_front(&o->parameters); iter;) {
-			struct UMLParameter *p = NV_UML_LIST_GET_DATA(iter, struct UMLParameter, link);
+			struct UMLParameter *p = NV_LIST_GET_DATA(iter, struct UMLParameter, link);
 			iter = nv_list_next(iter);
 			nv_uml_parameter_delete(p);
 		}

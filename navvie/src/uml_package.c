@@ -31,37 +31,37 @@ void nv_uml_package_delete(struct UMLPackage *p)
 		nv_uml_element_clear(&p->super);
 
 		for(iter = nv_list_front(&p->packages); iter;) {
-			struct UMLPackage *p2 = NV_UML_LIST_GET_DATA(iter, struct UMLPackage, link);
+			struct UMLPackage *p2 = NV_LIST_GET_DATA(iter, struct UMLPackage, link);
 			iter = nv_list_next(iter);
 			nv_uml_package_delete(p2);
 		}
 
 		for(iter = nv_list_front(&p->classes); iter;) {
-			struct UMLClass *c = NV_UML_LIST_GET_DATA(iter, struct UMLClass, link);
+			struct UMLClass *c = NV_LIST_GET_DATA(iter, struct UMLClass, link);
 			iter = nv_list_next(iter);
 			nv_uml_class_delete(c);
 		}
 
 		for(iter = nv_list_front(&p->datatypes); iter;) {
-			struct UMLDataType *d = NV_UML_LIST_GET_DATA(iter, struct UMLDataType, link);
+			struct UMLDataType *d = NV_LIST_GET_DATA(iter, struct UMLDataType, link);
 			iter = nv_list_next(iter);
 			nv_uml_datatype_delete(d);
 		}
 
 		for(iter = nv_list_front(&p->enumerations); iter;) {
-			struct UMLEnumeration *e = NV_UML_LIST_GET_DATA(iter, struct UMLEnumeration, link);
+			struct UMLEnumeration *e = NV_LIST_GET_DATA(iter, struct UMLEnumeration, link);
 			iter = nv_list_next(iter);
 			nv_uml_enumeration_delete(e);
 		}
 
 		for(iter = nv_list_front(&p->primitivetypes); iter;) {
-			struct UMLPrimitiveType *p = NV_UML_LIST_GET_DATA(iter, struct UMLPrimitiveType, link);
+			struct UMLPrimitiveType *p = NV_LIST_GET_DATA(iter, struct UMLPrimitiveType, link);
 			iter = nv_list_next(iter);
 			nv_uml_primitivetype_delete(p);
 		}
 
 		for(iter = nv_list_front(&p->associations); iter;) {
-			struct UMLAssociation *a = NV_UML_LIST_GET_DATA(iter, struct UMLAssociation, link);
+			struct UMLAssociation *a = NV_LIST_GET_DATA(iter, struct UMLAssociation, link);
 			iter = nv_list_next(iter);
 			nv_uml_association_delete(a);
 		}

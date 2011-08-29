@@ -97,7 +97,7 @@ static void xml_list_free(void *l)
 {
 	struct ListLink *iter;
 	for(iter = nv_list_front((struct List *) l); iter;) {
-		struct xmlCharListNode *n = NV_UML_LIST_GET_DATA(iter, struct xmlCharListNode, link);
+		struct xmlCharListNode *n = NV_LIST_GET_DATA(iter, struct xmlCharListNode, link);
 		iter = nv_list_next(iter);
 		free(n);
 	}
@@ -853,7 +853,7 @@ static void nv_xmlr_resolve_types()
 		struct List *l = (struct List *) hash_table_iter_next(&iterator, (HashTableKey *) &t);
 		struct ListLink *iter;
 		for(iter = nv_list_front(l); iter; iter = nv_list_next(iter)) {
-			struct xmlCharListNode *node = NV_UML_LIST_GET_DATA(iter, struct xmlCharListNode, link);
+			struct xmlCharListNode *node = NV_LIST_GET_DATA(iter, struct xmlCharListNode, link);
 			xmlChar *id = node->id;
 			struct UMLType *ty = (struct UMLType *) hash_table_lookup(types_hash, id);
 			if (ty != NULL) {

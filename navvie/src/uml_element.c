@@ -23,13 +23,13 @@ void nv_uml_element_clear(struct UMLElement *e)
 		free(e->name);
 
 		for(iter = nv_list_front(&e->comments); iter;) {
-			struct UMLComment *com = NV_UML_LIST_GET_DATA(iter, struct UMLComment, link);
+			struct UMLComment *com = NV_LIST_GET_DATA(iter, struct UMLComment, link);
 			iter = nv_list_next(iter);
 			nv_uml_comment_delete(com);
 		}
 
 		for(iter = nv_list_front(&e->constraints); iter;) {
-			struct UMLConstraint *con = NV_UML_LIST_GET_DATA(iter, struct UMLConstraint, link);
+			struct UMLConstraint *con = NV_LIST_GET_DATA(iter, struct UMLConstraint, link);
 			iter = nv_list_next(iter);
 			nv_uml_constraint_delete(con);
 		}

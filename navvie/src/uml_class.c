@@ -34,43 +34,43 @@ void nv_uml_class_delete(struct UMLClass *c)
 		nv_uml_type_clear(&c->super);
 
 		for(iter = nv_list_front(&c->attributes); iter;) {
-			struct UMLAttribute *a = NV_UML_LIST_GET_DATA(iter, struct UMLAttribute, link);
+			struct UMLAttribute *a = NV_LIST_GET_DATA(iter, struct UMLAttribute, link);
 			iter = nv_list_next(iter);
 			nv_uml_attribute_delete(a);
 		}
 
 		for(iter = nv_list_front(&c->operations); iter;) {
-			struct UMLOperation *o = NV_UML_LIST_GET_DATA(iter, struct UMLOperation, link);
+			struct UMLOperation *o = NV_LIST_GET_DATA(iter, struct UMLOperation, link);
 			iter = nv_list_next(iter);
 			nv_uml_operation_delete(o);
 		}
 
 		for(iter = nv_list_front(&c->enumerations); iter;) {
-			struct UMLEnumeration *e = NV_UML_LIST_GET_DATA(iter, struct UMLEnumeration, link);
+			struct UMLEnumeration *e = NV_LIST_GET_DATA(iter, struct UMLEnumeration, link);
 			iter = nv_list_next(iter);
 			nv_uml_enumeration_delete(e);
 		}
 
 		for(iter = nv_list_front(&c->primitivetypes); iter;) {
-			struct UMLPrimitiveType *p = NV_UML_LIST_GET_DATA(iter, struct UMLPrimitiveType, link);
+			struct UMLPrimitiveType *p = NV_LIST_GET_DATA(iter, struct UMLPrimitiveType, link);
 			iter = nv_list_next(iter);
 			nv_uml_primitivetype_delete(p);
 		}
 
 		for(iter = nv_list_front(&c->datatypes); iter;) {
-			struct UMLDataType *d = NV_UML_LIST_GET_DATA(iter, struct UMLDataType, link);
+			struct UMLDataType *d = NV_LIST_GET_DATA(iter, struct UMLDataType, link);
 			iter = nv_list_next(iter);
 			nv_uml_datatype_delete(d);
 		}
 
 		for(iter = nv_list_front(&c->nested_classes); iter;) {
-			struct UMLClass *c = NV_UML_LIST_GET_DATA(iter, struct UMLClass, link);
+			struct UMLClass *c = NV_LIST_GET_DATA(iter, struct UMLClass, link);
 			iter = nv_list_next(iter);
 			nv_uml_class_delete(c);
 		}
 
 		for(iter = nv_list_front(&c->associations); iter;) {
-			struct UMLAssociation *a = NV_UML_LIST_GET_DATA(iter, struct UMLAssociation, link);
+			struct UMLAssociation *a = NV_LIST_GET_DATA(iter, struct UMLAssociation, link);
 			iter = nv_list_next(iter);
 			nv_uml_association_delete(a);
 		}

@@ -74,7 +74,7 @@ static void nv_graphviz_write_operation(FILE *fp, struct UMLOperation *o)
 	}
 	fprintf(fp, "%s(",nv_get_name(o));
 	for(iter = nv_list_front(&o->parameters); iter; iter = nv_list_next(iter)) {
-		struct UMLParameter *p = NV_UML_LIST_GET_DATA(iter, struct UMLParameter, link);
+		struct UMLParameter *p = NV_LIST_GET_DATA(iter, struct UMLParameter, link);
 		if (nv_uml_parameter_get_direction(p) != NV_RETURN) {
 			t = nv_uml_parameter_get_type(p);
 			fprintf(fp, "%s", comma);
@@ -107,7 +107,7 @@ static void nv_graphviz_write_class(FILE *fp, struct UMLClass *c)
 	{
 		struct ListLink *iter;
 		for(iter = nv_list_front(&c->attributes); iter; iter = nv_list_next(iter)) {
-			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			struct UMLAttribute *a = NV_LIST_GET_DATA( iter, struct UMLAttribute, link );
 			nv_graphviz_write_attribute(fp, a);
 		}
 	}
@@ -115,7 +115,7 @@ static void nv_graphviz_write_class(FILE *fp, struct UMLClass *c)
 
 	/* print operations */
 	for(iter = nv_list_front(&c->operations); iter; iter = nv_list_next(iter)) {
-		struct UMLOperation *o = NV_UML_LIST_GET_DATA( iter, struct UMLOperation, link );
+		struct UMLOperation *o = NV_LIST_GET_DATA( iter, struct UMLOperation, link );
 		nv_graphviz_write_operation(fp, o);
 	}
 	fprintf(fp, "}\"\n\t]\n");
@@ -163,7 +163,7 @@ static void nv_graphviz_write_ownedend(FILE *fp, struct UMLOwnedEnd *o)
 	{
 		struct ListLink *iter;
 		for(iter = nv_list_front(&c->attributes); iter; iter = nv_list_next(iter)) {
-			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
+			struct UMLAttribute *a = NV_LIST_GET_DATA( iter, struct UMLAttribute, link );
 			if(nv_uml_attribute_get_association(a) == nv_uml_ownedend_get_association(o)) {
 				struct UMLType *t = nv_uml_attribute_get_type(a);
 				fprintf(fp, "%s ", nv_uml_element_get_name((struct UMLElement *)t));
@@ -198,23 +198,23 @@ void nv_graphviz_write_model(struct UMLModel *m, FILE *fp)
 
 	/* print classes */
 	for(iter = nv_list_front(&m->super.classes); iter; iter = nv_list_next(iter)) {
-		struct UMLClass *c = NV_UML_LIST_GET_DATA( iter, struct UMLClass, link );
+		struct UMLClass *c = NV_LIST_GET_DATA( iter, struct UMLClass, link );
 		nv_graphviz_write_class(fp, c);
 	}
 
 	/* print associations */
 	for(iter = nv_list_front(&m->super.associations); iter; iter = nv_list_next(iter)) {
-		struct UMLAssociation *a = NV_UML_LIST_GET_DATA( iter, struct UMLAssociation, link );
+		struct UMLAssociation *a = NV_LIST_GET_DATA( iter, struct UMLAssociation, link );
 		nv_graphviz_write_association(fp, a);
 	}
 
 	/* print class generalizations */
 	for(iter = nv_list_front(&m->super.classes); iter; iter = nv_list_next(iter)) {
-		struct UMLClass *c = NV_UML_LIST_GET_DATA( iter, struct UMLClass, link );
+		struct UMLClass *c = NV_LIST_GET_DATA( iter, struct UMLClass, link );
 		const char *src_name = nv_uml_element_get_name((struct UMLElement *)c);
 		struct ListLink *iter2;
 		for(iter2 = nv_list_front(&((struct UMLType*)c)->super_types); iter2; iter2 = nv_list_next(iter2)) {
-			struct UMLType *ty = NV_UML_LIST_GET_DATA( iter, struct UMLType, link );
+			struct UMLType *ty = NV_LIST_GET_DATA( iter, struct UMLType, link );
 			const char *dst_name = nv_uml_element_get_name((struct UMLElement *)ty);
 			fprintf(fp, "\tedge [\n" );
 			fprintf(fp, "\t\tarrowhead = \"empty\"\n");

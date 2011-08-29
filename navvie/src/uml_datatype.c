@@ -24,13 +24,13 @@ void nv_uml_datatype_delete(struct UMLDataType *d)
 		nv_uml_type_clear(&d->super);
 
 		for(iter = nv_list_front(&d->attributes); iter;) {
-			struct UMLAttribute *a = NV_UML_LIST_GET_DATA(iter, struct UMLAttribute, link);
+			struct UMLAttribute *a = NV_LIST_GET_DATA(iter, struct UMLAttribute, link);
 			iter = nv_list_next(iter);
 			nv_uml_attribute_delete(a);
 		}
 
 		for(iter = nv_list_front(&d->operations); iter;) {
-			struct UMLOperation *o = NV_UML_LIST_GET_DATA(iter, struct UMLOperation, link);
+			struct UMLOperation *o = NV_LIST_GET_DATA(iter, struct UMLOperation, link);
 			iter = nv_list_next(iter);
 			nv_uml_operation_delete(o);
 		}
