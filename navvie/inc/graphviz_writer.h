@@ -3,6 +3,6 @@
 
 struct UMLModel;
 
-void nv_graphviz_write_model(struct UMLModel *m, FILE *fp);
+void nv_graphviz_write_model(struct UMLModel *m, const char *file);
 
 #endif

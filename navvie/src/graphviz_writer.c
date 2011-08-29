@@ -189,9 +189,12 @@ static void nv_graphviz_write_association(FILE *fp, struct UMLAssociation *a)
 	}
 }
 
-void nv_graphviz_write_model(struct UMLModel *m, FILE *fp)
+void nv_graphviz_write_model(struct UMLModel *m, const char *file)
 {
+	FILE *fp;
 	struct ListLink *iter;
+
+	fp = fopen(file, "w");
 	fprintf(fp, "digraph %s {\n",
 	        nv_uml_element_get_name((struct UMLElement *) m));
 	fprintf(fp, "\trankdir = \"BT\"\n");
@@ -224,4 +227,5 @@ void nv_graphviz_write_model(struct UMLModel *m, FILE *fp)
 	}
 
 	fprintf(fp, "}\n");
+	fclose(fp);
 }

@@ -1,6 +1,6 @@
 gsim:
 	cd navvie && make
-	cd aire && mkdir -p build && ../navvie/navvie ./aire.uml ./build/ > aire.dot && cd build && patch -p1 < ../aire_cpp.patch && make
+	cd aire && mkdir -p build && ../navvie/navvie --read uml ./aire.uml --write cpp ./build/ --write graphviz aire.dot && cd build && patch -p1 < ../aire_cpp.patch && make
 	cd vhdl && make
 	cd verilog && make
 
