@@ -6,7 +6,7 @@ void nv_uml_type_init(struct UMLType *t, enum UMLBaseType b)
 {
 	nv_uml_element_init(&t->super);
 	t->base_type = b;
-	nv_uml_list_init(&t->super_types);
+	nv_list_init(&t->super_types);
 }
 
 void nv_uml_type_clear(struct UMLType *t)

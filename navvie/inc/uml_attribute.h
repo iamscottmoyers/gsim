@@ -4,7 +4,7 @@
 #include "uml_qualifier.h"
 #include "uml_element.h"
 #include "uml_multiplicity.h"
-#include "uml_list.h"
+#include "list.h"
 
 struct UMLType;
 struct UMLAssociation;
@@ -18,7 +18,7 @@ enum UMLAggregation {
 struct UMLAttribute {
 	struct UMLElement super;
 	struct UMLType *type;
-	struct UMLListLink link;
+	struct ListLink link;
 	int qualifiers;
 	struct UMLAssociation *association;
 	enum UMLAggregation aggregation;

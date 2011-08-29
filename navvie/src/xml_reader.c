@@ -12,10 +12,9 @@
 #include "compare-string.h"
 #include "hash-pointer.h"
 #include "compare-pointer.h"
-#include "list.h"
 #include "util.h"
+#include "list.h"
 
-#include "uml_list.h"
 #include "uml_class.h"
 #include "uml_package.h"
 #include "uml_datatype.h"
@@ -32,6 +31,11 @@
 #include "uml_comment.h"
 #include "uml_constraint.h"
 
+struct xmlCharListNode {
+	xmlChar *id;
+	struct ListLink link;
+};
+
 static HashTable *types_hash; /* hashes an xmi id to the actual uml_type */
 static HashTable *attr_to_id; /* hashes an attribute/parameter to it's xmi id */
 static HashTable *super_ids; /* hashes a struct UMLType *to a List of xmlChar IDs */
@@ -40,14 +44,14 @@ static HashTable *attr_to_assoc_id;
 static HashTable *id_to_assoc;
 static HashTable *stereotypes; /* hashes a stereotyped element to the stereotype enum */
 
-static void nv_xmlr_get_constraints(struct UMLList *l, xmlNode *a_node);
-static void nv_xmlr_get_comments(struct UMLList *l, xmlNode *a_node);
+static void nv_xmlr_get_constraints(struct List *l, xmlNode *a_node);
+static void nv_xmlr_get_comments(struct List *l, xmlNode *a_node);
 static enum UMLVisibility nv_xmlr_get_visibility(xmlNode *a_node);
 
 static void nv_xmlr_generalisations(xmlNode *a_node, struct UMLType *t);
 
 static struct UMLPrimitiveType *nv_xmlr_primitivetype(xmlNode *a_node);
-static void nv_xmlr_primitivetypes(struct UMLList *l, xmlNode *a_node, const char *nested);
+static void nv_xmlr_primitivetypes(struct List *l, xmlNode *a_node, const char *nested);
 
 static void nv_xmlr_stereotypes(xmlNode *a_node);
 static struct UMLModel *nv_xmlr_model(xmlNode *a_node);
@@ -55,29 +59,29 @@ static struct UMLModel *nv_xmlr_model(xmlNode *a_node);
 static void nv_xmlr_multiplicity(xmlNode *a_node, int *multiplicity);
 
 static void nv_xmlr_attribute_qualifiers(xmlNode *a_node, struct UMLAttribute *a);
-static void nv_xmlr_attributes(struct UMLList *l, xmlNode *a_node);
+static void nv_xmlr_attributes(struct List *l, xmlNode *a_node);
 
 static void nv_xmlr_operation_parameters(xmlNode *a_node, struct UMLOperation *o);
 static void nv_xmlr_operation_qualifiers(xmlNode *a_node, struct UMLOperation *o);
 static struct UMLOperation *nv_xmlr_operation(xmlNode *a_node);
-static void nv_xmlr_operations(struct UMLList *l, xmlNode *a_node);
+static void nv_xmlr_operations(struct List *l, xmlNode *a_node);
 
 static void nv_xmlr_ownedends(xmlNode *a_node, struct UMLAssociation *a);
 static struct UMLAssociation *nv_xmlr_association(xmlNode *a_node);
-static void nv_xmlr_associations(struct UMLList *l, xmlNode *a_node, const char *nested);
+static void nv_xmlr_associations(struct List *l, xmlNode *a_node, const char *nested);
 
 static void nv_xmlr_enumeration_literals(xmlNode *a_node, struct UMLEnumeration *e);
 static struct UMLEnumeration *nv_xmlr_enumeration(xmlNode *a_node);
-static void nv_xmlr_enumerations(struct UMLList *l, xmlNode *a_node, const char *nested);
+static void nv_xmlr_enumerations(struct List *l, xmlNode *a_node, const char *nested);
 
 static struct UMLDataType *nv_xmlr_datatype(xmlNode *a_node);
-static void nv_xmlr_datatypes(struct UMLList *l, xmlNode *a_node, const char *nested);
+static void nv_xmlr_datatypes(struct List *l, xmlNode *a_node, const char *nested);
 
 static struct UMLClass *nv_xmlr_class(xmlNode *a_node);
-static void nv_xmlr_classes(struct UMLList *l, xmlNode *a_node, const char *nested);
+static void nv_xmlr_classes(struct List *l, xmlNode *a_node, const char *nested);
 
 static struct UMLPackage *nv_xmlr_package(xmlNode *a_node);
-static void nv_xmlr_packages(struct UMLList *l, xmlNode *a_node, const char *nested);
+static void nv_xmlr_packages(struct List *l, xmlNode *a_node, const char *nested);
 
 static void nv_xmlr_resolve_types();
 
@@ -91,27 +95,32 @@ static void nv_xmlr_resolve_types();
 
 static void xml_list_free(void *l)
 {
-	List *work = (List *)l;
-	while(work != NULL) {
-		xmlChar *x = (xmlChar *)work->data;
-		xmlFree(x);
-		work = work->next;
+	struct ListLink *iter;
+	for(iter = nv_list_front((struct List *) l); iter;) {
+		struct xmlCharListNode *n = NV_UML_LIST_GET_DATA(iter, struct xmlCharListNode, link);
+		iter = nv_list_next(iter);
+		free(n);
 	}
-	delete_list((List *) l);
+
+	free(l);
 }
 
 static void xml_hash_list_insert(HashTable *s, struct UMLType *t, xmlChar *gen)
 {
-	List *l = (List *) hash_table_lookup(s, t);
+	struct List *l = (struct List *) hash_table_lookup(s, t);
+	struct xmlCharListNode *node = (struct xmlCharListNode *) malloc(sizeof(struct xmlCharListNode));
+	node->id = gen;
 	if (l != NULL) {
-		push_back_list(&l, gen);
+		nv_list_push_back(l, &node->link);
 	} else {
-		push_back_list(&l, gen);
+		l = (struct List *) malloc(sizeof(struct List));
+		nv_list_init(l);
+		nv_list_push_back(l, &node->link);
 		hash_table_insert(s, t, l);
 	}
 }
 
-static void nv_xmlr_get_constraints(struct UMLList *l, xmlNode *a_node)
+static void nv_xmlr_get_constraints(struct List *l, xmlNode *a_node)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, "ownedRule") {
@@ -125,7 +134,7 @@ static void nv_xmlr_get_constraints(struct UMLList *l, xmlNode *a_node)
 					xmlChar *body = xmlNodeGetContent(child2->children);
 					nv_fix_new_lines(body);
 					nv_uml_constraint_set_body(con, body);
-					nv_uml_list_push_back(l, &con->link);
+					nv_list_push_back(l, &con->link);
 					printf("----------- %s ---------\n", body);
 					xmlFree(body);
 				} else  {
@@ -139,7 +148,7 @@ static void nv_xmlr_get_constraints(struct UMLList *l, xmlNode *a_node)
 	}
 }
 
-static void nv_xmlr_get_comments(struct UMLList *l, xmlNode *a_node)
+static void nv_xmlr_get_comments(struct List *l, xmlNode *a_node)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, "ownedComment") {
@@ -149,7 +158,7 @@ static void nv_xmlr_get_comments(struct UMLList *l, xmlNode *a_node)
 			xmlChar *body = xmlNodeGetContent(child_node->children);
 			nv_fix_new_lines(body);
 			nv_uml_comment_set_body(com, body);
-			nv_uml_list_push_back(l, &com->link);
+			nv_list_push_back(l, &com->link);
 			xmlFree(body);
 		}
 	}
@@ -214,14 +223,14 @@ static struct UMLPrimitiveType *nv_xmlr_primitivetype(xmlNode *a_node)
 	return p;
 }
 
-static void nv_xmlr_primitivetypes(struct UMLList *l, xmlNode *a_node, const char *nested)
+static void nv_xmlr_primitivetypes(struct List *l, xmlNode *a_node, const char *nested)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, nested) {
 		xmlChar *t = xmlGetProp(cur_node, "type");
 		if (!strcmp((char *)t, "uml:PrimitiveType")) {
 			struct UMLPrimitiveType *p = nv_xmlr_primitivetype(cur_node);
-			nv_uml_list_push_back(l, &p->link);
+			nv_list_push_back(l, &p->link);
 		}
 		xmlFree(t);
 	}
@@ -369,14 +378,14 @@ static void nv_xmlr_multiplicity(xmlNode *a_node, int *multiplicity)
 	}
 }
 
-static void nv_xmlr_attributes(struct UMLList *l, xmlNode *a_node)
+static void nv_xmlr_attributes(struct List *l, xmlNode *a_node)
 {
 	int multiplicity[2];
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, "ownedAttribute") {
 		xmlChar *n;
 		struct UMLAttribute *a = nv_uml_attribute_new();
-		nv_uml_list_push_back(l, &a->link);
+		nv_list_push_back(l, &a->link);
 
 		n = xmlGetProp(cur_node, "name");
 		nv_set_name(a, n);
@@ -523,12 +532,12 @@ static struct UMLOperation *nv_xmlr_operation(xmlNode *a_node)
 	return o;
 }
 
-static void nv_xmlr_operations(struct UMLList *l, xmlNode *a_node)
+static void nv_xmlr_operations(struct List *l, xmlNode *a_node)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, "ownedOperation") {
 		struct UMLOperation *o = nv_xmlr_operation(cur_node);
-		nv_uml_list_push_back(l, &o->link);
+		nv_list_push_back(l, &o->link);
 	}
 }
 
@@ -595,14 +604,14 @@ static struct UMLAssociation *nv_xmlr_association(xmlNode *a_node)
 	return a;
 }
 
-static void nv_xmlr_associations(struct UMLList *l, xmlNode *a_node, const char *nested)
+static void nv_xmlr_associations(struct List *l, xmlNode *a_node, const char *nested)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, nested) {
 		xmlChar *t = xmlGetProp(cur_node, "type");
 		if (!strcmp((char *)t, "uml:Association")) {
 			struct UMLAssociation *a = nv_xmlr_association(cur_node);
-			nv_uml_list_push_back(l, &a->link);
+			nv_list_push_back(l, &a->link);
 		}
 		xmlFree(t);
 	}
@@ -619,7 +628,7 @@ static void nv_xmlr_enumeration_literals(xmlNode *a_node, struct UMLEnumeration 
 		nv_xmlr_get_comments(&((struct UMLElement *)l)->comments, cur_node);
 		nv_xmlr_get_constraints(&((struct UMLElement *)l)->constraints, cur_node);
 		nv_set_visibility(l, nv_xmlr_get_visibility(cur_node));
-		nv_uml_list_push_back(&e->literals, &l->link);
+		nv_list_push_back(&e->literals, &l->link);
 		xmlFree(n);
 		xmlFree(id);
 	}
@@ -648,14 +657,14 @@ static struct UMLEnumeration *nv_xmlr_enumeration(xmlNode *a_node)
 	return e;
 }
 
-static void nv_xmlr_enumerations(struct UMLList *l, xmlNode *a_node, const char *nested)
+static void nv_xmlr_enumerations(struct List *l, xmlNode *a_node, const char *nested)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, nested) {
 		xmlChar *t = xmlGetProp(cur_node, "type");
 		if (!strcmp((char *)t, "uml:Enumeration")) {
 			struct UMLEnumeration *e = nv_xmlr_enumeration(cur_node);
-			nv_uml_list_push_back(l, &e->link);
+			nv_list_push_back(l, &e->link);
 		}
 		xmlFree(t);
 	}
@@ -685,14 +694,14 @@ static struct UMLDataType *nv_xmlr_datatype(xmlNode *a_node)
 	return d;
 }
 
-static void nv_xmlr_datatypes(struct UMLList *l, xmlNode *a_node, const char *nested)
+static void nv_xmlr_datatypes(struct List *l, xmlNode *a_node, const char *nested)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, nested) {
 		xmlChar *t = xmlGetProp(cur_node, "type");
 		if (!strcmp((char *)t, "uml:DataType")) {
 			struct UMLDataType *d = nv_xmlr_datatype(cur_node);
-			nv_uml_list_push_back(l, &d->link);
+			nv_list_push_back(l, &d->link);
 		}
 		xmlFree(t);
 	}
@@ -738,14 +747,14 @@ static struct UMLClass *nv_xmlr_class(xmlNode *a_node)
 	return c;
 }
 
-static void nv_xmlr_classes(struct UMLList *l, xmlNode *a_node, const char *nested)
+static void nv_xmlr_classes(struct List *l, xmlNode *a_node, const char *nested)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, nested) {
 		xmlChar *t = xmlGetProp(cur_node, "type");
 		if (!strcmp((char *)t, "uml:Class")) {
 			struct UMLClass *c = nv_xmlr_class(cur_node);
-			nv_uml_list_push_back(l, &c->link);
+			nv_list_push_back(l, &c->link);
 		}
 		xmlFree(t);
 	}
@@ -779,14 +788,14 @@ static struct UMLPackage *nv_xmlr_package(xmlNode *a_node)
 	return p;
 }
 
-static void nv_xmlr_packages(struct UMLList *l, xmlNode *a_node, const char *nested)
+static void nv_xmlr_packages(struct List *l, xmlNode *a_node, const char *nested)
 {
 	xmlNode *cur_node = a_node->children;
 	nv_xml_on_node(cur_node, nested) {
 		xmlChar *t = xmlGetProp(cur_node, "type");
 		if (!strcmp((char *)t, "uml:Package")) {
 			struct UMLPackage *p = nv_xmlr_package(cur_node);
-			nv_uml_list_push_back(l, &p->link);
+			nv_list_push_back(l, &p->link);
 		}
 		xmlFree(t);
 	}
@@ -841,22 +850,22 @@ static void nv_xmlr_resolve_types()
 	hash_table_iterate(super_ids, &iterator);
 	while (hash_table_iter_has_more(&iterator)) {
 		struct UMLType *t;
-		List *l = (List *) hash_table_iter_next(&iterator, (HashTableKey *) &t);
-		while(l != NULL) {
-			xmlChar *id = (xmlChar *) l->data;
+		struct List *l = (struct List *) hash_table_iter_next(&iterator, (HashTableKey *) &t);
+		struct ListLink *iter;
+		for(iter = nv_list_front(l); iter; iter = nv_list_next(iter)) {
+			struct xmlCharListNode *node = NV_UML_LIST_GET_DATA(iter, struct xmlCharListNode, link);
+			xmlChar *id = node->id;
 			struct UMLType *ty = (struct UMLType *) hash_table_lookup(types_hash, id);
 			if (ty != NULL) {
 				if (nv_uml_type_get_base_type(ty) == nv_uml_type_get_base_type(t)) {
-					nv_uml_list_push_back(&t->super_types, &ty->link);
+					nv_list_push_back(&t->super_types, &ty->link);
 				} else {
 					fprintf(stderr, "%s can't inherit from a %s as they are not"
 						" of the same type\n", nv_get_name(t), nv_get_name(ty));
 				}
 			} else {
-				fprintf(stderr, "Malformed xmi file: missing super class %s\n",
-					id);
+				fprintf(stderr, "Malformed xmi file: missing super class %s\n", id);
 			}
-			l = l->next;
 		}
 	}
 }

@@ -2,7 +2,7 @@
 #define _NAVVIE_UML_PARAMETER_H_
 
 #include "uml_element.h"
-#include "uml_list.h"
+#include "list.h"
 #include "uml_multiplicity.h"
 
 struct UMLType;
@@ -19,7 +19,7 @@ struct UMLParameter {
 	struct UMLType *type;
 	enum UMLParameterDirection direction;
 	int multiplicity[2];
-	struct UMLListLink link;
+	struct ListLink link;
 };
 
 struct UMLParameter *nv_uml_parameter_new();

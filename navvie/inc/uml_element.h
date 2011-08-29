@@ -3,15 +3,15 @@
 
 #include "uml_visibility.h"
 #include "uml_stereotype.h"
-#include "uml_list.h"
+#include "list.h"
 
 struct UMLComment;
 struct UMLConstraint;
 
 struct UMLElement {
 	enum UMLVisibility visibility;
-	struct UMLList comments;
-	struct UMLList constraints;
+	struct List comments;
+	struct List constraints;
 	char *name;
 	UMLStereotype stereotypes;
 };

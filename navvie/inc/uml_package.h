@@ -3,18 +3,18 @@
 
 #include <stdio.h>
 
-#include "uml_list.h"
+#include "list.h"
 #include "uml_element.h"
 
 struct UMLPackage {
 	struct UMLElement super;
-	struct UMLList packages;
-	struct UMLList classes;
-	struct UMLList datatypes;
-	struct UMLList enumerations;
-	struct UMLList primitivetypes;
-	struct UMLList associations;
-	struct UMLListLink link;
+	struct List packages;
+	struct List classes;
+	struct List datatypes;
+	struct List enumerations;
+	struct List primitivetypes;
+	struct List associations;
+	struct ListLink link;
 };
 
 struct UMLPackage *nv_uml_package_new();

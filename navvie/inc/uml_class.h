@@ -1,21 +1,21 @@
 #ifndef _NAVVIE_UML_CLASS_H_
 #define _NAVVIE_UML_CLASS_H_
 
-#include "uml_list.h"
+#include "list.h"
 #include "uml_type.h"
 #include "uml_qualifier.h"
 
 struct UMLClass {
 	struct UMLType super;
-	struct UMLList attributes;
-	struct UMLList operations;
-	struct UMLList enumerations;
-	struct UMLList primitivetypes;
-	struct UMLList datatypes;
-	struct UMLList nested_classes;
-	struct UMLList associations;
+	struct List attributes;
+	struct List operations;
+	struct List enumerations;
+	struct List primitivetypes;
+	struct List datatypes;
+	struct List nested_classes;
+	struct List associations;
 	unsigned int qualifiers;
-	struct UMLListLink link;
+	struct ListLink link;
 };
 
 struct UMLClass *nv_uml_class_new();

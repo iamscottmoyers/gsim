@@ -2,7 +2,7 @@
 #define _NAVVIE_UML_TYPE_H_
 
 #include "uml_element.h"
-#include "uml_list.h"
+#include "list.h"
 
 /* is this type a class/enum/datatype? */
 enum UMLBaseType {
@@ -16,8 +16,8 @@ enum UMLBaseType {
 struct UMLType {
 	struct UMLElement super;
 	enum UMLBaseType base_type;
-	struct UMLList super_types;
-	struct UMLListLink link;
+	struct List super_types;
+	struct ListLink link;
 };
 
 void nv_uml_type_init(struct UMLType *t, enum UMLBaseType b);

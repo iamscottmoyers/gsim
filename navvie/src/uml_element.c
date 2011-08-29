@@ -11,26 +11,26 @@ void nv_uml_element_init(struct UMLElement *e)
 	e->name = (char *)malloc(sizeof(char));
 	e->name[0] = '\0';
 	e->visibility = NV_PUBLIC;
-	nv_uml_list_init(&e->comments);
-	nv_uml_list_init(&e->constraints);
+	nv_list_init(&e->comments);
+	nv_list_init(&e->constraints);
 	e->stereotypes = 0;
 }
 
 void nv_uml_element_clear(struct UMLElement *e)
 {
 	if (e != NULL) {
-		struct UMLListLink *iter;
+		struct ListLink *iter;
 		free(e->name);
 
-		for(iter = nv_uml_list_front(&e->comments); iter;) {
+		for(iter = nv_list_front(&e->comments); iter;) {
 			struct UMLComment *com = NV_UML_LIST_GET_DATA(iter, struct UMLComment, link);
-			iter = nv_uml_list_next(iter);
+			iter = nv_list_next(iter);
 			nv_uml_comment_delete(com);
 		}
 
-		for(iter = nv_uml_list_front(&e->constraints); iter;) {
+		for(iter = nv_list_front(&e->constraints); iter;) {
 			struct UMLConstraint *con = NV_UML_LIST_GET_DATA(iter, struct UMLConstraint, link);
-			iter = nv_uml_list_next(iter);
+			iter = nv_list_next(iter);
 			nv_uml_constraint_delete(con);
 		}
 	}

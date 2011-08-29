@@ -12,26 +12,26 @@ struct UMLDataType *nv_uml_datatype_new()
 		return NULL;
 	}
 	nv_uml_type_init(&d->super, NV_DATATYPE);
-	nv_uml_list_init(&d->attributes);
-	nv_uml_list_init(&d->operations);
+	nv_list_init(&d->attributes);
+	nv_list_init(&d->operations);
 	return d;
 }
 
 void nv_uml_datatype_delete(struct UMLDataType *d)
 {
 	if (d != NULL) {
-		struct UMLListLink *iter;
+		struct ListLink *iter;
 		nv_uml_type_clear(&d->super);
 
-		for(iter = nv_uml_list_front(&d->attributes); iter;) {
+		for(iter = nv_list_front(&d->attributes); iter;) {
 			struct UMLAttribute *a = NV_UML_LIST_GET_DATA(iter, struct UMLAttribute, link);
-			iter = nv_uml_list_next(iter);
+			iter = nv_list_next(iter);
 			nv_uml_attribute_delete(a);
 		}
 
-		for(iter = nv_uml_list_front(&d->operations); iter;) {
+		for(iter = nv_list_front(&d->operations); iter;) {
 			struct UMLOperation *o = NV_UML_LIST_GET_DATA(iter, struct UMLOperation, link);
-			iter = nv_uml_list_next(iter);
+			iter = nv_list_next(iter);
 			nv_uml_operation_delete(o);
 		}
 

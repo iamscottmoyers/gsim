@@ -6,7 +6,6 @@
 #include "uml_element.h"
 
 #include "util.h"
-#include "list.h"
 
 #include "uml_class.h"
 #include "uml_package.h"
@@ -62,7 +61,7 @@ static void nv_graphviz_write_attribute(FILE *fp, struct UMLAttribute *a)
 
 static void nv_graphviz_write_operation(FILE *fp, struct UMLOperation *o)
 {
-	struct UMLListLink *iter;
+	struct ListLink *iter;
 	char comma[3] = {'\0','\0','\0'};
 	struct UMLParameter *p;
 	struct UMLType *t;
@@ -74,7 +73,7 @@ static void nv_graphviz_write_operation(FILE *fp, struct UMLOperation *o)
 		fprintf(fp, "~");
 	}
 	fprintf(fp, "%s(",nv_get_name(o));
-	for(iter = nv_uml_list_front(&o->parameters); iter; iter = nv_uml_list_next(iter)) {
+	for(iter = nv_list_front(&o->parameters); iter; iter = nv_list_next(iter)) {
 		struct UMLParameter *p = NV_UML_LIST_GET_DATA(iter, struct UMLParameter, link);
 		if (nv_uml_parameter_get_direction(p) != NV_RETURN) {
 			t = nv_uml_parameter_get_type(p);
@@ -98,7 +97,7 @@ static void nv_graphviz_write_operation(FILE *fp, struct UMLOperation *o)
 
 static void nv_graphviz_write_class(FILE *fp, struct UMLClass *c)
 {
-	struct UMLListLink *iter;
+	struct ListLink *iter;
 	const char *name = nv_uml_element_get_name((struct UMLElement *)c);
 	fprintf(fp, "\tnode [shape = \"record\"]\n");
 	fprintf(fp, "\t%s [\n", name);
@@ -106,8 +105,8 @@ static void nv_graphviz_write_class(FILE *fp, struct UMLClass *c)
 
 	/* print attributes */
 	{
-		struct UMLListLink *iter;
-		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+		struct ListLink *iter;
+		for(iter = nv_list_front(&c->attributes); iter; iter = nv_list_next(iter)) {
 			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
 			nv_graphviz_write_attribute(fp, a);
 		}
@@ -115,7 +114,7 @@ static void nv_graphviz_write_class(FILE *fp, struct UMLClass *c)
 	fprintf(fp, "|");
 
 	/* print operations */
-	for(iter = nv_uml_list_front(&c->operations); iter; iter = nv_uml_list_next(iter)) {
+	for(iter = nv_list_front(&c->operations); iter; iter = nv_list_next(iter)) {
 		struct UMLOperation *o = NV_UML_LIST_GET_DATA( iter, struct UMLOperation, link );
 		nv_graphviz_write_operation(fp, o);
 	}
@@ -162,8 +161,8 @@ static void nv_graphviz_write_ownedend(FILE *fp, struct UMLOwnedEnd *o)
 
 	fprintf(fp, "\t%s -> ", name);
 	{
-		struct UMLListLink *iter;
-		for(iter = nv_uml_list_front(&c->attributes); iter; iter = nv_uml_list_next(iter)) {
+		struct ListLink *iter;
+		for(iter = nv_list_front(&c->attributes); iter; iter = nv_list_next(iter)) {
 			struct UMLAttribute *a = NV_UML_LIST_GET_DATA( iter, struct UMLAttribute, link );
 			if(nv_uml_attribute_get_association(a) == nv_uml_ownedend_get_association(o)) {
 				struct UMLType *t = nv_uml_attribute_get_type(a);
@@ -192,29 +191,29 @@ static void nv_graphviz_write_association(FILE *fp, struct UMLAssociation *a)
 
 void nv_graphviz_write_model(struct UMLModel *m, FILE *fp)
 {
-	struct UMLListLink *iter;
+	struct ListLink *iter;
 	fprintf(fp, "digraph %s {\n",
 	        nv_uml_element_get_name((struct UMLElement *) m));
 	fprintf(fp, "\trankdir = \"BT\"\n");
 
 	/* print classes */
-	for(iter = nv_uml_list_front(&m->super.classes); iter; iter = nv_uml_list_next(iter)) {
+	for(iter = nv_list_front(&m->super.classes); iter; iter = nv_list_next(iter)) {
 		struct UMLClass *c = NV_UML_LIST_GET_DATA( iter, struct UMLClass, link );
 		nv_graphviz_write_class(fp, c);
 	}
 
 	/* print associations */
-	for(iter = nv_uml_list_front(&m->super.associations); iter; iter = nv_uml_list_next(iter)) {
+	for(iter = nv_list_front(&m->super.associations); iter; iter = nv_list_next(iter)) {
 		struct UMLAssociation *a = NV_UML_LIST_GET_DATA( iter, struct UMLAssociation, link );
 		nv_graphviz_write_association(fp, a);
 	}
 
 	/* print class generalizations */
-	for(iter = nv_uml_list_front(&m->super.classes); iter; iter = nv_uml_list_next(iter)) {
+	for(iter = nv_list_front(&m->super.classes); iter; iter = nv_list_next(iter)) {
 		struct UMLClass *c = NV_UML_LIST_GET_DATA( iter, struct UMLClass, link );
 		const char *src_name = nv_uml_element_get_name((struct UMLElement *)c);
-		struct UMLListLink *iter2;
-		for(iter2 = nv_uml_list_front(&((struct UMLType*)c)->super_types); iter2; iter2 = nv_uml_list_next(iter2)) {
+		struct ListLink *iter2;
+		for(iter2 = nv_list_front(&((struct UMLType*)c)->super_types); iter2; iter2 = nv_list_next(iter2)) {
 			struct UMLType *ty = NV_UML_LIST_GET_DATA( iter, struct UMLType, link );
 			const char *dst_name = nv_uml_element_get_name((struct UMLElement *)ty);
 			fprintf(fp, "\tedge [\n" );

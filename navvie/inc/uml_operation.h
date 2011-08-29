@@ -3,16 +3,16 @@
 
 #include "uml_qualifier.h"
 #include "uml_element.h"
-#include "uml_list.h"
+#include "list.h"
 
 struct UMLParameter;
 
 struct UMLOperation {
 	struct UMLElement super;
-	struct UMLList parameters;
+	struct List parameters;
 	struct UMLParameter *return_parameter;
 	unsigned int qualifiers;
-	struct UMLListLink link;
+	struct ListLink link;
 };
 
 struct UMLOperation *nv_uml_operation_new();

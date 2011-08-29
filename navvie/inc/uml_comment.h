@@ -1,11 +1,11 @@
 #ifndef _NAVVIE_UML_COMMENT_H_
 #define _NAVVIE_UML_COMMENT_H_
 
-#include "uml_list.h"
+#include "list.h"
 
 struct UMLComment {
 	char *body;
-	struct UMLListLink link;
+	struct ListLink link;
 };
 
 struct UMLComment *nv_uml_comment_new();
