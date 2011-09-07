@@ -42,14 +42,9 @@ void nv_uml_attribute_set_qualifier(struct UMLAttribute *a, enum UMLQualifier q)
 	a->qualifiers |= q;
 }
 
-void nv_uml_attribute_clear_qualifier(struct UMLAttribute *a, enum UMLQualifier q)
-{
-	a->qualifiers &= ~q;
-}
-
 int nv_uml_attribute_get_qualifier(struct UMLAttribute *a, enum UMLQualifier q)
 {
-	return !!(a->qualifiers & q);
+	return a->qualifiers & q;
 }
 
 void nv_uml_attribute_set_association(struct UMLAttribute *a, struct UMLAssociation *as)

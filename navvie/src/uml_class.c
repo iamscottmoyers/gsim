@@ -84,12 +84,7 @@ void nv_uml_class_set_qualifier(struct UMLClass *c, enum UMLQualifier q)
 	c->qualifiers |= q;
 }
 
-void nv_uml_class_clear_qualifier(struct UMLClass *c, enum UMLQualifier q)
-{
-	c->qualifiers &= ~q;
-}
-
 int nv_uml_class_get_qualifier(struct UMLClass *c, enum UMLQualifier q)
 {
-	return !!(c->qualifiers & q);
+	return c->qualifiers & q;
 }

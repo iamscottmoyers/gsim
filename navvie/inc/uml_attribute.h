@@ -32,7 +32,6 @@ void nv_uml_attribute_set_type(struct UMLAttribute *a, struct UMLType *type);
 struct UMLType *nv_uml_attribute_get_type(struct UMLAttribute *a);
 
 void nv_uml_attribute_set_qualifier(struct UMLAttribute *a, enum UMLQualifier q);
-void nv_uml_attribute_clear_qualifier(struct UMLAttribute *a, enum UMLQualifier q);
 int nv_uml_attribute_get_qualifier(struct UMLAttribute *a, enum UMLQualifier q);
 
 void nv_uml_attribute_set_association(struct UMLAttribute *a, struct UMLAssociation *as);

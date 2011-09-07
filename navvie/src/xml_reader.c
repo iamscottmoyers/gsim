@@ -324,11 +324,11 @@ static void nv_xmlr_attribute_qualifiers(xmlNode *a_node, struct UMLAttribute *a
 
 	/* isUnique only appears as "false"
 	   assume "true" unless we see false */
-	nv_uml_attribute_set_qualifier(a, NV_UNIQUE);
 	n = xmlGetProp(a_node, "isUnique");
-	if (n != NULL && !strcmp(n, "false")) {
-		nv_uml_attribute_clear_qualifier(a, NV_UNIQUE);
+	if( n == NULL || strcmp(n, "false") ) {
+		nv_uml_attribute_set_qualifier(a, NV_UNIQUE);
 	}
+
 	xmlFree(n);
 }
 
