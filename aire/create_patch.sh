@@ -6,6 +6,6 @@
 # creation process.
 
 mkdir a
-../navvie/navvie aire.uml ./a > /dev/null
+../navvie/navvie --read uml ./aire.uml --write cpp ./a
 diff -uN a b > aire_cpp.patch
 rm -rf a

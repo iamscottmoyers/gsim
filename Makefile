@@ -7,5 +7,5 @@ gsim:
 clean:
 	cd verilog && make clean
 	cd vhdl && make clean
-	cd aire && rm -f aire.dot && cd build && make clean
+	cd aire && rm -f aire.dot && rm -rf build
 	cd navvie && make clean
