@@ -454,7 +454,7 @@ static void nv_c_write_makefile(const char *dir, struct UMLModel *m)
 
 	fprintf(fp, "LIBNAME := %s\n", nv_get_name(m));
 	fprintf(fp, "CXX := gcc\n");
-	fprintf(fp, "WARNING_FLAGS := -Wall -Wc++-compat -Wextra --pedantic -ansi\n");
+	fprintf(fp, "WARNING_FLAGS := -Wall -Wc++-compat -Wextra --pedantic -ansi -Wno-long-long\n");
 	fprintf(fp, "CXX_FLAGS := $(WARNING_FLAGS) -g\n");
 	fprintf(fp, "LIBS :=\n");
 	fprintf(fp, "OBJDIR := .\n");

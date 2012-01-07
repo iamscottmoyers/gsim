@@ -570,7 +570,7 @@ static void nv_cpp_write_makefile(const char *dir, struct UMLModel *m)
 
 	fprintf(fp, "LIBNAME := %s\n", nv_get_name(m));
 	fprintf(fp, "CXX := g++\n");
-	fprintf(fp, "WARNINGFLAGS := -Wall -Wextra --pedantic\n");
+	fprintf(fp, "WARNINGFLAGS := -Wall -Wextra --pedantic -Wno-long-long\n");
 	fprintf(fp, "CXXFLAGS := $(WARNINGFLAGS) -g\n");
 	fprintf(fp, "LIBS :=\n");
 	fprintf(fp, "OBJDIR := .\n");
