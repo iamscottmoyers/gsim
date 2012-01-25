@@ -19,20 +19,9 @@ void nv_uml_element_init(struct UMLElement *e)
 void nv_uml_element_clear(struct UMLElement *e)
 {
 	if (e != NULL) {
-		struct ListLink *iter;
 		free(e->name);
-
-		for(iter = nv_list_front(&e->comments); iter;) {
-			struct UMLComment *com = NV_LIST_GET_DATA(iter, struct UMLComment, link);
-			iter = nv_list_next(iter);
-			nv_uml_comment_delete(com);
-		}
-
-		for(iter = nv_list_front(&e->constraints); iter;) {
-			struct UMLConstraint *con = NV_LIST_GET_DATA(iter, struct UMLConstraint, link);
-			iter = nv_list_next(iter);
-			nv_uml_constraint_delete(con);
-		}
+		NV_LIST_DESTROY(&e->comments,    struct UMLComment,    link, nv_uml_comment_delete   );
+		NV_LIST_DESTROY(&e->constraints, struct UMLConstraint, link, nv_uml_constraint_delete);
 	}
 }
 

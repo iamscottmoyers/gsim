@@ -1,15 +1,16 @@
 CXX := gcc
 WARNINGFLAGS := -Wall -Wc++-compat -Wextra -Wno-pointer-sign --pedantic -ansi
-CXXFLAGS := $(WARNINGFLAGS) -g `xml2-config --cflags`
+CXXFLAGS := $(WARNINGFLAGS) -g `xml2-config --cflags` `pkg-config --cflags gtk+-2.0`
 #CXXFLAGS := $(WARNINGFLAGS) -O2 -DNDEBUG -I/usr/include/libxml2
 #CXXFLAGS := $(WARNINGFLAGS) -pg -O3 -g -I/usr/include/libxml2
 
-LIBS := `xml2-config --libs`
+LIBS := `xml2-config --libs` `pkg-config --libs gtk+-2.0`
 OBJDIR := obj
 INCDIR := inc
 SOURCEDIR := src
 INCLUDE := -I $(INCDIR)
 OBJECTS := $(OBJDIR)/main.o \
+$(OBJDIR)/gui.o \
 $(OBJDIR)/xml_reader.o \
 $(OBJDIR)/c_writer.o \
 $(OBJDIR)/cpp_writer.o \

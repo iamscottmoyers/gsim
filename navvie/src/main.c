@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
+#include "gui.h"
 #include "xml_reader.h"
 #include "uml_model.h"
 #include "c_writer.h"
@@ -32,13 +33,14 @@ struct read_op_map read_map[] = {
 
 /* Argument string -> operation mappings for write operations. */
 struct write_op_map write_map[] = {
-	{"c", nv_c_write_model},
-	{"cpp", nv_cpp_write_model},
+	{"c",        nv_c_write_model       },
+	{"cpp",      nv_cpp_write_model     },
 	{"graphviz", nv_graphviz_write_model}
 };
 
-/* Status machine for parsing the command line. */
+/* State machine for parsing the command line. */
 enum arg_state {
+	MATCH_GUI_OR_READ_WRITE,
 	MATCH_READ_WRITE,
 	MATCH_READ_OP,
 	MATCH_WRITE_OP,
@@ -47,12 +49,12 @@ enum arg_state {
 };
 
 /* Prints a message and usage information when argument parsing fails. */
-void usage(const char *prog, const char *msg)
+static void usage(const char *prog, const char *msg)
 {
 	unsigned int i;
 	printf("ERROR: %s\n\n", msg);
 	printf("Usage:\n");
-	printf("\t%s ( --read operation input_path ( --write operation output_path )* )*\n\n", prog);
+	printf("\t%s (--gui | ( --read operation input_path ( --write operation output_path )* )* )\n\n", prog);
 	printf("Where --read operation can be any of:\n");
 	for(i = 0; i < NELEMS(read_map); i++) {
 		printf("%s\n", read_map[i].str);
@@ -65,9 +67,9 @@ void usage(const char *prog, const char *msg)
 	exit(1);
 }
 
-void interpret_arguments(int argc, char **argv)
+static void interpret_arguments(int argc, char **argv)
 {
-	enum arg_state state = MATCH_READ_WRITE;
+	enum arg_state state = MATCH_GUI_OR_READ_WRITE;
 	struct UMLModel *current_model = NULL;
 	read_function read = NULL;
 	write_function write = NULL;
@@ -75,6 +77,14 @@ void interpret_arguments(int argc, char **argv)
 
 	for(i = 1; i < argc; i++) {
 		switch(state) {
+			case MATCH_GUI_OR_READ_WRITE:
+				state = MATCH_READ_WRITE;
+				if(!strcmp("--gui", argv[i])) {
+					nv_gui(&argc, &argv);
+					break;
+				}
+
+				/* Fall through to MATCH_READ_WRITE if we didn't see a --gui command */
 			case MATCH_READ_WRITE:
 				if(!strcmp("--read", argv[i])) {
 					state = MATCH_READ_OP;
@@ -136,6 +146,11 @@ void interpret_arguments(int argc, char **argv)
 				break;
 		}
 	}
+
+	if (state != MATCH_READ_WRITE) {
+		usage(argv[0], "Missing arguments");
+	}
+
 	nv_uml_model_delete(current_model);
 }
 

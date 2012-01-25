@@ -20,21 +20,9 @@ struct UMLDataType *nv_uml_datatype_new()
 void nv_uml_datatype_delete(struct UMLDataType *d)
 {
 	if (d != NULL) {
-		struct ListLink *iter;
 		nv_uml_type_clear(&d->super);
-
-		for(iter = nv_list_front(&d->attributes); iter;) {
-			struct UMLAttribute *a = NV_LIST_GET_DATA(iter, struct UMLAttribute, link);
-			iter = nv_list_next(iter);
-			nv_uml_attribute_delete(a);
-		}
-
-		for(iter = nv_list_front(&d->operations); iter;) {
-			struct UMLOperation *o = NV_LIST_GET_DATA(iter, struct UMLOperation, link);
-			iter = nv_list_next(iter);
-			nv_uml_operation_delete(o);
-		}
-
+		NV_LIST_DESTROY(&d->attributes, struct UMLAttribute, link, nv_uml_attribute_delete);
+		NV_LIST_DESTROY(&d->operations, struct UMLOperation, link, nv_uml_operation_delete);
 		free(d);
 	}
 }
