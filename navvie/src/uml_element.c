@@ -27,10 +27,7 @@ void nv_uml_element_clear(struct UMLElement *e)
 
 void nv_uml_element_set_name(struct UMLElement *e, const char *name)
 {
-	if (e->name != NULL) {
-		free(e->name);
-	}
-
+	free(e->name);
 	e->name = (char *) malloc(sizeof(char) * (strlen(name) + 1));
 	strcpy(e->name, name);
 }

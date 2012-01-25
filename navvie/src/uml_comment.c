@@ -25,10 +25,7 @@ void nv_uml_comment_delete(struct UMLComment *c)
 
 void nv_uml_comment_set_body(struct UMLComment *c, const char *body)
 {
-	if (c->body != NULL) {
-		free(c->body);
-	}
-
+	free(c->body);
 	c->body = (char *) malloc(sizeof(char) * (strlen(body) + 1));
 	strcpy(c->body, body);
 }
