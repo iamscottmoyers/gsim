@@ -18,7 +18,7 @@ struct UMLClass {
 	struct ListLink link;
 };
 
-struct UMLClass *nv_uml_class_new();
+struct UMLClass *nv_uml_class_new(void);
 void nv_uml_class_delete(struct UMLClass *c);
 
 void nv_uml_class_set_qualifier(struct UMLClass *c, enum UMLQualifier q);

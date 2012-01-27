@@ -25,7 +25,7 @@ void nv_list_push_back( struct List *l, struct ListLink *el )
 void nv_list_push_front( struct List *l, struct ListLink *el )
 {
 	el->next = l->front;
-	l->front = el->next;
+	l->front = el;
 
 	if( l->back == NULL ) {
 		l->back = el;

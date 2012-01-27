@@ -8,7 +8,7 @@ struct UMLConstraint {
 	struct ListLink link;
 };
 
-struct UMLConstraint *nv_uml_constraint_new();
+struct UMLConstraint *nv_uml_constraint_new(void);
 void nv_uml_constraint_delete(struct UMLConstraint *c);
 
 void nv_uml_constraint_set_body(struct UMLConstraint *c, const char *body);

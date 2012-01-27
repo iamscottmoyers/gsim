@@ -13,7 +13,7 @@ struct UMLAssociation {
 	struct ListLink link;
 };
 
-struct UMLAssociation *nv_uml_association_new();
+struct UMLAssociation *nv_uml_association_new(void);
 void nv_uml_association_delete(struct UMLAssociation *a);
 
 void nv_uml_association_set_ownedend(struct UMLAssociation *a, struct UMLOwnedEnd *o, unsigned int pos);

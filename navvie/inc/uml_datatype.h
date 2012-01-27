@@ -11,7 +11,7 @@ struct UMLDataType {
 	struct ListLink link;
 };
 
-struct UMLDataType *nv_uml_datatype_new();
+struct UMLDataType *nv_uml_datatype_new(void);
 void nv_uml_datatype_delete(struct UMLDataType *c);
 
 #endif

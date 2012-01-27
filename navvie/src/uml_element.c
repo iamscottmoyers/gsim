@@ -20,8 +20,8 @@ void nv_uml_element_clear(struct UMLElement *e)
 {
 	if (e != NULL) {
 		free(e->name);
-		NV_LIST_DESTROY(&e->comments,    struct UMLComment,    link, nv_uml_comment_delete   );
-		NV_LIST_DESTROY(&e->constraints, struct UMLConstraint, link, nv_uml_constraint_delete);
+		NV_LIST_FOREACH(&e->comments,    struct UMLComment,    link, nv_uml_comment_delete   );
+		NV_LIST_FOREACH(&e->constraints, struct UMLConstraint, link, nv_uml_constraint_delete);
 	}
 }
 

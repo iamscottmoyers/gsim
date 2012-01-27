@@ -3,7 +3,7 @@
 
 #include "uml_literal.h"
 
-struct UMLLiteral *nv_uml_literal_new()
+struct UMLLiteral *nv_uml_literal_new(void)
 {
 	struct UMLLiteral *l = (struct UMLLiteral *) malloc(sizeof(struct UMLLiteral));
 	if (l == NULL) {

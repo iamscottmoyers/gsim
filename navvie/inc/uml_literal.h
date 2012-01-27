@@ -8,7 +8,7 @@ struct UMLLiteral {
 	struct ListLink link;
 };
 
-struct UMLLiteral *nv_uml_literal_new();
+struct UMLLiteral *nv_uml_literal_new(void);
 void nv_uml_literal_delete(struct UMLLiteral *l);
 
 #endif

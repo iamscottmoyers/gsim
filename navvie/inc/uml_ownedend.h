@@ -15,7 +15,7 @@ struct UMLOwnedEnd {
 	int multiplicity[2];
 };
 
-struct UMLOwnedEnd *nv_uml_ownedend_new();
+struct UMLOwnedEnd *nv_uml_ownedend_new(void);
 void nv_uml_ownedend_delete(struct UMLOwnedEnd *a);
 
 void nv_uml_ownedend_set_type(struct UMLOwnedEnd *o, struct UMLClass * c);

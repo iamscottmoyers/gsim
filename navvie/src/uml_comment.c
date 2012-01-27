@@ -3,7 +3,7 @@
 
 #include "uml_comment.h"
 
-struct UMLComment *nv_uml_comment_new()
+struct UMLComment *nv_uml_comment_new(void)
 {
 	struct UMLComment *c = (struct UMLComment *) malloc(sizeof(struct UMLComment));
 	if (c == NULL) {

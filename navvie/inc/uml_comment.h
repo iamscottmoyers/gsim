@@ -8,7 +8,7 @@ struct UMLComment {
 	struct ListLink link;
 };
 
-struct UMLComment *nv_uml_comment_new();
+struct UMLComment *nv_uml_comment_new(void);
 void nv_uml_comment_delete(struct UMLComment *c);
 
 void nv_uml_comment_set_body(struct UMLComment *c, const char *body);

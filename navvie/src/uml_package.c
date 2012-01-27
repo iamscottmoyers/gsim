@@ -8,7 +8,7 @@
 #include "uml_datatype.h"
 #include "uml_association.h"
 
-struct UMLPackage *nv_uml_package_new()
+struct UMLPackage *nv_uml_package_new(void)
 {
 	struct UMLPackage *p = (struct UMLPackage *) malloc(sizeof(struct UMLPackage));
 	if (p == NULL) {
@@ -28,12 +28,12 @@ void nv_uml_package_delete(struct UMLPackage *p)
 {
 	if (p != NULL) {
 		nv_uml_element_clear(&p->super);
-		NV_LIST_DESTROY(&p->packages,       struct UMLPackage,       link, nv_uml_package_delete      );
-		NV_LIST_DESTROY(&p->classes,        struct UMLClass,         link, nv_uml_class_delete        );
-		NV_LIST_DESTROY(&p->datatypes,      struct UMLDataType,      link, nv_uml_datatype_delete     );
-		NV_LIST_DESTROY(&p->enumerations,   struct UMLEnumeration,   link, nv_uml_enumeration_delete  );
-		NV_LIST_DESTROY(&p->primitivetypes, struct UMLPrimitiveType, link, nv_uml_primitivetype_delete);
-		NV_LIST_DESTROY(&p->associations,   struct UMLAssociation,   link, nv_uml_association_delete  );
+		NV_LIST_FOREACH(&p->packages,       struct UMLPackage,       link, nv_uml_package_delete      );
+		NV_LIST_FOREACH(&p->classes,        struct UMLClass,         link, nv_uml_class_delete        );
+		NV_LIST_FOREACH(&p->datatypes,      struct UMLDataType,      link, nv_uml_datatype_delete     );
+		NV_LIST_FOREACH(&p->enumerations,   struct UMLEnumeration,   link, nv_uml_enumeration_delete  );
+		NV_LIST_FOREACH(&p->primitivetypes, struct UMLPrimitiveType, link, nv_uml_primitivetype_delete);
+		NV_LIST_FOREACH(&p->associations,   struct UMLAssociation,   link, nv_uml_association_delete  );
 		free(p);
 	}
 }

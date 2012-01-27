@@ -4,7 +4,7 @@
 #include "uml_association.h"
 #include "uml_ownedend.h"
 
-struct UMLAssociation *nv_uml_association_new()
+struct UMLAssociation *nv_uml_association_new(void)
 {
 	struct UMLAssociation *a = (struct UMLAssociation *) malloc(sizeof(struct UMLAssociation));
 	if (a == NULL) {

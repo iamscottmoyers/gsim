@@ -87,9 +87,9 @@ static void nv_xmlr_resolve_types();
 
 /* iterates through the given node list (iter)  and executes the following code
    if it finds a node with the given name (a) */
-#define nv_xml_on_node(iter, a)						\
-	for(;iter; iter = iter->next)					\
-		if (iter->type == XML_ELEMENT_NODE &&			\
+#define nv_xml_on_node(iter, a)\
+	for(;iter; iter = iter->next)\
+		if (iter->type == XML_ELEMENT_NODE &&\
 		    !strcmp(iter->name, a))
 
 
@@ -241,8 +241,9 @@ static void nv_xmlr_stereotypes(xmlNode *a_node)
 	xmlNode *cur_node = a_node;
 
 	/* If the first level is a model then we have no stereotypes */
-	if( cur_node->type == XML_ELEMENT_NODE && !strcmp(cur_node->name, "Model") )
+	if( cur_node->type == XML_ELEMENT_NODE && !strcmp(cur_node->name, "Model") ) {
 		return;
+	}
 
 	for(cur_node = cur_node->children; cur_node; cur_node = cur_node->next) {
 		/* To support elements with multiple stereotypes we must 'OR' the new stereotype with the old one */
@@ -265,8 +266,9 @@ static struct UMLModel *nv_xmlr_model(xmlNode *a_node)
 	struct UMLModel *m = NULL;
 
 	/* First level could be uml:Model or xmi:XMI */
-	if( cur_node->type == XML_ELEMENT_NODE && strcmp(cur_node->name, "Model") )
+	if( cur_node->type == XML_ELEMENT_NODE && strcmp(cur_node->name, "Model") ) {
 		cur_node = cur_node->children;
+	}
 
 	nv_xml_on_node(cur_node, "Model") {
 		xmlChar *t = xmlGetProp(cur_node, "name");
@@ -328,7 +330,6 @@ static void nv_xmlr_attribute_qualifiers(xmlNode *a_node, struct UMLAttribute *a
 	if( n == NULL || strcmp(n, "false") ) {
 		nv_uml_attribute_set_qualifier(a, NV_UNIQUE);
 	}
-
 	xmlFree(n);
 }
 

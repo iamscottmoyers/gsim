@@ -5,7 +5,7 @@
 #include "uml_operation.h"
 #include "uml_parameter.h"
 
-struct UMLOperation *nv_uml_operation_new()
+struct UMLOperation *nv_uml_operation_new(void)
 {
 	struct UMLOperation *o = (struct UMLOperation *) malloc(sizeof(struct UMLOperation));
 	if (o == NULL) {
@@ -23,7 +23,7 @@ void nv_uml_operation_delete(struct UMLOperation *o)
 {
 	if (o != NULL) {
 		nv_uml_element_clear(&o->super);
-		NV_LIST_DESTROY(&o->parameters, struct UMLParameter, link, nv_uml_parameter_delete);
+		NV_LIST_FOREACH(&o->parameters, struct UMLParameter, link, nv_uml_parameter_delete);
 		free(o);
 	}
 }

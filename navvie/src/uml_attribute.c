@@ -4,7 +4,7 @@
 
 #include "uml_attribute.h"
 
-struct UMLAttribute *nv_uml_attribute_new()
+struct UMLAttribute *nv_uml_attribute_new(void)
 {
 	struct UMLAttribute *a = (struct UMLAttribute *) malloc(sizeof(struct UMLAttribute));
 	if (a == NULL) {

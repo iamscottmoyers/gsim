@@ -3,7 +3,7 @@
 
 #include "uml_ownedend.h"
 
-struct UMLOwnedEnd *nv_uml_ownedend_new()
+struct UMLOwnedEnd *nv_uml_ownedend_new(void)
 {
 	struct UMLOwnedEnd *o = (struct UMLOwnedEnd *) malloc(sizeof(struct UMLOwnedEnd));
 	if (o == NULL) {

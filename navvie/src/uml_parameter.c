@@ -4,7 +4,7 @@
 #include <assert.h>
 #include "uml_parameter.h"
 
-struct UMLParameter *nv_uml_parameter_new()
+struct UMLParameter *nv_uml_parameter_new(void)
 {
 	struct UMLParameter *p = (struct UMLParameter *) malloc(sizeof(struct UMLParameter));
 	if (p == NULL) {

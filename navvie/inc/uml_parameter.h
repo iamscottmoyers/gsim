@@ -22,7 +22,7 @@ struct UMLParameter {
 	struct ListLink link;
 };
 
-struct UMLParameter *nv_uml_parameter_new();
+struct UMLParameter *nv_uml_parameter_new(void);
 void nv_uml_parameter_delete(struct UMLParameter *p);
 
 void nv_uml_parameter_set_type(struct UMLParameter *p, struct UMLType *type);

@@ -25,7 +25,7 @@ struct UMLAttribute {
 	int multiplicity[2];
 };
 
-struct UMLAttribute *nv_uml_attribute_new();
+struct UMLAttribute *nv_uml_attribute_new(void);
 void nv_uml_attribute_delete(struct UMLAttribute *a);
 
 void nv_uml_attribute_set_type(struct UMLAttribute *a, struct UMLType *type);

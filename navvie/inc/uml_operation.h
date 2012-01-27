@@ -15,7 +15,7 @@ struct UMLOperation {
 	struct ListLink link;
 };
 
-struct UMLOperation *nv_uml_operation_new();
+struct UMLOperation *nv_uml_operation_new(void);
 void nv_uml_operation_delete(struct UMLOperation *o);
 
 void nv_uml_operation_add_parameter(struct UMLOperation *o, struct UMLParameter *p);

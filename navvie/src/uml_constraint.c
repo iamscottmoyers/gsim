@@ -3,7 +3,7 @@
 
 #include "uml_constraint.h"
 
-struct UMLConstraint *nv_uml_constraint_new()
+struct UMLConstraint *nv_uml_constraint_new(void)
 {
 	struct UMLConstraint *c = (struct UMLConstraint *) malloc(sizeof(struct UMLConstraint));
 	if (c == NULL) {

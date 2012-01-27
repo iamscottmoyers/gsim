@@ -12,7 +12,7 @@ struct UMLEnumeration {
 	struct ListLink link;
 };
 
-struct UMLEnumeration *nv_uml_enumeration_new();
+struct UMLEnumeration *nv_uml_enumeration_new(void);
 void nv_uml_enumeration_delete(struct UMLEnumeration *e);
 
 #endif

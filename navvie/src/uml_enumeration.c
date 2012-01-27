@@ -4,7 +4,7 @@
 #include "uml_enumeration.h"
 #include "uml_literal.h"
 
-struct UMLEnumeration *nv_uml_enumeration_new()
+struct UMLEnumeration *nv_uml_enumeration_new(void)
 {
 	struct UMLEnumeration *e = (struct UMLEnumeration *) malloc(sizeof(struct UMLEnumeration));
 	if (e == NULL) {
@@ -19,7 +19,7 @@ void nv_uml_enumeration_delete(struct UMLEnumeration *e)
 {
 	if (e != NULL) {
 		nv_uml_type_clear(&e->super);
-		NV_LIST_DESTROY(&e->literals, struct UMLLiteral, link, nv_uml_literal_delete);
+		NV_LIST_FOREACH(&e->literals, struct UMLLiteral, link, nv_uml_literal_delete);
 		free(e);
 	}
 }

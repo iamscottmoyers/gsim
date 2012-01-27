@@ -9,7 +9,7 @@ struct UMLPrimitiveType {
 	struct ListLink link;
 };
 
-struct UMLPrimitiveType *nv_uml_primitivetype_new();
+struct UMLPrimitiveType *nv_uml_primitivetype_new(void);
 void nv_uml_primitivetype_delete(struct UMLPrimitiveType *p);
 void nv_uml_primitivetype_set_name(struct UMLPrimitiveType *p, const char *name);
 const char *nv_uml_primitivetype_get_name(struct UMLPrimitiveType *p);

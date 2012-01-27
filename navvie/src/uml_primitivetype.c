@@ -3,7 +3,7 @@
 
 #include "uml_primitivetype.h"
 
-struct UMLPrimitiveType *nv_uml_primitivetype_new()
+struct UMLPrimitiveType *nv_uml_primitivetype_new(void)
 {
 	struct UMLPrimitiveType *p = (struct UMLPrimitiveType *) malloc(sizeof(struct UMLPrimitiveType));
 	if (p == NULL) {
